@@ -97,7 +97,10 @@ set laststatus=2
 set t_Co=256
 let NERDTreeDirArrows=0
 let g:rehash256 = 1
-colorscheme molokai
+
+if filereadable(glob('~/.vim/bundle/molokai/colors/molokai.vim'))
+    colorscheme molokai
+endif
 
 let mapleader = ','
 nnoremap <Leader>nt :NERDTreeToggle<CR>           " Open NERDTree
