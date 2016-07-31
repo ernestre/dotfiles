@@ -45,6 +45,8 @@ Plugin 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts=1
   " powerline symbols
 
+Plugin 'tpope/vim-surround'
+
 Plugin 'evidens/vim-twig'
 Plugin 'mattn/emmet-vim'
 
