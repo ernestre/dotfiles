@@ -10,6 +10,9 @@ set guifont=Roboto\ Mono\ Light\ for\ Powerline:h11
 set colorcolumn=121
 set complete-=i
 
+" Remove white space on save.
+autocmd BufWritePre * %s/\s\+$//e
+
 " disable error bell {
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
