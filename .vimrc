@@ -13,6 +13,8 @@ set complete-=i
 " Remove white space on save.
 autocmd BufWritePre * %s/\s\+$//e
 
+let mapleader = ','
+
 " disable error bell {
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
@@ -43,12 +45,26 @@ Plugin 'tpope/vim-fugitive'
 Bundle "myusuf3/numbers.vim"
 " nerdtree
 Bundle 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 "GITGUTTER
 Plugin 'airblade/vim-gitgutter'
-"ctrl p
-Bundle 'kien/ctrlp.vim'
+
+"ctrl p {
+    Bundle 'kien/ctrlp.vim'
+
+    " Ignore vendor file
+    set wildignore+=*/vendor/**
+
+    " Ignore symfony cache folder
+    set wildignore+=*/app/cache/**
+    set wildignore+=*/app/logs/**
+
+    " Ignore node modules folder
+    set wildignore+=*/node_modules/**
+" }
+
 " Vim powerline
-Plugin 'vim-airline/vim-airline' 
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts=1
 
@@ -91,6 +107,16 @@ Plugin 'sniphpets/sniphpets-symfony'
 Plugin 'sniphpets/sniphpets-doctrine'
 Plugin 'sniphpets/sniphpets-phpunit'
 " }
+"
+" Php Documentation {
+" Requires ultisnips
+Plugin 'tobyS/vmustache'
+Plugin 'tobyS/pdv'
+
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
+" }
+
 
 " tags {
 
@@ -107,6 +133,7 @@ Plugin 'easymotion/vim-easymotion'
 
 " Plugin 'qbbr/vim-symfony'
 " Plugin 'docteurklein/vim-symfony'
+" Plugin 'spf13/PIV'
 
 "" JavaScript --------------
 Plugin 'pangloss/vim-javascript'
@@ -131,7 +158,6 @@ if filereadable(glob('~/.vim/bundle/vim-colors-ir-dark-gray/colors/ir_dark_gray.
     colorscheme ir_dark_gray
 endif
 
-let mapleader = ','
 nnoremap <Leader>nt :NERDTreeToggle<CR>           " Open NERDTree
 nnoremap <Leader>p :CtrlP<CR>           " User CtrlP
 
@@ -148,3 +174,19 @@ function! IPhpExpandClass()
 endfunction
 autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
 autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
+
+" Notes
+"
+" Tags
+"   :tn - next tag
+"   :tp - previous tag
+"   :ts - list tags
+"
+" Run shell commands
+" :!<command> , :!ls
+"
+" Buffer
+"   :bd - destroy buffer
+"   :bn - next buffer
+"   :bp - previous buffer
+"   :ls - list buffers
