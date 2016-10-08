@@ -10,6 +10,8 @@ set guifont=Roboto\ Mono\ Light\ for\ Powerline:h11
 set colorcolumn=121
 set complete-=i
 
+let mapleader = ','
+
 " disable error bell {
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
@@ -102,6 +104,16 @@ Plugin 'sniphpets/sniphpets-symfony'
 Plugin 'sniphpets/sniphpets-doctrine'
 Plugin 'sniphpets/sniphpets-phpunit'
 " }
+"
+" Php Documentation {
+" Requires ultisnips
+Plugin 'tobyS/vmustache'
+Plugin 'tobyS/pdv'
+
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
+" }
+
 
 " tags {
 
@@ -143,7 +155,6 @@ if filereadable(glob('~/.vim/bundle/vim-colors-ir-dark-gray/colors/ir_dark_gray.
     colorscheme ir_dark_gray
 endif
 
-let mapleader = ','
 nnoremap <Leader>nt :NERDTreeToggle<CR>           " Open NERDTree
 nnoremap <Leader>p :CtrlP<CR>           " User CtrlP
 
@@ -160,3 +171,19 @@ function! IPhpExpandClass()
 endfunction
 autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
 autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
+
+" Notes 
+"
+" Tags 
+"   :tn - next tag
+"   :tp - previous tag
+"   :ts - list tags
+"
+" Run shell commands
+" :!<command> , :!ls
+"
+" Buffer 
+"   :bd - destroy buffer
+"   :bn - next buffer
+"   :bp - previous buffer
+"   :ls - list buffers
