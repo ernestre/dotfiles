@@ -131,10 +131,6 @@ nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
 
 Plugin 'easymotion/vim-easymotion'
 
-" Plugin 'qbbr/vim-symfony'
-" Plugin 'docteurklein/vim-symfony'
-" Plugin 'spf13/PIV'
-
 "" JavaScript --------------
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
