@@ -43,10 +43,23 @@ Bundle 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 "GITGUTTER
 Plugin 'airblade/vim-gitgutter'
-"ctrl p
-Bundle 'kien/ctrlp.vim'
+
+"ctrl p {
+    Bundle 'kien/ctrlp.vim'
+
+    " Ignore vendor file
+    set wildignore+=*/vendor/**
+
+    " Ignore symfony cache folder
+    set wildignore+=*/app/cache/**
+    set wildignore+=*/app/logs/**
+
+    " Ignore node modules folder
+    set wildignore+=*/node_modules/**
+" }
+
 " Vim powerline
-Plugin 'vim-airline/vim-airline' 
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts=1
 
@@ -105,6 +118,7 @@ Plugin 'easymotion/vim-easymotion'
 
 " Plugin 'qbbr/vim-symfony'
 " Plugin 'docteurklein/vim-symfony'
+" Plugin 'spf13/PIV'
 
 "" JavaScript --------------
 Plugin 'pangloss/vim-javascript'
