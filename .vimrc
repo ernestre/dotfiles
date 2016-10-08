@@ -171,6 +171,14 @@ endfunction
 autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
 autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
 
+" Custom commands:
+" phpUnit: {
+    " Test current file
+    nnoremap <Leader>ct :!bin/phpunit -c app %<CR>
+    " Run phpunit
+    nnoremap <Leader>t :!bin/phpunit -c app <CR>
+" }
+
 " Notes
 "
 " Tags
