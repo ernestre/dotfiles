@@ -72,6 +72,7 @@ Plugin 'tpope/vim-surround'
 
 Plugin 'evidens/vim-twig'
 Plugin 'mattn/emmet-vim'
+Plugin 'godlygeek/tabular'
 
 " colorschemes
 Plugin 'hpoydar/vim-colors-ir-dark-gray'
