@@ -9,6 +9,7 @@ set guioptions-=r
 set guifont=Roboto\ Mono\ Light\ for\ Powerline:h11
 set colorcolumn=121
 set complete-=i
+set lazyredraw
 
 " Remove white space on save.
 autocmd BufWritePre * %s/\s\+$//e
