@@ -50,6 +50,11 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 "GITGUTTER
 Plugin 'airblade/vim-gitgutter'
 
+Plugin 'scrooloose/syntastic'
+let g:syntastic_check_on_open = 1
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_php_phpcs_args="--standard=PSR2"
+
 "ctrl p {
     Bundle 'kien/ctrlp.vim'
 
