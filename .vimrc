@@ -9,7 +9,15 @@ set guioptions-=r
 set guifont=Roboto\ Mono\ Light\ for\ Powerline:h11
 set colorcolumn=121
 set complete-=i
-set lazyredraw
+set lazyredraw   " will buffer screen updates instead of updating all the time
+set tabstop=4    " show existing tab with 4 spaces width
+set shiftwidth=4 " when indenting with '>', use 4 spaces width
+set expandtab    " On pressing tab, insert 4 spaces
+set nocompatible " be iMproved, required
+set laststatus=2 " Always show statusline
+set t_Co=256     " Use 256 colours (Use this setting only if your terminal supports 256
+let NERDTreeDirArrows=0
+let g:rehash256 = 1
 
 " Remove white space on save.
 autocmd BufWritePre * %s/\s\+$//e
@@ -26,126 +34,48 @@ vnoremap < <gv
 vnoremap > >gv
 
 filetype plugin indent on
-" show existing tab with 4 spaces width
-set tabstop=4
-" " when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" " On pressing tab, insert 4 spaces
-set expandtab
+filetype off
 
-
- " Vundle config
-set nocompatible              " be iMproved, required
-filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 Plugin 'VundleVim/Vundle.vim'
-" PLUGINS
-Plugin 'tpope/vim-fugitive'
-" numbers
-Bundle "myusuf3/numbers.vim"
-" nerdtree
-Bundle 'scrooloose/nerdtree'
+" Git
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-"GITGUTTER
 Plugin 'airblade/vim-gitgutter'
-
-Plugin 'scrooloose/syntastic'
-let g:syntastic_check_on_open = 1
-let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-let g:syntastic_php_phpcs_args="--standard=PSR2"
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_jsx_checkers = ['eslint']
-" Disable eclim's file validator
-let g:EclimFileTypeValidate = 0
-
-
-"ctrl p {
-    Bundle 'kien/ctrlp.vim'
-
-    " Ignore vendor file
-    set wildignore+=*/vendor/**
-
-    " Ignore symfony cache folder
-    set wildignore+=*/app/cache/**
-    set wildignore+=*/app/logs/**
-
-    " Ignore node modules folder
-    set wildignore+=*/node_modules/**
-" }
-
-" Vim powerline
+Plugin 'tpope/vim-fugitive'
+" misc
+Bundle "myusuf3/numbers.vim"
+Bundle 'scrooloose/nerdtree'
+" Navigation
+Bundle 'kien/ctrlp.vim'
+Plugin 'easymotion/vim-easymotion'
+" styles
+Plugin 'godlygeek/csapprox'
+Plugin 'hpoydar/vim-colors-ir-dark-gray'
+Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-let g:airline_powerline_fonts=1
-
-Plugin 'tpope/vim-surround'
-
-Plugin 'evidens/vim-twig'
-Plugin 'mattn/emmet-vim'
-Plugin 'godlygeek/tabular'
-
-" colorschemes
-Plugin 'hpoydar/vim-colors-ir-dark-gray'
-Plugin 'godlygeek/csapprox'
-
-Plugin 'tomtom/tcomment_vim'
+" ide
 Bundle 'arnaud-lb/vim-php-namespace'
-
-" autocomplete {
-Plugin 'Valloric/YouCompleteMe'
-let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
-
-let g:EclimCompletionMethod = 'omnifunc'
-" }
-
-" superTab {
-Plugin 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType    = '<C-n>'
-let g:SupereTabCrMapping                = 0
-" }
-
-" UltiSnips {
-Plugin 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsEditSplit="vertical"
-"
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'craigemery/vim-autotag'
+Plugin 'ervandew/supertab'
+Plugin 'evidens/vim-twig'
+Plugin 'godlygeek/tabular'
+Plugin 'honza/vim-snippets'
+Plugin 'mattn/emmet-vim'
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/syntastic'
 Plugin 'sniphpets/sniphpets'
-Plugin 'sniphpets/sniphpets-symfony'
 Plugin 'sniphpets/sniphpets-doctrine'
 Plugin 'sniphpets/sniphpets-phpunit'
-" }
-"
-" Php Documentation {
-" Requires ultisnips
-Plugin 'tobyS/vmustache'
+Plugin 'sniphpets/sniphpets-symfony'
 Plugin 'tobyS/pdv'
-
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
-" }
-
-
-" tags {
-
-    " AutoTag {
-        Plugin 'craigemery/vim-autotag'
-        let g:autotagTagsFile="tags"
-    " }
-
-    Plugin 'majutsushi/tagbar'
-    set tags+=tags.vendors
-" }
-
-Plugin 'easymotion/vim-easymotion'
-
-"" JavaScript --------------
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plugin 'tobyS/vmustache' " Php Documentation  (requires ultiSnips)
+Plugin 'tomtom/tcomment_vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -153,56 +83,61 @@ filetype plugin indent on    " required
 
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
-" Always show statusline
-set laststatus=2
-"
-" " Use 256 colours (Use this setting only if your terminal supports 256
-" colours)
-set t_Co=256
-let NERDTreeDirArrows=0
-let g:rehash256 = 1
+" Settings
+" Syntastic
+let g:syntastic_check_on_open       = 1
+let g:syntastic_php_checkers        = ['php', 'phpcs', 'phpmd']
+let g:syntastic_php_phpcs_args      = "--standard=PSR2"
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_jsx_checkers        = ['eslint']
+" Disable eclim's file validator
+let g:EclimFileTypeValidate = 0
+let g:EclimCompletionMethod = 'omnifunc'
+" CtrlP
+set wildignore+=*/vendor/**
+set wildignore+=*/app/cache/**
+set wildignore+=*/app/logs/**
+set wildignore+=*/node_modules/**
+" Vim powerline
+let g:airline_powerline_fonts=1
+" YouCompleteMe
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+" superTab
+let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:SupereTabCrMapping            = 0
+" UltiSnips {
+let g:UltiSnipsExpandTrigger       = "<tab>"
+let g:UltiSnipsJumpForwardTrigger  = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsEditSplit           = "vertical"
+" pdv
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
+" tags
+let g:autotagTagsFile="tags"
+set tags+=tags.vendors
 
 if filereadable(glob('~/.vim/bundle/vim-colors-ir-dark-gray/colors/ir_dark_gray.vim'))
     colorscheme ir_dark_gray
 endif
 
-nnoremap <Leader>nt :NERDTreeToggle<CR>           " Open NERDTree
-nnoremap <Leader>p :CtrlP<CR>           " User CtrlP
-
 function! IPhpInsertUse()
     call PhpInsertUse()
     call feedkeys('a',  'n')
 endfunction
-autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
 function! IPhpExpandClass()
     call PhpExpandClass()
     call feedkeys('a', 'n')
 endfunction
+
 autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
 autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
-" Custom commands:
-" phpUnit: {
-    " Test current file
-    nnoremap <Leader>ct :!bin/phpunit -c app %<CR>
-    " Run phpunit
-    nnoremap <Leader>t :!bin/phpunit -c app <CR>
-" }
-
-" Notes
-"
-" Tags
-"   :tn - next tag
-"   :tp - previous tag
-"   :ts - list tags
-"
-" Run shell commands
-" :!<command> , :!ls
-"
-" Buffer
-"   :bd - destroy buffer
-"   :bn - next buffer
-"   :bp - previous buffer
-"   :ls - list buffers
+nnoremap <Leader>nt :NERDTreeToggle<CR>
+nnoremap <Leader>p :CtrlP<CR>
+nnoremap <Leader>ct :!bin/phpunit -c app %<CR>
+nnoremap <Leader>t :!bin/phpunit -c app <CR>
