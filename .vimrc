@@ -56,6 +56,9 @@ let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 let g:syntastic_php_phpcs_args="--standard=PSR2"
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_jsx_checkers = ['eslint']
+" Disable eclim's file validator
+let g:EclimFileTypeValidate = 0
+
 
 "ctrl p {
     Bundle 'kien/ctrlp.vim'
