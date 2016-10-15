@@ -54,6 +54,8 @@ Plugin 'scrooloose/syntastic'
 let g:syntastic_check_on_open = 1
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 let g:syntastic_php_phpcs_args="--standard=PSR2"
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_jsx_checkers = ['eslint']
 
 "ctrl p {
     Bundle 'kien/ctrlp.vim'
