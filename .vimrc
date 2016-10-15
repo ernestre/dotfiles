@@ -88,8 +88,8 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 let g:syntastic_check_on_open       = 1
 let g:syntastic_php_checkers        = ['php', 'phpcs', 'phpmd']
 let g:syntastic_php_phpcs_args      = "--standard=PSR2"
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_jsx_checkers        = ['eslint']
+let g:syntastic_javascript_checkers = ['jslint']
+let g:syntastic_jsx_checkers        = ['jslint']
 " Disable eclim's file validator
 let g:EclimFileTypeValidate = 0
 let g:EclimCompletionMethod = 'omnifunc'
