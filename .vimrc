@@ -45,8 +45,9 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 " misc
-Bundle "myusuf3/numbers.vim"
+Bundle 'myusuf3/numbers.vim'
 Bundle 'scrooloose/nerdtree'
+Plugin 'suan/vim-instant-markdown'
 " Navigation
 Bundle 'kien/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
