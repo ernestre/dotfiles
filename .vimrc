@@ -9,16 +9,18 @@ set guioptions-=r
 set guifont=Roboto\ Mono\ Light\ for\ Powerline:h11
 set colorcolumn=121
 set complete-=i
-set lazyredraw   " will buffer screen updates instead of updating all the time
-set tabstop=4    " show existing tab with 4 spaces width
-set shiftwidth=4 " when indenting with '>', use 4 spaces width
-set expandtab    " On pressing tab, insert 4 spaces
-set nocompatible " be iMproved, required
-set laststatus=2 " Always show statusline
-set t_Co=256     " Use 256 colours (Use this setting only if your terminal supports 256
+set lazyredraw          " will buffer screen updates instead of updating all the time
+set tabstop=4           " show existing tab with 4 spaces width
+set shiftwidth=4        " when indenting with '>', use 4 spaces width
+set expandtab           " On pressing tab, insert 4 spaces
+set nocompatible        " be iMproved, required
+set laststatus=2        " Always show statusline
+set t_Co=256            " Use 256 colours (Use this setting only if your terminal supports 256
 let NERDTreeDirArrows=0
 let g:rehash256 = 1
-set path+=** " Look for files recursively
+set path+=**            " Look for files recursively
+set splitright          " Open new splits on the right
+
 
 " Remove white space on save.
 autocmd BufWritePre * %s/\s\+$//e
