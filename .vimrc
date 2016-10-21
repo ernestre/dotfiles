@@ -18,6 +18,7 @@ set laststatus=2 " Always show statusline
 set t_Co=256     " Use 256 colours (Use this setting only if your terminal supports 256
 let NERDTreeDirArrows=0
 let g:rehash256 = 1
+set path+=** " Look for files recursively
 
 " Remove white space on save.
 autocmd BufWritePre * %s/\s\+$//e
