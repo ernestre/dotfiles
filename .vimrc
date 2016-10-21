@@ -143,3 +143,10 @@ nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>ct :!bin/phpunit -c app %<CR>
 nnoremap <Leader>t :!bin/phpunit -c app <CR>
+" Tabular
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a> :Tabularize /=><CR>
+vmap <Leader>a> :Tabularize /=><CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
