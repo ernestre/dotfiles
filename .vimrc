@@ -21,6 +21,8 @@ let g:rehash256 = 1
 set path+=**            " Look for files recursively
 set splitright          " Open new splits on the right
 
+" Toggle hlsearch
+noremap <space> :set hlsearch! hlsearch?<CR>
 
 " Remove white space on save.
 autocmd BufWritePre * %s/\s\+$//e
