@@ -144,6 +144,7 @@ autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
 nnoremap <Leader>nt :NERDTreeToggle<CR>
+nnoremap <Leader>nf :NERDTreeFind<CR>
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>ct :!bin/phpunit -c app %<CR>
 nnoremap <Leader>t :!bin/phpunit -c app <CR>
