@@ -82,6 +82,9 @@ Plugin 'sniphpets/sniphpets-symfony'
 Plugin 'tobyS/pdv'
 Plugin 'tobyS/vmustache' " Php Documentation  (requires ultiSnips)
 Plugin 'tomtom/tcomment_vim'
+" Gist
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -119,6 +122,12 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsEditSplit           = "vertical"
 " pdv
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+" Gist
+let g:gist_detect_filetype         = 1
+let g:gist_open_browser_after_post = 1
+let g:gist_post_private            = 1
+let g:gist_post_anonymous          = 1
+
 nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
 " tags
 let g:autotagTagsFile="tags"
