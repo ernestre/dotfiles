@@ -22,6 +22,12 @@ set tabstop=4           " show existing tab with 4 spaces width
 set ttyfast
 syntax on
 
+" map wq to avoid typos
+command! WQ wq
+command! Wq wq
+command! W w
+command! Q q
+
 " Toggle hlsearch
 noremap <space> :set hlsearch! hlsearch?<CR>
 
