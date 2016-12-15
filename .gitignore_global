@@ -1,0 +1,9 @@
+*.swp
+tags*
+
+.buildpath
+.project
+.settings
+
+/node_modules
+

@@ -1,0 +1,20 @@
+[alias]
+lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+lg = !"git lg1"
+standup = !"git log --reverse --branches --since=$(if [[ "Mon" == "$(date +%a)" ]]; then echo "last friday"; else echo "yesterday"; fi) --author=$(git config --get user.email) --format=format:'%C(cyan) %ad %C(yellow)%h %Creset %s %Cgreen%d' --date=local"
+
+# Push the current branch to the remote "origin", and set it to track
+# # the upstream branch
+publish = !"git push -u origin $(git rev-parse --abbrev-ref HEAD)"
+
+# Delete any branches that have been merged into master
+clean-merged-branches = !"git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+[user]
+	name = Ernest Rekel
+	email = ernest.rekel@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+
+
