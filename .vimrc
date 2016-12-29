@@ -73,6 +73,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " ide
 Bundle 'arnaud-lb/vim-php-namespace'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'craigemery/vim-autotag'
