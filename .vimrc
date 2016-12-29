@@ -5,9 +5,11 @@ set colorcolumn=121
 set complete-=i
 set cursorline
 set expandtab           " On pressing tab, insert 4 spaces
-set guifont=Roboto\ Mono\ Light\ for\ Powerline:h10
-set guioptions-=L
-set guioptions-=r
+set guifont=Roboto\ Mono\ Light\ for\ Powerline\ 8
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
 set laststatus=2        " Always show statusline
 set lazyredraw          " will buffer screen updates instead of updating all the time
 set list
