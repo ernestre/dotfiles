@@ -5,7 +5,7 @@ set colorcolumn=121
 set complete-=i
 set cursorline
 set expandtab           " On pressing tab, insert 4 spaces
-set guifont=Roboto\ Mono\ Light\ for\ Powerline\ 8
+set guifont=Menlo\ for\ Powerline:h10
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
