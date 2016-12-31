@@ -117,6 +117,8 @@ let g:EclimCompletionMethod = 'omnifunc'
 set wildignore+=*/vendor/**
 set wildignore+=*/app/cache/**
 set wildignore+=*/app/logs/**
+set wildignore+=*/var/cache/**
+set wildignore+=*/var/logs/**
 set wildignore+=*/node_modules/**
 " Vim powerline
 let g:airline_powerline_fonts=1
