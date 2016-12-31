@@ -105,7 +105,7 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 " Settings
 " Syntastic
-let g:syntastic_check_on_open       = 1
+let g:syntastic_check_on_open       = 0
 let g:syntastic_php_checkers        = ['php', 'phpcs', 'phpmd']
 let g:syntastic_php_phpcs_args      = "--standard=PSR2"
 let g:syntastic_javascript_checkers = ['jslint']
