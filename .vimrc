@@ -84,8 +84,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mattn/emmet-vim'
-Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'scrooloose/syntastic'
 Plugin 'sniphpets/sniphpets'
 Plugin 'sniphpets/sniphpets-doctrine'
@@ -141,6 +141,9 @@ let g:gist_detect_filetype         = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_post_private            = 1
 let g:gist_post_anonymous          = 1
+" JSX
+" Syntax highlight and indent for js files
+let g:jsx_ext_required = 0
 
 nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
 " tags
