@@ -62,6 +62,7 @@ Plugin 'tpope/vim-fugitive'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'scrooloose/nerdtree'
 Plugin 'suan/vim-instant-markdown'
+Plugin 'tpope/vim-repeat'
 " Navigation
 Bundle 'kien/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
