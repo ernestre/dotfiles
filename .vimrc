@@ -3,24 +3,29 @@ let g:rehash256 = 1
 set backspace=2
 set colorcolumn=121
 set complete-=i
-set expandtab           " On pressing tab, insert 4 spaces
 set guifont=Menlo\ for\ Powerline:h10
-set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
-set laststatus=2        " Always show statusline
-set lazyredraw          " will buffer screen updates instead of updating all the time
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:¬
-set nocompatible        " be iMproved, required
-set number
-set path+=**            " Look for files recursively
-set shiftwidth=4        " when indenting with '>', use 4 spaces width
-set splitright          " Open new splits on the right
-set t_Co=256            " Use 256 colours (Use this setting only if your terminal supports 256
-set tabstop=4           " show existing tab with 4 spaces width
+set nobackup       " Don't create backup files
+set pumheight=10   " Completion window max size
+set expandtab      " On pressing tab, insert 4 spaces
+set guioptions-=m  " remove menu bar
+set guioptions-=T  " remove toolbar
+set guioptions-=r  " remove right-hand scroll bar
+set guioptions-=L  " remove left-hand scroll bar
+set laststatus=2   " Always show statusline
+set lazyredraw     " will buffer screen updates instead of updating all the time
+set nocompatible   " be iMproved, required
+set number         " show line numbers
+set path+=**       " Look for files recursively
+set shiftwidth=4   " when indenting with '>', use 4 spaces width
+set splitright     " Open new splits on the right
+set t_Co=256       " Use 256 colours (Use this setting only if your terminal supports 256
+set tabstop=4      " show existing tab with 4 spaces width
 set ttyfast
+set nocursorcolumn " speed up syntax highlighting
+set nocursorline
+set updatetime=400 " wait ms after stop typing to trigger scripts
 syntax on
 
 " map wq to avoid typos
