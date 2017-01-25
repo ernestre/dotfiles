@@ -164,7 +164,9 @@ nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
 let g:autotagTagsFile="tags"
 set tags+=tags.vendors
 
-colorscheme molokai
+if filereadable(glob('~/.vim/plugged/molokai/colors/molokai.vim'))
+    colorscheme molokai
+endif
 
 function! IPhpInsertUse()
     call PhpInsertUse()
