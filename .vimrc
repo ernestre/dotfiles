@@ -63,23 +63,19 @@ Plug 'tpope/vim-fugitive'
 " misc
 Plug 'myusuf3/numbers.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'suan/vim-instant-markdown'
+Plug 'suan/vim-instant-markdown', { 'for': ['markdown','md'] }
 Plug 'tpope/vim-repeat'
 " Navigation
 Plug 'kien/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 " styles
 Plug 'godlygeek/csapprox'
-" Plug 'hpoydar/vim-colors-ir-dark-gray'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasr/molokai'
-" ide
-Plug 'arnaud-lb/vim-php-namespace'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'SirVer/ultisnips'
 
+" IDE
 function! BuildYCM(info)
     " info is a dictionary with 3 fields
     " - name:   name of the plugin
@@ -89,24 +85,29 @@ function! BuildYCM(info)
         !./install.py
     endif
 endfunction
-
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM')  }
+
+Plug 'SirVer/ultisnips'
 Plug 'craigemery/vim-autotag'
 Plug 'ervandew/supertab'
-Plug 'evidens/vim-twig'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
-Plug 'mattn/emmet-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'scrooloose/syntastic'
-Plug 'sniphpets/sniphpets'
-Plug 'sniphpets/sniphpets-doctrine'
-Plug 'sniphpets/sniphpets-phpunit'
-Plug 'sniphpets/sniphpets-symfony'
-Plug 'tobyS/pdv'
-Plug 'tobyS/vmustache' " Php Documentation  (requires ultiSnips)
+Plug 'terryma/vim-multiple-cursors'
+" IDE : HTML/JS
+Plug 'evidens/vim-twig',        { 'for': 'twig' }
+Plug 'mattn/emmet-vim',         { 'for': ['html', 'twig', 'js', 'jsx'] }
+Plug 'mxw/vim-jsx',             { 'for': ['js', 'jsx'] }
+Plug 'pangloss/vim-javascript', { 'for': ['js', 'jsx'] }
+" IDE : PHP
+Plug 'arnaud-lb/vim-php-namespace',  { 'for': 'php' }
+Plug 'sniphpets/sniphpets',          { 'for': 'php' }
+Plug 'sniphpets/sniphpets-doctrine', { 'for': 'php' }
+Plug 'sniphpets/sniphpets-phpunit',  { 'for': 'php' }
+Plug 'sniphpets/sniphpets-symfony',  { 'for': 'php' }
+Plug 'tobyS/pdv',                    { 'for': 'php' }
+Plug 'tobyS/vmustache',              { 'for': 'php' } " Php Documentation  (requires ultiSnips)
 Plug 'tomtom/tcomment_vim'
 " Gist
 Plug 'mattn/webapi-vim'
