@@ -3,6 +3,7 @@ let g:rehash256 = 1
 set backspace=2
 set colorcolumn=121
 set complete-=i
+set completeopt-=preview
 set guifont=Menlo\ for\ Powerline:h10
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:¬
