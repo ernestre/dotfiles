@@ -3,7 +3,6 @@ let g:rehash256 = 1
 set backspace=2
 set colorcolumn=121
 set complete-=i
-set cursorline
 set expandtab           " On pressing tab, insert 4 spaces
 set guifont=Menlo\ for\ Powerline:h10
 set guioptions-=m  "remove menu bar
@@ -68,10 +67,11 @@ Bundle 'kien/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 " styles
 Plugin 'godlygeek/csapprox'
-Plugin 'hpoydar/vim-colors-ir-dark-gray'
+" Plugin 'hpoydar/vim-colors-ir-dark-gray'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tomasr/molokai'
 " ide
 Bundle 'arnaud-lb/vim-php-namespace'
 Plugin 'terryma/vim-multiple-cursors'
@@ -150,9 +150,7 @@ nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
 let g:autotagTagsFile="tags"
 set tags+=tags.vendors
 
-if filereadable(glob('~/.vim/bundle/vim-colors-ir-dark-gray/colors/ir_dark_gray.vim'))
-    colorscheme ir_dark_gray
-endif
+colorscheme molokai
 
 function! IPhpInsertUse()
     call PhpInsertUse()
