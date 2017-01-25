@@ -49,58 +49,66 @@ vnoremap > >gv
 filetype plugin indent on
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
 " Git
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 " misc
-Bundle 'myusuf3/numbers.vim'
-Bundle 'scrooloose/nerdtree'
-Plugin 'suan/vim-instant-markdown'
-Plugin 'tpope/vim-repeat'
+Plug 'myusuf3/numbers.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'suan/vim-instant-markdown'
+Plug 'tpope/vim-repeat'
 " Navigation
-Bundle 'kien/ctrlp.vim'
-Plugin 'easymotion/vim-easymotion'
+Plug 'kien/ctrlp.vim'
+Plug 'easymotion/vim-easymotion'
 " styles
-Plugin 'godlygeek/csapprox'
-" Plugin 'hpoydar/vim-colors-ir-dark-gray'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tomasr/molokai'
+Plug 'godlygeek/csapprox'
+" Plug 'hpoydar/vim-colors-ir-dark-gray'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tomasr/molokai'
 " ide
-Bundle 'arnaud-lb/vim-php-namespace'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'SirVer/ultisnips'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'craigemery/vim-autotag'
-Plugin 'ervandew/supertab'
-Plugin 'evidens/vim-twig'
-Plugin 'godlygeek/tabular'
-Plugin 'honza/vim-snippets'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'mattn/emmet-vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'scrooloose/syntastic'
-Plugin 'sniphpets/sniphpets'
-Plugin 'sniphpets/sniphpets-doctrine'
-Plugin 'sniphpets/sniphpets-phpunit'
-Plugin 'sniphpets/sniphpets-symfony'
-Plugin 'tobyS/pdv'
-Plugin 'tobyS/vmustache' " Php Documentation  (requires ultiSnips)
-Plugin 'tomtom/tcomment_vim'
-" Gist
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
+Plug 'arnaud-lb/vim-php-namespace'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'SirVer/ultisnips'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+function! BuildYCM(info)
+    " info is a dictionary with 3 fields
+    " - name:   name of the plugin
+    " - status: 'installed', 'updated', or 'unchanged'
+    " - force:  set on PlugInstall! or PlugUpdate!
+    if a:info.status == 'installed' || a:info.force
+        !./install.py
+    endif
+endfunction
+
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM')  }
+Plug 'craigemery/vim-autotag'
+Plug 'ervandew/supertab'
+Plug 'evidens/vim-twig'
+Plug 'godlygeek/tabular'
+Plug 'honza/vim-snippets'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mattn/emmet-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'scrooloose/syntastic'
+Plug 'sniphpets/sniphpets'
+Plug 'sniphpets/sniphpets-doctrine'
+Plug 'sniphpets/sniphpets-phpunit'
+Plug 'sniphpets/sniphpets-symfony'
+Plug 'tobyS/pdv'
+Plug 'tobyS/vmustache' " Php Documentation  (requires ultiSnips)
+Plug 'tomtom/tcomment_vim'
+" Gist
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
+
+call plug#end()
+
 
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
