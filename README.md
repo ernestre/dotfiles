@@ -22,15 +22,16 @@ $ ~/.tmux/plugins/tpm/bin/install_plugins
 ```
 
 # Vim
-### [Vundle] :
-* Install vundle:
+### Plugin manager [Plug] :
+* Install Plug:
 ```sh
-$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 * Install plugins:
 ```sh
-$ vim +PluginInstall +qall
+$ vim +Plug +qall
 ```
 
 [TPM]:https://github.com/tmux-plugins/tpm
-[Vundle]:https://github.com/VundleVim/Vundle.vim
+[Plug]:https://github.com/junegunn/vim-plug
