@@ -189,6 +189,16 @@ nnoremap <Leader>nf :NERDTreeFind<CR>
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>ct :!bin/phpunit -c app %<CR>
 nnoremap <Leader>t :!bin/phpunit -c app <CR>
+
+" Fugitive
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gc :Gcommit -v<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gp :Gpush<CR>
+nnoremap <Leader>gr :Gread<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gw :Gwrite<CR>
+
 " Tabular
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
