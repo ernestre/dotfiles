@@ -97,8 +97,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/syntastic'
 Plug 'terryma/vim-multiple-cursors'
 " IDE : HTML/JS
-Plug 'evidens/vim-twig',        { 'for': 'twig' }
-Plug 'mattn/emmet-vim',         { 'for': ['html', 'twig', 'js', 'jsx'] }
+Plug 'evidens/vim-twig'
+Plug 'mattn/emmet-vim'
 Plug 'mxw/vim-jsx',             { 'for': ['js', 'jsx'] }
 Plug 'pangloss/vim-javascript', { 'for': ['js', 'jsx'] }
 " IDE : PHP
