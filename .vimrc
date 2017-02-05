@@ -151,7 +151,7 @@ let g:UltiSnipsJumpForwardTrigger  = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsEditSplit           = "vertical"
 " pdv
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
 " Gist
 let g:gist_detect_filetype         = 1
 let g:gist_open_browser_after_post = 1
@@ -169,6 +169,15 @@ set tags+=tags.vendors
 if filereadable(glob('~/.vim/plugged/molokai/colors/molokai.vim'))
     colorscheme molokai
 endif
+
+" Styling : {
+set linespace=2
+" Line numbures should match the background color
+hi LineNr guibg=bg ctermbg=bg
+" Remove split borders
+hi foldcolumn guibg=bg ctermbg=bg
+hi VertSplit guibg=bg guifg=bg ctermbg=bg ctermfg=bg
+" }
 
 function! IPhpInsertUse()
     call PhpInsertUse()
