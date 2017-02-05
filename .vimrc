@@ -97,6 +97,7 @@ Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/syntastic'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'skwp/greplace.vim'
 " IDE : HTML/JS
 Plug 'evidens/vim-twig'
 Plug 'mattn/emmet-vim'
