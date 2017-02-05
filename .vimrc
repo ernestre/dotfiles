@@ -171,13 +171,20 @@ if filereadable(glob('~/.vim/plugged/molokai/colors/molokai.vim'))
     colorscheme molokai
 endif
 
-" Styling : {
+" Styling (use :hi for color reference): {
 set linespace=2
 " Line numbures should match the background color
 hi LineNr guibg=bg ctermbg=bg
 " Remove split borders
 hi foldcolumn guibg=bg ctermbg=bg
 hi VertSplit guibg=bg guifg=bg ctermbg=bg ctermfg=bg
+" Tab styling
+hi TabLine cterm=bold ctermfg=8 ctermbg=bg
+hi TabLineFill cterm=bold ctermbg=bg
+" GitGutter background should match the bg color
+hi GitGutterAddDefault ctermfg=2 ctermbg=bg guifg=#009900 guibg=bg
+hi GitGutterChangeDefault ctermfg=3 ctermbg=bg guifg=#bbbb00 guibg=bg
+hi GitGutterDeleteDefault ctermfg=1 ctermbg=bg guifg=#ff2222 guibg=bg
 " }
 
 function! IPhpInsertUse()
