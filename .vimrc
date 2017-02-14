@@ -98,6 +98,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/syntastic'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'skwp/greplace.vim'
+Plug 'mileszs/ack.vim'
+
 " IDE : HTML/JS
 Plug 'evidens/vim-twig'
 Plug 'mattn/emmet-vim'
@@ -131,6 +133,17 @@ let g:syntastic_jsx_checkers        = ['jslint']
 " Disable eclim's file validator
 let g:EclimFileTypeValidate = 0
 let g:EclimCompletionMethod = 'omnifunc'
+" Gsearch
+" Use AG for search
+set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'
+
+" Ack
+" Use Ag if possible
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 " CtrlP
 set wildignore+=*/vendor/**
 set wildignore+=*/app/cache/**
