@@ -8,6 +8,7 @@ set guifont=Menlo\ for\ Powerline:h10
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:¬
 set nobackup       " Don't create backup files
+set noswapfile     " Don't create swapfile
 set pumheight=10   " Completion window max size
 set expandtab      " On pressing tab, insert 4 spaces
 set guioptions-=m  " remove menu bar
