@@ -175,6 +175,8 @@ let g:gist_post_anonymous          = 1
 " JSX
 " Syntax highlight and indent for js files
 let g:jsx_ext_required = 0
+" NerdTree
+let NERDTreeIgnore = ['node_modules']
 
 nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
 " tags
