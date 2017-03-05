@@ -29,6 +29,7 @@ set nocursorcolumn " speed up syntax highlighting
 set nocursorline
 set updatetime=400 " wait ms after stop typing to trigger scripts
 set nowrap         " Don't wrap lines
+set scrolloff=10   " scroll off padding
 syntax on
 
 " map wq to avoid typos
