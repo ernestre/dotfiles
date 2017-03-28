@@ -32,6 +32,10 @@ set nowrap         " Don't wrap lines
 set scrolloff=10   " scroll off padding
 set paste          " better pasting
 syntax on
+" allow project specific .vimrc configurations {{
+set exrc
+set secure
+" }}
 
 " map wq to avoid typos
 command! WQ wq
@@ -215,6 +219,14 @@ function! IPhpExpandClass()
     call feedkeys('a', 'n')
 endfunction
 
+function! RunPhpUnitForCurrentFile()
+	execute ":echo 0"
+endfunction
+
+function! RunPhpUnit()
+	execute ":echo 0"
+endfunction
+
 autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
 autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
 autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
@@ -223,8 +235,8 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
 nnoremap <Leader>p :CtrlP<CR>
-nnoremap <Leader>ct :!bin/phpunit -c app %<CR>
-nnoremap <Leader>t :!bin/phpunit -c app <CR>
+nnoremap <Leader>ct :call RunPhpUnitForCurrentFile()<CR>
+nnoremap <Leader>t :call RunPhpUnit()<CR>
 
 " Fugitive
 nnoremap <Leader>gb :Gblame<CR>
