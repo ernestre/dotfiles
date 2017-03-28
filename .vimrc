@@ -219,6 +219,7 @@ function! IPhpExpandClass()
     call feedkeys('a', 'n')
 endfunction
 
+" Should be overridden in project specific .vimrc {{
 function! RunPhpUnitForCurrentFile()
 	execute ":echo 0"
 endfunction
@@ -226,6 +227,7 @@ endfunction
 function! RunPhpUnit()
 	execute ":echo 0"
 endfunction
+" }}
 
 autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
 autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
