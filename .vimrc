@@ -95,6 +95,7 @@ function! BuildYCM(info)
     endif
 endfunction
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM')  }
+Plug 'joonty/vdebug'
 
 Plug 'SirVer/ultisnips'
 Plug 'craigemery/vim-autotag'
@@ -183,6 +184,14 @@ let g:gist_post_anonymous          = 1
 let g:jsx_ext_required = 0
 " NerdTree
 let NERDTreeIgnore = ['node_modules']
+
+" https://github.com/joonty/vdebug#quick-guide
+let g:vdebug_options         = {}
+let g:vdebug_options["port"] = 9000
+" Should be set in project specific .vimrc
+" let g:vdebug_options["path_maps"]   = {
+" \    '/var/www/vvs': '/project/vvs'
+" \}
 
 nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
 " tags
