@@ -95,7 +95,7 @@ function! BuildYCM(info)
     endif
 endfunction
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM')  }
-Plug 'joonty/vdebug'
+Plug 'joonty/vdebug',          { 'for': 'php' }
 
 Plug 'SirVer/ultisnips'
 Plug 'craigemery/vim-autotag'
