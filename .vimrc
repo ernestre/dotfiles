@@ -119,6 +119,7 @@ Plug 'sniphpets/sniphpets-doctrine', { 'for': 'php' }
 Plug 'sniphpets/sniphpets-phpunit',  { 'for': 'php' }
 Plug 'sniphpets/sniphpets-symfony',  { 'for': 'php' }
 Plug 'tobyS/pdv',                    { 'for': 'php' }
+Plug 'lvht/phpcd.vim',               { 'for': 'php' }
 Plug 'tobyS/vmustache',              { 'for': 'php' } " Php Documentation  (requires ultiSnips)
 Plug 'tomtom/tcomment_vim'
 " Gist
