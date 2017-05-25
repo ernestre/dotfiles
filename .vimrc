@@ -69,7 +69,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 " misc
-Plug 'myusuf3/numbers.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown', { 'for': ['markdown','md'] }
 Plug 'tpope/vim-repeat'
