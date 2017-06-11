@@ -26,6 +26,7 @@ set t_Co=256       " Use 256 colours (Use this setting only if your terminal sup
 set tabstop=4      " show existing tab with 4 spaces width
 set ttyfast
 set nocursorcolumn " speed up syntax highlighting
+set synmaxcol=200  " syntax highlight only 200 chars"
 set nocursorline
 set updatetime=400 " wait ms after stop typing to trigger scripts
 set nowrap         " Don't wrap lines
