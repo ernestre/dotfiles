@@ -73,7 +73,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown', { 'for': ['markdown','md'] }
 Plug 'tpope/vim-repeat'
 " Navigation
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'easymotion/vim-easymotion'
 " styles
 Plug 'godlygeek/csapprox'
@@ -151,13 +151,6 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-" CtrlP
-set wildignore+=*/vendor/**
-set wildignore+=*/app/cache/**
-set wildignore+=*/app/logs/**
-set wildignore+=*/var/cache/**
-set wildignore+=*/var/logs/**
-set wildignore+=*/node_modules/**
 " Vim powerline
 let g:airline_powerline_fonts=1
 " YouCompleteMe
@@ -244,7 +237,7 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
-nnoremap <Leader>p :CtrlP<CR>
+nnoremap <Leader>p :FZF<CR>
 nnoremap <Leader>ct :call RunPhpUnitForCurrentFile()<CR>
 nnoremap <Leader>t :call RunPhpUnit()<CR>
 
