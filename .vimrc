@@ -149,7 +149,8 @@ if executable('ag')
 endif
 
 " Vim powerline
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts            = 1
+let g:airline#extensions#tabline#enabled = 1
 " YouCompleteMe
 let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
@@ -260,3 +261,8 @@ nnoremap <C-l> :vertical resize -5<cr>
 nnoremap <C-j> :resize +5<cr>
 nnoremap <C-k> :resize -5<cr>
 nnoremap <C-h> :vertical resize +5<cr>
+
+" Quick buffer switching
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>
