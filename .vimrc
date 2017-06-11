@@ -102,7 +102,7 @@ Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'skwp/greplace.vim'
 Plug 'mileszs/ack.vim'
@@ -132,12 +132,8 @@ call plug#end()
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 " Settings
-" Syntastic
-let g:syntastic_check_on_open       = 0
-let g:syntastic_php_checkers        = ['php', 'phpcs', 'phpmd']
-let g:syntastic_php_phpcs_args      = "--standard=PSR2"
-let g:syntastic_javascript_checkers = ['jslint']
-let g:syntastic_jsx_checkers        = ['jslint']
+" ale
+let g:ale_php_phpcs_standard = 'PSR2'
 " Disable eclim's file validator
 let g:EclimFileTypeValidate = 0
 let g:EclimCompletionMethod = 'omnifunc'
