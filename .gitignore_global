@@ -5,6 +5,7 @@ tags*
 .buildpath
 .project
 .settings
+.phpcd
 
 /node_modules
 
