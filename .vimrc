@@ -149,8 +149,9 @@ if executable('ag')
 endif
 
 " Vim powerline
-let g:airline_powerline_fonts            = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts            = 1
+let g:airline_theme                      = 'murmur'
 " YouCompleteMe
 let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
