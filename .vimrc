@@ -149,12 +149,25 @@ if executable('ag')
 endif
 
 " CtrlP
-set wildignore+=*/vendor/**
-set wildignore+=*/app/cache/**
-set wildignore+=*/app/logs/**
-set wildignore+=*/var/cache/**
-set wildignore+=*/var/logs/**
-set wildignore+=*/node_modules/**
+let g:ctrlp_show_hidden = 1
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+else
+    set wildignore+=*/vendor/**
+    set wildignore+=*/app/cache/**
+    set wildignore+=*/app/logs/**
+    set wildignore+=*/var/cache/**
+    set wildignore+=*/var/logs/**
+    set wildignore+=*/node_modules/**
+endif
+
+
 " Vim powerline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts            = 1
