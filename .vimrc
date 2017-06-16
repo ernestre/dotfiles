@@ -257,6 +257,7 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
 nnoremap <Leader>p :CtrlP<CR>
+nnoremap <Leader>P :CtrlPBufTag<CR>
 nnoremap <Leader>ct :call RunPhpUnitForCurrentFile()<CR>
 nnoremap <Leader>t :call RunPhpUnit()<CR>
 
