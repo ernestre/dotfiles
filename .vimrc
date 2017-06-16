@@ -134,9 +134,6 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 " Settings
 " ale
 let g:ale_php_phpcs_standard = 'PSR2'
-" Disable eclim's file validator
-let g:EclimFileTypeValidate = 0
-let g:EclimCompletionMethod = 'omnifunc'
 " Gsearch
 " Use AG for search
 set grepprg=ag
