@@ -46,6 +46,9 @@ command! Q q
 " Toggle hlsearch
 noremap <space> :set hlsearch! hlsearch?<CR>
 
+" Toggle paste
+noremap <Leader>sp :set paste! nopaste?<CR>
+
 " Remove white space on save.
 autocmd BufWritePre * %s/\s\+$//e
 
