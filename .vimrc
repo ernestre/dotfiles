@@ -25,9 +25,8 @@ set splitright     " Open new splits on the right
 set t_Co=256       " Use 256 colours (Use this setting only if your terminal supports 256
 set tabstop=4      " show existing tab with 4 spaces width
 set ttyfast
-set nocursorcolumn " speed up syntax highlighting
 set synmaxcol=200  " syntax highlight only 200 chars"
-set nocursorline
+set cursorline
 set updatetime=400 " wait ms after stop typing to trigger scripts
 set nowrap         " Don't wrap lines
 set scrolloff=10   " scroll off padding
@@ -49,11 +48,8 @@ command! Wq wq
 command! W w
 command! Q q
 
-" Toggle hlsearch
+" Toggle hlsearcp
 noremap <space> :set hlsearch! hlsearch?<CR>
-
-" Toggle paste
-noremap <Leader>sp :set paste! nopaste?<CR>
 
 " Remove white space on save.
 autocmd BufWritePre * %s/\s\+$//e
@@ -94,7 +90,7 @@ Plug 'tomasr/molokai'
 
 " IDE
 function! BuildYCM(info)
-    " info is a dictionary with 3 fields
+" info is a dictionary with 3 fields
     " - name:   name of the plugin
     " - status: 'installed', 'updated', or 'unchanged'
     " - force:  set on PlugInstall! or PlugUpdate!
