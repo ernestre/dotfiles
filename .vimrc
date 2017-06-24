@@ -31,6 +31,7 @@ set nocursorline
 set updatetime=400 " wait ms after stop typing to trigger scripts
 set nowrap         " Don't wrap lines
 set scrolloff=10   " scroll off padding
+set hidden         " Allow buffer switching without saving
 syntax on
 " allow project specific .vimrc configurations {{
 set exrc
