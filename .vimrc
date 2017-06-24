@@ -48,7 +48,7 @@ command! Wq wq
 command! W w
 command! Q q
 
-" Toggle hlsearcp
+" Toggle hlsearch
 noremap <space> :set hlsearch! hlsearch?<CR>
 
 " Remove white space on save.
