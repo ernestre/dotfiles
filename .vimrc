@@ -118,6 +118,7 @@ Plug 'pangloss/vim-javascript', { 'for': ['js', 'jsx'] }
 " IDE : PHP
 Plug 'arnaud-lb/vim-php-namespace',  { 'for': 'php' }
 Plug 'sniphpets/sniphpets',          { 'for': 'php' }
+Plug 'sniphpets/sniphpets-common',   { 'for': 'php' }
 Plug 'sniphpets/sniphpets-doctrine', { 'for': 'php' }
 Plug 'sniphpets/sniphpets-phpunit',  { 'for': 'php' }
 Plug 'sniphpets/sniphpets-symfony',  { 'for': 'php' }
