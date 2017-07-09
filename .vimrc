@@ -78,6 +78,8 @@ Plug 'suan/vim-instant-markdown', { 'for': ['markdown','md'] }
 Plug 'tpope/vim-repeat'
 " Navigation
 Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'junegunn/fzf.vim'
 Plug 'easymotion/vim-easymotion'
 " styles
 Plug 'godlygeek/csapprox'
