@@ -115,8 +115,8 @@ Plug 'mileszs/ack.vim'
 " IDE : HTML/JS
 Plug 'evidens/vim-twig'
 Plug 'mattn/emmet-vim'
-Plug 'mxw/vim-jsx',             { 'for': ['js', 'jsx'] }
-Plug 'pangloss/vim-javascript', { 'for': ['js', 'jsx'] }
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
 " IDE : PHP
 Plug 'arnaud-lb/vim-php-namespace',  { 'for': 'php' }
 Plug 'sniphpets/sniphpets',          { 'for': 'php' }
@@ -193,9 +193,6 @@ let g:gist_detect_filetype         = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_post_private            = 1
 let g:gist_post_anonymous          = 1
-" JSX
-" Syntax highlight and indent for js files
-let g:jsx_ext_required = 0
 " NerdTree
 let NERDTreeIgnore = ['node_modules']
 
