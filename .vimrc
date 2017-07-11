@@ -4,7 +4,11 @@ set backspace=2
 set colorcolumn=121
 set complete-=i
 set completeopt-=preview
-set guifont=Menlo\ for\ Powerline:h10
+if has('mac')
+    set guifont=Menlo\ for\ Powerline:h10
+elseif has('unix')
+    set guifont=Menlo\ for\ Powerline\ 7.5
+endif
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:¬
 set nobackup       " Don't create backup files
