@@ -142,6 +142,9 @@ call plug#end()
 set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 " Settings
+" instant markdown
+let g:instant_markdown_autostart = 0
+
 " ale
 let g:ale_php_phpcs_standard = 'PSR2'
 " Gsearch
