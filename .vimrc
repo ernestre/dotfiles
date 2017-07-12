@@ -80,6 +80,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown', { 'for': ['markdown','md'] }
 Plug 'tpope/vim-repeat'
+Plug 'vimwiki'
 " Navigation
 Plug 'kien/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
