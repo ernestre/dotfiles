@@ -48,6 +48,8 @@ vmap <C-X> "+x
 command! WQ wq
 command! Wq wq
 command! W w
+command! Wa wa
+command! Wqa wqa
 command! Q q
 
 " Toggle hlsearch
