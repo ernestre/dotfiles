@@ -25,6 +25,14 @@ $ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 $ ~/.tmux/plugins/tpm/bin/install_plugins
 ```
 
+# FZF
+### Fuzzy finder [FZF] :
+* Install fzf:
+```sh
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+```
+
 # Vim
 ### Plugin manager [Plug] :
 * Install Plug:
@@ -34,9 +42,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```
 * Install plugins:
 ```sh
-$ vim +Plug +qall
+$ vim +PlugInstall +qall
 ```
 
 [TPM]:https://github.com/tmux-plugins/tpm
 [Plug]:https://github.com/junegunn/vim-plug
+[FZF]:https://github.com/junegunn/fzf
 [ag]:https://github.com/ggreer/the_silver_searcher#installing

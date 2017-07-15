@@ -1,5 +1,6 @@
 let NERDTreeDirArrows=0
 let g:rehash256 = 1
+set encoding=utf-8
 set backspace=2
 set colorcolumn=121
 set complete-=i
@@ -82,7 +83,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown', { 'for': ['markdown','md'] }
 Plug 'tpope/vim-repeat'
-Plug 'vimwiki'
+Plug 'vimwiki/vimwiki'
 " Navigation
 Plug 'kien/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
@@ -96,16 +97,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasr/molokai'
 
 " IDE
-function! BuildYCM(info)
-" info is a dictionary with 3 fields
-    " - name:   name of the plugin
-    " - status: 'installed', 'updated', or 'unchanged'
-    " - force:  set on PlugInstall! or PlugUpdate!
-    if a:info.status == 'installed' || a:info.force
-        !./install.py
-    endif
-endfunction
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM')  }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
 Plug 'joonty/vdebug',          { 'for': 'php' }
 
 Plug 'SirVer/ultisnips'

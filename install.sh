@@ -12,38 +12,47 @@ files="vimrc tmux.conf ctags gitconfig gitignore_global zshrc" # list of files/f
 
 ##########
 
-# create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
 echo "...done"
 
-# change to the dotfiles directory
 echo "Changing to the $dir directory"
 cd $dir
 echo "...done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
+echo "Moving any existing dotfiles from ~ to $olddir"
 for file in $files; do
-    echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
+    if [ -f ~/.$file  ]; then
+        mv ~/.$file $olddir
+        echo $file "moved to" $olddir
+    fi
+done
+echo "...done"
+
+echo "Creating symlinks"
+for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/.$file ~/.$file
 done
+echo "...done"
 
-# install TPM
 echo "Installing TPM"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+echo "...done"
 
-# install Tmux plugins
+echo "Installing Tmux plugins"
 ~/.tmux/plugins/tpm/bin/install_plugins
+echo "...done"
 
-# install Plug
+echo "Installing FZF"
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+echo "...done"
+
 echo "Installing Plug"
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo "...Done"
 
-# install vim plugins
 echo "Installing Vim plugins"
-vim +Plug +qall
-
+vim +PlugInstall +qall
 echo "...Done"
