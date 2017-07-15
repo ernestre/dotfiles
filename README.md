@@ -1,6 +1,10 @@
 # dotfiles
 
-#tl:dr
+# Requirements
+* Ag - [ag]
+* `instant-markdown-d` : (`npm install -g instant-markdown-d`)
+
+# tl:dr
 
 ```sh
 $ git clone https://github.com/ernestre/dotfiles.git && cd dotfiles && sh install.sh
@@ -35,3 +39,4 @@ $ vim +Plug +qall
 
 [TPM]:https://github.com/tmux-plugins/tpm
 [Plug]:https://github.com/junegunn/vim-plug
+[ag]:https://github.com/ggreer/the_silver_searcher#installing
