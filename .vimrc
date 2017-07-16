@@ -31,7 +31,7 @@ set t_Co=256       " Use 256 colours (Use this setting only if your terminal sup
 set tabstop=4      " show existing tab with 4 spaces width
 set ttyfast
 set synmaxcol=200  " syntax highlight only 200 chars"
-set cursorline
+" set cursorline
 set updatetime=400 " wait ms after stop typing to trigger scripts
 set nowrap         " Don't wrap lines
 set scrolloff=10   " scroll off padding
@@ -106,7 +106,7 @@ Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'skwp/greplace.vim'
 Plug 'rking/ag.vim'
@@ -138,6 +138,12 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 " Settings
 " instant markdown
 let g:instant_markdown_autostart = 0
+
+let g:UltiSnipsSnippetDirectories=[
+    \"UltiSnips",
+    \$HOME.'/dotfiles/UltiSnips/general',
+    \$HOME.'/dotfiles/UltiSnips/specific'
+\]
 
 " ale
 let g:ale_php_phpcs_standard = 'PSR2'
