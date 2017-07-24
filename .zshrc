@@ -79,6 +79,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias gs='git status'
 alias gac='git add . && git commit -v'
+alias gaca='git add . && git commit -v --amend'
 DEFAULT_USER="$USER"
 
 source ~/.aliases
