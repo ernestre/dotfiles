@@ -291,6 +291,6 @@ nnoremap <C-k> :resize -5<cr>
 nnoremap <C-h> :vertical resize +5<cr>
 
 " Quick buffer switching
-map <tab> :bn<cr>
-map <s-tab> :bp<cr>
+map gn :bn<cr>
+map gp :bp<cr>
 map gd :bd<cr>
