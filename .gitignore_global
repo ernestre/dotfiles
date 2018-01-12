@@ -1,6 +1,8 @@
 *.swp
 tags*
 .vimrc
+.idea
+.DS_Store
 
 .buildpath
 .project
