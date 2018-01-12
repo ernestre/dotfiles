@@ -1,8 +1,9 @@
 # dotfiles
 
 # Requirements
-* Ag - [ag]
-* `instant-markdown-d` : (`npm install -g instant-markdown-d`)
+* [ag]
+* [vim-instant-markdown] : (`npm install -g instant-markdown-d`)
+* [diff-so-fancy] : (`npm install -g diff-so-fancy`)
 
 # tl:dr
 
@@ -49,3 +50,5 @@ $ vim +PlugInstall +qall
 [Plug]:https://github.com/junegunn/vim-plug
 [FZF]:https://github.com/junegunn/fzf
 [ag]:https://github.com/ggreer/the_silver_searcher#installing
+[vim-instant-markdown]:https://github.com/suan/vim-instant-markdown
+[diff-so-fancy]:https://github.com/so-fancy/diff-so-fancy

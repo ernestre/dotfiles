@@ -14,9 +14,24 @@ publish = !"git push -u origin $(git rev-parse --abbrev-ref HEAD)"
 clean-merged-branches = !"git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
 [user]
-	name = Ernest Rekel
-	email = ernest.rekel@gmail.com
+    name = Ernest Rekel
+    email = ernest.rekel@gmail.com
 [core]
-	excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore_global
+    pager = diff-so-fancy | less --tabs=4 -RFX
 
 
+[color]
+    ui = true
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+[color "diff"]
+    meta = 227
+    frag = magenta bold
+    commit = 227 bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
