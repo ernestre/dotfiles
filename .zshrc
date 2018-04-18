@@ -81,6 +81,9 @@ alias gs='git status'
 alias gac='git add . && git commit -v'
 alias guc='git add -u && git commit -v'
 alias gaca='git add . && git commit -v --amend'
+alias gfu='git fetch upstream'
+alias cp='cp -v'
+alias rm='rm -v'
 DEFAULT_USER="$USER"
 
 source ~/.aliases
