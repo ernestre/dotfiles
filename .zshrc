@@ -18,17 +18,17 @@ POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S \uf073 %d.%m.%y}"
 POWERLEVEL9K_VCS_TAG_ICON='\uf9f8'
 
-plugins=(git docker web-search tmux colorize redis-cli)
+plugins=(git docker docker-compose web-search tmux colorize redis-cli)
 
 ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
-
 alias gs='git status'
 alias gac='git add . && git commit -v'
 alias guc='git add -u && git commit -v'
 alias gaca='git add . && git commit -v --amend'
+alias gacan='gaca --no-edit'
 alias gfu='git fetch upstream'
 alias cp='cp -v'
 alias rm='rm -v'
@@ -36,5 +36,3 @@ alias cat='ccat'
 DEFAULT_USER="$USER"
 
 source ~/.aliases
-
-
