@@ -107,7 +107,6 @@ Plug 'fatih/vim-go', { 'for': 'go'  }
 Plug 'SirVer/ultisnips'
 Plug 'craigemery/vim-autotag'
 Plug 'ervandew/supertab'
-Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 " Plug 'w0rp/ale'
@@ -279,14 +278,6 @@ nnoremap <Leader>gp :Gpush<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gw :Gwrite<CR>
-
-" Tabular
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a> :Tabularize /=><CR>
-vmap <Leader>a> :Tabularize /=><CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
 
 " Resize panes
 nnoremap <C-l> :vertical resize -5<cr>
