@@ -31,8 +31,7 @@ set t_Co=256       " Use 256 colours (Use this setting only if your terminal sup
 set tabstop=4      " show existing tab with 4 spaces width
 set ttyfast
 set synmaxcol=200  " syntax highlight only 200 chars"
-" set cursorline
-set updatetime=400 " wait ms after stop typing to trigger scripts
+set updatetime=1000 " wait ms after stop typing to trigger scripts
 set nowrap         " Don't wrap lines
 set scrolloff=10   " scroll off padding
 set hidden         " Allow buffer switching without saving
@@ -41,6 +40,8 @@ syntax on
 set exrc
 set secure
 " }}
+
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 
 vmap <C-C> "+y
 vmap <C-X> "+x
@@ -77,42 +78,49 @@ call plug#begin('~/.vim/plugged')
 
 " Git
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'elzr/vim-json', {'for': 'json'}
 Plug 'airblade/vim-gitgutter'
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+
 Plug 'tpope/vim-fugitive'
 " misc
 Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown', { 'for': ['markdown','md'] }
 Plug 'tpope/vim-repeat'
 Plug 'vimwiki/vimwiki'
+Plug 'chr4/nginx.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-surround'
+Plug 'godlygeek/csapprox'
 " Navigation
 Plug 'kien/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
-Plug 'easymotion/vim-easymotion'
 " styles
-Plug 'godlygeek/csapprox'
-Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasr/molokai'
 
 " IDE
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
-Plug 'joonty/vdebug',          { 'for': 'php' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py', 'on': [] }
+augroup load_ycm
+    autocmd!
+    autocmd CursorHold * call plug#load('YouCompleteMe') | autocmd! load_ycm
+augroup END
 
+
+Plug 'fatih/vim-go', { 'for': 'go'  }
 Plug 'SirVer/ultisnips'
 Plug 'craigemery/vim-autotag'
 Plug 'ervandew/supertab'
-Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'w0rp/ale'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'w0rp/ale'
 Plug 'skwp/greplace.vim'
 Plug 'rking/ag.vim'
 
 " IDE : HTML/JS
-Plug 'evidens/vim-twig'
+Plug 'lumiliet/vim-twig', {'for': ['html', 'twig']}
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -123,13 +131,8 @@ Plug 'sniphpets/sniphpets-common',   { 'for': 'php' }
 Plug 'sniphpets/sniphpets-doctrine', { 'for': 'php' }
 Plug 'sniphpets/sniphpets-phpunit',  { 'for': 'php' }
 Plug 'sniphpets/sniphpets-symfony',  { 'for': 'php' }
-Plug 'tobyS/pdv',                    { 'for': 'php' }
-Plug 'lvht/phpcd.vim',               { 'for': 'php', 'do': 'composer install'  }
-Plug 'tobyS/vmustache',              { 'for': 'php' } " Php Documentation  (requires ultiSnips)
+Plug 'tobyS/vmustache',              { 'for': 'php' }
 Plug 'tomtom/tcomment_vim'
-" Gist
-Plug 'mattn/webapi-vim'
-Plug 'mattn/gist-vim'
 
 call plug#end()
 
@@ -147,6 +150,14 @@ let g:UltiSnipsSnippetDirectories=[
 
 " ale
 let g:ale_php_phpcs_standard = 'PSR2'
+let g:ale_linters = {'javascript': ['eslint'], 'php': ['phpcs', 'php', 'phpstan'] }
+let g:ale_fixers = {
+    \   'javascript': ['prettier', 'eslint'],
+    \   'php': ['phpcbf'],
+    \}
+let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 0
+
 " Gsearch
 " Use AG for search
 set grepprg=ag
@@ -179,7 +190,7 @@ endif
 " Vim powerline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts            = 1
-let g:airline_theme                      = 'murmur'
+let g:airline_theme                      = 'minimalist'
 " YouCompleteMe
 let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
@@ -193,21 +204,8 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsEditSplit           = "vertical"
 " pdv
 let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
-" Gist
-let g:gist_detect_filetype         = 1
-let g:gist_open_browser_after_post = 1
-let g:gist_post_private            = 1
-let g:gist_post_anonymous          = 1
 " NerdTree
 let NERDTreeIgnore = ['node_modules']
-
-" https://github.com/joonty/vdebug#quick-guide
-let g:vdebug_options         = {}
-let g:vdebug_options["port"] = 9000
-" Should be set in project specific .vimrc
-" let g:vdebug_options["path_maps"]   = {
-" \    '/var/www/vvs': '/project/vvs'
-" \}
 
 nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
 " tags
@@ -244,13 +242,20 @@ function! IPhpExpandClass()
     call feedkeys('a', 'n')
 endfunction
 
-" Should be overridden in project specific .vimrc {{
 function! RunPhpUnitForCurrentFile()
-	execute ":echo 0"
+    if filereadable('bin/phpunit')
+        execute '!bin/phpunit %'
+    else
+        execute ':echo phpunit not found in ./bin'
+    endif
 endfunction
 
 function! RunPhpUnit()
-	execute ":echo 0"
+    if filereadable('bin/phpunit')
+        execute '!bin/phpunit'
+    else
+        execute ':echo phpunit not found in ./bin'
+    endif
 endfunction
 " }}
 
@@ -276,14 +281,6 @@ nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 
-" Tabular
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a> :Tabularize /=><CR>
-vmap <Leader>a> :Tabularize /=><CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
-
 " Resize panes
 nnoremap <C-l> :vertical resize -5<cr>
 nnoremap <C-j> :resize +5<cr>
@@ -294,3 +291,7 @@ nnoremap <C-h> :vertical resize +5<cr>
 map gn :bn<cr>
 map gp :bp<cr>
 map gd :bd<cr>
+
+" Golang mapping
+nnoremap <Leader>glb :GoBuild<CR>
+nnoremap <Leader>glr :GoRun<CR>
