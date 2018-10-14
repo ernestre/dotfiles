@@ -31,8 +31,7 @@ set t_Co=256       " Use 256 colours (Use this setting only if your terminal sup
 set tabstop=4      " show existing tab with 4 spaces width
 set ttyfast
 set synmaxcol=200  " syntax highlight only 200 chars"
-" set cursorline
-set updatetime=400 " wait ms after stop typing to trigger scripts
+set updatetime=1000 " wait ms after stop typing to trigger scripts
 set nowrap         " Don't wrap lines
 set scrolloff=10   " scroll off padding
 set hidden         " Allow buffer switching without saving
@@ -97,8 +96,12 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasr/molokai'
 
 " IDE
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
-Plug 'joonty/vdebug',          { 'for': 'php' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py', 'on': [] }
+augroup load_ycm
+    autocmd!
+    autocmd CursorHold * call plug#load('YouCompleteMe') | autocmd! load_ycm
+augroup END
+
 
 Plug 'fatih/vim-go', { 'for': 'go'  }
 Plug 'SirVer/ultisnips'
