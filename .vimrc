@@ -100,6 +100,7 @@ Plug 'tomasr/molokai'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py'  }
 Plug 'joonty/vdebug',          { 'for': 'php' }
 
+Plug 'fatih/vim-go', { 'for': 'go'  }
 Plug 'SirVer/ultisnips'
 Plug 'craigemery/vim-autotag'
 Plug 'ervandew/supertab'
@@ -294,3 +295,7 @@ nnoremap <C-h> :vertical resize +5<cr>
 map gn :bn<cr>
 map gp :bp<cr>
 map gd :bd<cr>
+
+" Golang mapping
+nnoremap <Leader>glb :GoBuild<CR>
+nnoremap <Leader>glr :GoRun<CR>
