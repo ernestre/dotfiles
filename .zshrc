@@ -30,9 +30,14 @@ alias guc='git add -u && git commit -v'
 alias gaca='git add . && git commit -v --amend'
 alias gacan='gaca --no-edit'
 alias gfu='git fetch upstream'
-alias cp='cp -v'
-alias rm='rm -v'
-alias cat='ccat'
+alias cat='bat'
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+
 DEFAULT_USER="$USER"
 
 source ~/.aliases
+source ~/.ssh-aliases
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export LESS="-XRFS" # dont wrap long lines in less
