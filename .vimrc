@@ -41,6 +41,8 @@ set exrc
 set secure
 " }}
 
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+
 vmap <C-C> "+y
 vmap <C-X> "+x
 
