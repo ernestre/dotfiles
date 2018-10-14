@@ -247,13 +247,20 @@ function! IPhpExpandClass()
     call feedkeys('a', 'n')
 endfunction
 
-" Should be overridden in project specific .vimrc {{
 function! RunPhpUnitForCurrentFile()
-	execute ":echo 0"
+    if filereadable('bin/phpunit')
+        execute '!bin/phpunit %'
+    else
+        execute ':echo phpunit not found in ./bin'
+    endif
 endfunction
 
 function! RunPhpUnit()
-	execute ":echo 0"
+    if filereadable('bin/phpunit')
+        execute '!bin/phpunit'
+    else
+        execute ':echo phpunit not found in ./bin'
+    endif
 endfunction
 " }}
 
