@@ -1,12 +1,19 @@
+--PHP-kinds=+cfi-vj
+--exclude="*/_*cache/*"
+--exclude="*/_*data/*"
+--exclude="*/_*logs{0,1}/*"
+--exclude=*.js
+--exclude=*.vim
+--exclude=.git
+--exclude=.svn
+--exclude=composer.phar
+--langmap=php:.engine.inc.module.theme.install.php
+--languages=PHP
+--recurse
+--regex-PHP=/(public |static |abstract |protected |private )+ function +([^ \(]*)/\2/f/
 --regex-PHP=/abstract class ([^ ]*)/\1/c/
 --regex-PHP=/final class ([^ ]*)/\1/c/
 --regex-PHP=/interface ([^ ]*)/\1/c/
---regex-PHP=/(public |static |abstract |protected |private )+function ([a-zA-Z0-9_]*)/\2/f/
 --regex-php=/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i
 --tag-relative=yes
---exclude=.git
---exclude=composer.phar
---exclude=*.js
---exclude=*.vim
---langmap=php:.engine.inc.module.theme.install.php
---PHP-kinds=+cfi-vj
+--totals=yes
