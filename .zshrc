@@ -32,6 +32,9 @@ alias gacan='gaca --no-edit'
 alias gfu='git fetch upstream'
 alias cat='bat'
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+alias todayTodo="vim +VimwikiMakeDiaryNote"
+alias tomorrowTodo="vim +VimwikiMakeTomorrowDiaryNote"
+alias yesterdayTodo="vim +VimwikiMakeYesterdayDiaryNote"
 
 DEFAULT_USER="$USER"
 
