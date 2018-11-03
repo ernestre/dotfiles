@@ -7,6 +7,8 @@
 * [alacritty](https://github.com/jwilm/alacritty): A cross-platform, GPU-accelerated terminal emulator
     * [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 * [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts): MesloLGS Nerd Font:12
+* [mycli](https://github.com/dbcli/mycli): A Terminal Client for MySQL with AutoCompletion and Syntax Highlighting. http://mycli.net
+* [pgcli](https://github.com/dbcli/pgcli): Postgres CLI with autocompletion and syntax highlighting http://pgcli.com
 
 # tl:dr
 
