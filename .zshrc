@@ -1,8 +1,13 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.composer/vendor/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.composer/vendor/bin:/usr/local/go/bin
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
+export TERM="xterm-256color"
 
 export EDITOR=/usr/local/bin/vim
 
@@ -18,7 +23,7 @@ POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S \uf073 %d.%m.%y}"
 POWERLEVEL9K_VCS_TAG_ICON='\uf9f8'
 
-plugins=(git docker docker-compose web-search tmux colorize redis-cli)
+plugins=(git docker docker-compose web-search colorize redis-cli)
 
 ZSH_TMUX_AUTOSTART=true
 
@@ -30,11 +35,11 @@ alias guc='git add -u && git commit -v'
 alias gaca='git add . && git commit -v --amend'
 alias gacan='gaca --no-edit'
 alias gfu='git fetch upstream'
-alias cat='bat'
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias todayTodo="vim +VimwikiMakeDiaryNote"
 alias tomorrowTodo="vim +VimwikiMakeTomorrowDiaryNote"
 alias yesterdayTodo="vim +VimwikiMakeYesterdayDiaryNote"
+alias vim=nvim
 
 DEFAULT_USER="$USER"
 

@@ -1,52 +1,118 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'Shougo/deoplete.nvim',             { 'do': ':UpdateRemotePlugins' }
+Plug 'phpactor/phpactor' ,               { 'do': 'composer install', 'for': 'php'}
+Plug 'kristijanhusak/deoplete-phpactor'
+Plug 'carlitux/deoplete-ternjs',         { 'do': 'npm install -g tern' }
+Plug 'mdempsky/gocode',                  { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+Plug 'zchee/deoplete-go',                { 'do': 'make'}
+
+Plug 'SirVer/ultisnips'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Yggdroot/indentLine'
+Plug 'airblade/vim-gitgutter'
+Plug 'craigemery/vim-autotag'
+Plug 'ervandew/supertab'
+Plug 'fatih/vim-go',                   { 'for': 'go'  }
+Plug 'godlygeek/tabular'
+Plug 'honza/vim-snippets'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf',                   { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'junegunn/fzf.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
+" Plug 'sheerun/vim-polyglot'
+Plug 'skwp/greplace.vim'
+Plug 'sniphpets/sniphpets',            { 'for': 'php' }
+Plug 'sniphpets/sniphpets-common',     { 'for': 'php' }
+Plug 'sniphpets/sniphpets-doctrine',   { 'for': 'php' }
+Plug 'sniphpets/sniphpets-phpunit',    { 'for': 'php' }
+Plug 'sniphpets/sniphpets-symfony',    { 'for': 'php' }
+Plug 'suan/vim-instant-markdown',      { 'for': ['markdown','md'] }
+Plug 'tobyS/vmustache',                { 'for': 'php' }
+Plug 'tomasr/molokai'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vimwiki/vimwiki'
+Plug 'w0rp/ale'
+"
+call plug#end()
+let g:vim_markdown_no_extensions_in_markdown = 1
+
+let mapleader = ','
+
 let NERDTreeDirArrows=0
 let g:rehash256 = 1
-set encoding=utf-8
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:¬
 set backspace=2
 set colorcolumn=121
 set complete-=i
-set completeopt-=preview
-if has('mac')
-    set guifont=Menlo\ for\ Powerline:h10
-elseif has('unix')
-    set guifont=Menlo\ for\ Powerline\ 7.5
-endif
+set encoding=utf-8
+set expandtab             " On pressing tab, insert 4 spaces
+set exrc                  " allow project specific .vimrc configurations {{
+set guioptions-=L         " remove left-hand scroll bar
+set guioptions-=T         " remove toolbar
+set guioptions-=m         " remove menu bar
+set guioptions-=r         " remove right-hand scroll bar
+set hidden                " Allow buffer switching without saving
+set laststatus=2          " Always show statusline
+set lazyredraw            " will buffer screen updates instead of updating all the time
 set list
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:¬
-set nobackup       " Don't create backup files
-set noswapfile     " Don't create swapfile
-set pumheight=10   " Completion window max size
-set expandtab      " On pressing tab, insert 4 spaces
-set guioptions-=m  " remove menu bar
-set guioptions-=T  " remove toolbar
-set guioptions-=r  " remove right-hand scroll bar
-set guioptions-=L  " remove left-hand scroll bar
-set laststatus=2   " Always show statusline
-set lazyredraw     " will buffer screen updates instead of updating all the time
-set nocompatible   " be iMproved, required
-set number         " show line numbers
-set path+=**       " Look for files recursively
-set shiftwidth=4   " when indenting with '>', use 4 spaces width
-set splitright     " Open new splits on the right
-set t_Co=256       " Use 256 colours (Use this setting only if your terminal supports 256
-set tabstop=4      " show existing tab with 4 spaces width
+set maxmempattern=20000   " increase max memory to show syntax highlighting for large files
+set nobackup              " Don't create backup files
+set nocompatible          " be iMproved, required
+set nocursorcolumn
+set noshowcmd
+set noshowmode            " We show the mode with airline or lightline
+set noswapfile            " Don't create swapfile
+set nowrap                " Don't wrap lines
+set number                " show line numbers
+set path+=**              " Look for files recursively
+set pumheight=10          " Completion window max size
+set regexpengine=1        " use old regex eninge since it's faster
+set scrolloff=10          " scroll off padding
+set shiftwidth=4          " when indenting with '>', use 4 spaces width
+set noerrorbells
+set splitright            " Open new splits on the right
+set synmaxcol=200         " syntax highlight only 200 chars"
+set t_Co=256              " Use 256 colours (Use this setting only if your terminal supports 256
+set tabstop=4             " show existing tab with 4 spaces width
 set ttyfast
-set synmaxcol=200  " syntax highlight only 200 chars"
-set updatetime=1000 " wait ms after stop typing to trigger scripts
-set nowrap         " Don't wrap lines
-set scrolloff=10   " scroll off padding
-set hidden         " Allow buffer switching without saving
+set updatetime=1000       " wait ms after stop typing to trigger scripts
+set cursorline
 syntax on
-" allow project specific .vimrc configurations {{
-set exrc
-set secure
-" }}
+syntax sync minlines=256  " start highlighting from 256 lines backwards
+filetype plugin indent on
+filetype on
 
-autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+colorscheme molokai
 
+if (has("nvim"))
+    set inccommand=nosplit
+    tnoremap <Esc> <C-\><C-n>
+endif
+
+autocmd BufWritePre * %s/\s\+$//e " Remove white space on save.
+
+" ========= Mappings =========
+"
 vmap <C-C> "+y
 vmap <C-X> "+x
 
-" map wq to avoid typos
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" avoid typos
 command! WQ wq
 command! Wq wq
 command! W w
@@ -54,223 +120,19 @@ command! Wa wa
 command! Wqa wqa
 command! Q q
 
-" Toggle hlsearch
-noremap <space> :set hlsearch! hlsearch?<CR>
-
-" Remove white space on save.
-autocmd BufWritePre * %s/\s\+$//e
-
-let mapleader = ','
-
-" disable error bell {
-set noerrorbells visualbell t_vb=
-autocmd GUIEnter * set visualbell t_vb=
-" }
+noremap <space> :set hlsearch! hlsearch?<CR> " Toggle hlsearch
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
 
-filetype plugin indent on
-filetype off
-
-call plug#begin('~/.vim/plugged')
-
-" Git
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'elzr/vim-json', {'for': 'json'}
-Plug 'airblade/vim-gitgutter'
-Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
-
-Plug 'tpope/vim-fugitive'
-" misc
-Plug 'scrooloose/nerdtree'
-Plug 'suan/vim-instant-markdown', { 'for': ['markdown','md'] }
-Plug 'tpope/vim-repeat'
-Plug 'vimwiki/vimwiki'
-Plug 'chr4/nginx.vim'
-Plug 'Yggdroot/indentLine'
-Plug 'tpope/vim-surround'
-Plug 'godlygeek/csapprox'
-" Navigation
-Plug 'kien/ctrlp.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
-Plug 'junegunn/fzf.vim'
-" styles
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tomasr/molokai'
-
-" IDE
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py', 'on': [] }
-augroup load_ycm
-    autocmd!
-    autocmd CursorHold * call plug#load('YouCompleteMe') | autocmd! load_ycm
-augroup END
-
-
-Plug 'fatih/vim-go', { 'for': 'go'  }
-Plug 'SirVer/ultisnips'
-Plug 'craigemery/vim-autotag'
-Plug 'ervandew/supertab'
-Plug 'honza/vim-snippets'
-Plug 'jiangmiao/auto-pairs'
-Plug 'w0rp/ale'
-Plug 'skwp/greplace.vim'
-Plug 'rking/ag.vim'
-
-" IDE : HTML/JS
-Plug 'lumiliet/vim-twig', {'for': ['html', 'twig']}
-Plug 'mattn/emmet-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'maxmellon/vim-jsx-pretty'
-" IDE : PHP
-Plug 'arnaud-lb/vim-php-namespace',  { 'for': 'php' }
-Plug 'sniphpets/sniphpets',          { 'for': 'php' }
-Plug 'sniphpets/sniphpets-common',   { 'for': 'php' }
-Plug 'sniphpets/sniphpets-doctrine', { 'for': 'php' }
-Plug 'sniphpets/sniphpets-phpunit',  { 'for': 'php' }
-Plug 'sniphpets/sniphpets-symfony',  { 'for': 'php' }
-Plug 'tobyS/vmustache',              { 'for': 'php' }
-Plug 'tomtom/tcomment_vim'
-
-call plug#end()
-
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
-
-" Settings
-" instant markdown
-let g:instant_markdown_autostart = 0
-
-let g:UltiSnipsSnippetDirectories=[
-    \"UltiSnips",
-    \$HOME.'/dotfiles/UltiSnips/general',
-    \$HOME.'/dotfiles/UltiSnips/specific'
-\]
-
-" ale
-let g:ale_php_phpcs_standard = 'PSR2'
-let g:ale_linters = {'javascript': ['eslint'], 'php': ['phpcs', 'php', 'phpstan'] }
-let g:ale_fixers = {
-    \   'javascript': ['prettier', 'eslint'],
-    \   'php': ['phpcbf'],
-    \}
-let g:ale_completion_enabled = 1
-let g:ale_fix_on_save = 0
-
-" Gsearch
-" Use AG for search
-set grepprg=ag
-let g:grep_cmd_opts = '--line-numbers --noheading'
-
-" Ack
-" Use Ag if possible
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
-" CtrlP
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_use_caching = 0
-
-" The Silver Searcher
-if executable('ag')
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-else
-    set wildignore+=*/vendor/**
-    set wildignore+=*/app/cache/**
-    set wildignore+=*/app/logs/**
-    set wildignore+=*/var/cache/**
-    set wildignore+=*/var/logs/**
-    set wildignore+=*/node_modules/**
-endif
-
-
-" Vim powerline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts            = 1
-let g:airline_theme                      = 'minimalist'
-" YouCompleteMe
-let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
-" superTab
-let g:SuperTabDefaultCompletionType = '<C-n>'
-let g:SupereTabCrMapping            = 0
-" UltiSnips {
-let g:UltiSnipsExpandTrigger       = "<tab>"
-let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-let g:UltiSnipsEditSplit           = "vertical"
-" pdv
-let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
-" NerdTree
-let NERDTreeIgnore = ['node_modules']
-
 nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
-" tags
-let g:autotagTagsFile="tags"
-set tags+=tags.vendors
-
-if filereadable(glob('~/.vim/plugged/molokai/colors/molokai.vim'))
-    colorscheme molokai
-endif
-
-" Styling (use :hi for color reference): {
-set linespace=2
-" Line numbures should match the background color
-hi LineNr guibg=bg ctermbg=bg
-" Remove split borders
-hi foldcolumn guibg=bg ctermbg=bg
-hi VertSplit guibg=bg guifg=bg ctermbg=bg ctermfg=bg
-" Tab styling
-hi TabLine cterm=bold ctermfg=8 ctermbg=bg
-hi TabLineFill cterm=bold ctermbg=bg
-" GitGutter background should match the bg color
-hi GitGutterAddDefault ctermfg=2 ctermbg=bg guifg=#009900 guibg=bg
-hi GitGutterChangeDefault ctermfg=3 ctermbg=bg guifg=#bbbb00 guibg=bg
-hi GitGutterDeleteDefault ctermfg=1 ctermbg=bg guifg=#ff2222 guibg=bg
-" }
-
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-
-function! IPhpExpandClass()
-    call PhpExpandClass()
-    call feedkeys('a', 'n')
-endfunction
-
-function! RunPhpUnitForCurrentFile()
-    if filereadable('bin/phpunit')
-        execute '!bin/phpunit %'
-    else
-        execute ':echo phpunit not found in ./bin'
-    endif
-endfunction
-
-function! RunPhpUnit()
-    if filereadable('bin/phpunit')
-        execute '!bin/phpunit'
-    else
-        execute ':echo phpunit not found in ./bin'
-    endif
-endfunction
-" }}
-
-autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
-autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
-autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>P :CtrlPBufTag<CR>
 nnoremap <Leader>b :CtrlPBuffer<CR>
-nnoremap <Leader>ct :call RunPhpUnitForCurrentFile()<CR>
-nnoremap <Leader>t :call RunPhpUnit()<CR>
 
 " Fugitive
 nnoremap <Leader>gb :Gblame<CR>
@@ -295,3 +157,95 @@ map gd :bd<cr>
 " Golang mapping
 nnoremap <Leader>glb :GoBuild<CR>
 nnoremap <Leader>glr :GoRun<CR>
+
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
+" ========= Settings =========
+"
+let g:deoplete#enable_at_startup = 1
+
+let g:instant_markdown_autostart = 0
+
+let g:UltiSnipsSnippetDirectories=[
+    \'UltiSnips',
+    \$HOME.'/dotfiles/UltiSnips/general',
+    \$HOME.'/dotfiles/UltiSnips/specific'
+\]
+
+" ale
+let g:ale_php_phpcs_standard = 'PSR2'
+let g:ale_linters = {'javascript': ['eslint'], 'php': ['phpcs', 'php', 'phpstan'] }
+let g:ale_fixers = {
+    \   'javascript': ['prettier', 'eslint'],
+    \   'php': ['phpcbf'],
+    \}
+let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 0
+
+" Ag
+set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" CtrlP
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_use_caching = 0
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+else
+    set wildignore+=*/vendor/**
+    set wildignore+=*/app/cache/**
+    set wildignore+=*/app/logs/**
+    set wildignore+=*/var/cache/**
+    set wildignore+=*/var/logs/**
+    set wildignore+=*/node_modules/**
+endif
+
+" Vim powerline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts            = 1
+let g:airline_theme                      = 'minimalist'
+
+" UltiSnips {
+let g:UltiSnipsExpandTrigger       = '<tab>'
+let g:UltiSnipsJumpForwardTrigger  = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsEditSplit           = 'vertical'
+
+" pdv
+let g:pdv_template_dir = $HOME . '/.vim/plugged/pdv/templates_snip'
+
+" NerdTree
+let NERDTreeIgnore = ['node_modules']
+
+" tags
+let g:autotagTagsFile='tags'
+set tags+=tags.vendors
+
+" Styling (use :hi for color reference): {
+set linespace=2
+" Line numbures should match the background color
+hi LineNr guibg=bg ctermbg=bg
+" Remove split borders
+hi foldcolumn guibg=bg ctermbg=bg
+hi VertSplit guibg=bg guifg=bg ctermbg=bg ctermfg=bg
+" Tab styling
+hi TabLine cterm=bold ctermfg=8 ctermbg=bg
+hi TabLineFill cterm=bold ctermbg=bg
+" GitGutter background should match the bg color
+hi GitGutterAddDefault ctermfg=2 ctermbg=bg guifg=#009900 guibg=bg
+hi GitGutterChangeDefault ctermfg=3 ctermbg=bg guifg=#bbbb00 guibg=bg
+hi GitGutterDeleteDefault ctermfg=1 ctermbg=bg guifg=#ff2222 guibg=bg
+" }
+
+
+let g:gitgutter_sign_added = '▶'
+let g:gitgutter_sign_modified = '✹'
+let g:gitgutter_sign_removed = '◀'
+let g:gitgutter_sign_modified_removed = '◀'
