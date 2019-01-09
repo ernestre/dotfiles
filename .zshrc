@@ -9,7 +9,7 @@ export PATH=$PATH:$GOPATH/bin
 export ZSH=~/.oh-my-zsh
 export TERM="xterm-256color"
 
-export EDITOR=/usr/local/bin/vim
+export EDITOR=/usr/local/bin/nvim
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
