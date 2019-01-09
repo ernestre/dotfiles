@@ -40,6 +40,10 @@ alias todayTodo="vim +VimwikiMakeDiaryNote"
 alias tomorrowTodo="vim +VimwikiMakeTomorrowDiaryNote"
 alias yesterdayTodo="vim +VimwikiMakeYesterdayDiaryNote"
 alias vim=nvim
+alias gcb='git checkout $(git branch | fzf)'
+alias gct='git checkout $(git tag | fzf)'
+alias p='fzf --preview="head -$LINES {}"'
+alias fs="ssh \$(cat ~/.ssh/config | grep 'Host ' | awk '{print \$2}' | fzf)"
 
 DEFAULT_USER="$USER"
 
@@ -47,5 +51,7 @@ source ~/.aliases
 source ~/.ssh-aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# use RG for fzf
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
 export LESS="-XRFS" # dont wrap long lines in less
