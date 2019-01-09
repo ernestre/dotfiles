@@ -1,3 +1,5 @@
+setlocal ts=4 sts=4 sw=4
+
 nmap <Leader>u :call phpactor#UseAdd()<CR>
 nmap <Leader>mm :call phpactor#ContextMenu()<CR>
 nmap <Leader>nn :call phpactor#Navigate()<CR>
