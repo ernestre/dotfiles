@@ -23,7 +23,7 @@ POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S \uf073 %d.%m.%y}"
 POWERLEVEL9K_VCS_TAG_ICON='\uf9f8'
 
-plugins=(git docker docker-compose web-search colorize redis-cli)
+plugins=(git docker docker-compose web-search colorize redis-cli wd)
 
 ZSH_TMUX_AUTOSTART=true
 
