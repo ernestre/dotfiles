@@ -1,19 +1,38 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'Shougo/deoplete.nvim',             { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim',             { 'do': ':UpdateRemotePlugins' }
 Plug 'phpactor/phpactor' ,               { 'do': 'composer install', 'for': 'php'}
-Plug 'kristijanhusak/deoplete-phpactor'
+" Plug 'kristijanhusak/deoplete-phpactor'
 Plug 'carlitux/deoplete-ternjs',         { 'do': 'npm install -g tern' }
-Plug 'mdempsky/gocode',                  { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-Plug 'zchee/deoplete-go',                { 'do': 'make'}
+" Plug 'mdempsky/gocode',                  { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+" Plug 'zchee/deoplete-go',                { 'do': 'make'}
+" Plug 'zchee/deoplete-jedi'
+" Plug 'kristijanhusak/vim-carbon-now-sh'
 
+" ncm2 setup {{
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-cssomni'
+Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
+Plug 'phpactor/ncm2-phpactor'
+
+" }}
+
+
+Plug 'tpope/vim-obsession'
 Plug 'SirVer/ultisnips'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'craigemery/vim-autotag'
 Plug 'ervandew/supertab'
-Plug 'fatih/vim-go',                   { 'for': 'go'  }
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries'  }
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
@@ -25,7 +44,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
-" Plug 'sheerun/vim-polyglot'
 Plug 'skwp/greplace.vim'
 Plug 'sniphpets/sniphpets',            { 'for': 'php' }
 Plug 'sniphpets/sniphpets-common',     { 'for': 'php' }
@@ -43,11 +61,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
-"
+Plug 'majutsushi/tagbar'
+
 call plug#end()
 let g:vim_markdown_no_extensions_in_markdown = 1
 
 let mapleader = ','
+
+set guifont=DroidSansMono_Nerd_Font:h11
 
 let NERDTreeDirArrows=0
 let g:rehash256 = 1
@@ -75,6 +96,7 @@ set noshowmode            " We show the mode with airline or lightline
 set noswapfile            " Don't create swapfile
 set nowrap                " Don't wrap lines
 set number                " show line numbers
+set relativenumber
 set path+=**              " Look for files recursively
 set pumheight=10          " Completion window max size
 set regexpengine=1        " use old regex eninge since it's faster
@@ -130,9 +152,10 @@ nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
 
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
-nnoremap <Leader>p :CtrlP<CR>
-nnoremap <Leader>P :CtrlPBufTag<CR>
-nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>p :GFiles<CR>
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>P :BTags<CR>
+nnoremap <Leader>b :Buffers<CR>
 
 " Fugitive
 nnoremap <Leader>gb :Gblame<CR>
@@ -163,6 +186,7 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 " ========= Settings =========
 "
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 0
 
 let g:instant_markdown_autostart = 0
 
@@ -180,14 +204,11 @@ let g:ale_fixers = {
     \   'php': ['phpcbf'],
     \}
 let g:ale_completion_enabled = 1
-let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 1
 
-" Ag
-set grepprg=ag
-let g:grep_cmd_opts = '--line-numbers --noheading'
-
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+if executable("rg")
+    set grepprg=rg
+    let g:grep_cmd_opts = '--line-number --no-heading'
 endif
 
 " CtrlP
@@ -210,7 +231,8 @@ endif
 " Vim powerline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts            = 1
-let g:airline_theme                      = 'minimalist'
+let g:airline_theme                      = 'deus'
+
 
 " UltiSnips {
 let g:UltiSnipsExpandTrigger       = '<tab>'
@@ -242,10 +264,8 @@ hi TabLineFill cterm=bold ctermbg=bg
 hi GitGutterAddDefault ctermfg=2 ctermbg=bg guifg=#009900 guibg=bg
 hi GitGutterChangeDefault ctermfg=3 ctermbg=bg guifg=#bbbb00 guibg=bg
 hi GitGutterDeleteDefault ctermfg=1 ctermbg=bg guifg=#ff2222 guibg=bg
+hi! link Pmenu VisualNOS
 " }
 
-
-let g:gitgutter_sign_added = '▶'
-let g:gitgutter_sign_modified = '✹'
-let g:gitgutter_sign_removed = '◀'
-let g:gitgutter_sign_modified_removed = '◀'
+let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:deplete#auto_complete_delay = 0
