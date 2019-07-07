@@ -1,49 +1,78 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'Shougo/deoplete.nvim',             { 'do': ':UpdateRemotePlugins' }
-Plug 'phpactor/phpactor' ,               { 'do': 'composer install', 'for': 'php'}
-Plug 'kristijanhusak/deoplete-phpactor'
-Plug 'carlitux/deoplete-ternjs',         { 'do': 'npm install -g tern' }
-Plug 'mdempsky/gocode',                  { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
-Plug 'zchee/deoplete-go',                { 'do': 'make'}
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'phpactor/ncm2-phpactor'
+Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-path'
+
+autocmd BufEnter  *  call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+
+
+nmap <C-]> :call LanguageClient#textDocument_definition()<CR>
+nmap <leader>h :call LanguageClient#textDocument_hover()<CR>
+nmap <leader>l :call LanguageClient_textDocument_formatting()<CR>
+nmap <leader>i :call LanguageClient_textDocument_references()<CR>
+
+let g:LanguageClient_serverCommands = {}
+
+" npm i -g javascript-typescript-stdio
+let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
+
+" npm i -g intelephense
+let g:LanguageClient_serverCommands.php = ['intelephense', '--stdio']
+
+" https://github.com/sourcegraph/go-langserver
+" go get -u github.com/sourcegraph/go-langserver
+let g:LanguageClient_serverCommands.go = ['go-langserver', '-gocodecompletion']
+
 
 Plug 'SirVer/ultisnips'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
-Plug 'craigemery/vim-autotag'
+Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
-Plug 'fatih/vim-go',                   { 'for': 'go'  }
+Plug 'fatih/vim-go',                                 { 'for': 'go', 'do': ':GoInstallBinaries'  }
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
+Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf',                   { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'junegunn/fzf',                                 { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
 Plug 'kien/ctrlp.vim'
+Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
+Plug 'phpactor/phpactor',                            { 'do': 'composer install', 'for': 'php'}
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
-" Plug 'sheerun/vim-polyglot'
 Plug 'skwp/greplace.vim'
-Plug 'sniphpets/sniphpets',            { 'for': 'php' }
-Plug 'sniphpets/sniphpets-common',     { 'for': 'php' }
-Plug 'sniphpets/sniphpets-doctrine',   { 'for': 'php' }
-Plug 'sniphpets/sniphpets-phpunit',    { 'for': 'php' }
-Plug 'sniphpets/sniphpets-symfony',    { 'for': 'php' }
-Plug 'suan/vim-instant-markdown',      { 'for': ['markdown','md'] }
-Plug 'tobyS/vmustache',                { 'for': 'php' }
+Plug 'sniphpets/sniphpets',                          { 'for': 'php' }
+Plug 'sniphpets/sniphpets-common',                   { 'for': 'php' }
+Plug 'sniphpets/sniphpets-doctrine',                 { 'for': 'php' }
+Plug 'sniphpets/sniphpets-phpunit',                  { 'for': 'php' }
+Plug 'sniphpets/sniphpets-symfony',                  { 'for': 'php' }
+Plug 'suan/vim-instant-markdown',                    { 'for': ['markdown','md'] }
+Plug 'tobyS/vmustache',                              { 'for': 'php' }
 Plug 'tomasr/molokai'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
-"
+
 call plug#end()
 let g:vim_markdown_no_extensions_in_markdown = 1
 
@@ -53,7 +82,7 @@ let NERDTreeDirArrows=0
 let g:rehash256 = 1
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:¬
 set backspace=2
-set colorcolumn=121
+set colorcolumn=81
 set complete-=i
 set encoding=utf-8
 set expandtab             " On pressing tab, insert 4 spaces
@@ -75,6 +104,7 @@ set noshowmode            " We show the mode with airline or lightline
 set noswapfile            " Don't create swapfile
 set nowrap                " Don't wrap lines
 set number                " show line numbers
+set relativenumber
 set path+=**              " Look for files recursively
 set pumheight=10          " Completion window max size
 set regexpengine=1        " use old regex eninge since it's faster
@@ -112,7 +142,11 @@ vmap <C-X> "+x
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-" avoid typos
+" Edit or source .vimrc
+nnoremap <leader>ev :e ~/.vimrc<cr>
+nnoremap <leader>sv :source ~/.vimrc<cr>
+
+" Avoid typos
 command! WQ wq
 command! Wq wq
 command! W w
@@ -126,11 +160,10 @@ noremap <space> :set hlsearch! hlsearch?<CR> " Toggle hlsearch
 vnoremap < <gv
 vnoremap > >gv
 
-nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
-
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
 nnoremap <Leader>p :CtrlP<CR>
+nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>P :CtrlPBufTag<CR>
 nnoremap <Leader>b :CtrlPBuffer<CR>
 
@@ -154,15 +187,9 @@ map gn :bn<cr>
 map gp :bp<cr>
 map gd :bd<cr>
 
-" Golang mapping
-nnoremap <Leader>glb :GoBuild<CR>
-nnoremap <Leader>glr :GoRun<CR>
-
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+" set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 " ========= Settings =========
-"
-let g:deoplete#enable_at_startup = 1
 
 let g:instant_markdown_autostart = 0
 
@@ -174,30 +201,33 @@ let g:UltiSnipsSnippetDirectories=[
 
 " ale
 let g:ale_php_phpcs_standard = 'PSR2'
-let g:ale_linters = {'javascript': ['eslint'], 'php': ['phpcs', 'php', 'phpstan'] }
+let g:ale_linters = {
+    \ 'javascript': ['eslint'],
+    \ 'php': ['phpcs', 'php', 'phpstan']
+    \}
 let g:ale_fixers = {
+	\   '*': ['remove_trailing_lines', 'trim_whitespace'],
     \   'javascript': ['prettier', 'eslint'],
-    \   'php': ['phpcbf'],
+    \   'php': ['phpcbf', 'php_cs_fixer'],
     \}
 let g:ale_completion_enabled = 1
-let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 1
 
-" Ag
-set grepprg=ag
-let g:grep_cmd_opts = '--line-numbers --noheading'
-
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+if executable("rg")
+    set grepprg=rg\ --color=never
+    let g:grep_cmd_opts = '--line-number --no-heading'
 endif
 
 " CtrlP
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_use_caching = 0
 
-" The Silver Searcher
-if executable('ag')
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+if executable('rg')
+    let g:ctrlp_user_command = 'ag %s -l -g ""'
+    let g:ctrlp_use_caching = 0
+elseif executable('ag')
+    let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+    let g:ctrlp_use_caching = 0
 else
     set wildignore+=*/vendor/**
     set wildignore+=*/app/cache/**
@@ -207,19 +237,11 @@ else
     set wildignore+=*/node_modules/**
 endif
 
-" Vim powerline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts            = 1
-let g:airline_theme                      = 'minimalist'
-
 " UltiSnips {
 let g:UltiSnipsExpandTrigger       = '<tab>'
 let g:UltiSnipsJumpForwardTrigger  = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsEditSplit           = 'vertical'
-
-" pdv
-let g:pdv_template_dir = $HOME . '/.vim/plugged/pdv/templates_snip'
 
 " NerdTree
 let NERDTreeIgnore = ['node_modules']
@@ -239,13 +261,28 @@ hi VertSplit guibg=bg guifg=bg ctermbg=bg ctermfg=bg
 hi TabLine cterm=bold ctermfg=8 ctermbg=bg
 hi TabLineFill cterm=bold ctermbg=bg
 " GitGutter background should match the bg color
-hi GitGutterAddDefault ctermfg=2 ctermbg=bg guifg=#009900 guibg=bg
-hi GitGutterChangeDefault ctermfg=3 ctermbg=bg guifg=#bbbb00 guibg=bg
-hi GitGutterDeleteDefault ctermfg=1 ctermbg=bg guifg=#ff2222 guibg=bg
+hi GitGutterAdd ctermfg=2 ctermbg=bg guifg=#009900 guibg=bg
+hi GitGutterChange ctermfg=3 ctermbg=bg guifg=#bbbb00 guibg=bg
+hi GitGutterDelete ctermfg=1 ctermbg=bg guifg=#ff2222 guibg=bg
+hi! link Pmenu VisualNOS
 " }
 
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '-'
 
-let g:gitgutter_sign_added = '▶'
-let g:gitgutter_sign_modified = '✹'
-let g:gitgutter_sign_removed = '◀'
-let g:gitgutter_sign_modified_removed = '◀'
+let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:deplete#auto_complete_delay = 0
+
+
+  " Open terminal in vertical, horizontal and new tab
+nnoremap <leader>tv :vsplit<cr>:term<CR>
+nnoremap <leader>ts :split<cr>:term<CR>
+nnoremap <leader>tt :tabnew<cr>:term<CR>
+
+tnoremap <leader>tv <C-w>:vsplit<cr>:term<CR>
+tnoremap <leader>ts <C-w>:split<cr>:term<CR>
+tnoremap <leader>tt <C-w>:tabnew<cr>:term<CR>
+
+" Open file under cursor in a new vertical/horizontal split +10 speed pts;
+noremap gv <C-W>vgf
+noremap gs <C-W>sgf
