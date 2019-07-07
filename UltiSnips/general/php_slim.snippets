@@ -1,0 +1,46 @@
+priority -40
+
+snippet sc "Slim / Controller / Controller" b
+<?php
+
+declare(strict_types=1);
+
+namespace `!v sniphpets#namespace()`;
+
+use Slim\Http\Request;
+use Slim\Http\Response;
+use Slim\Router;
+
+class `!v sniphpets#basename()`
+{
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet sa "Slim / Controller / Action" b
+public function ${1:index}(Request $request, Response $response): Response
+{
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet sp "Slim / Dependency Injection / Service provider" b
+<?php
+
+declare(strict_types=1);
+
+namespace `!v sniphpets#namespace()`;
+
+use Pimple\Container;
+use Pimple\ServiceProviderInterface;
+
+class `!v sniphpets#basename()` implements ServiceProviderInterface
+{
+	public function register(Container $container): void
+	{
+		$container[`!v sniphpets#basename()[0:-9]`::class] = function (Container $container) {
+			return new `!v sniphpets#basename()[0:-9]`($0);
+		};
+	}
+}
+endsnippet
