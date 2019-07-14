@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-function! PostCocInstall()
+function! PostCocInstall(info)
     exec ":CocInstall coc-emmet coc-snippets coc-yaml coc-json coc-tsserver"
     exec "!go get -u github.com/sourcegraph/go-langserver"
     exec "!npm i -g intelephense"
