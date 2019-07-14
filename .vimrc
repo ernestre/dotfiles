@@ -1,39 +1,30 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'phpactor/ncm2-phpactor'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
+function! PostCocInstall()
+    exec ":CocInstall coc-emmet coc-snippets coc-yaml coc-json coc-tsserver"
+    exec "!go get -u github.com/sourcegraph/go-langserver"
+    exec "!npm i -g intelephense"
+endfunction
 
-autocmd BufEnter  *  call ncm2#enable_for_buffer()
-set completeopt=noinsert,menuone,noselect
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': function('PostCocInstall')}
 
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
+let g:coc_snippet_next = '<tab>'
 
-nmap <C-]> :call LanguageClient#textDocument_definition()<CR>
-nmap <leader>h :call LanguageClient#textDocument_hover()<CR>
-nmap <leader>l :call LanguageClient_textDocument_formatting()<CR>
-nmap <leader>i :call LanguageClient_textDocument_references()<CR>
-
-let g:LanguageClient_serverCommands = {}
-
-" npm i -g javascript-typescript-stdio
-let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
-
-" npm i -g intelephense
-let g:LanguageClient_serverCommands.php = ['intelephense', '--stdio']
-
-" https://github.com/sourcegraph/go-langserver
-" go get -u github.com/sourcegraph/go-langserver
-let g:LanguageClient_serverCommands.go = ['go-langserver', '-gocodecompletion']
-
+nmap <C-]> <Plug>(coc-definition)
+nmap <leader>i <Plug>(coc-references)
+nmap <leader>cr <Plug>(coc-rename)
+nmap <leader>l  :call CocAction('format')<CR>
 
 Plug 'SirVer/ultisnips'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -63,7 +54,6 @@ Plug 'sniphpets/sniphpets-doctrine',                 { 'for': 'php' }
 Plug 'sniphpets/sniphpets-phpunit',                  { 'for': 'php' }
 Plug 'sniphpets/sniphpets-symfony',                  { 'for': 'php' }
 Plug 'suan/vim-instant-markdown',                    { 'for': ['markdown','md'] }
-Plug 'tobyS/vmustache',                              { 'for': 'php' }
 Plug 'tomasr/molokai'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
@@ -286,3 +276,6 @@ tnoremap <leader>tt <C-w>:tabnew<cr>:term<CR>
 " Open file under cursor in a new vertical/horizontal split +10 speed pts;
 noremap gv <C-W>vgf
 noremap gs <C-W>sgf
+
+let g:lightline = {}
+let g:lightline.colorscheme = 'wombat'
