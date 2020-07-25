@@ -9,6 +9,8 @@
 * [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts): MesloLGS Nerd Font:12
 * [mycli](https://github.com/dbcli/mycli): A Terminal Client for MySQL with AutoCompletion and Syntax Highlighting. http://mycli.net
 * [pgcli](https://github.com/dbcli/pgcli): Postgres CLI with autocompletion and syntax highlighting http://pgcli.com
+* [bat](https://github.com/sharkdp/bat): A cat(1) clone with wings.
+* [ctop](https://github.com/bcicen/ctop): Top-like interface for container metrics
 
 # tl:dr
 
