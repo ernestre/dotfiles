@@ -9,7 +9,7 @@ export PATH=$PATH:$GOPATH/bin
 export ZSH=~/.oh-my-zsh
 export TERM="xterm-256color"
 
-export EDITOR=/usr/local/bin/nvim
+export EDITOR=/usr/bin/nvim
 
 ZSH_THEME="cloud"
 
@@ -32,12 +32,22 @@ alias yesterdayTodo="vim +VimwikiMakeYesterdayDiaryNote"
 alias vim=nvim
 alias gcb='git checkout $(git branch | fzf)'
 alias gct='git checkout $(git tag | fzf)'
-alias p='fzf --preview="head -$LINES {}"'
+alias p="fzf --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 alias fs="ssh \$(cat ~/.ssh/config | grep 'Host ' | awk '{print \$2}' | fzf)"
 
 # Linux alternative for OSX pbcopy
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
+if ! [ -x "$(command -v pbpaste)" ]; then
+    alias pbpaste='xclip -selection clipboard -o'
+fi
+
+if ! [ -x "$(command -v pbcopy)" ]; then
+    alias pbcopy='xclip -selection clipboard -o'
+fi
+
+# Repeat the command
+r () {
+    while true; do $@; done
+}
 
 # Start vim session if session file exists
 alias vims='[[ -f Session.vim ]] && vim -S || vim'
