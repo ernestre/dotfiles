@@ -38,7 +38,7 @@ class `!v sniphpets#basename()` implements ServiceProviderInterface
 {
 	public function register(Container $container): void
 	{
-		$container[`!v sniphpets#basename()[0:-9]`::class] = function (Container $container) {
+		$container[`!v sniphpets#basename()[0:-9]`::class] = static function (Container $container): `!v sniphpets#basename()[0:-9]` {
 			return new `!v sniphpets#basename()[0:-9]`($0);
 		};
 	}
