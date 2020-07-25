@@ -8,60 +8,40 @@ endfunction
 
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': function('PostCocInstall')}
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<tab>'
-
 nmap <C-]> <Plug>(coc-definition)
-nmap <leader>i <Plug>(coc-references)
-nmap <leader>cr <Plug>(coc-rename)
-nmap <leader>l  :call CocAction('format')<CR>
+nmap <silent>gi <Plug>(coc-references)
+nmap <silent>gr <Plug>(coc-rename)
+nmap <silent>gl  :call CocAction('format')<CR>
 
 Plug 'SirVer/ultisnips'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
-Plug 'fatih/vim-go',                                 { 'for': 'go', 'do': ':GoInstallBinaries'  }
+Plug 'fatih/vim-go',                 { 'for': 'go', 'do': ':GoInstallBinaries'  }
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf',                                 { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'junegunn/fzf',                 { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
-Plug 'kien/ctrlp.vim'
-Plug 'majutsushi/tagbar'
-Plug 'mattn/emmet-vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'pangloss/vim-javascript'
-Plug 'phpactor/phpactor',                            { 'do': 'composer install', 'for': 'php'}
+Plug 'junegunn/goyo.vim'
+Plug 'phpactor/phpactor',            { 'do': 'composer install', 'for': 'php'}
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'skwp/greplace.vim'
-Plug 'sniphpets/sniphpets',                          { 'for': 'php' }
-Plug 'sniphpets/sniphpets-common',                   { 'for': 'php' }
-Plug 'sniphpets/sniphpets-doctrine',                 { 'for': 'php' }
-Plug 'sniphpets/sniphpets-phpunit',                  { 'for': 'php' }
-Plug 'sniphpets/sniphpets-symfony',                  { 'for': 'php' }
-Plug 'suan/vim-instant-markdown',                    { 'for': ['markdown','md'] }
+Plug 'sniphpets/sniphpets',          { 'for': 'php' }
+Plug 'sniphpets/sniphpets-common',   { 'for': 'php' }
+Plug 'sniphpets/sniphpets-doctrine', { 'for': 'php' }
+Plug 'sniphpets/sniphpets-phpunit',  { 'for': 'php' }
+Plug 'sniphpets/sniphpets-symfony',  { 'for': 'php' }
+Plug 'suan/vim-instant-markdown',    { 'for': ['markdown','md'] }
 Plug 'tomasr/molokai'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
-Plug 'w0rp/ale'
 
 call plug#end()
 let g:vim_markdown_no_extensions_in_markdown = 1
@@ -71,8 +51,8 @@ let mapleader = ','
 let NERDTreeDirArrows=0
 let g:rehash256 = 1
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:¬
+set nowrap
 set backspace=2
-set colorcolumn=81
 set complete-=i
 set encoding=utf-8
 set expandtab             " On pressing tab, insert 4 spaces
@@ -92,7 +72,6 @@ set nocursorcolumn
 set noshowcmd
 set noshowmode            " We show the mode with airline or lightline
 set noswapfile            " Don't create swapfile
-set nowrap                " Don't wrap lines
 set number                " show line numbers
 set relativenumber
 set path+=**              " Look for files recursively
@@ -108,6 +87,8 @@ set tabstop=4             " show existing tab with 4 spaces width
 set ttyfast
 set updatetime=1000       " wait ms after stop typing to trigger scripts
 set cursorline
+set diffopt+=vertical
+
 syntax on
 syntax sync minlines=256  " start highlighting from 256 lines backwards
 filetype plugin indent on
@@ -152,15 +133,17 @@ vnoremap > >gv
 
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
-nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>p :GFiles<CR>
+nnoremap <Leader>gS :GFiles?<CR>
 nnoremap <Leader>P :CtrlPBufTag<CR>
-nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>b :Buffers<CR>
 
 " Fugitive
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gc :Gcommit -v<CR>
-nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gac :Gcommit --amend -v<CR>
+nnoremap <Leader>gd :Gdiffsplit!<CR>
 nnoremap <Leader>gp :Gpush<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gs :Gstatus<CR>
@@ -177,9 +160,7 @@ map gn :bn<cr>
 map gp :bp<cr>
 map gd :bd<cr>
 
-" set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
-
-" ========= Settings =========
+" Settings
 
 let g:instant_markdown_autostart = 0
 
@@ -189,42 +170,9 @@ let g:UltiSnipsSnippetDirectories=[
     \$HOME.'/dotfiles/UltiSnips/specific'
 \]
 
-" ale
-let g:ale_php_phpcs_standard = 'PSR2'
-let g:ale_linters = {
-    \ 'javascript': ['eslint'],
-    \ 'php': ['phpcs', 'php', 'phpstan']
-    \}
-let g:ale_fixers = {
-	\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-    \   'javascript': ['prettier', 'eslint'],
-    \   'php': ['phpcbf', 'php_cs_fixer'],
-    \}
-let g:ale_completion_enabled = 1
-let g:ale_fix_on_save = 1
-
 if executable("rg")
     set grepprg=rg\ --color=never
     let g:grep_cmd_opts = '--line-number --no-heading'
-endif
-
-" CtrlP
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_use_caching = 0
-
-if executable('rg')
-    let g:ctrlp_user_command = 'ag %s -l -g ""'
-    let g:ctrlp_use_caching = 0
-elseif executable('ag')
-    let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-    let g:ctrlp_use_caching = 0
-else
-    set wildignore+=*/vendor/**
-    set wildignore+=*/app/cache/**
-    set wildignore+=*/app/logs/**
-    set wildignore+=*/var/cache/**
-    set wildignore+=*/var/logs/**
-    set wildignore+=*/node_modules/**
 endif
 
 " UltiSnips {
@@ -235,6 +183,7 @@ let g:UltiSnipsEditSplit           = 'vertical'
 
 " NerdTree
 let NERDTreeIgnore = ['node_modules']
+let NERDTreeHighlightCursorline = 0
 
 " tags
 let g:autotagTagsFile='tags'
@@ -242,19 +191,22 @@ set tags+=tags.vendors
 
 " Styling (use :hi for color reference): {
 set linespace=2
-" Line numbures should match the background color
-hi LineNr guibg=bg ctermbg=bg
-" Remove split borders
-hi foldcolumn guibg=bg ctermbg=bg
-hi VertSplit guibg=bg guifg=bg ctermbg=bg ctermfg=bg
-" Tab styling
-hi TabLine cterm=bold ctermfg=8 ctermbg=bg
-hi TabLineFill cterm=bold ctermbg=bg
-" GitGutter background should match the bg color
-hi GitGutterAdd ctermfg=2 ctermbg=bg guifg=#009900 guibg=bg
-hi GitGutterChange ctermfg=3 ctermbg=bg guifg=#bbbb00 guibg=bg
-hi GitGutterDelete ctermfg=1 ctermbg=bg guifg=#ff2222 guibg=bg
-hi! link Pmenu VisualNOS
+hi    LineNr            guibg=bg        ctermbg=bg
+hi    SignColumn        guibg=bg        ctermbg=bg
+hi    foldcolumn        guibg=bg        ctermbg=bg
+hi    VertSplit         guibg=bg        guifg=bg        ctermbg=bg      ctermfg=bg
+hi    TabLine           cterm=bold      ctermfg=8       ctermbg=bg
+hi    TabLineFill       cterm=bold      ctermbg=bg
+hi    GitGutterAdd      ctermfg=2       ctermbg=bg      guifg=#009900   guibg=bg
+hi    GitGutterChange   ctermfg=3       ctermbg=bg      guifg=#bbbb00   guibg=bg
+hi    GitGutterDelete   ctermfg=1       ctermbg=bg      guifg=#ff2222   guibg=bg
+hi!   link              Pmenu           VisualNOS
+hi    DiffText          gui=none,bold   guibg=#4C4745
+hi    Macro             gui=none        guifg=#C4BE89
+hi    SpecialKey        gui=none        guifg=#66D9EF
+hi    Special           gui=none        guifg=#66D9EF   guibg=bg
+hi    StorageClass      gui=none        guifg=#FD971F
+hi    Tag               gui=none        guifg=#F92672
 " }
 
 let g:gitgutter_sign_removed = '-'
@@ -264,14 +216,10 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:deplete#auto_complete_delay = 0
 
 
-  " Open terminal in vertical, horizontal and new tab
+" Open terminal in vertical, horizontal and new tab
 nnoremap <leader>tv :vsplit<cr>:term<CR>
 nnoremap <leader>ts :split<cr>:term<CR>
 nnoremap <leader>tt :tabnew<cr>:term<CR>
-
-tnoremap <leader>tv <C-w>:vsplit<cr>:term<CR>
-tnoremap <leader>ts <C-w>:split<cr>:term<CR>
-tnoremap <leader>tt <C-w>:tabnew<cr>:term<CR>
 
 " Open file under cursor in a new vertical/horizontal split +10 speed pts;
 noremap gv <C-W>vgf
@@ -286,3 +234,13 @@ if exists('+termguicolors') && !has('macunix')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
+
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+let $FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --layout reverse --margin=1,4 --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+
+if has("nvim")
+  au TermOpen * tnoremap <Esc> <c-\><c-n>
+  au FileType fzf tunmap <Esc>
+endif
+
+let g:coc_disable_startup_warning = 1
