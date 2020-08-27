@@ -18,24 +18,25 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
-Plug 'fatih/vim-go',                 { 'for': 'go', 'do': ':GoInstallBinaries'  }
+Plug 'fatih/vim-go',                  { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf',                 { 'dir': '~/.fzf', 'do': './install --all'  }
+Plug 'junegunn/fzf',                  { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'phpactor/phpactor',            { 'do': 'composer install', 'for': 'php'}
+Plug 'majutsushi/tagbar'
+Plug 'phpactor/phpactor',             { 'do': 'composer install', 'for': 'php'}
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'skwp/greplace.vim'
-Plug 'sniphpets/sniphpets',          { 'for': 'php' }
-Plug 'sniphpets/sniphpets-common',   { 'for': 'php' }
-Plug 'sniphpets/sniphpets-doctrine', { 'for': 'php' }
-Plug 'sniphpets/sniphpets-phpunit',  { 'for': 'php' }
-Plug 'sniphpets/sniphpets-symfony',  { 'for': 'php' }
-Plug 'suan/vim-instant-markdown',    { 'for': ['markdown','md'] }
+Plug 'sniphpets/sniphpets',           { 'for': 'php' }
+Plug 'sniphpets/sniphpets-common',    { 'for': 'php' }
+Plug 'sniphpets/sniphpets-doctrine',  { 'for': 'php' }
+Plug 'sniphpets/sniphpets-phpunit',   { 'for': 'php' }
+Plug 'sniphpets/sniphpets-symfony',   { 'for': 'php' }
+Plug 'suan/vim-instant-markdown',     { 'for': ['markdown','md'] }
 Plug 'tomasr/molokai'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
@@ -159,6 +160,8 @@ nnoremap <C-h> :vertical resize +5<cr>
 map gn :bn<cr>
 map gp :bp<cr>
 map gd :bd<cr>
+
+nnoremap <leader>t :TagbarToggle<CR>
 
 " Settings
 
