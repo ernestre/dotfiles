@@ -9,7 +9,6 @@ vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
 nmap <Leader>e :call phpactor#GetClassFullName()<CR>
 
 nmap <Leader>r :call RunCurrentFile()<CR>
-
 function! RunCurrentFile()
     if executable('php')
         execute '!php %'
@@ -17,22 +16,3 @@ function! RunCurrentFile()
         execute 'php not available'
     endif
 endfunction
-
-function! RunPhpUnitForCurrentFile()
-    if filereadable('bin/phpunit')
-        execute '!php -n bin/phpunit %'
-    else
-        execute ':echo phpunit not found in ./bin'
-    endif
-endfunction
-
-function! RunPhpUnit()
-    if filereadable('bin/phpunit')
-        execute '!php -n bin/phpunit'
-    else
-        execute ':echo phpunit not found in ./bin'
-    endif
-endfunction
-
-nnoremap <Leader>ct :call RunPhpUnitForCurrentFile()<CR>
-nnoremap <Leader>t :call RunPhpUnit()<CR>
