@@ -1,53 +1,28 @@
-# dotfiles
+# My dotfiles
 
-# Requirements
-* [ag](https://github.com/ggreer/the_silver_searcher#installing)
-* [vim-instant-markdown](https://github.com/suan/vim-instant-markdown) (`npm install -g instant-markdown-d`)
-* [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy) : (`npm install -g diff-so-fancy`)
-* [alacritty](https://github.com/jwilm/alacritty): A cross-platform, GPU-accelerated terminal emulator
-    * [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
-* [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts): MesloLGS Nerd Font:12
-* [mycli](https://github.com/dbcli/mycli): A Terminal Client for MySQL with AutoCompletion and Syntax Highlighting. http://mycli.net
-* [pgcli](https://github.com/dbcli/pgcli): Postgres CLI with autocompletion and syntax highlighting http://pgcli.com
+## Tools:
 * [bat](https://github.com/sharkdp/bat): A cat(1) clone with wings.
 * [ctop](https://github.com/bcicen/ctop): Top-like interface for container metrics
+* [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy): Good-lookin' diffs. Actually… nah… The best-lookin' diffs.
+* [mycli](https://github.com/dbcli/mycli): A Terminal Client for MySQL with AutoCompletion and Syntax Highlighting. http://mycli.net
+* [neovim](https://github.com/neovim/neovim): Vim-fork focused on extensibility and usability
+* [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern
+* [tmux](https://github.com/tmux/tmux)
+* zsh with [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
+* go 1.15
+* node LTS
+* php 7.4
 
-# tl:dr
+## Vim:
+* [coc.nvim](https://github.com/neoclide/coc.nvim) Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode
+    * with nodejs/typescriipt, golang, php lanaguage server extensions
+* [molokai](https://github.com/tomasr/molokai) Molokai color scheme for Vim with some modifications
+* and a bunch of other [plugins](./vim/plugin/plugins/core.vim)
 
+![vim demo](./vim_demo.png)
+
+
+## Installation
 ```sh
-$ git clone https://github.com/ernestre/dotfiles.git && cd dotfiles && sh install.sh
+$ cd && git clone https://github.com/ernestre/dotfiles.git && sh ./dotfiles/install.sh
 ```
-
----
-
-# Tmux
-### [TPM](https://github.com/tmux-plugins/tpm) :
-Requirements: tmux version 1.9 (or higher), git, bash.
-
-* Install tmux package manager:
-```sh
-$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-* Install tmux plugins:
-```sh
-$ ~/.tmux/plugins/tpm/bin/install_plugins
-```
-
-# FZF
-### Fuzzy finder [FZF](https://github.com/junegunn/fzf) :
-* Install fzf:
-```sh
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-```
-
-# Vim
-### Plugin manager [Plug](https://github.com/junegunn/vim-plug) :
-* Install Plug:
-```sh
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-* Install plugins:
-```sh
-$ vim +PlugInstall +qall
