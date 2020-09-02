@@ -16,3 +16,4 @@ silent! hi    SpecialKey        gui=none        guifg=#66D9EF
 silent! hi    Special           gui=none        guifg=#66D9EF   guibg=bg
 silent! hi    StorageClass      gui=none        guifg=#FD971F
 silent! hi    Tag               gui=none        guifg=#F92672
+silent! hi    NonText           guifg=bg
