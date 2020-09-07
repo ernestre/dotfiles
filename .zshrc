@@ -34,6 +34,9 @@ alias gcb='git checkout $(git branch | fzf)'
 alias gct='git checkout $(git tag | fzf)'
 alias p="fzf --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 alias fs="ssh \$(cat ~/.ssh/config | grep 'Host ' | awk '{print \$2}' | fzf)"
+alias dsh="docker exec -it \$(docker ps --format '{{.Names}}' | fzf) sh"
+alias dstop="docker stop \$(docker ps --format '{{.Names}}' | fzf)"
+alias dstart="docker start \$(docker ps -a --format '{{.Names}}' | fzf)"
 
 # Linux alternative for OSX pbcopy
 if ! [ -x "$(command -v pbpaste)" ]; then
