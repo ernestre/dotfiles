@@ -14,3 +14,8 @@ let g:gitgutter_sign_removed            = '▁▁'
 let g:gitgutter_sign_removed_first_line = '▔▔'
 let g:gitgutter_terminal_reports_focus = 0
 let g:gitgutter_diff_args = '-w'
+
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
+let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+let g:NERDTreeDirArrowExpandable = "\u00a0"
+let g:NERDTreeDirArrowCollapsible = "\u00a0"
