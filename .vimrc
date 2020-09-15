@@ -38,6 +38,8 @@ set cursorline
 set diffopt+=vertical
 set linespace=2
 set shortmess=I          " Disable welcome message
+set fillchars+=vert:\    " Remove vertical line split
+let &colorcolumn="80,".join(range(120,999),",")
 
 let $KEYMAPS='~/.vim/plugin/settings/keymap.vim'
 let $PLUGINLIST='~/.vim/plugin/plugins/core.vim'
