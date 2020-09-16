@@ -19,9 +19,6 @@
 * [molokai](https://github.com/tomasr/molokai) Molokai color scheme for Vim with some modifications
 * and a bunch of other [plugins](./vim/plugin/plugins/core.vim)
 
-![vim demo](./vim_demo.png)
-
-
 ## Installation
 ```sh
 $ cd && git clone https://github.com/ernestre/dotfiles.git && sh ./dotfiles/install.sh
