@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.composer/vendor/bin:/usr/local/go/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.composer/vendor/bin:/usr/local/go/bin:$HOME/.yarn/bin
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
@@ -9,19 +9,9 @@ export PATH=$PATH:$GOPATH/bin
 export ZSH=~/.oh-my-zsh
 export TERM="xterm-256color"
 
-export EDITOR=/usr/local/bin/nvim
+export EDITOR=/usr/bin/nvim
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE='nerdfont-complete'
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs docker_machine time)
-POWERLEVEL9K_SHORTEN_DELIMITER=""
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
-POWERLEVEL9K_STATUS_VERBOSE=false
-POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S \uf073 %d.%m.%y}"
-POWERLEVEL9K_VCS_TAG_ICON='\uf9f8'
+ZSH_THEME="cloud"
 
 plugins=(git docker docker-compose web-search colorize redis-cli wd)
 
@@ -42,8 +32,28 @@ alias yesterdayTodo="vim +VimwikiMakeYesterdayDiaryNote"
 alias vim=nvim
 alias gcb='git checkout $(git branch | fzf)'
 alias gct='git checkout $(git tag | fzf)'
-alias p='fzf --preview="head -$LINES {}"'
+alias p="fzf --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 alias fs="ssh \$(cat ~/.ssh/config | grep 'Host ' | awk '{print \$2}' | fzf)"
+alias dsh="docker exec -it \$(docker ps --format '{{.Names}}' | fzf) bash"
+alias dstop="docker stop \$(docker ps --format '{{.Names}}' | fzf)"
+alias dstart="docker start \$(docker ps -a --format '{{.Names}}' | fzf)"
+
+# Linux alternative for OSX pbcopy
+if ! [ -x "$(command -v pbpaste)" ]; then
+    alias pbpaste='xclip -selection clipboard -o'
+fi
+
+if ! [ -x "$(command -v pbcopy)" ]; then
+    alias pbcopy='xclip -selection clipboard'
+fi
+
+# Repeat the command
+r () {
+    while true; do $@; done
+}
+
+# Start vim session if session file exists
+alias vims='[[ -f Session.vim ]] && vim -S || vim'
 
 DEFAULT_USER="$USER"
 
@@ -54,4 +64,4 @@ source ~/.ssh-aliases
 # use RG for fzf
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
-export LESS="-XRFS" # dont wrap long lines in less
+export LESS="-XRFS" # dont wrap long lines in less;

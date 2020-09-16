@@ -10,4 +10,6 @@ tags*
 .phpcd
 
 /node_modules
-
+Session.vim
+Makefile.local
+docker-compose.local.yml
