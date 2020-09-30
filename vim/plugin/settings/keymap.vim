@@ -69,4 +69,5 @@ nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>p :GFiles<CR>
 nnoremap <Leader>gS :GFiles?<CR>
 nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>F :CocSearch <C-R>=expand("<cword>")<CR><CR>
 " }}}
