@@ -42,7 +42,8 @@ set fillchars+=vert:\    " Remove vertical line split
 let &colorcolumn="80,".join(range(120,999),",")
 
 let $KEYMAPS='~/.vim/plugin/settings/keymap.vim'
-let $PLUGINLIST='~/.vim/plugin/plugins/core.vim'
+let $PLUGINLIST='~/.vim/plugin/plugins'
+let $PLUGINS='~/.vim/plugin/plugins/core.vim'
 
 autocmd BufWritePre * %s/\s\+$//e " Remove white space on save.
 
