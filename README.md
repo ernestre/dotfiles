@@ -16,7 +16,7 @@
 ## Vim:
 * [coc.nvim](https://github.com/neoclide/coc.nvim) Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode
     * with nodejs/typescriipt, golang, php lanaguage server extensions
-* [molokai](https://github.com/tomasr/molokai) Molokai color scheme for Vim with some modifications
+* [sonokai](https://github.com/sainnhe/sonokai) High Contrast & Vivid Color Scheme based on Monokai Pro
 * and a bunch of other [plugins](./vim/plugin/plugins/core.vim)
 
 ## Installation

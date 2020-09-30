@@ -1,2 +1,2 @@
 let g:lightline = {}
-let g:lightline.colorscheme = 'wombat'
+let g:lightline.colorscheme = 'sonokai'
