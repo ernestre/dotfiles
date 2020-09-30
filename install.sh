@@ -20,7 +20,7 @@ dir=dotfiles
 ln -sv ~/$dir/vim/plugin/ ~/.vim/plugin
 ln -sv ~/$dir/vim/ftplugin/ ~/.vim/ftplugin
 
-files=".ctags .gitconfig .gitignore_global .tmux.conf .vimrc .zshrc .config" # list of files/folders to symlink in homedir
+files=".ctags .gitconfig .gitignore_global .tmux.conf .vimrc .zshrc .config/nvim" # list of files/folders to symlink in homedir
 for file in $files; do
     if [ -f ~/$file ]
     then
