@@ -5,7 +5,6 @@ lgs = log --all --decorate --oneline --graph --stat
 contrib = shortlog -ns
 
 lg = !"git lg1"
-standup = !"git log --reverse --branches --since=$(if [[ "Mon" == "$(date +%a)" ]]; then echo "last friday"; else echo "yesterday"; fi) --author=$(git config --get user.email) --format=format:'%C(cyan) %ad %C(yellow)%h %Creset %s %Cgreen%d' --date=local"
 
 # Push the current branch to the remote "origin", and set it to track
 # # the upstream branch

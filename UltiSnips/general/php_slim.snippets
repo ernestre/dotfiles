@@ -36,11 +36,10 @@ use Pimple\ServiceProviderInterface;
 
 class `!v sniphpets#basename()` implements ServiceProviderInterface
 {
-	public function register(${1:Container $container}): void
+	public function register(Container $container): void
 	{
-		$container[${2:}::class] = function (${3:Container $container}) {
-			return new $2(${4});
-			${VISUAL}${0}
+		$container[`!v sniphpets#basename()[0:-9]`::class] = static function (Container $container): `!v sniphpets#basename()[0:-9]` {
+			return new `!v sniphpets#basename()[0:-9]`($0);
 		};
 	}
 }
