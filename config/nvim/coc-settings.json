@@ -7,15 +7,6 @@
             "initializationOptions": {
                 "storagePath": "/tmp/intelephense"
             }
-        },
-        "golang": {
-            "command": "go-langserver",
-            "filetypes": ["go"],
-            "initializationOptions": {
-                "gocodeCompletionEnabled": true,
-                "diagnosticsEnabled": true,
-                "lintTool": "golint"
-            }
         }
     },
     "diagnostic.errorSign": "●",
