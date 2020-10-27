@@ -34,8 +34,8 @@ nnoremap <Leader>gp :Gpush<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gw :Gwrite<CR>
-nnoremap <Leader>gf :diffget //2<CR>
-nnoremap <Leader>gj :diffget //3<CR>
+nnoremap <Leader>gh :diffget //2<CR>
+nnoremap <Leader>gl :diffget //3<CR>
 " }}}
 " Resize panes: {{{
 nnoremap <C-l> :vertical resize -5<cr>
