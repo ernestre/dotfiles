@@ -39,6 +39,7 @@ set diffopt+=vertical
 set linespace=2
 set shortmess=I          " Disable welcome message
 set fillchars+=vert:\    " Remove vertical line split
+set iskeyword-=_         " Treat underscores as words
 let &colorcolumn="80,".join(range(120,999),",")
 
 let $KEYMAPS='~/.vim/plugin/settings/keymap.vim'
