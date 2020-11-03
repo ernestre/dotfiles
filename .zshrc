@@ -13,7 +13,7 @@ export EDITOR=/usr/bin/nvim
 
 ZSH_THEME="cloud"
 
-plugins=(git docker docker-compose web-search colorize redis-cli wd)
+plugins=(git docker docker-compose web-search colorize redis-cli wd tmuxinator)
 
 ZSH_TMUX_AUTOSTART=true
 
