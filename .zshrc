@@ -19,6 +19,15 @@ ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
+# Linux alternative for OSX pbcopy
+if ! [ -x "$(command -v pbpaste)" ]; then
+    alias pbpaste='xclip -selection clipboard -o'
+fi
+
+if ! [ -x "$(command -v pbcopy)" ]; then
+    alias pbcopy='xclip -selection clipboard'
+fi
+
 alias gs='git status'
 alias gac='git add . && git commit -v'
 alias guc='git add -u && git commit -v'
@@ -37,15 +46,7 @@ alias fs="ssh \$(cat ~/.ssh/config | grep 'Host ' | awk '{print \$2}' | fzf)"
 alias dsh="docker exec -it \$(docker ps --format '{{.Names}}' | fzf) bash"
 alias dstop="docker stop \$(docker ps --format '{{.Names}}' | fzf)"
 alias dstart="docker start \$(docker ps -a --format '{{.Names}}' | fzf)"
-
-# Linux alternative for OSX pbcopy
-if ! [ -x "$(command -v pbpaste)" ]; then
-    alias pbpaste='xclip -selection clipboard -o'
-fi
-
-if ! [ -x "$(command -v pbcopy)" ]; then
-    alias pbcopy='xclip -selection clipboard'
-fi
+alias ppjson="pbpaste | python3 -m json.tool | bat -l json"
 
 # Repeat the command
 r () {
