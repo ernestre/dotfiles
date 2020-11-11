@@ -9,7 +9,7 @@ export PATH=$PATH:$GOPATH/bin
 export ZSH=~/.oh-my-zsh
 export TERM="xterm-256color"
 
-export EDITOR=/usr/bin/nvim
+export EDITOR=/snap/bin/nvim
 
 ZSH_THEME="cloud"
 

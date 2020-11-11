@@ -7,7 +7,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
     fzf \
     git \
     mycli \
-    neovim \
     php7.4-curl \
     php7.4-dom \
     php7.4-fpm \
@@ -16,3 +15,4 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
     tmux \
     zsh
 
+sudo snap install --edge nvim --classic
