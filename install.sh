@@ -19,6 +19,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 dir=dotfiles
 ln -sv ~/$dir/vim/plugin/ ~/.vim/plugin
 ln -sv ~/$dir/vim/ftplugin/ ~/.vim/ftplugin
+ln -sv ~/$dir/vim/after/ ~/.vim/after
 
 files=".ctags .gitconfig .gitignore_global .tmux.conf .vimrc .zshrc .config/nvim .config/kitty" # list of files/folders to symlink in homedir
 for file in $files; do
