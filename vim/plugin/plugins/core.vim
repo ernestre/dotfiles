@@ -25,7 +25,7 @@ Plug 'sniphpets/sniphpets-doctrine',  { 'for': 'php' }
 Plug 'sniphpets/sniphpets-phpunit',   { 'for': 'php' }
 Plug 'sniphpets/sniphpets-symfony',   { 'for': 'php' }
 Plug 'suan/vim-instant-markdown',     { 'for': ['markdown','md'] }
-Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'

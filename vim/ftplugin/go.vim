@@ -12,3 +12,5 @@ function! RunCurrentFile()
 endfunction
 
 nmap <Leader>r :call RunCurrentFile()<CR>
+
+let b:commentary_format = '// %s'

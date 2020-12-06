@@ -16,3 +16,5 @@ function! RunCurrentFile()
         execute 'php not available'
     endif
 endfunction
+
+let b:commentary_format = '// %s'
