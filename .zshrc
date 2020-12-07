@@ -9,11 +9,7 @@ export PATH=$PATH:$GOPATH/bin
 export ZSH=~/.oh-my-zsh
 export TERM="xterm-256color"
 
-if [ "$(uname 2> /dev/null)" = "Darwin" ]; then
-    export EDITOR=/usr/local/bin/nvim
-else
-    export EDITOR=/snap/bin/nvim
-fi
+export EDITOR=/usr/local/bin/nvim
 
 ZSH_THEME="cloud"
 
