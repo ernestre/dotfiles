@@ -1,5 +1,5 @@
 function! PostCocInstall(info)
-    exec ":CocInstall coc-emmet coc-snippets coc-yaml coc-json coc-tsserver"
+    exec ":CocInstall coc-emmet coc-snippets coc-yaml coc-json coc-tsserver coc-spell-checker"
 endfunction
 
 Plug 'SirVer/ultisnips'
