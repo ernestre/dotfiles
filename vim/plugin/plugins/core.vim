@@ -1,5 +1,7 @@
 function! PostCocInstall(info)
-    exec ":CocInstall coc-emmet coc-snippets coc-yaml coc-json coc-tsserver coc-spell-checker"
+    if a:info.status == 'installed' || a:info.force
+        exec ":CocInstall coc-emmet coc-snippets coc-yaml coc-json coc-tsserver coc-spell-checker"
+    endif
 endfunction
 
 Plug 'SirVer/ultisnips'
