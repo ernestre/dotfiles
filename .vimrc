@@ -1,5 +1,5 @@
 let mapleader = ','
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:.,eol:¬
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 set nowrap
 set backspace=2
 set complete-=i
