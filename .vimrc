@@ -57,7 +57,7 @@ syntax sync minlines=256  " start highlighting from 256 lines backwards
 filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
-    for fpath in split(globpath('~/.vim/plugin/plugins', '*.vim'), '\n')
+    for fpath in split(globpath('~/.vim/plugin/plugins', 'core.vim'), '\n')
       exe 'source' fpath
     endfor
 call plug#end()
