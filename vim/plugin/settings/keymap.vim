@@ -59,9 +59,9 @@ nnoremap gs <C-W>sgf
 " }}}
 " Plugin Mappings: {{{
 nmap <C-]> <Plug>(coc-definition)
-nmap <silent>ci <Plug>(coc-references)
-nmap <silent>cr <Plug>(coc-rename)
-nmap <silent>cl  :call CocAction('format')<CR>
+nmap <leader>ci <Plug>(coc-references)
+nmap <leader>cr <Plug>(coc-rename)
+nmap <leader>cl  :call CocAction('format')<CR>
 
 nnoremap <leader>tb :TagbarToggle<CR>
 
