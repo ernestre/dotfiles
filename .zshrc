@@ -28,6 +28,10 @@ if ! [ -x "$(command -v pbcopy)" ]; then
     alias pbcopy='xclip -selection clipboard'
 fi
 
+if [ -x "$(command -v fdfind)" ]; then
+    alias fd='fdfind'
+fi
+
 alias gs='git status'
 alias gac='git add . && git commit -v'
 alias guc='git add -u && git commit -v'
