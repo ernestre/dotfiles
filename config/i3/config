@@ -213,7 +213,7 @@ client.unfocused #000000 #000000 #000000 #000000 #000000
 client.urgent #b80c09 #b80c09 #b80c09 #b80c09 #b80c09
 client.placeholder #3772ff #3772ff #3772ff #3772ff #3772ff
 
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border pixel 1
 
 gaps inner 10
 gaps outer 20
