@@ -1,7 +1,6 @@
 # My dotfiles
 
 ## Tools:
-* [bat](https://github.com/sharkdp/bat): A cat(1) clone with wings.
 * [ctop](https://github.com/bcicen/ctop): Top-like interface for container metrics
 * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy): Good-lookin' diffs. Actually… nah… The best-lookin' diffs.
 * [mycli](https://github.com/dbcli/mycli): A Terminal Client for MySQL with AutoCompletion and Syntax Highlighting. http://mycli.net

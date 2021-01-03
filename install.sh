@@ -3,7 +3,6 @@
 scriptSource=$(dirname "${BASH_SOURCE[0]}")
 
 bash $scriptSource/installers/dependencies.sh
-bash $scriptSource/installers/bat.sh
 bash $scriptSource/installers/ctop.sh
 bash $scriptSource/installers/go.sh
 bash $scriptSource/installers/nodejs.sh
