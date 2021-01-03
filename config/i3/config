@@ -93,7 +93,7 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym Mod4+l exec ~/scripts/i3/lock.sh
+bindsym Mod4+l exec ~/dotfiles/scripts/i3/lock.sh
 
 # split in horizontal orientation
 # bindsym $mod+h split h
@@ -222,7 +222,7 @@ for_window [class=".*"] border pixel 1
 gaps inner 10
 gaps outer 20
 
-exec --no-startup-id ~/scripts/i3/alternating_layouts.py
+exec --no-startup-id ~/dotfiles/scripts/i3/alternating_layouts.py
 exec_always feh --bg-scale ~/dotfiles/wallpapers/default.jpeg
 # exec --no-startup-id xrandr --output DP-2 --primary && xrandr --output eDP-1 --off
 # exec --no-startup-id xrandr --output HDMI-2 --primary && xrandr --output eDP-1 --off
@@ -230,5 +230,4 @@ exec_always feh --bg-scale ~/dotfiles/wallpapers/default.jpeg
 exec --no-startup-id spotify
 exec_always --no-startup-id picom --experimental-backends
 
-exec --no-startup-id ~/scripts/i3-alternating-layout/alternating_layouts.py
 exec --no-startup-id export $(gnome-keyring-daemon --start --components=secrets,ssh)
