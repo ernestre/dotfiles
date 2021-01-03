@@ -93,7 +93,7 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym Mod4+l exec ~/scripts/i3wm/lock.sh
+bindsym Mod4+l exec ~/scripts/i3/lock.sh
 
 # split in horizontal orientation
 # bindsym $mod+h split h
@@ -222,7 +222,7 @@ for_window [class=".*"] border pixel 1
 gaps inner 10
 gaps outer 20
 
-exec --no-startup-id ~/scripts/i3wm/alternating_layouts.py
+exec --no-startup-id ~/scripts/i3/alternating_layouts.py
 exec_always feh --bg-scale ~/Pictures/default.png
 # exec --no-startup-id xrandr --output DP-2 --primary && xrandr --output eDP-1 --off
 # exec --no-startup-id xrandr --output HDMI-2 --primary && xrandr --output eDP-1 --off
