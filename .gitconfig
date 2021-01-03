@@ -36,5 +36,5 @@ clean-merged-branches = !"git checkout master && git branch --merged | grep -v '
     new = green bold
     whitespace = red reverse
 
-[include]
+[includeIf "gitdir:~/Documents/projects/"]
     path=~/.gitconfig_work
