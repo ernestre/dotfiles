@@ -223,12 +223,12 @@ gaps inner 10
 gaps outer 20
 
 exec --no-startup-id ~/scripts/i3wm/alternating_layouts.py
-exec_always feh --bg-scale ~/Pictures/horizon.jpg
+exec_always feh --bg-scale ~/Pictures/default.png
 # exec --no-startup-id xrandr --output DP-2 --primary && xrandr --output eDP-1 --off
 # exec --no-startup-id xrandr --output HDMI-2 --primary && xrandr --output eDP-1 --off
 
-exec spotify
-# exec telegram-desktop
-exec slack
-# exec discord
-exec mailspring
+exec --no-startup-id spotify
+exec_always --no-startup-id picom --experimental-backends
+
+exec --no-startup-id ~/scripts/i3-alternating-layout/alternating_layouts.py
+exec --no-startup-id export $(gnome-keyring-daemon --start --components=secrets,ssh)
