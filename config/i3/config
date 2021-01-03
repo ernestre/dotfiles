@@ -13,7 +13,8 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Hack Bold Nerd Font Complete 8
+# font pango:Hack Bold Nerd Font Complete 8
+font pango:Monaco 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -59,7 +60,9 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+set $rofiTheme "Monokai"
+bindsym $mod+d exec rofi -theme $rofiTheme -show drun -show-icons -modi drun
+bindsym $mod+w exec rofi -theme $rofiTheme -show window -show-icons
 bindsym $mod+p exec bash /usr/share/doc/pass/examples/dmenu/passmenu
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -90,6 +93,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+bindsym Mod4+l exec ~/scripts/i3wm/lock.sh
+
 # split in horizontal orientation
 # bindsym $mod+h split h
 
@@ -98,11 +103,6 @@ bindsym $mod+Shift+Right move right
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -118,11 +118,11 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: Internets "
-set $ws2 "2: Code "
-set $ws3 "3: Chats "
-set $ws4 "4: Music "
-set $ws5 "5"
+set $ws1 "1: Internets  "
+set $ws2 "2: Code  "
+set $ws3 "3: Chats  "
+set $ws4 "4: Music  "
+set $ws5 "5: Mail  "
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -154,10 +154,12 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 assign [class="Chromium"] $ws1
+assign [class="Google-chrome"] $ws1
 assign [class="Slack"] $ws3
 assign [class="TelegramDesktop"] $ws3
 assign [class="discord"] $ws3
 for_window [class="Spotify"] move to workspace $ws4
+assign [class="Mailspring"] $ws5
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -199,13 +201,14 @@ bindsym $mod+r mode "resize"
 # https://coolors.co/000000-b80c09-f7f4f3-7e7f83-6c756b
 bar {
     status_command i3status
-        colors {
-            focused_workspace  #000000 #000000 #f7f4f3
-            active_workspace   #000000 #000000 #f7f4f3
-            inactive_workspace #000000 #000000 #7e7f83
-            urgent_workspace   #b80c09 #b80c09 #f7f4f3
-            binding_mode       #3772ff #3772ff #f7f4f3
-        }
+
+    colors {
+        focused_workspace  #000000 #000000 #f7f4f3
+        active_workspace   #000000 #000000 #f7f4f3
+        inactive_workspace #000000 #000000 #7e7f83
+        urgent_workspace   #b80c09 #b80c09 #f7f4f3
+        binding_mode       #3772ff #3772ff #f7f4f3
+    }
 }
 
 client.focused #f7f4f3 #f7f4f3 #f7f4f3 #f7f4f3 #f7f4f3
@@ -219,12 +222,13 @@ for_window [class=".*"] border pixel 1
 gaps inner 10
 gaps outer 20
 
-exec --no-startup-id ~/scripts/i3-alternating-layout/alternating_layouts.py
-
-# wallpaper
-exec_always feh --bg-scale ~/Pictures/sky.png
+exec --no-startup-id ~/scripts/i3wm/alternating_layouts.py
+exec_always feh --bg-scale ~/Pictures/horizon.jpg
+# exec --no-startup-id xrandr --output DP-2 --primary && xrandr --output eDP-1 --off
+# exec --no-startup-id xrandr --output HDMI-2 --primary && xrandr --output eDP-1 --off
 
 exec spotify
-exec telegram-desktop
+# exec telegram-desktop
 exec slack
-exec discord
+# exec discord
+exec mailspring
