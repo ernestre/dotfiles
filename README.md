@@ -7,6 +7,8 @@
 * [neovim](https://github.com/neovim/neovim): Vim-fork focused on extensibility and usability
 * [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern
 * [tmux](https://github.com/tmux/tmux)
+* fd
+* pass
 * zsh with [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
 * go 1.15
 * node LTS

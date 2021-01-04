@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
 
 sudo apt-get update -qq
 
@@ -17,5 +19,3 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
     ripgrep \
     tmux \
     zsh
-
-sudo snap install --edge nvim --classic
