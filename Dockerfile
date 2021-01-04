@@ -10,4 +10,6 @@ WORKDIR /home/docker
 
 USER docker
 
+COPY . /home/docker/dotfiles
+
 CMD /bin/bash

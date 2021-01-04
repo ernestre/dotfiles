@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
 
 # Install composer https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md
 
