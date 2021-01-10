@@ -1,6 +1,6 @@
 function! PostCocInstall(info)
     if a:info.status == 'installed' || a:info.force
-        exec ":CocInstall coc-emmet coc-snippets coc-yaml coc-json coc-tsserver coc-spell-checker"
+        exec ":CocInstall coc-emmet coc-snippets coc-yaml coc-json coc-vim coc-tsserver coc-spell-checker"
     endif
 endfunction
 
