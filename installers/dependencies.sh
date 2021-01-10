@@ -18,4 +18,5 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
     php7.4-mbstring \
     ripgrep \
     tmux \
+    zathura \
     zsh
