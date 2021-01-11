@@ -18,5 +18,6 @@ done
 
 configDirs=`ls ~/$dir/.config`
 for configDir in $configDirs; do
+    [ -d ~/.config/$configDir ] && rm -rfv ~/.config/$configDir
     ln -svf ~/$dir/.config/$configDir ~/.config/$configDir
 done
