@@ -5,6 +5,7 @@ IFS=$'\n\t'
 sudo apt-get update -qq
 
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
+    autorandr \
     curl \
     fd-find \
     fzf \
