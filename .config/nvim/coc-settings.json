@@ -2,8 +2,12 @@
     "languageserver": {
         "intelephense": {
             "command": "intelephense",
-            "args": ["--stdio"],
-            "filetypes": ["php"],
+            "args": [
+                "--stdio"
+            ],
+            "filetypes": [
+                "php"
+            ],
             "initializationOptions": {
                 "storagePath": "/tmp/intelephense"
             }
@@ -12,5 +16,10 @@
     "diagnostic.errorSign": "●",
     "diagnostic.warningSign": "●",
     "diagnostic.infoSign": "●",
-    "diagnostic.hintSign": "●"
+    "diagnostic.hintSign": "●",
+    "coc.preferences.formatOnSaveFiletypes": [
+        "php",
+        "json",
+        "javascript"
+    ]
 }
