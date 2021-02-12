@@ -5,6 +5,7 @@ set complete-=i
 set encoding=utf-8
 set expandtab            " On pressing tab, insert 4 spaces
 set exrc                 " allow project specific .vimrc configurations {{
+set secure
 set guioptions-=L        " remove left-hand scroll bar
 set guioptions-=T        " remove toolbar
 set guioptions-=m        " remove menu bar
@@ -38,8 +39,8 @@ set diffopt+=vertical
 set linespace=2
 set shortmess=I          " Disable welcome message
 set fillchars+=vert:\    " Remove vertical line split
-set wrap
 set mouse=a
+set nowrap
 let &colorcolumn="80,".join(range(120,999),",")
 
 let $KEYMAPS='~/.vim/plugin/settings/keymap.vim'

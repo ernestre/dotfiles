@@ -1,6 +1,7 @@
 *.swp
 tags*
 .vimrc
+.nvimrc
 .idea
 .DS_Store
 
