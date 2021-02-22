@@ -3,10 +3,9 @@ nmap <Leader>mm :call phpactor#ContextMenu()<CR>
 nmap <Leader>nn :call phpactor#Navigate()<CR>
 nmap <Leader>tt :call phpactor#Transform()<CR>
 nmap <Leader>cc :call phpactor#ClassNew()<CR>
-nmap <silent><Leader>ee :call phpactor#ExtractExpression(v:false)<CR>
-vmap <silent><Leader>ee :<C-U>call phpactor#ExtractExpression(v:true)<CR>
-vmap <silent><Leader>em :<C-U>call phpactor#ExtractMethod()<CR>
-nmap <Leader>e :call phpactor#GetClassFullName()<CR>
+vmap <silent><Leader>ee :<C-U>PhpactorExtractExpression<CR>
+vmap <silent><Leader>em :<C-U>PhpactorExtractMethod<CR>
+nmap <Leader>e :PhpactorClassExpand<CR>
 
 nmap <Leader>r :call RunCurrentFile()<CR>
 function! RunCurrentFile()
