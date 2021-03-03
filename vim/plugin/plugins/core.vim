@@ -13,8 +13,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf',                  { 'dir': '~/.fzf', 'do': './install --all'  }
-Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim',             { 'branch': 'release', 'do': function('PostCocInstall')}
 Plug 'phpactor/phpactor',             { 'do': 'composer install', 'for': 'php'}
 Plug 'scrooloose/nerdtree'
@@ -34,3 +32,9 @@ Plug 'unblevable/quick-scope'
 Plug 'sainnhe/sonokai'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter'
+
+" telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'

@@ -67,9 +67,11 @@ nnoremap <leader>tb :TagbarToggle<CR>
 
 nnoremap <Leader>nt :NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
-nnoremap <Leader>f :Files<CR>
-nnoremap <Leader>p :GFiles<CR>
-nnoremap <Leader>gS :GFiles?<CR>
-nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>f :Telescope find_files<CR>
+nnoremap <Leader>p :Telescope git_files<CR>
+nnoremap <Leader>gS :Telescope git_status<CR>
+nnoremap <Leader>b :Telescope buffers<CR>
+nnoremap <Leader>l :Telescope treesitter<CR>
+nnoremap <Leader>gf :Telescope live_grep<CR>
 nnoremap <Leader>F :CocSearch <C-R>=expand("<cword>")<CR><CR>
 " }}}
