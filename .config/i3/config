@@ -155,6 +155,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 assign [class="Chromium"] $ws1
 assign [class="Google-chrome"] $ws1
+assign [class="Brave-browser"] $ws1
 assign [class="Slack"] $ws3
 assign [class="TelegramDesktop"] $ws3
 assign [class="discord"] $ws3
