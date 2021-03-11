@@ -14,7 +14,7 @@ Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim',             { 'branch': 'release', 'do': function('PostCocInstall')}
-Plug 'phpactor/phpactor',             { 'do': 'composer install', 'for': 'php'}
+Plug 'phpactor/phpactor',             { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 Plug 'scrooloose/nerdtree'
 Plug 'skwp/greplace.vim'
 Plug 'sniphpets/sniphpets',           { 'for': 'php' }
