@@ -18,9 +18,9 @@
     "diagnostic.infoSign": "●",
     "diagnostic.hintSign": "●",
     "coc.preferences.formatOnSaveFiletypes": [
-        "php",
         "json",
-        "javascript"
+        "javascript",
+        "go"
     ],
     "suggest.completionItemKindLabels": {
         "method": "  ",
