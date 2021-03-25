@@ -57,6 +57,8 @@ nnoremap <leader>tt :tabnew<cr>:term<CR>
 nnoremap gv <C-W>vgf
 nnoremap gs <C-W>sgf
 " }}}
+nnoremap <C-s> <C-^>
+
 " Plugin Mappings: {{{
 nmap <C-]> <Plug>(coc-definition)
 nmap <leader>ci <Plug>(coc-references)
