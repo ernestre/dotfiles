@@ -25,6 +25,9 @@ command! Q q
 vnoremap < <gv
 vnoremap > >gv
 " }}}
+" Paste in visual mode without copying {{{
+xnoremap p pgvy
+" }}}
 " Fugitive: {{{
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gc :Gcommit -v<CR>
@@ -63,7 +66,7 @@ nnoremap <C-s> <C-^>
 nmap <C-]> <Plug>(coc-definition)
 nmap <leader>ci <Plug>(coc-references)
 nmap <leader>cr <Plug>(coc-rename)
-nmap <leader>cl  :call CocAction('format')<CR>
+nmap <leader>cl :call CocAction('format')<CR>
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
