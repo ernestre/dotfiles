@@ -13,7 +13,7 @@ export EDITOR=nvim
 
 ZSH_THEME="cloud"
 
-plugins=(git docker docker-compose web-search colorize redis-cli wd tmuxinator pass)
+plugins=(git docker docker-compose web-search colorize redis-cli wd tmuxinator pass bgnotify)
 
 ZSH_TMUX_AUTOSTART=true
 
@@ -62,11 +62,16 @@ alias vims='[[ -f Session.vim ]] && vim -S || vim'
 
 DEFAULT_USER="$USER"
 
-source ~/.aliases
-source ~/.ssh-aliases
+
+[[ ! -f ~/.aliases ]] || source ~/.aliases
+[[ ! -f ~/.ssh-aliases ]] || source ~/.ssh-aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # use RG for fzf
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
 export LESS="-XRFS" # dont wrap long lines in less;
+
+if [ -x "$(command -v xset)" ]; then
+    xset r rate 200 85
+fi
