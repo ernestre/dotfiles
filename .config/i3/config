@@ -227,5 +227,8 @@ exec_always feh --bg-scale ~/dotfiles/wallpapers/3977775.jpg
 
 exec --no-startup-id spotify
 # exec_always --no-startup-id picom --experimental-backends
+exec --no-startup-id slack
+exec --no-startup-id mailspring
 
 exec --no-startup-id export $(gnome-keyring-daemon --start --components=secrets,ssh)
+exec --no-startup-id xrandr --output DP-2 --primary && xrandr --output eDP-1 --off
