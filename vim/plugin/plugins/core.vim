@@ -4,7 +4,7 @@ function! PostCocInstall(info)
     endif
 endfunction
 
-Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips', { 'tag': '3.2' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
@@ -37,3 +37,5 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
+" Write function for telescope specific directories
