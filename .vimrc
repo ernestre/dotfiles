@@ -41,7 +41,6 @@ set shortmess=I          " Disable welcome message
 set fillchars+=vert:\    " Remove vertical line split
 set mouse=a
 set nowrap
-set foldmethod=marker
 let &colorcolumn="80,".join(range(120,999),",")
 
 let $KEYMAPS='~/.vim/plugin/settings/keymap.vim'
