@@ -91,3 +91,7 @@ nnoremap <Leader>l :Telescope treesitter<CR>
 nnoremap <Leader>gf :Telescope live_grep<CR>
 nnoremap <Leader>F :CocSearch <C-R>=expand("<cword>")<CR><CR>
 " }}}
+
+" szw/vim-maximizer: {{{
+nnoremap <silent>m :MaximizerToggle<CR>
+" }}}
