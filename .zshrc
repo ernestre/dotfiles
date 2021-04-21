@@ -43,7 +43,7 @@ alias todayTodo="vim +VimwikiMakeDiaryNote"
 alias tomorrowTodo="vim +VimwikiMakeTomorrowDiaryNote"
 alias yesterdayTodo="vim +VimwikiMakeYesterdayDiaryNote"
 alias vim=nvim
-alias gcb='git checkout $(git branch | fzf)'
+alias gcb='git checkout $(git branch --sort=-committerdate --no-merged | fzf)'
 alias gct='git checkout $(git tag | fzf)'
 alias p="fzf --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 alias fs="ssh \$(cat ~/.ssh/config | grep 'Host ' | awk '{print \$2}' | fzf)"
@@ -75,3 +75,10 @@ export LESS="-XRFS" # dont wrap long lines in less;
 if [ -x "$(command -v xset)" ]; then
     xset r rate 200 85
 fi
+
+tfs() {
+  local session
+  session=$(tmux list-sessions -F "#{session_name}" | \
+    fzf --query="$1" --select-1 --exit-0) &&
+  tmux switch-client -t "$session"
+}
