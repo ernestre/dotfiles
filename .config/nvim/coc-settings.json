@@ -20,7 +20,8 @@
     "coc.preferences.formatOnSaveFiletypes": [
         "json",
         "javascript",
-        "go"
+        "go",
+        "php"
     ],
     "suggest.completionItemKindLabels": {
         "method": "  ",
