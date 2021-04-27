@@ -1,16 +1,10 @@
-function! PostCocInstall(info)
-    if a:info.status == 'installed' || a:info.force
-        exec ":CocInstall coc-emmet coc-snippets coc-yaml coc-json coc-vim coc-tsserver coc-spell-checker"
-    endif
-endfunction
-
-Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips', { 'tag': '3.2' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'neoclide/coc.nvim',             { 'branch': 'release', 'do': function('PostCocInstall')}
 Plug 'phpactor/phpactor',             { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 Plug 'skwp/greplace.vim'
 Plug 'sniphpets/sniphpets',           { 'for': 'php' }
@@ -42,3 +36,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 " Plug 'dstein64/vim-startuptime'
+
+" LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+Plug 'onsails/lspkind-nvim'

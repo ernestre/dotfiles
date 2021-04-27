@@ -35,7 +35,7 @@ nnoremap <Leader>gac :Git commit --amend -v<CR>
 nnoremap <Leader>gd :Gdiffsplit!<CR>
 nnoremap <Leader>gp :Gpush<CR>
 nnoremap <Leader>gr :Gread<CR>
-nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gs :Git<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gh :diffget //2<CR>
 nnoremap <Leader>gl :diffget //3<CR>
@@ -65,21 +65,25 @@ nnoremap <C-s> <C-^>
 nmap <leader>vm <Plug>MarkdownPreviewToggle
 
 " Plugin Mappings: {{{
-nmap <C-]> <Plug>(coc-definition)
-nmap <leader>ci <Plug>(coc-references)
-nmap <leader>cr <Plug>(coc-rename)
-nmap <leader>cl :call CocAction('format')<CR>
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
+" nmap <C-]> <Plug>(coc-definition)
+nmap <C-]> <Cmd>lua vim.lsp.buf.definition()<CR>
+" nmap <leader>ci <Plug>(coc-references)
+nmap <leader>ci <Cmd>lua vim.lsp.buf.references()<CR>
+" nmap <leader>cr <Plug>(coc-rename)
+nmap <leader>cr <Cmd>lua vim.lsp.buf.rename()<CR>
+" nmap <leader>cl :call CocAction('format')<CR>
+nmap <leader>cl <Cmd>lua vim.lsp.buf.formatting()<CR><CR>
+" nnoremap <silent>K :call <SID>show_documentation()<CR>
+nnoremap <silent>K <Cmd>lua vim.lsp.buf.hover()<CR>
+" function! s:show_documentation()
+"   if (index(['vim','help'], &filetype) >= 0)
+"     execute 'h '.expand('<cword>')
+"   elseif (coc#rpc#ready())
+"     call CocActionAsync('doHover')
+"   else
+"     execute '!' . &keywordprg . " " . expand('<cword>')
+"   endif
+" endfunction
 
 nnoremap <leader>tb :TagbarToggle<CR>
 
@@ -95,7 +99,22 @@ nnoremap <Leader>gf :Telescope live_grep<CR>
 " }}}
 
 " szw/vim-maximizer: {{{
-nnoremap <silent>m :MaximizerToggle<CR>
+nnoremap <silent>m :MaximizerToggle!<CR>
+" }}}
+
+" puremourning/vimspector: {{{
+nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
+nnoremap <leader>dd :call vimspector#Launch()<CR>
+
+nmap <leader>dl <Plug>VimspectorStepInto
+nmap <leader>dj <Plug>VimspectorStepOver
+nmap <leader>dk <Plug>VimspectorStepOut
+nmap <leader>d_ <Plug>VimspectorRestart
+nnoremap <leader>d<space> :call vimspector#Continue()<CR>
+
+nmap <leader>drc <Plug>VimspectorRunToCursor
+nmap <leader>dbp <Plug>VimspectorToggleBreakpoint
+nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
 " }}}
 
 " puremourning/vimspector: {{{
