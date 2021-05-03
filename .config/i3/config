@@ -223,7 +223,7 @@ gaps inner 10
 gaps outer 10
 
 exec --no-startup-id ~/dotfiles/scripts/i3/alternating_layouts.py
-exec_always feh --bg-scale ~/dotfiles/wallpapers/3977775.jpg
+exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/Staircase.jpg
 
 exec --no-startup-id spotify
 # exec_always --no-startup-id picom --experimental-backends
