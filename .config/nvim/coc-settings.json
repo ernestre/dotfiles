@@ -23,6 +23,7 @@
         "go",
         "php"
     ],
+    "snippets.userSnippetsDirectory": "~/dotfiles/UltiSnips/general",
     "suggest.completionItemKindLabels": {
         "method": "  ",
         "function": "  ",
