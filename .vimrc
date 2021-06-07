@@ -1,5 +1,5 @@
 let mapleader = ','
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
+set listchars=tab:»\ ,trail:·,extends:#
 set backspace=2
 set complete-=i
 set encoding=utf-8
