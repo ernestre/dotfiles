@@ -95,3 +95,18 @@ nnoremap <Leader>gf :Telescope live_grep<CR>
 " szw/vim-maximizer: {{{
 nnoremap <silent>m :MaximizerToggle<CR>
 " }}}
+
+" puremourning/vimspector: {{{
+nnoremap <leader>dd :call vimspector#Launch()<CR>
+nnoremap <leader>de :call vimspector#Reset()<CR>
+nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
+
+nmap <leader>dl <Plug>VimspectorStepInto
+nmap <leader>dj <Plug>VimspectorStepOver
+nmap <leader>dk <Plug>VimspectorStepOut
+nmap <leader>d_ <Plug>VimspectorRestart
+nnoremap <leader>d<space> :call vimspector#Continue()<CR>
+
+nmap <leader>drc <Plug>VimspectorRunToCursor
+nmap <leader>dbp <Plug>VimspectorToggleBreakpoint
+nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint

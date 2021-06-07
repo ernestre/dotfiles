@@ -32,6 +32,7 @@ Plug 'sainnhe/sonokai'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'szw/vim-maximizer'
+Plug 'puremourning/vimspector'
 
 " telescope
 Plug 'nvim-lua/popup.nvim'
