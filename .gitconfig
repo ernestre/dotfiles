@@ -18,8 +18,10 @@ clean-merged-branches = !"git checkout master && git branch --merged | grep -v '
     email = ernest.rekel@gmail.com
 [core]
     excludesfile = ~/.gitignore_global
-    pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = git-split-diffs --color | less -RFX
 
+[split-diffs]
+    syntax-highlighting-theme=
 
 [color]
     ui = true

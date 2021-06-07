@@ -4,6 +4,6 @@ IFS=$'\n\t'
 
 sudo npm install -g \
     instant-markdown-d \
-    diff-so-fancy \
+    git-split-diffs \
     intelephense
 
