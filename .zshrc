@@ -7,8 +7,6 @@ export PATH=$PATH:$GOPATH/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
-export TERM="xterm-256color"
-
 export EDITOR=nvim
 
 ZSH_THEME="cloud"
@@ -75,10 +73,3 @@ export LESS="-XRFS" # dont wrap long lines in less;
 if [ -x "$(command -v xset)" ]; then
     xset r rate 200 85
 fi
-
-tfs() {
-  local session
-  session=$(tmux list-sessions -F "#{session_name}" | \
-    fzf --query="$1" --select-1 --exit-0) &&
-  tmux switch-client -t "$session"
-}
