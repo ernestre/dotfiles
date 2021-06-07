@@ -19,7 +19,6 @@
     "diagnostic.hintSign": "",
     "coc.preferences.formatOnSaveFiletypes": [
         "json",
-        "javascript",
         "go",
         "php"
     ],
