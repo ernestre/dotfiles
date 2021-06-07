@@ -5,8 +5,6 @@ function! PostCocInstall(info)
 endfunction
 
 Plug 'SirVer/ultisnips'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
 Plug 'honza/vim-snippets'
@@ -14,7 +12,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim',             { 'branch': 'release', 'do': function('PostCocInstall')}
 Plug 'phpactor/phpactor',             { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
-Plug 'scrooloose/nerdtree'
 Plug 'skwp/greplace.vim'
 Plug 'sniphpets/sniphpets',           { 'for': 'php' }
 Plug 'sniphpets/sniphpets-common',    { 'for': 'php' }
@@ -29,7 +26,8 @@ Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
 Plug 'unblevable/quick-scope'
 Plug 'sainnhe/sonokai'
-Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'szw/vim-maximizer'
 Plug 'puremourning/vimspector'
