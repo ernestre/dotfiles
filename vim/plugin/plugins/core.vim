@@ -20,7 +20,6 @@ Plug 'sniphpets/sniphpets-phpunit',   { 'for': 'php' }
 Plug 'sniphpets/sniphpets-symfony',   { 'for': 'php' }
 Plug 'suan/vim-instant-markdown',     { 'for': ['markdown','md'] }
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
@@ -32,13 +31,16 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'szw/vim-maximizer'
 Plug 'puremourning/vimspector'
 
+" Git
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'rhysd/committia.vim'
+Plug 'tpope/vim-fugitive'
+
 " telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-
 Plug 'nvim-lua/plenary.nvim'
-Plug 'lewis6991/gitsigns.nvim'
 
 " Plug 'dstein64/vim-startuptime'
