@@ -27,7 +27,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'unblevable/quick-scope'
 Plug 'sainnhe/sonokai'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-tree.lua', { 'commit': '18fffc09bfc27d6665644aeff1cf53bf87591cc0' }
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'szw/vim-maximizer'
 Plug 'puremourning/vimspector'
