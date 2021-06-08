@@ -62,6 +62,8 @@ nnoremap gs <C-W>sgf
 " }}}
 nnoremap <C-s> <C-^>
 
+nmap <leader>vm <Plug>MarkdownPreviewToggle
+
 " Plugin Mappings: {{{
 nmap <C-]> <Plug>(coc-definition)
 nmap <leader>ci <Plug>(coc-references)

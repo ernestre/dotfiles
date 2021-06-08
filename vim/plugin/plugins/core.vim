@@ -18,7 +18,7 @@ Plug 'sniphpets/sniphpets-common',    { 'for': 'php' }
 Plug 'sniphpets/sniphpets-doctrine',  { 'for': 'php' }
 Plug 'sniphpets/sniphpets-phpunit',   { 'for': 'php' }
 Plug 'sniphpets/sniphpets-symfony',   { 'for': 'php' }
-Plug 'suan/vim-instant-markdown',     { 'for': ['markdown','md'] }
+Plug 'iamcco/markdown-preview.nvim',  { 'for': ['markdown','md'], 'do': 'cd app && yarn install' }
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
