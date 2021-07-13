@@ -3,7 +3,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
 Plug 'honza/vim-snippets'
-Plug 'itchyny/lightline.vim'
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'phpactor/phpactor',             { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 Plug 'scrooloose/nerdtree'
