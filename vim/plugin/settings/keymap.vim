@@ -87,8 +87,8 @@ nnoremap <silent>K <Cmd>lua vim.lsp.buf.hover()<CR>
 
 nnoremap <leader>tb :TagbarToggle<CR>
 
-nnoremap <Leader>nt :NvimTreeToggle<CR>
-nnoremap <Leader>nf :NvimTreeFindFile<CR>
+nnoremap <Leader>nt :NERDTreeToggle<CR>
+nnoremap <Leader>nf :NERDTreeFind<CR>
 nnoremap <Leader>f :Telescope find_files<CR>
 nnoremap <Leader>F :Telescope find_files find_command=rg,--no-ignore,--hidden,--files,.<CR>
 nnoremap <Leader>p :Telescope git_files<CR>

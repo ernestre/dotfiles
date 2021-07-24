@@ -1,11 +1,12 @@
-Plug 'SirVer/ultisnips', { 'tag': '3.2' }
+Plug 'SirVer/ultisnips'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
 Plug 'honza/vim-snippets'
-Plug 'itchyny/lightline.vim'
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'phpactor/phpactor',             { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+Plug 'scrooloose/nerdtree'
 Plug 'skwp/greplace.vim'
 Plug 'sniphpets/sniphpets',           { 'for': 'php' }
 Plug 'sniphpets/sniphpets-common',    { 'for': 'php' }
@@ -20,8 +21,7 @@ Plug 'tpope/vim-surround'
 Plug 'vimwiki/vimwiki'
 Plug 'unblevable/quick-scope'
 Plug 'sainnhe/sonokai'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua', { 'commit': '18fffc09bfc27d6665644aeff1cf53bf87591cc0' }
+Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'szw/vim-maximizer'
 Plug 'puremourning/vimspector'
@@ -40,3 +40,4 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'onsails/lspkind-nvim'
+Plug 'kyazdani42/nvim-web-devicons'
