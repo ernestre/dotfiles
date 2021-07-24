@@ -34,13 +34,8 @@ lua <<EOF
     -- textDocument/codeAction can return either Command[] or CodeAction[]. If it
     -- is a CodeAction, it can have either an edit, a command or both. Edits
     -- should be executed first.
-    if action.edit or type(action.command) == "table" then
-      if action.edit then
-        vim.lsp.util.apply_workspace_edit(action.edit)
-      end
-      if type(action.command) == "table" then
-        vim.lsp.buf.execute_command(action.command)
-      end
+    if action.edit then
+      vim.lsp.util.apply_workspace_edit(action.edit)
     else
       vim.lsp.buf.execute_command(action)
     end
