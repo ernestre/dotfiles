@@ -195,28 +195,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-
-# https://coolors.co/000000-b80c09-f7f4f3-7e7f83-6c756b
-bar {
-    status_command i3status
-
-    colors {
-        focused_workspace  #000000 #000000 #f7f4f3
-        active_workspace   #000000 #000000 #f7f4f3
-        inactive_workspace #000000 #000000 #7e7f83
-        urgent_workspace   #b80c09 #b80c09 #f7f4f3
-        binding_mode       #3772ff #3772ff #f7f4f3
-    }
-}
-
-client.focused #f7f4f3 #f7f4f3 #f7f4f3 #f7f4f3 #f7f4f3
-client.focused_inactive #000000 #000000 #000000 #000000 #000000
-client.unfocused #000000 #000000 #000000 #000000 #000000
-client.urgent #b80c09 #b80c09 #b80c09 #b80c09 #b80c09
-client.placeholder #3772ff #3772ff #3772ff #3772ff #3772ff
-
 for_window [class=".*"] border pixel 1
 
 smart_gaps on
@@ -235,3 +213,4 @@ exec --no-startup-id mailspring
 
 exec --no-startup-id export $(gnome-keyring-daemon --start --components=secrets,ssh)
 exec --no-startup-id xrandr --output DP-2 --primary && xrandr --output eDP-1 --off
+exec --no-startup-id polybar bottom
