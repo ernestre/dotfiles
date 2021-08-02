@@ -155,7 +155,7 @@ assign [class="Chromium"] $ws1
 assign [class="Google-chrome"] $ws1
 assign [class="Brave-browser"] $ws1
 assign [class="Slack"] $ws3
-assign [class="TelegramDesktop"] $ws3
+for_window [class="TelegramDesktop"] floating enable
 assign [class="discord"] $ws3
 for_window [class="Spotify"] move to workspace $ws4
 assign [class="Mailspring"] $ws5
@@ -193,6 +193,13 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+
+client.focused #f7f4f3 #f7f4f3 #f7f4f3 #f7f4f3 #f7f4f3
+client.focused_inactive #000000 #000000 #000000 #000000 #000000
+client.unfocused #000000 #000000 #000000 #000000 #000000
+client.urgent #b80c09 #b80c09 #b80c09 #b80c09 #b80c09
+client.placeholder #3772ff #3772ff #3772ff #3772ff #3772ff
+
 bindsym $mod+r mode "resize"
 
 for_window [class=".*"] border pixel 1
@@ -204,7 +211,7 @@ gaps inner 5
 gaps outer 5
 
 exec --no-startup-id ~/dotfiles/scripts/i3/alternating_layouts.py
-exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/Staircase.jpg
+exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/main.png
 
 exec --no-startup-id spotify
 # exec_always --no-startup-id picom --experimental-backends
