@@ -1,5 +1,6 @@
 [bar/bottom]
-monitor = ${env:MONITORS[1]:DP-0}
+monitor = ${env:MONITORS[1]:DP2}
+; monitor = ${env:MONITORS[1]:DP-0:eDP1}
 bottom = true
 width = 100%
 height = 25
@@ -18,12 +19,13 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = JetBrainsMono:style=Regular:size=4;0
-font-1 = FontAwesome5Free:style=Solid:size=4;0
-font-2 = FontAwesome5Free:style=Regular:size=4;0
-font-3 = FontAwesome5Brands:style=Regular:size=4;0
+; font-1 = FontAwesome5Free:style=Solid:size=4;0
+; font-2 = FontAwesome5Free:style=Regular:size=4;0
+; font-3 = FontAwesome5Brands:style=Regular:size=4;0
+font-1 = FontAwesome:style=Solid:size=4;0
 
 modules-left = i3
-modules-right = powermenu spotify cpu memory temperature alsa wireless-network battery weather date
+modules-right = powermenu cpu memory temperature alsa battery weather date
 
 tray-position = right
 tray-scale = 1.0
@@ -123,7 +125,7 @@ bar-used-empty-foreground = #444444
 [module/wireless-network]
 type = internal/network
 ;interface = enp4s0
-interface = wlp5s0
+interface = wlp0s20f3
 interval = 1.0
 ping-interval = 10
 
@@ -235,7 +237,7 @@ ramp-foreground = #66
 [module/i3]
 type = internal/i3
 
-pin-workspaces = true
+pin-workspaces = false
 strip-wsnumbers = true
 index-sort = true
 
