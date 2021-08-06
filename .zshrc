@@ -3,7 +3,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.composer/vendor/bin:/usr/local
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-
+export TERM="xterm-256color"
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
