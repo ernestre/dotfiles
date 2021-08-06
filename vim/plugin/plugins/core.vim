@@ -1,7 +1,6 @@
 Plug 'SirVer/ultisnips'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'easymotion/vim-easymotion'
-Plug 'ervandew/supertab'
 Plug 'honza/vim-snippets'
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'jiangmiao/auto-pairs'
@@ -25,6 +24,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'szw/vim-maximizer'
 Plug 'puremourning/vimspector'
+Plug 'folke/zen-mode.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'rhysd/committia.vim'
 
 " telescope
 Plug 'nvim-lua/popup.nvim'
@@ -34,11 +36,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 Plug 'lewis6991/gitsigns.nvim'
 
-" Plug 'dstein64/vim-startuptime'
-
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'onsails/lspkind-nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'rhysd/committia.vim'

@@ -3,6 +3,9 @@ let &packpath = &runtimepath
 source ~/.vimrc
 
 lua require'lspconfig'.intelephense.setup{}
-lua require'lspconfig'.gopls.setup{}
 lua require'lspconfig'.tsserver.setup{}
+lua require'lspconfig'.gopls.setup{}
+lua require'lspconfig'.yamlls.setup{}
+lua require'gitsigns'.setup{}
 lua require'lspkind'.init()
+lua require'zen-mode'.setup{}
