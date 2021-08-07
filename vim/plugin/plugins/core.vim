@@ -1,6 +1,5 @@
 Plug 'SirVer/ultisnips'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'easymotion/vim-easymotion'
 Plug 'honza/vim-snippets'
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'jiangmiao/auto-pairs'
