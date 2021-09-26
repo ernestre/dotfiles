@@ -25,6 +25,7 @@ Plug 'szw/vim-maximizer'
 Plug 'puremourning/vimspector'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'rhysd/committia.vim'
+Plug 'norcalli/nvim-colorizer.lua'
 
 " telescope
 Plug 'nvim-lua/popup.nvim'
