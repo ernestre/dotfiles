@@ -50,10 +50,10 @@ nnoremap <C-j> :resize +5<cr>
 nnoremap <C-k> :resize -5<cr>
 nnoremap <C-h> :vertical resize +5<cr>
 " }}}
-" Quick buffer switching: {{{
-nnoremap gn :bn<cr>
-nnoremap gp :bp<cr>
-nnoremap gd :bd<cr>
+" Quick git hunk switching: {{{
+nnoremap gn :Gitsigns next_hunk<cr>
+nnoremap gp :Gitsigns prev_hunk<cr>
+nnoremap gu :Gitsigns reset_hunk<cr>
 " }}}
 " Open terminal in vertical, horizontal and new tab: {{{
 nnoremap <leader>tv :vsplit<cr>:term<CR>
