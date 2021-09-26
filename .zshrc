@@ -49,6 +49,7 @@ alias dsh="docker exec -it \$(docker ps --format '{{.Names}}' | fzf) bash"
 alias dstop="docker stop \$(docker ps --format '{{.Names}}' | fzf)"
 alias dstart="docker start \$(docker ps -a --format '{{.Names}}' | fzf)"
 alias ppjson="pbpaste | python3 -m json.tool | bat -l json"
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # Repeat the command
 r () {
