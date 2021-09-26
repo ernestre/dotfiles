@@ -35,6 +35,6 @@ end
 EOF
 
 
-autocmd BufWritePre *.go lua GoImports(1000)
-autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.go lua GoImports(100)
+" autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
 
