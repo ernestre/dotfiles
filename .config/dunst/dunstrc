@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "500x5+710+20"  # x = 1920 / 2 - width / 2
+    geometry = "500x5-40+40"  # x = 1920 / 2 - width / 2
 
     # Turn on the progess bar
     progress_bar = true
