@@ -23,8 +23,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'szw/vim-maximizer'
 Plug 'puremourning/vimspector'
-Plug 'folke/zen-mode.nvim'
-Plug 'folke/twilight.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'rhysd/committia.vim'
 

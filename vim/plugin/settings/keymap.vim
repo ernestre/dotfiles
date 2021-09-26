@@ -102,6 +102,3 @@ nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
 " }}}
 
 nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
-
-nnoremap <Leader>z :ZenMode<CR>
-nnoremap <Leader>t :Twilight<CR>
