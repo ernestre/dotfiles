@@ -465,7 +465,9 @@
 
 [Slack]
     appname = Slack
-    format = "<b>💬 %s</b>\n%b"
+    format = " %s\n<b>%b</b>"
+    background = "#36C5F0"
+    foreground = "#191414"
 
 [Spotify]
     appname = Spotify
