@@ -90,6 +90,7 @@ nnoremap <silent>m :MaximizerToggle!<CR>
 " puremourning/vimspector: {{{
 nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
 nnoremap <leader>dd :call vimspector#Launch()<CR>
+nnoremap <leader>de :call vimspector#Reset()<CR>
 nmap <leader>dl <Plug>VimspectorStepInto
 nmap <leader>dj <Plug>VimspectorStepOver
 nmap <leader>dk <Plug>VimspectorStepOut
