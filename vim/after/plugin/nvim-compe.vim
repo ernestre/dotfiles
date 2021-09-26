@@ -2,18 +2,19 @@ lua <<EOF
 vim.o.completeopt = "menuone,noselect"
 
 require'compe'.setup {
-  min_length = 0;
+  min_length = 1;
   preselect = 'enable';
-  incomplete_delay = 10;
+  incomplete_delay = 0;
+  throttle_time = 0;
 
   source = {
     path = true;
     buffer = true;
     calc = true;
-    vsnip = true;
+    vsnip = false;
     spell = true;
     tags = true;
-    snippets_nvim = true;
+    snippets_nvim = false;
     ultisnips = true;
     treesitter = false;
     nvim_lsp = true;
