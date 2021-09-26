@@ -18,25 +18,32 @@ clean-merged-branches = !"git checkout master && git branch --merged | grep -v '
     email = ernest.rekel@gmail.com
 [core]
     excludesfile = ~/.gitignore_global
-    pager = git-split-diffs --color | less -RFX
 
-[split-diffs]
-    syntax-highlighting-theme=
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
 
-[color]
-    ui = true
-[color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
-[color "diff"]
-    meta = 227
-    frag = magenta bold
-    commit = 227 bold
-    old = red bold
-    new = green bold
-    whitespace = red reverse
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+
+[delta]
+    features = decorations
+    side-by-side = true
+    syntax-theme = Monokai Extended
+    navigate = true
+[delta "interactive"]
+    keep-plus-minus-markers = false
+    diffFilter = delta --color-only
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
 
 [includeIf "gitdir:~/Documents/projects/"]
     path=~/.gitconfig_work
