@@ -66,7 +66,7 @@ nmap <leader>vm <Plug>MarkdownPreviewToggle
 
 nmap <C-]> <Cmd>lua vim.lsp.buf.definition()<CR>
 nmap <leader>ci <Cmd>lua vim.lsp.buf.references()<CR>
-nmap <leader>cr <Cmd>lua vim.lsp.buf.rename()<CR>
+nmap <leader>r <Cmd>lua vim.lsp.buf.rename()<CR>
 nmap <leader>cl <Cmd>lua vim.lsp.buf.formatting()<CR><CR>
 nnoremap <silent>K <Cmd>lua vim.lsp.buf.hover()<CR>
 
