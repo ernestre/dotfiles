@@ -1,10 +1,8 @@
 Plug 'SirVer/ultisnips'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'honza/vim-snippets'
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'phpactor/phpactor',             { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
-Plug 'scrooloose/nerdtree'
 Plug 'skwp/greplace.vim'
 Plug 'sniphpets/sniphpets',           { 'for': 'php' }
 Plug 'sniphpets/sniphpets-common',    { 'for': 'php' }
@@ -39,3 +37,5 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
 Plug 'onsails/lspkind-nvim'
+
+Plug 'kyazdani42/nvim-tree.lua'
