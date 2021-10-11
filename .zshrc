@@ -3,7 +3,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.composer/vendor/bin:/usr/local
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-
+export TERM="xterm-256color"
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
@@ -11,7 +11,7 @@ export EDITOR=nvim
 
 ZSH_THEME="cloud"
 
-plugins=(git docker docker-compose web-search colorize redis-cli wd tmuxinator pass bgnotify)
+plugins=(git docker docker-compose wd pass taskwarrior aws)
 
 ZSH_TMUX_AUTOSTART=true
 
@@ -49,6 +49,7 @@ alias dsh="docker exec -it \$(docker ps --format '{{.Names}}' | fzf) bash"
 alias dstop="docker stop \$(docker ps --format '{{.Names}}' | fzf)"
 alias dstart="docker start \$(docker ps -a --format '{{.Names}}' | fzf)"
 alias ppjson="pbpaste | python3 -m json.tool | bat -l json"
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # Repeat the command
 r () {

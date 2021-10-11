@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "500x5+710+20"  # x = 1920 / 2 - width / 2
+    geometry = "500x5-40+40"  # x = 1920 / 2 - width / 2
 
     # Turn on the progess bar
     progress_bar = true
@@ -105,7 +105,7 @@
 
     ### Text ###
 
-    font = Monaco 10
+    font = JetBrainsMono 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -465,7 +465,9 @@
 
 [Slack]
     appname = Slack
-    format = "<b>💬 %s</b>\n%b"
+    format = " %s\n<b>%b</b>"
+    background = "#36C5F0"
+    foreground = "#191414"
 
 [Spotify]
     appname = Spotify

@@ -71,7 +71,16 @@ if exists('+termguicolors') && !has('macunix')
   set termguicolors
 endif
 
+
 if has("nvim")
   au TermOpen * tnoremap <Esc> <c-\><c-n>
   au FileType fzf tunmap <Esc>
 endif
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+let g:completion_matching_strategy_list = ['fuzzy']
+let g:completion_matching_ignore_case = 1

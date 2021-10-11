@@ -6,6 +6,10 @@ vmap <C-X> "+x
 " search will center on the line it's found in.
 nnoremap n nzzzv
 nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
 
 nnoremap <space> :set hlsearch! hlsearch?<CR> " Toggle hlsearch
 " }}}
@@ -35,7 +39,7 @@ nnoremap <Leader>gac :Git commit --amend -v<CR>
 nnoremap <Leader>gd :Gdiffsplit!<CR>
 nnoremap <Leader>gp :Gpush<CR>
 nnoremap <Leader>gr :Gread<CR>
-nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gs :Git<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 nnoremap <Leader>gh :diffget //2<CR>
 nnoremap <Leader>gl :diffget //3<CR>
@@ -46,40 +50,28 @@ nnoremap <C-j> :resize +5<cr>
 nnoremap <C-k> :resize -5<cr>
 nnoremap <C-h> :vertical resize +5<cr>
 " }}}
-" Quick buffer switching: {{{
-nnoremap gn :bn<cr>
-nnoremap gp :bp<cr>
-nnoremap gd :bd<cr>
+" Quick git hunk switching: {{{
+nnoremap gn :Gitsigns next_hunk<cr>
+nnoremap gp :Gitsigns prev_hunk<cr>
+nnoremap gu :Gitsigns reset_hunk<cr>
 " }}}
 " Open terminal in vertical, horizontal and new tab: {{{
 nnoremap <leader>tv :vsplit<cr>:term<CR>
 nnoremap <leader>ts :split<cr>:term<CR>
 nnoremap <leader>tt :tabnew<cr>:term<CR>
 " }}}
-" Open file under cursor in a new vertical/horizontal split +10 speed pts: {{{
-nnoremap gv <C-W>vgf
-nnoremap gs <C-W>sgf
-" }}}
 nnoremap <C-s> <C-^>
 
 nmap <leader>vm <Plug>MarkdownPreviewToggle
 
-" Plugin Mappings: {{{
-nmap <C-]> <Plug>(coc-definition)
-nmap <leader>ci <Plug>(coc-references)
-nmap <leader>cr <Plug>(coc-rename)
-nmap <leader>cl :call CocAction('format')<CR>
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
+nmap <C-]> <Cmd>lua vim.lsp.buf.definition()<CR>
+nmap <leader>ci <Cmd>lua vim.lsp.buf.references()<CR>
+nmap <leader>r <Cmd>lua vim.lsp.buf.rename()<CR>
+nmap <leader>cl <Cmd>lua vim.lsp.buf.formatting()<CR><CR>
+nnoremap <silent>K <Cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <S-l> <Cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <S-h> <Cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <S-c> <Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
 
 nnoremap <leader>tb :TagbarToggle<CR>
 
@@ -92,23 +84,19 @@ nnoremap <Leader>gS :Telescope git_status<CR>
 nnoremap <Leader>b :Telescope buffers<CR>
 nnoremap <Leader>l :Telescope treesitter<CR>
 nnoremap <Leader>gf :Telescope live_grep<CR>
-" }}}
-
-" szw/vim-maximizer: {{{
-nnoremap <silent>m :MaximizerToggle<CR>
-" }}}
 
 " puremourning/vimspector: {{{
+nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
 nnoremap <leader>dd :call vimspector#Launch()<CR>
 nnoremap <leader>de :call vimspector#Reset()<CR>
-nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
-
 nmap <leader>dl <Plug>VimspectorStepInto
 nmap <leader>dj <Plug>VimspectorStepOver
 nmap <leader>dk <Plug>VimspectorStepOut
 nmap <leader>d_ <Plug>VimspectorRestart
 nnoremap <leader>d<space> :call vimspector#Continue()<CR>
-
 nmap <leader>drc <Plug>VimspectorRunToCursor
 nmap <leader>dbp <Plug>VimspectorToggleBreakpoint
+nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
+" }}}
+
 nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
