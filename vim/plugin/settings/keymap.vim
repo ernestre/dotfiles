@@ -85,8 +85,6 @@ nnoremap <Leader>b :Telescope buffers<CR>
 nnoremap <Leader>l :Telescope treesitter<CR>
 nnoremap <Leader>gf :Telescope live_grep<CR>
 
-nnoremap <silent>m :MaximizerToggle!<CR>
-
 " puremourning/vimspector: {{{
 nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
 nnoremap <leader>dd :call vimspector#Launch()<CR>
