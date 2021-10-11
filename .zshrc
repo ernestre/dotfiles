@@ -11,7 +11,7 @@ export EDITOR=nvim
 
 ZSH_THEME="cloud"
 
-plugins=(git docker docker-compose web-search colorize redis-cli wd tmuxinator pass)
+plugins=(git docker docker-compose wd pass taskwarrior aws)
 
 ZSH_TMUX_AUTOSTART=true
 
