@@ -465,7 +465,7 @@
 
 [Slack]
     appname = Slack
-    format = " %s\n<b>%b</b>"
+    format = " %s\n<b>%b</b>"
     background = "#36C5F0"
     foreground = "#191414"
 
