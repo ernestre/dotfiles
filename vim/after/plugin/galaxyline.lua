@@ -1,4 +1,3 @@
-lua <<EOF
 local cmd = vim.cmd
 local fn = vim.fn
 local gl = require("galaxyline")
@@ -267,4 +266,3 @@ section.short_line_right[1] = {
     highlight = {nord_colors.fg, nord_colors.lbg}
   }
 }
-EOF
