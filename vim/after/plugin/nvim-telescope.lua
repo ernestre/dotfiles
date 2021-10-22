@@ -1,5 +1,3 @@
-if &runtimepath =~ 'telescope.nvim'
-lua <<EOF
 require('telescope').setup {
     defaults = {
         file_sorter = require('telescope.sorters').fuzzy_with_index_bias,
@@ -22,5 +20,3 @@ require('telescope').setup {
 }
 
 require('telescope').load_extension('fzf')
-EOF
-endif
