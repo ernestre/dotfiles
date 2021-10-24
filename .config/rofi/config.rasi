@@ -1,5 +1,5 @@
 configuration {
-  font: "SF Pro Rounded 10";
+  font: "JetBrainsMono Bold 10";
   show-icons: true;
   hide-scrollbar: true;
   theme: "~/.config/rofi/material-ocean.rasi";
