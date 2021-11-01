@@ -37,7 +37,7 @@ set updatetime=1000      " wait ms after stop typing to trigger scripts
 set cursorline
 set diffopt+=vertical
 set linespace=2
-set shortmess=I          " Disable welcome message
+set shortmess=Ia          " Disable welcome message and random short messages
 set fillchars+=vert:\    " Remove vertical line split
 set mouse=a
 set nowrap
