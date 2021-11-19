@@ -30,7 +30,15 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'ultisnips' },
-    { name = 'buffer', keyword_length = 5 },
+    {
+        name = 'buffer',
+        keyword_length = 3,
+        opts = {
+            get_bufnrs = function()
+                return vim.api.nvim_list_bufs()
+            end
+        }
+    },
   },
   experimental = {
     native_menu = false,
