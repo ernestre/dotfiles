@@ -11,7 +11,7 @@ export EDITOR=nvim
 
 ZSH_THEME="cloud"
 
-plugins=(git docker docker-compose wd pass taskwarrior aws)
+plugins=(git docker docker-compose wd pass taskwarrior aws kubectl helm)
 
 ZSH_TMUX_AUTOSTART=true
 
