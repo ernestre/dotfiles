@@ -219,3 +219,4 @@ exec --no-startup-id mailspring
 
 exec --no-startup-id export $(gnome-keyring-daemon --start --components=secrets,ssh)
 exec --no-startup-id polybar bottom
+exec --no-startup-id xset -dpms && xset s off
