@@ -8,7 +8,7 @@ then
     exit 0
 fi
 
-VERSION='1.15'
+VERSION='1.17'
 echo "Downloading go v$VERSION"
 
 sudo curl -Lso go$VERSION.linux-amd64.tar.gz https://golang.org/dl/go$VERSION.linux-amd64.tar.gz
