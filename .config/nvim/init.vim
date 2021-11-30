@@ -13,3 +13,4 @@ lua require'lspconfig'.pyright.setup{}
 lua require'lspconfig'.tsserver.setup{}
 lua require'lspconfig'.yamlls.setup{}
 lua require'lspconfig'.terraformls.setup{}
+lua require'go'.setup({ verbose = false })
