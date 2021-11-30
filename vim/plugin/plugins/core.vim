@@ -24,6 +24,7 @@ Plug 'puremourning/vimspector'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'rhysd/committia.vim'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'ThePrimeagen/harpoon'
 
 " telescope
 Plug 'nvim-lua/popup.nvim'
