@@ -56,11 +56,6 @@ nnoremap gn :Gitsigns next_hunk<cr>
 nnoremap gp :Gitsigns prev_hunk<cr>
 nnoremap gu :Gitsigns reset_hunk<cr>
 " }}}
-" Open terminal in vertical, horizontal and new tab: {{{
-nnoremap <leader>tv :vsplit<cr>:term<CR>
-nnoremap <leader>ts :split<cr>:term<CR>
-nnoremap <leader>tt :tabnew<cr>:term<CR>
-" }}}
 nnoremap <C-s> <C-^>
 
 nmap <leader>vm <Plug>MarkdownPreviewToggle
@@ -73,8 +68,6 @@ nnoremap <silent>K <Cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <S-l> <Cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 nnoremap <S-h> <Cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <S-c> <Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
-
-nnoremap <leader>tb :TagbarToggle<CR>
 
 nnoremap <Leader>nt :NvimTreeToggle<CR>
 nnoremap <Leader>nf :NvimTreeFindFile<CR>
