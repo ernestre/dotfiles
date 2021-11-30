@@ -24,22 +24,33 @@ cmp.setup({
     ['<C-j>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
     ['<C-k>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
     ['<C-e>'] = cmp.mapping.close(),
-    ['<Tab>'] = cmp.mapping.confirm({ select = true }),
-  },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'path' },
-    { name = 'ultisnips' },
-    {
-        name = 'buffer',
-        keyword_length = 3,
-        opts = {
-            get_bufnrs = function()
-                return vim.api.nvim_list_bufs()
+    ["<Tab>"] = cmp.mapping(function(fallback)
+        -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
+        if cmp.visible() then
+            local entry = cmp.get_selected_entry()
+            if not entry then
+                cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
             end
-        }
-    },
+            cmp.confirm()
+        else
+            fallback()
+        end
+    end, {"i","s","c",}),
   },
+  sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'path' },
+      { name = 'ultisnips' },
+      {
+          name = 'buffer',
+          keyword_length = 3,
+          option = {
+              get_bufnrs = function()
+                  return vim.api.nvim_list_bufs()
+              end
+          }
+      }
+  }),
   experimental = {
     native_menu = false,
     ghost_text = false,
