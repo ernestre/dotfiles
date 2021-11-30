@@ -44,5 +44,4 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
-Plug 'SirVer/ultisnips'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips', { 'commit': '78a9452d61bc7f1c3aeb33f6011513760f705bdf'}
