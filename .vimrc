@@ -37,9 +37,11 @@ set updatetime=1000      " wait ms after stop typing to trigger scripts
 set cursorline
 set diffopt+=vertical
 set linespace=2
-set shortmess=Ia          " Disable welcome message and random short messages
+set shortmess=Ia          " Disable welcome message and random short messagesA
 set fillchars+=vert:\    " Remove vertical line split
 set mouse=a
+set nowrap
+
 let &colorcolumn="80,".join(range(120,999),",")
 
 let $KEYMAPS='~/.vim/plugin/settings/keymap.vim'
