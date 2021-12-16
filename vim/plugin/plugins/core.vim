@@ -10,7 +10,7 @@ Plug 'sniphpets/sniphpets-doctrine',  { 'for': 'php' }
 Plug 'sniphpets/sniphpets-phpunit',   { 'for': 'php' }
 Plug 'sniphpets/sniphpets-symfony',   { 'for': 'php' }
 Plug 'iamcco/markdown-preview.nvim',  { 'for': ['markdown','md'], 'do': 'cd app && yarn install' }
-Plug 'tpope/vim-commentary'
+Plug 'numToStr/Comment.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
