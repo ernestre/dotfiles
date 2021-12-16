@@ -3,19 +3,4 @@ let g:go_fmt_command = "goimports"
 let g:go_auto_sameids = 1
 let g:go_def_mode = 'godef'
 
-function! RunCurrentFile()
-    if executable('go')
-        execute '!go run %'
-    else
-        execute 'go not available'
-    endif
-endfunction
-
-nmap <Leader>r :call RunCurrentFile()<CR>
-
 let b:commentary_format = '// %s'
-
-augroup lsp_buf_format
-    au! BufWritePre <buffer>
-    autocmd BufWritePre <buffer> :lua vim.lsp.buf.formatting_sync()
-augroup END
