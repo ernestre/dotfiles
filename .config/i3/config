@@ -159,6 +159,7 @@ for_window [class="TelegramDesktop"] floating enable
 assign [class="discord"] $ws3
 for_window [class="Spotify"] move to workspace $ws4
 assign [class="Mailspring"] $ws5
+assign [class="discord"] $ws4
 assign [class="jetbrains-phpstorm"] $ws10
 
 # reload the configuration file
