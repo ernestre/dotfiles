@@ -326,15 +326,15 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#0f111a"
-    foreground = "#f1f1f1"
+    background = "#2a2f38"
+    foreground = "#f1fffa"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#0f111a"
-    foreground = "#f1f1f1"
+    background = "#2a2f38"
+    foreground = "#f1fffa"
     timeout = 5
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
@@ -466,8 +466,6 @@
 [Slack]
     appname = Slack
     format = " %s\n<b>%b</b>"
-    background = "#36C5F0"
-    foreground = "#191414"
 
 [Spotify]
     appname = Spotify
