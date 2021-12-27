@@ -150,8 +150,8 @@ font:
     #style: Bold Italic
 
   # Point size
-  # size: 5.5 # laptop monitor
-  # size: 7
+  # size: 6
+  size: 9 # laptop screen / home monitor
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
