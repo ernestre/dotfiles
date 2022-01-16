@@ -52,3 +52,6 @@ Plug 'simrat39/symbols-outline.nvim'
 
 Plug 'szw/vim-maximizer'
 Plug 'junegunn/gv.vim'
+
+Plug 'mbbill/undotree'
+
