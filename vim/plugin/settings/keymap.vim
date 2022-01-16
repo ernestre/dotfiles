@@ -102,3 +102,5 @@ nnoremap <leader>hq <Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>
 " }}}
 
 nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
+
+nnoremap <leader>so :SymbolsOutline<CR>

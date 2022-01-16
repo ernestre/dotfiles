@@ -47,3 +47,5 @@ Plug 'hrsh7th/cmp-path'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 Plug 'ray-x/go.nvim'
+
+Plug 'simrat39/symbols-outline.nvim'
