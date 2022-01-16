@@ -35,7 +35,7 @@ cmp.setup({
         else
             fallback()
         end
-    end, {"i","s","c",}),
+    end, {"i"}), -- Only work in insert mode, otherwise the command toggling is not working
   },
   sources = cmp.config.sources({
       { name = 'nvim_lsp' },
