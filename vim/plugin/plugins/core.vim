@@ -49,3 +49,5 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'ray-x/go.nvim'
 
 Plug 'simrat39/symbols-outline.nvim'
+
+Plug 'szw/vim-maximizer'
