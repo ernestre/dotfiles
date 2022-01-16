@@ -5,6 +5,7 @@ source ~/.vimrc
 lua require'colorizer'.setup()
 lua require'gitsigns'.setup{current_line_blame=true}
 lua require'lspkind'.init()
+lua require'Comment'.setup()
 
 lua require'lspconfig'.gopls.setup{}
 lua require'lspconfig'.intelephense.setup{}
