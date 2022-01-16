@@ -47,8 +47,8 @@ nnoremap <Leader>gl :diffget //3<CR>
 " }}}
 " Resize panes: {{{
 nnoremap <C-l> :vertical resize -5<cr>
-nnoremap <C-j> :resize +5<cr>
-nnoremap <C-k> :resize -5<cr>
+" nnoremap <C-j> :resize +5<cr>
+" nnoremap <C-k> :resize -5<cr>
 nnoremap <C-h> :vertical resize +5<cr>
 " }}}
 " Quick git hunk switching: {{{
@@ -94,7 +94,6 @@ nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
 " }}}
 
 " ThePrimeagen/harpoon: {{{
-
 nnoremap <leader>t <Cmd>lua require("harpoon.term").gotoTerminal(1)<CR>
 nnoremap <leader>1 <Cmd>lua require("harpoon.ui").nav_file(1)<CR>
 nnoremap <leader>2 <Cmd>lua require("harpoon.ui").nav_file(2)<CR>
