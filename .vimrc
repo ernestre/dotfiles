@@ -65,11 +65,12 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " Fix true issue for vim: https://github.com/tmux/tmux/issues/1246
-if exists('+termguicolors') && !has('macunix')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
+" if exists('+termguicolors') && !has('macunix')
+"   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+"   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"   set termguicolors
+" endif
+set termguicolors
 
 
 if has("nvim")
