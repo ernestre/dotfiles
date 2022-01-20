@@ -1,6 +1,6 @@
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'phpactor/phpactor',             { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 Plug 'skwp/greplace.vim'
