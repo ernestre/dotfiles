@@ -1,7 +1,7 @@
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 Plug 'phpactor/phpactor',             { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 Plug 'skwp/greplace.vim'
 Plug 'sniphpets/sniphpets',           { 'for': 'php' }
