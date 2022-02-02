@@ -1,7 +1,7 @@
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 Plug 'phpactor/phpactor',             { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 Plug 'skwp/greplace.vim'
 Plug 'sniphpets/sniphpets',           { 'for': 'php' }
@@ -20,7 +20,7 @@ Plug 'sainnhe/sonokai'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'szw/vim-maximizer'
-Plug 'puremourning/vimspector'
+" Plug 'puremourning/vimspector'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'rhysd/committia.vim'
 Plug 'norcalli/nvim-colorizer.lua'
