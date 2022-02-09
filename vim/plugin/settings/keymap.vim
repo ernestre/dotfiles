@@ -65,9 +65,10 @@ nmap <leader>ci <Cmd>lua vim.lsp.buf.references()<CR>
 nmap <leader>r <Cmd>lua vim.lsp.buf.rename()<CR>
 nmap <leader>cl <Cmd>lua vim.lsp.buf.formatting()<CR><CR>
 nnoremap <silent>K <Cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <S-l> <Cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <S-h> <Cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <S-c> <Cmd>lua vim.lsp.diagnostic.set_loclist()<CR>
+nnoremap <S-l> <Cmd>lua vim.diagnostic.goto_next()<CR>
+nnoremap <S-h> <Cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap <S-c> <Cmd>lua vim.diagnostic.setloclist()<CR>
+
 
 nnoremap <Leader>nt :NvimTreeToggle<CR>
 nnoremap <Leader>nf :NvimTreeFindFile<CR>
