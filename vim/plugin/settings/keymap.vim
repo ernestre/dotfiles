@@ -80,20 +80,6 @@ nnoremap <Leader>b :Telescope buffers<CR>
 nnoremap <Leader>l :Telescope treesitter<CR>
 nnoremap <Leader>gf :Telescope live_grep<CR>
 
-" puremourning/vimspector: {{{
-nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
-nnoremap <leader>dd :call vimspector#Launch()<CR>
-nnoremap <leader>de :call vimspector#Reset()<CR>
-nmap <leader>dl <Plug>VimspectorStepInto
-nmap <leader>dj <Plug>VimspectorStepOver
-nmap <leader>dk <Plug>VimspectorStepOut
-nmap <leader>d_ <Plug>VimspectorRestart
-nnoremap <leader>d<space> :call vimspector#Continue()<CR>
-nmap <leader>drc <Plug>VimspectorRunToCursor
-nmap <leader>dbp <Plug>VimspectorToggleBreakpoint
-nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
-" }}}
-
 " ThePrimeagen/harpoon: {{{
 nnoremap <leader>t <Cmd>lua require("harpoon.term").gotoTerminal(1)<CR>
 nnoremap <leader>1 <Cmd>lua require("harpoon.ui").nav_file(1)<CR>
@@ -101,7 +87,5 @@ nnoremap <leader>2 <Cmd>lua require("harpoon.ui").nav_file(2)<CR>
 nnoremap <leader>ha <Cmd>lua require("harpoon.mark").add_file()<CR>
 nnoremap <leader>hq <Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>
 " }}}
-
-nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
 
 nnoremap <leader>so :SymbolsOutline<CR>
