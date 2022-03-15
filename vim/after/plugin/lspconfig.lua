@@ -14,7 +14,7 @@ require'lspconfig'.gopls.setup{
       analyses = {
         fieldalignment = true,
       },
-      ["build.experimentalWorkspaceModule"] = true,
+      ["build.experimentalWorkspaceModule"] = false,
       ["formatting.gofumpt"] = true,
       ["staticcheck"] = true,
       ["ui.verboseOutput"] = true,
