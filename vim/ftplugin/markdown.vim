@@ -1,2 +1,2 @@
 setlocal spell
-set textwidth=80
+" set textwidth=80
