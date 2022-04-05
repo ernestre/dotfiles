@@ -38,9 +38,9 @@ cmp.setup({
     end, {"i"}), -- Only work in insert mode, otherwise the command toggling is not working
   },
   sources = cmp.config.sources({
+      { name = 'ultisnips' },
       { name = 'nvim_lsp' },
       { name = 'path' },
-      { name = 'ultisnips' },
       { name = 'calc' },
       {
           name = 'buffer',
