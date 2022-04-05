@@ -72,5 +72,5 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export LESS="-XRFS" # dont wrap long lines in less;
 
 if [ -x "$(command -v xset)" ]; then
-    xset r rate 200 85
+    xset r rate 300 85
 fi
