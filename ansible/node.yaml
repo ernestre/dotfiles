@@ -1,0 +1,23 @@
+---
+  - name: "Install nodejs with npm packages"
+    hosts: localhost
+    connection: local 
+    become: true
+    tasks:
+      - name: Install nodejs and npm
+        community.general.pacman:
+          name:
+            - nodejs
+            - npm 
+
+      - name: Install node.js packages globally
+        npm:
+          name: "{{ item }}"
+          global: yes
+        loop:
+          - instant-markdown-d
+          - intelephense
+          - typescript
+          - typescript-language-server
+          - vscode-langservers-extracted
+          - yaml-language-server

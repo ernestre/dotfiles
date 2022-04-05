@@ -1,0 +1,21 @@
+---
+  - name: "Install various tools"
+    hosts: localhost
+    connection: local 
+    become: true
+    tasks:
+      - name: Install tools
+        community.general.pacman:
+          name:
+            - autorandr
+            - ctop
+            - curl
+            - fd
+            - fzf
+            - go
+            - neovim
+            - pass
+            - ripgrep
+            - tmux
+            - zathura
+            - brave-browser # TODO: Add sync if possible

@@ -1,0 +1,6 @@
+- import_playbook: node.yaml
+- import_playbook: php.yaml
+- import_playbook: go.yaml
+- import_playbook: tools.yaml
+- import_playbook: docker.yaml
+- import_playbook: zsh.yaml
