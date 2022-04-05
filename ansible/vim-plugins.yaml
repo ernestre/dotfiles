@@ -1,0 +1,25 @@
+---
+  - name: "Install vim plugins"
+    hosts: localhost
+    connection: local
+    become: no
+    tasks:
+      - name: Create vim autoload directory
+        file:
+          path: /home/erre/.vim/autoload
+          state: directory
+          mode: '0755'
+
+      - name: Install vim plugins
+        shell: nvim --headless +PlugInstall +qall
+      - name: Download vim-plug
+        get_url:
+          url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+          dest: /home/erre/.vim/autoload/plug.vim
+          mode: '0755'
+
+      - name: Install nvim-pip
+        shell: python3 -m pip install --user --upgrade pynvim
+
+      - name: Install vim plugins
+        shell: nvim --headless +PlugInstall +GoInstallBinaries +qall

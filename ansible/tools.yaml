@@ -1,13 +1,16 @@
 ---
   - name: "Install various tools"
     hosts: localhost
-    connection: local 
+    connection: local
     become: true
     tasks:
       - name: Install tools
         community.general.pacman:
           name:
+            - alacritty
             - autorandr
+            - brave-browser # TODO: Add sync if possible
+            - gcc
             - ctop
             - curl
             - fd
@@ -15,7 +18,7 @@
             - go
             - neovim
             - pass
+            - python-pip
             - ripgrep
-            - tmux
+            - rofi
             - zathura
-            - brave-browser # TODO: Add sync if possible
