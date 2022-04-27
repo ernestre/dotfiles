@@ -1,7 +1,7 @@
 ---
   - name: "Install docker"
     hosts: localhost
-    connection: local 
+    connection: local
     become: yes
     tasks:
       - name: Install docker
@@ -12,6 +12,7 @@
       - name: Start docker service
         ansible.builtin.systemd:
           state: started
+          enabled: yes
           name: docker.service
 
       - name: Add user to docker group
