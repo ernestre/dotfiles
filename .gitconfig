@@ -22,7 +22,7 @@ clean-merged-branches = !"git checkout master && git branch --merged | grep -v '
     excludesfile = ~/.gitignore_global
 
 [commit]
-	gpgsign = true
+	; gpgsign = true
 
 [pager]
     diff = delta
