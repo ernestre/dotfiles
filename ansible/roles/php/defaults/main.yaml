@@ -1,3 +1,2 @@
-php/dephp_version: php
 additional_packages:
   - composer

@@ -1,7 +1,7 @@
 - name: Install php
   become: true
   community.general.pacman:
-    name: "{{ php_version }}"
+    name: php
 
 - name: Install additional packages
   become: true
