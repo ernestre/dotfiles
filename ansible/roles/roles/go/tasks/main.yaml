@@ -1,8 +1,0 @@
-- name: Install go
-  become: true
-  community.general.pacman:
-    name: go
-
-- name: Install go libraries
-  ansible.builtin.command: go install "{{ item }}"
-  loop: "{{ libraries }}"

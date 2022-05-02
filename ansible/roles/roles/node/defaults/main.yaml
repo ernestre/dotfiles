@@ -1,8 +1,0 @@
-global_packages:
-  - instant-markdown-d
-  - intelephense
-  - typescript
-  - typescript-language-server
-  - vscode-langservers-extracted
-  - yaml-language-server
-  - neovim

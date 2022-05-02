@@ -1,9 +1,0 @@
-- name: Install php
-  become: true
-  community.general.pacman:
-    name: "{{ php_version }}"
-
-- name: Install additional packages
-  become: true
-  community.general.pacman:
-    name: "{{ additional_packages }}"
