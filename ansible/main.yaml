@@ -1,9 +1,15 @@
-- import_playbook: ./node.yaml
-- import_playbook: ./php.yaml
-- import_playbook: ./go.yaml
-- import_playbook: ./tools.yaml
-- import_playbook: ./docker.yaml
-- import_playbook: ./zsh.yaml
-- import_playbook: ./configs.yaml
-- import_playbook: ./tmux.yaml
-- import_playbook: ./vim-plugins.yaml
+---
+- hosts: localhost
+  connection: local
+  vars:
+    user: "{{ lookup('env', 'USER')}}"
+  roles:
+    - configs
+    - core
+    - docker
+    - go
+    - node
+    - php
+    - tmux
+    - vim
+    - zsh
