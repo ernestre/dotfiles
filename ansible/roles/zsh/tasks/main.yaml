@@ -1,0 +1,12 @@
+- name: Install zsh
+  become: true
+  community.general.pacman:
+    name:
+      - zsh
+
+- name: Change default shell to zsh
+  user:
+    name: "{{ user }}"
+    shell: /bin/zsh
+
+- include_tasks: oh-my-zsh.yaml

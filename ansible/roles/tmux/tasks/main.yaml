@@ -1,0 +1,13 @@
+- name: Install tmux
+  become: true
+  pacman:
+    name:
+      - tmux
+
+- name: Install tmux plugin manager
+  git:
+    repo: https://github.com/tmux-plugins/tpm.git
+    dest: "/home/{{ user }}/.tmux/plugins/tpm"
+
+- name: Install tmux plugin manager
+  shell: "/home/{{ user }}/.tmux/plugins/tpm/bin/install_plugins"

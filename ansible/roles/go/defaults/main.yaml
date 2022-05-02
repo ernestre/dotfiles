@@ -1,0 +1,4 @@
+libraries:
+  - golang.org/x/tools/gopls@latest
+  - github.com/nametake/golangci-lint-langserver@latest
+  - github.com/golangci/golangci-lint/cmd/golangci-lint@v1.42.1

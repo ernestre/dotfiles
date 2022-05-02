@@ -1,0 +1,17 @@
+packages:
+  core:
+    - alacritty
+    - autorandr
+    - brave-browser # TODO: Add sync if possible
+    - gcc
+    - ctop
+    - curl
+    - fd
+    - fzf
+    - go
+    - neovim
+    - pass
+    - python-pip
+    - ripgrep
+    - rofi
+    - zathura

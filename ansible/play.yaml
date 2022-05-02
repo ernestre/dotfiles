@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  connection: local
+  vars:
+    user: "{{ lookup('env', 'USER')}}"
+  roles:
+    - core
+    - docker
+    - tmux
+    - vim
+    - php
+    - go
+    - node
+    - zsh

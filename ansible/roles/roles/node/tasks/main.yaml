@@ -1,0 +1,13 @@
+- name: Install nodejs and npm
+  become: true
+  community.general.pacman:
+    name:
+      - nodejs
+      - npm
+
+- name: Install node.js packages globally
+  become: true
+  npm:
+    name: "{{ item }}"
+    global: yes
+  loop: "{{ global_packages }}"
