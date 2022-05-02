@@ -4,11 +4,12 @@
   vars:
     user: "{{ lookup('env', 'USER')}}"
   roles:
+    - configs
     - core
     - docker
-    - tmux
-    - vim
-    - php
     - go
     - node
+    - php
+    - tmux
+    - vim
     - zsh
