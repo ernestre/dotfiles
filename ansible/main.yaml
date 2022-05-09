@@ -5,11 +5,11 @@
     user: "{{ lookup('env', 'USER')}}"
   roles:
     - configs
-    - core
-    - docker
-    - go
-    - node
-    - php
-    - tmux
-    - vim
-    - zsh
+    # - core
+    # - docker
+    # - go
+    # - node
+    # - php
+    # - tmux
+    # - vim
+    # - zsh

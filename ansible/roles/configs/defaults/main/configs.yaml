@@ -1,0 +1,47 @@
+base_config_directories:
+  - .vim
+
+vim_directories:
+  - plugin
+  - ftplugin
+  - after
+
+conflicting_configurations_to_remove:
+  - .gitconfig
+  - .zshrc
+
+root_configurations:
+  - .gitconfig
+  - .gitignore_global
+  - .tmux.conf
+  - .vimrc
+  - .zshrc
+  - .fonts
+
+app_configs:
+  - app: polybar
+    configs:
+      - config.ini
+  - app: rofi
+    configs:
+      - config.rasi
+      - material-ocean.rasi
+  - app: alacritty
+    configs:
+      - alacritty.yaml
+  - app: dunst
+    configs:
+      - dunstrc
+  - app: i3
+    configs:
+      - config
+  - app: nitrogen
+    configs:
+      - bg-saved.cfg
+      - nitrogen.cfg
+  - app: picom
+    configs:
+      - picom.conf
+
+restart_apps:
+  - nitrogen --restore

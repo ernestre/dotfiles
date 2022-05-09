@@ -25,9 +25,20 @@
     state: link
   loop: "{{ root_configurations }}"
 
-- name: Link app configs
+- name: Create app configuration directories
   file:
-    src: "{{ playbook_dir }}/../.config/{{ item }}"
-    dest: "/home/{{ user }}/.config/{{ item }}"
-    state: link
-  loop: "{{ app_configurations }}"
+    path: "/home/{{ user }}/.config/{{ item.app }}"
+    state: directory
+  loop: "{{ app_configs }}"
+
+- name: Copy app confiurations
+  template:
+    src: "{{ item.0.app }}/{{ item.1 }}.j2"
+    dest: "/home/{{ user }}/.config/{{ item.0.app }}/{{ item.1 }}"
+  with_subelements:
+    - "{{ app_configs }}"
+    - configs
+
+- name: Restart apps
+  shell: "{{ item }}"
+  loop: "{{ restart_apps }}"

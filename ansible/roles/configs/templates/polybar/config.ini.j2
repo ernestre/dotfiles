@@ -5,8 +5,9 @@ width = 100%
 height = 25
 dpi = 192
 
-background = #2a2f38
-foreground = #f1fffa
+#TODO: extract colors to variables
+background = {{ colors.background }}
+foreground = {{ colors.foreground }}
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -17,7 +18,8 @@ line-size = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = JetBrainsMono:style=Regular:size=4;0
+#TODO: extract fonts to a variable
+font-0 = {{ font.name }}:style={{ font.style }}:size=4;0
 font-1 = FontAwesome:style=Solid:size=4;0
 font-2 = icomoon:style=Regular:pixelsize=5;0
 
@@ -127,7 +129,7 @@ label = %percentage_used%%
 
 bar-used-indicator =
 bar-used-width = 10
-bar-used-foreground-0 = #40BCD8
+bar-used-foreground-0 = {{ colors.primary }}
 bar-used-fill = 
 bar-used-empty = 
 bar-used-empty-foreground = #fff
@@ -282,9 +284,9 @@ label-mode-background = #e60053
 ;   %output%
 ; Default: %icon%  %name%
 label-focused =  %icon%
-label-focused-foreground = #ffffff
-label-focused-background = #3f3f3f
-label-focused-underline = #40bcd8
+label-focused-foreground = {{ colors.foreground }}
+label-focused-background = {{ colors.background }}
+label-focused-underline = {{ colors.primary }}
 label-focused-padding = 1
 
 ws-icon-0 = 1;
@@ -337,8 +339,8 @@ type = custom/script
 interval = 1800
 format = <label>
 format-prefix = " "
-format-prefix-foreground = #40BCD8
-format-underline = #40BCD8
+format-prefix-foreground = {{ colors.primary }}
+format-underline = {{ colors.primary }}
 ; format-foreground = ${colors.foreground}
 ; format-background = ${colors.background}
 exec = curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo

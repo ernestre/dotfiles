@@ -1,0 +1,11 @@
+colors:
+  background: '#2a2f39'
+  foreground: '#f1fffa'
+  primary: '#40bcd8'
+
+font:
+  name: JetBrainsMono
+  style: Regular
+  size: 10
+
+wallpaper: pixel-forest.png
