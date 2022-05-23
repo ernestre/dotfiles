@@ -28,7 +28,7 @@ app_configs:
       - material-ocean.rasi
   - app: alacritty
     configs:
-      - alacritty.yaml
+      - alacritty.yml
   - app: dunst
     configs:
       - dunstrc
