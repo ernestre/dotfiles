@@ -42,11 +42,11 @@ set fillchars+=vert:\    " Remove vertical line split
 set mouse=a
 set nowrap
 
-let &colorcolumn="80,".join(range(120,999),",")
-
 let $KEYMAPS='~/.vim/plugin/settings/keymap.vim'
 let $PLUGINS_DIR='~/.vim/plugin/plugins'
 let $PLUGINS='~/.vim/plugin/plugins/core.vim'
+let $PLUGINS='~/.vim/plugin/plugins/core.vim'
+let $UI='~/.vim/plugin/settings/ui.vim'
 
 
 if (has("nvim"))
