@@ -1,7 +1,12 @@
 configuration {
-  font: "JetBrainsMono Bold 10";
-  show-icons: true;
-  hide-scrollbar: true;
-  theme: "~/.config/rofi/material-ocean.rasi";
-  kb-cancel: "Escape,Alt+F1";
+    font: "JetBrainsMono Bold 10";
+    lines: 5;
+    show-icons: true;
+    hide-scrollbar: true;
+    icon-theme: "Papirus";
+    kb-cancel: "Escape,Alt+F1";
+    disable-history: false;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-window: " 﩯  Window ";
 }
