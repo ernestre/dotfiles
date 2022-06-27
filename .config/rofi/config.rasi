@@ -10,3 +10,5 @@ configuration {
     display-run: "   Run ";
     display-window: " 﩯  Window ";
 }
+
+@theme "tokyonight"
