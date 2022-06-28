@@ -21,8 +21,8 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    height: 52.5%;
-    width: 35%;
+    height: 30%;
+    width: 40%;
     /* border: 3px; */
     border-color: @border-col;
     background-color: @bg-col;
