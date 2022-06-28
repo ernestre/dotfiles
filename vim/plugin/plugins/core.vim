@@ -56,3 +56,4 @@ Plug 'tpope/vim-fugitive'
 " }}}
 
 Plug 'jghauser/mkdir.nvim'
+Plug 'phaazon/hop.nvim'
