@@ -54,3 +54,5 @@ Plug 'junegunn/gv.vim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-fugitive'
 " }}}
+
+Plug 'jghauser/mkdir.nvim'
