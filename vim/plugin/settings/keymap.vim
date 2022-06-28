@@ -94,3 +94,12 @@ nnoremap <leader>hq <Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>
 nnoremap <leader>hw :HopWord<CR>
 nnoremap <leader>hl :HopLine<CR>
 " }}}
+" nvim-dap: {{{
+nnoremap <leader>db <Cmd>lua require'dap'.toggle_breakpoint()<CR>
+nnoremap <leader>dt <Cmd>lua require'dap-go'.debug_test()<CR>
+nnoremap <leader>dc <Cmd>lua require'dap'.continue()<CR>
+nnoremap <leader>dl <Cmd>lua require'dap'.step_over()<CR>
+nnoremap <leader>dj <Cmd>lua require'dap'.step_into()<CR>
+nnoremap <leader>dk <Cmd>lua require'dap'.step_out()<CR>
+nnoremap <leader>ds <Cmd>lua require'dap'.close()<CR>
+" }}}
