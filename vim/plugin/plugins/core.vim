@@ -27,6 +27,8 @@ Plug 'tpope/vim-surround'
 Plug 'unblevable/quick-scope'
 Plug 'vimwiki/vimwiki'
 Plug 'windwp/nvim-autopairs'
+Plug 'jghauser/mkdir.nvim'
+Plug 'phaazon/hop.nvim'
 " }}}
 " Telescope: {{{
 Plug 'nvim-lua/popup.nvim'
@@ -54,8 +56,6 @@ Plug 'junegunn/gv.vim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-fugitive'
 " }}}
-Plug 'jghauser/mkdir.nvim'
-Plug 'phaazon/hop.nvim'
 " nvim-dap: {{{
 Plug 'mfussenegger/nvim-dap'
 Plug 'leoluz/nvim-dap-go'
