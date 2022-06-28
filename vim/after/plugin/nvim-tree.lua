@@ -30,6 +30,15 @@ require'nvim-tree'.setup {
         enable = false,
         update_cwd = true,
     },
+    renderer = {
+        indent_markers = {
+            enable = true,
+        },
+    },
+    diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+    },
     view = {
         mappings = {
             custom_only = false,
