@@ -7,9 +7,6 @@ Plug 'sniphpets/sniphpets-doctrine',  { 'for': 'php' }
 Plug 'sniphpets/sniphpets-phpunit',   { 'for': 'php' }
 Plug 'sniphpets/sniphpets-symfony',   { 'for': 'php' }
 " }}}
-" PHP: {{{
-Plug 'phpactor/phpactor',             { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
-" }}}
 " General: {{{
 Plug 'ThePrimeagen/harpoon'
 Plug 'iamcco/markdown-preview.nvim',  { 'for': ['markdown','md'], 'do': 'cd app && yarn install' }
