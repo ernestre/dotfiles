@@ -38,9 +38,10 @@ set cursorline
 set diffopt+=vertical
 set linespace=2
 set shortmess=IaT        " Disable welcome message and random short messagesA
-set fillchars+=vert:\    " Remove vertical line split
+" set fillchars+=vert:\    " Remove vertical line split
 set mouse=a
 set nowrap
+set laststatus=3
 
 let $KEYMAPS='~/.vim/plugin/settings/keymap.vim'
 let $PLUGINS_DIR='~/.vim/plugin/plugins'
