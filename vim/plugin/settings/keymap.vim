@@ -103,3 +103,6 @@ nnoremap <leader>dj <Cmd>lua require'dap'.step_into()<CR>
 nnoremap <leader>dk <Cmd>lua require'dap'.step_out()<CR>
 nnoremap <leader>ds <Cmd>lua require'dap'.close()<CR>
 " }}}
+" vim-test: {{{
+nmap <silent> <leader><leader>t :TestNearest<CR>
+" }}}

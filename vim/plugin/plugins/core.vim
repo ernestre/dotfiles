@@ -62,3 +62,6 @@ Plug 'rcarriga/nvim-dap-ui'
 Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'nvim-telescope/telescope-dap.nvim'
 " }}}
+" vim-test: {{{
+Plug 'vim-test/vim-test'
+" }}}
