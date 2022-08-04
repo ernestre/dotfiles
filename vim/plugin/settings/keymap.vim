@@ -48,7 +48,7 @@ nnoremap <Leader>gB <Cmd>lua require"gitsigns".blame_line{full=true}<CR>
 nnoremap <Leader>gc :Git commit -v \| MaximizerToggle<CR>
 nnoremap <Leader>gac :Git commit --amend -v \| MaximizerToggle<CR>
 nnoremap <Leader>gd :Gdiffsplit!<CR>
-nnoremap <Leader>gp :Gpush<CR>
+nnoremap <Leader>gp :Git push<CR>
 nnoremap <Leader>gr :Gread<CR>
 nnoremap <Leader>gs :Git<CR>
 nnoremap <Leader>gw :Gwrite<CR>
