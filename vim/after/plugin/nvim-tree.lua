@@ -1,7 +1,5 @@
 local g = vim.g
 
--- g.nvim_tree_root_folder_modifier = table.concat { ":t:gs?$?/..", string.rep(" ", 1000), "?:gs?^??" }
-
 tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 require'nvim-tree'.setup {
@@ -11,6 +9,32 @@ require'nvim-tree'.setup {
     },
     renderer = {
         highlight_git = true,
+        root_folder_modifier = ":t",
+        icons = {
+            glyphs = {
+                default = "",
+                symlink = "",
+                folder = {
+                    arrow_open = "",
+                    arrow_closed = "",
+                    default = "",
+                    open = "",
+                    empty = "",
+                    empty_open = "",
+                    symlink = "",
+                    symlink_open = "",
+                },
+                git = {
+                    unstaged = "",
+                    staged = "S",
+                    unmerged = "",
+                    renamed = "➜",
+                    untracked = "U",
+                    deleted = "",
+                    ignored = "◌",
+                },
+            },
+        },
         indent_markers = {
             enable = true,
         },
