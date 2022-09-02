@@ -160,6 +160,7 @@ for_window [class="Spotify"] move to workspace $ws4
 assign [class="Mailspring"] $ws5
 assign [class="discord"] $ws6
 assign [class="jetbrains-phpstorm"] $ws10
+for_window [class="Org.gnome.Nautilus" instance="org.gnome.Nautilus"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
