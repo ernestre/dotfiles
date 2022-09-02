@@ -87,11 +87,12 @@ nnoremap <Leader>gf :Telescope live_grep<CR>
 nnoremap <leader>t <Cmd>lua require("harpoon.term").gotoTerminal(1)<CR>
 nnoremap <leader>1 <Cmd>lua require("harpoon.ui").nav_file(1)<CR>
 nnoremap <leader>2 <Cmd>lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <leader>3 <Cmd>lua require("harpoon.ui").nav_file(3)<CR>
 nnoremap <leader>ha <Cmd>lua require("harpoon.mark").add_file()<CR>
 nnoremap <leader>hq <Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>
 " }}}
 " phaazon/hop.nvim: {{{
-nnoremap <leader>hw :HopWord<CR>
+nnoremap <leader><leader>w :HopWord<CR>
 nnoremap <leader>hl :HopLine<CR>
 " }}}
 " nvim-dap: {{{
