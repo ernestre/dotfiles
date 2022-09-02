@@ -1,8 +1,8 @@
 local g = vim.g
 
-tree_cb = require'nvim-tree.config'.nvim_tree_callback
+tree_cb = require 'nvim-tree.config'.nvim_tree_callback
 
-require'nvim-tree'.setup {
+require 'nvim-tree'.setup {
     update_focused_file = {
         enable = false,
         update_cwd = true,
@@ -25,11 +25,11 @@ require'nvim-tree'.setup {
                     symlink_open = "",
                 },
                 git = {
-                    unstaged = "",
-                    staged = "S",
+                    unstaged = "",
+                    staged = "",
                     unmerged = "",
                     renamed = "➜",
-                    untracked = "U",
+                    untracked = "",
                     deleted = "",
                     ignored = "◌",
                 },
