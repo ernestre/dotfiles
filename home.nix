@@ -85,12 +85,6 @@ in {
         source ~/.vimrc
     '';
     extraPackages = with pkgs; [
-      # used to compile tree-sitter grammar
-      tree-sitter
-
-      # installs different langauge servers for neovim-lsp
-      # have a look on the link below to figure out the ones for your languages
-      # https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
       nodePackages.typescript nodePackages.typescript-language-server
       gopls
     ];
@@ -137,13 +131,13 @@ in {
         vimwiki
         (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: [
           plugins.tree-sitter-go
-          plugins.tree-sitter-json
+          plugins.tree-sitter-hcl
           plugins.tree-sitter-javascript
           plugins.tree-sitter-jsdoc
-          plugins.tree-sitter-typescript
-          plugins.tree-sitter-php
-          plugins.tree-sitter-hcl
+          plugins.tree-sitter-json
           plugins.tree-sitter-nix
+          plugins.tree-sitter-php
+          plugins.tree-sitter-typescript
         ]))
     ];
   };
