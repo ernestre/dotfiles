@@ -59,12 +59,6 @@ syntax on
 syntax sync minlines=256  " start highlighting from 256 lines backwards
 filetype plugin indent on
 
-call plug#begin('~/.vim/plugged')
-    for fpath in split(globpath('~/.vim/plugin/plugins', 'core.vim'), '\n')
-      exe 'source' fpath
-    endfor
-call plug#end()
-
 " Fix true issue for vim: https://github.com/tmux/tmux/issues/1246
 " if exists('+termguicolors') && !has('macunix')
 "   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
