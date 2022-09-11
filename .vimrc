@@ -82,5 +82,5 @@ let g:completion_matching_strategy_list = ['fuzzy']
 let g:completion_matching_ignore_case = 1
 
 autocmd BufWritePre * %s/\s\+$//e " Remove white space on save.
-autocmd BufWritePre * lua vim.lsp.buf.format(nil, 500)
+autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 500)
 autocmd BufWritePre *.go GoImport
