@@ -41,6 +41,7 @@ in {
 
   home.packages = with pkgs; [
     git
+    pass
     tmux
     fzf
     fd
@@ -49,6 +50,9 @@ in {
     zsh
     go
   ];
+
+  programs.bottom.enable = true;
+  programs.bat.enable = true;
 
   programs.git = {
     delta = { enable = true; };
