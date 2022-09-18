@@ -66,6 +66,7 @@ in {
 
 
   programs.neovim = vimsettings pkgs;
+  home.file.".vimrc".source = ./.vimrc;
 
   programs.zsh = {
       enable = true;
