@@ -34,21 +34,24 @@ in {
     userEmail = "ernest.rekel@gmail.com";
     userName = "Ernest Rekel";
 
-    extraConfig = {
-      branch.autosetuprebase = "always";
-      color.ui = true;
-      diff.colorMoved = "zebra";
-      fetch.prune = true;
-      github.user = "ernestre";
-      init.defaultBranch = "main";
-      pull.rebase = true;
-      push.default = "tracking";
-      rebase.autoStash = true;
-    };
+    # extraConfig = {
+    #   branch.autosetuprebase = "always";
+    #   color.ui = true;
+    #   diff.colorMoved = "zebra";
+    #   fetch.prune = true;
+    #   github.user = "ernestre";
+    #   init.defaultBranch = "main";
+    #   pull.rebase = true;
+    #   push.default = "tracking";
+    #   rebase.autoStash = true;
+    # };
+
   };
+  home.file.".gitconfig".source = ./.gitconfig;
 
   programs.neovim = vimsettings pkgs;
   home.file.".vimrc".source = ./.vimrc;
 
   programs.zsh = zshSettings pkgs;
+  home.file.".tmux.conf".source = ./.tmux.conf;
 }

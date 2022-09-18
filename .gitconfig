@@ -8,12 +8,7 @@ lt = !"git describe --tags `git rev-list --tags --max-count=1`"
 
 lg = !"git lg1"
 
-# Push the current branch to the remote "origin", and set it to track
-# # the upstream branch
 publish = !"git push -u origin $(git rev-parse --abbrev-ref HEAD)"
-
-# Delete any branches that have been merged into master
-clean-merged-branches = !"git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
 [user]
     name = Ernest Rekel
@@ -22,7 +17,7 @@ clean-merged-branches = !"git checkout master && git branch --merged | grep -v '
     excludesfile = ~/.gitignore_global
 
 [commit]
-	gpgsign = true
+    gpgsign = false
 
 [pager]
     diff = delta
