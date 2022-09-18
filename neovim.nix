@@ -69,6 +69,7 @@ in {
         vim-surround
         vim-test
         vimwiki
+        indent-blankline-nvim
         (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: [
           plugins.tree-sitter-go
           plugins.tree-sitter-hcl
