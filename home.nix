@@ -51,6 +51,7 @@ in {
 
   programs.neovim = vimsettings pkgs;
   home.file.".vimrc".source = ./.vimrc;
+  home.file.".vim".source = ./vim;
 
   programs.zsh = zshSettings pkgs;
   home.file.".tmux.conf".source = ./.tmux.conf;
