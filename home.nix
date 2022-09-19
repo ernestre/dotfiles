@@ -39,9 +39,9 @@ in {
     delta = { enable = true; };
 
     enable = true;
-    userEmail = "ernest.rekel@gmail.com";
-    userName = "Ernest Rekel";
-
+    # userEmail = "ernest.rekel@gmail.com";
+    # userName = "Ernest Rekel";
+    #
     # extraConfig = {
     #   branch.autosetuprebase = "always";
     #   color.ui = true;
