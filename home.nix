@@ -10,6 +10,7 @@ in {
   home.stateVersion = "22.05";
 
   programs.home-manager.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
     git
@@ -22,6 +23,13 @@ in {
     go
     gcc
     xclip
+
+    nodejs-16_x
+    nodePackages."intelephense"
+    nodePackages."typescript"
+    nodePackages."typescript-language-server"
+    nodePackages."vscode-langservers-extracted"
+    nodePackages."yaml-language-server"
   ];
 
   programs.bottom.enable = true;
