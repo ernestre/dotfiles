@@ -26,6 +26,7 @@ in {
       tree-sitter
       nodePackages.typescript nodePackages.typescript-language-server
       gopls
+      golangci-lint-langserver
     ];
     plugins = with pkgs.vimPlugins; [
         cmp-buffer
