@@ -10,6 +10,27 @@ lg = !"git lg1"
 
 publish = !"git push -u origin $(git rev-parse --abbrev-ref HEAD)"
 
+[branch]
+    autosetuprebase = "always"
+
+[color]
+    ui = true
+
+[fetch]
+    prune = true
+
+[init]
+    defaultBranch = "main"
+
+[pull]
+    rebase = true
+
+[push]
+    default = "tracking"
+
+[rebase]
+    autoStash = true
+
 [user]
     name = Ernest Rekel
     email = ernest.rekel@gmail.com
