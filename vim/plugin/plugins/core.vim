@@ -28,6 +28,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'windwp/nvim-autopairs'
 Plug 'jghauser/mkdir.nvim'
 Plug 'phaazon/hop.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 " }}}
 " Telescope: {{{
 Plug 'nvim-lua/popup.nvim'
