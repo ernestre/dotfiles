@@ -11,11 +11,15 @@ let
     };
   };
 in {
+  home.file.".vimrc".source = ./.vimrc;
+  home.file.".vim".source = ./vim;
+
+  programs.neovim = {
     enable = true;
     vimAlias = true;
     withNodeJs = true;
-
     extraConfig = builtins.readFile ./init.vim;
+
     extraPackages = with pkgs; [
       tree-sitter
       nodePackages.typescript nodePackages.typescript-language-server
@@ -76,4 +80,5 @@ in {
           plugins.tree-sitter-typescript
         ]))
     ];
-  }
+  };
+}
