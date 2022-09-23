@@ -1,27 +1,21 @@
 { pkgs, lib, ... }:
 
 let
-  # installs a vim plugin from git with a given tag / branch
-  pluginGit = ref: repo: pkgs.vimUtils.buildVimPluginFrom2Nix {
+  plugin = repo: rev: pkgs.vimUtils.buildVimPluginFrom2Nix {
     pname = "${lib.strings.sanitizeDerivationName repo}";
-    version = ref;
+    version = rev;
     src = builtins.fetchGit {
       url = "https://github.com/${repo}.git";
-      ref = ref;
+      ref = "master";
+      rev = rev;
     };
   };
-  # always installs latest version
-  plugin = pluginGit "HEAD";
 in {
     enable = true;
     vimAlias = true;
     withNodeJs = true;
 
-    extraConfig = ''
-        set runtimepath^=~/.vim runtimepath+=~/.vim/after
-        let &packpath=&runtimepath
-        source ~/.vimrc
-    '';
+    extraConfig = builtins.readFile ./init.vim;
     extraPackages = with pkgs; [
       tree-sitter
       nodePackages.typescript nodePackages.typescript-language-server
@@ -30,8 +24,8 @@ in {
     ];
     plugins = with pkgs.vimPlugins; [
         cmp-buffer
-        (plugin "ray-x/go.nvim")
-        (plugin "ThePrimeagen/harpoon")
+        (plugin "ray-x/go.nvim" "c75824b1f050c153ebfd5be65a318b9d4463d5a9")
+        (plugin "ThePrimeagen/harpoon" "f4aff5bf9b512f5a85fe20eb1dcf4a87e512d971")
         cmp-calc
         cmp-nvim-lsp
         cmp-nvim-ultisnips
