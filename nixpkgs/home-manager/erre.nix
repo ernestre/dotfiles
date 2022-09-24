@@ -15,8 +15,10 @@
   home.stateVersion = "22.05";
 
   programs.home-manager.enable = true;
+
   # This doesn't work with a flake
   # nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
   home.packages = with pkgs; [
     git
@@ -31,7 +33,7 @@
     xclip
 
     nodejs-16_x
-    # nodePackages."intelephense"
+    nodePackages."intelephense"
     nodePackages."typescript"
     nodePackages."typescript-language-server"
     nodePackages."vscode-langservers-extracted"
