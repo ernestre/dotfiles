@@ -1,0 +1,124 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.009  000.009: --- NVIM STARTING ---
+000.442  000.433: locale set
+000.752  000.310: inits 1
+000.765  000.013: window checked
+000.768  000.003: parsing arguments
+002.600  001.832: init lua interpreter
+002.840  000.240: expanding arguments
+002.868  000.028: inits 2
+003.171  000.302: init highlight
+003.172  000.002: waiting for UI
+004.111  000.938: done waiting for UI
+004.128  000.017: init screen for UI
+004.147  000.019: init default mappings
+004.172  000.026: init default autocommands
+004.251  000.079: --cmd commands
+005.718  000.045  000.045: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/ftplugin.vim
+005.965  000.031  000.031: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/indent.vim
+007.813  000.072  000.072: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/syntax/synload.vim
+008.282  000.080  000.080: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/filetype.lua
+013.837  000.329  000.329: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/ray-x-go.nvim/ftdetect/go.vim
+013.981  000.024  000.024: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/ultisnips/ftdetect/snippets.vim
+014.045  000.011  000.011: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/vim-fugitive/ftdetect/fugitive.vim
+015.059  006.751  006.388: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/filetype.vim
+016.150  000.407  000.407: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/scripts.vim
+016.243  009.916  002.605: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/syntax/syntax.vim
+016.710  000.061  000.061: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/filetype.lua
+016.746  000.013  000.013: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/filetype.vim
+017.041  000.023  000.023: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/ftplugin.vim
+017.281  000.010  000.010: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/indent.vim
+017.382  011.205  001.182: sourcing /home/erre/.vimrc
+017.387  011.247  000.042: sourcing /home/erre/.config/nvim/init-home-manager.vim
+017.394  011.342  000.094: sourcing /home/erre/.config/nvim/init.lua
+017.401  001.732: sourcing vimrc file(s)
+018.776  000.015  000.015: sourcing /home/erre/.vim/plugin/plugins/core.vim
+018.833  000.034  000.034: sourcing /home/erre/.vim/plugin/plugins/quick-scope.vim
+018.872  000.017  000.017: sourcing /home/erre/.vim/plugin/plugins/ultisnips.vim
+018.898  000.010  000.010: sourcing /home/erre/.vim/plugin/plugins/vim-devicons.vim
+018.925  000.012  000.012: sourcing /home/erre/.vim/plugin/plugins/vimwiki.vim
+019.154  000.212  000.212: sourcing /home/erre/.vim/plugin/settings/keymap.vim
+021.796  000.103  000.103: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/sonokai/autoload/sonokai.vim
+047.100  025.618  025.515: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/sonokai/colors/sonokai.vim
+047.488  028.314  002.696: sourcing /home/erre/.vim/plugin/settings/ui.vim
+048.409  000.449  000.449: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/plugin/gzip.vim
+048.457  000.014  000.014: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/plugin/health.vim
+048.735  000.260  000.260: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/plugin/man.vim
+049.440  000.225  000.225: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+049.586  000.794  000.569: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/plugin/matchit.vim
+049.760  000.150  000.150: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/plugin/matchparen.vim
+050.822  001.037  001.037: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/plugin/netrwPlugin.vim
+051.008  000.011  000.011: sourcing /nix/store/5avz918x7avjyz5d69yxiba96n5nhcqy-neovim-0.7.2/rplugin.vim
+051.111  000.225  000.214: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/plugin/rplugin.vim
+051.445  000.309  000.309: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/plugin/shada.vim
+051.502  000.027  000.027: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/plugin/spellfile.vim
+051.776  000.252  000.252: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/plugin/tarPlugin.vim
+051.869  000.064  000.064: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/plugin/tohtml.vim
+051.908  000.016  000.016: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/plugin/tutor.vim
+052.100  000.170  000.170: sourcing /nix/store/jnfqzl7lzqshbqfm9mkl27024nsbcgvz-neovim-unwrapped-0.7.2/share/nvim/runtime/plugin/zipPlugin.vim
+052.520  002.739: loading rtp plugins
+056.872  003.328  003.328: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/comment.nvim/plugin/Comment.lua
+057.280  000.286  000.286: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/committia.vim/plugin/committia.vim
+057.567  000.124  000.124: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/gv.vim/plugin/gv.vim
+057.848  000.150  000.150: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/hop.nvim/plugin/hop.vim
+059.460  001.491  001.491: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/indent-blankline.nvim/plugin/indent_blankline.vim
+059.865  000.219  000.219: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/markdown-preview.nvim/plugin/mkdp.vim
+060.097  000.075  000.075: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/mkdir.nvim/plugin/mkdir.lua
+062.018  001.786  001.786: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/nvim-cmp/plugin/cmp.lua
+062.224  000.059  000.059: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/nvim-colorizer.lua/plugin/colorizer.lua
+062.411  000.072  000.072: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/nvim-dap/plugin/dap.lua
+063.065  000.470  000.470: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/nvim-lspconfig/plugin/lspconfig.lua
+071.698  008.463  008.463: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/nvim-treesitter/plugin/nvim-treesitter.lua
+071.884  000.067  000.067: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+072.043  000.035  000.035: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/plenary.nvim/plugin/plenary.vim
+072.777  000.595  000.595: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/quick-scope/plugin/quick_scope.vim
+072.974  000.017  000.017: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/symbols-outline.nvim/plugin/symbols-outline.vim
+073.182  000.075  000.075: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/szw-vim-maximizer/plugin/maximizer.vim
+073.893  000.490  000.490: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/telescope.nvim/plugin/telescope.lua
+074.421  000.052  000.052: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/ultisnips/autoload/UltiSnips/map_keys.vim
+074.481  000.492  000.439: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/ultisnips/plugin/UltiSnips.vim
+074.781  000.179  000.179: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/undotree/plugin/undotree.vim
+075.832  000.909  000.909: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/vim-fugitive/plugin/fugitive.vim
+076.029  000.036  000.036: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/vim-snippets/plugin/vimsnippets.vim
+076.432  000.268  000.268: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/vim-surround/plugin/surround.vim
+076.968  000.073  000.073: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/vim-test/autoload/test.vim
+077.566  001.000  000.927: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/vim-test/plugin/test.vim
+078.286  000.241  000.241: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/vimwiki/autoload/vimwiki/vars.vim
+079.442  000.077  000.077: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/vimwiki/autoload/vimwiki/u.vim
+081.934  004.219  003.901: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/vimwiki/plugin/vimwiki.vim
+082.192  004.768: loading packages
+082.577  000.107  000.107: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/ultisnips/after/plugin/UltiSnips_after.vim
+090.746  007.734  007.734: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/cmp-buffer/after/plugin/cmp_buffer.lua
+091.122  000.275  000.275: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/cmp-calc/after/plugin/cmp_calc.lua
+091.803  000.592  000.592: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua
+096.102  000.021  000.021: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/ultisnips/plugin/UltiSnips.vim
+096.420  000.094  000.094: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/cmp-nvim-ultisnips/autoload/cmp_nvim_ultisnips.vim
+096.782  004.876  004.761: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/cmp-nvim-ultisnips/after/plugin/cmp_nvim_ultisnips.lua
+097.169  000.278  000.278: sourcing /nix/store/cc7aj13s5b4d87vhd1iw094za38y9xj5-vim-pack-dir/pack/myNeovimPackages/start/cmp-path/after/plugin/cmp_path.lua
+098.303  000.655  000.655: sourcing /home/erre/.vim/after/plugin/comment.nvim.lua
+105.448  007.089  007.089: sourcing /home/erre/.vim/after/plugin/dap.lua
+111.034  005.537  005.537: sourcing /home/erre/.vim/after/plugin/gitsigns.nvim.lua
+126.528  015.413  015.413: sourcing /home/erre/.vim/after/plugin/go.nvim.lua
+128.190  001.600  001.600: sourcing /home/erre/.vim/after/plugin/hop.lua
+132.015  003.787  003.787: sourcing /home/erre/.vim/after/plugin/lspconfig.lua
+132.383  000.315  000.315: sourcing /home/erre/.vim/after/plugin/lspkind.lua
+139.274  006.859  006.859: sourcing /home/erre/.vim/after/plugin/lualine.lua
+142.178  002.851  002.851: sourcing /home/erre/.vim/after/plugin/nvim-autopairs.lua
+142.847  000.595  000.595: sourcing /home/erre/.vim/after/plugin/nvim-cmp.lua
+145.729  002.833  002.833: sourcing /home/erre/.vim/after/plugin/nvim-colorizer.lua
+160.644  014.862  014.862: sourcing /home/erre/.vim/after/plugin/nvim-telescope.lua
+186.255  025.563  025.563: sourcing /home/erre/.vim/after/plugin/nvim-tree.lua
+187.070  000.617  000.617: sourcing /home/erre/.vim/after/plugin/nvim-treesitter.lua
+187.243  000.126  000.126: sourcing /home/erre/.vim/after/plugin/symbols-outline.lua
+187.308  000.030  000.030: sourcing /home/erre/.vim/after/plugin/vim-test.lua
+187.317  002.530: loading after plugins
+187.393  000.077: inits 3
+189.337  001.943: reading ShaDa
+190.237  000.900: opening buffers
+190.440  000.203: BufEnter autocommands
+190.443  000.004: editing files in windows
