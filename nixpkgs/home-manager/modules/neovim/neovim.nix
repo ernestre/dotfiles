@@ -25,6 +25,7 @@ in {
       nodePackages.typescript nodePackages.typescript-language-server
       gopls
       golangci-lint-langserver
+      sumneko-lua-language-server
     ];
     plugins = with pkgs.vimPlugins; [
         (plugin "ray-x/go.nvim" "c75824b1f050c153ebfd5be65a318b9d4463d5a9")
@@ -78,6 +79,7 @@ in {
           plugins.tree-sitter-json
           plugins.tree-sitter-nix
           plugins.tree-sitter-php
+          plugins.tree-sitter-lua
           plugins.tree-sitter-typescript
         ]))
     ];

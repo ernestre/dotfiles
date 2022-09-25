@@ -4,6 +4,7 @@ require'lspconfig'.pyright.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.yamlls.setup{}
 require'lspconfig'.terraformls.setup{}
+require'lspconfig'.sumneko_lua.setup{}
 
 require'lspconfig'.gopls.setup{
   cmd = {"gopls"},
