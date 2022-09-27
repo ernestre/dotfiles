@@ -35,13 +35,12 @@ vnoremap > >gv
 
 " Resize panes
 nnoremap <C-l> :vertical resize -5<cr>
-" nnoremap <C-j> :resize +5<cr>
-" nnoremap <C-k> :resize -5<cr>
 nnoremap <C-h> :vertical resize +5<cr>
 
 nnoremap <leader>so :SymbolsOutline<CR>
 nmap <leader>vm <Plug>MarkdownPreviewToggle
 " }}}
+
 " Fugitive: {{{
 nnoremap <Leader>gb :Git blame<CR>
 nnoremap <Leader>gB <Cmd>lua require"gitsigns".blame_line{full=true}<CR>
