@@ -1,4 +1,4 @@
-function map(m, k ,v)
+function map(m, k, v)
     vim.keymap.set(m, k, v, { silent = true })
 end
 
@@ -39,3 +39,4 @@ map('v', '>', '>gv')
 -- Reselect visual block after indent/outdent
 map('n', '<C-l>', ':vertical resize -5<cr>')
 map('n', '<C-h>', ':vertical resize +5<cr>')
+map('t', '<Esc>', [[<C-\><C-n>]])
