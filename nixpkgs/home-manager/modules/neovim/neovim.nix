@@ -17,7 +17,6 @@ in {
     enable = true;
     vimAlias = true;
     withNodeJs = true;
-    # extraConfig = builtins.readFile ./init.lua;
 
     extraPackages = with pkgs; [
       tree-sitter
