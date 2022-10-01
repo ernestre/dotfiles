@@ -2,13 +2,17 @@ local g = vim.g
 local o = vim.opt
 
 g.mapleader = ','
--- TODO: Fix issue with tab symbol
-o.listchars = 'tab:»\\ ,trail:·,extends:#,eol:↴'
+
+o.list = true
+o.listchars:append "trail:⋅"
+o.listchars:append "extends:#"
+o.listchars:append "eol:↲"
+o.listchars:append "tab:» "
+
 o.encoding = 'utf-8'
 o.expandtab = true
 o.hidden = true
 o.lazyredraw = true -- will buffer screen updates instead of updating all the time show statusline
-o.list = true
 o.maxmempattern = 20000 -- increase max memory to show syntax highlighting for large files
 o.swapfile = false -- Don't create swapfile
 o.number = true -- show line numbers
