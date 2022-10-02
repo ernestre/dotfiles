@@ -1,0 +1,6 @@
+map('n', '<leader>t', [[<Cmd>lua require("harpoon.term").gotoTerminal(1)<CR>]])
+map('n', '<leader>1', [[<Cmd>lua require("harpoon.ui").nav_file(1)<CR>]])
+map('n', '<leader>2', [[<Cmd>lua require("harpoon.ui").nav_file(2)<CR>]])
+map('n', '<leader>3', [[<Cmd>lua require("harpoon.ui").nav_file(3)<CR>]])
+map('n', '<leader>ha', [[<Cmd>lua require("harpoon.mark").add_file()<CR>]])
+map('n', '<leader>hq', [[<Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]])

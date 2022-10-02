@@ -11,25 +11,25 @@ let
     };
   };
 in {
-  home.file.".vimrc".source = ./.vimrc;
-  home.file.".vim".source = ./vim;
+  home.file.".config/nvim".source = ./config/nvim;
 
   programs.neovim = {
     enable = true;
     vimAlias = true;
     withNodeJs = true;
-    extraConfig = builtins.readFile ./init.vim;
 
     extraPackages = with pkgs; [
       tree-sitter
       nodePackages.typescript nodePackages.typescript-language-server
       gopls
       golangci-lint-langserver
+      sumneko-lua-language-server
     ];
     plugins = with pkgs.vimPlugins; [
-        cmp-buffer
         (plugin "ray-x/go.nvim" "c75824b1f050c153ebfd5be65a318b9d4463d5a9")
         (plugin "ThePrimeagen/harpoon" "f4aff5bf9b512f5a85fe20eb1dcf4a87e512d971")
+        (plugin "szw/vim-maximizer" "2e54952fe91e140a2e69f35f22131219fcd9c5f1")
+        cmp-buffer
         cmp-calc
         cmp-nvim-lsp
         cmp-nvim-ultisnips
@@ -39,6 +39,7 @@ in {
         gitsigns-nvim
         gv-vim
         hop-nvim
+        indent-blankline-nvim
         lspkind-nvim
         lualine-nvim
         markdown-preview-nvim
@@ -46,7 +47,6 @@ in {
         nvim-autopairs
         nvim-cmp
         nvim-colorizer-lua
-        nvim-dap
         nvim-dap-ui
         nvim-dap-virtual-text
         nvim-lspconfig
@@ -54,7 +54,6 @@ in {
         nvim-web-devicons
         plenary-nvim
         popup-nvim
-        quick-scope
         sonokai
         symbols-outline-nvim
         telescope-dap-nvim
@@ -66,9 +65,7 @@ in {
         vim-repeat
         vim-snippets
         vim-surround
-        vim-test
         vimwiki
-        indent-blankline-nvim
         (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: [
           plugins.tree-sitter-go
           plugins.tree-sitter-hcl
@@ -77,6 +74,7 @@ in {
           plugins.tree-sitter-json
           plugins.tree-sitter-nix
           plugins.tree-sitter-php
+          plugins.tree-sitter-lua
           plugins.tree-sitter-typescript
         ]))
     ];
