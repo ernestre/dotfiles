@@ -22,6 +22,7 @@ in {
       tree-sitter
       nodePackages.typescript nodePackages.typescript-language-server
       gopls
+      terraform-ls
       golangci-lint-langserver
       sumneko-lua-language-server
     ];
