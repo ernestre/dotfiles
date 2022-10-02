@@ -1,6 +1,6 @@
 map('n', '<Leader>gb', ':Git blame<CR>')
-map('n', '<Leader>gc', [[:Git commit -v \| MaximizerToggle<CR>]])
-map('n', '<Leader>gac', [[:Git commit --amend -v \| MaximizerToggle<CR>]])
+map('n', '<Leader>gc', [[:Git commit -v | MaximizerToggle<CR>]])
+map('n', '<Leader>gac', [[:Git commit --amend -v | MaximizerToggle<CR>]])
 map('n', '<Leader>gd', ':Gdiffsplit!<CR>')
 map('n', '<Leader>gp', ':Git push<CR>')
 map('n', '<Leader>gr', ':Gread<CR>')
