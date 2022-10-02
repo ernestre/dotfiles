@@ -28,6 +28,7 @@
     ripgrep
     tree
     go
+    just
 
     nodejs-16_x
     nodePackages."intelephense"

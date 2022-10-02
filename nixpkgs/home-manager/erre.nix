@@ -31,6 +31,7 @@
     go
     gcc
     xclip
+    just
 
     nodejs-16_x
     nodePackages."intelephense"
