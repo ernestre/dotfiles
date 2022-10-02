@@ -28,6 +28,8 @@
     ripgrep
     tree
     go
+    just
+    terraform
 
     nodejs-16_x
     nodePackages."intelephense"
