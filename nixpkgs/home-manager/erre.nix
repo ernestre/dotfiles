@@ -32,6 +32,7 @@
     gcc
     xclip
     just
+    terraform
 
     nodejs-16_x
     nodePackages."intelephense"
