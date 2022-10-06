@@ -80,8 +80,6 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       firefox
-      spotify
-      discord
       #  thunderbird
     ];
   };
@@ -104,7 +102,10 @@
     git
     docker
     docker-compose
-    #  wget
+  ];
+
+  fonts.fonts = with pkgs; [
+    jetbrains-mono
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -135,5 +136,4 @@
   system.stateVersion = "22.05"; # Did you read the comment?
 
   virtualisation.docker.enable = true;
-
 }
