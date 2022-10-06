@@ -6,8 +6,6 @@
     ./modules/git/git.nix
     ./modules/tmux/tmux.nix
     ./modules/rofi
-
-    ./modules/fonts/fonts.nix
   ];
 
   home.username = "erre";

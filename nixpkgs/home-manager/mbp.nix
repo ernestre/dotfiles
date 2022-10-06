@@ -5,8 +5,6 @@
     ./modules/zsh/zsh.nix
     ./modules/git/git.nix
     ./modules/tmux/tmux.nix
-
-    ./modules/fonts/fonts.nix
   ];
 
   home.username = "erre";
