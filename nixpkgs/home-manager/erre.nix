@@ -5,6 +5,7 @@
     ./modules/zsh/zsh.nix
     ./modules/git/git.nix
     ./modules/tmux/tmux.nix
+    ./modules/rofi
 
     ./modules/fonts/fonts.nix
   ];
@@ -34,6 +35,7 @@
     xclip
     just
     terraform
+    rofi
 
     nodejs-16_x
     nodePackages."intelephense"
