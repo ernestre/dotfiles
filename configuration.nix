@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -72,12 +73,12 @@
   users.users.erre = {
     isNormalUser = true;
     description = "erre";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       firefox
       spotify
       discord
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -99,7 +100,7 @@
     git
     docker
     docker-compose
-  #  wget
+    #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

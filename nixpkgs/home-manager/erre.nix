@@ -1,13 +1,13 @@
 { config, pkgs, lib, ... }:
 {
-    imports = [
-        ./modules/neovim/neovim.nix
-        ./modules/zsh/zsh.nix
-        ./modules/git/git.nix
-        ./modules/tmux/tmux.nix
+  imports = [
+    ./modules/neovim/neovim.nix
+    ./modules/zsh/zsh.nix
+    ./modules/git/git.nix
+    ./modules/tmux/tmux.nix
 
-        ./modules/fonts/fonts.nix
-    ];
+    ./modules/fonts/fonts.nix
+  ];
 
   home.username = "erre";
   home.homeDirectory = "/home/erre";
