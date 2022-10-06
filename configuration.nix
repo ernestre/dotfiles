@@ -42,6 +42,7 @@
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.windowManager.i3.enable = true;
   services.xserver.windowManager.i3.package = pkgs.i3-gaps;
+  services.xserver.windowManager.i3.configFile = "/home/erre/dotfiles/.config/i3/config";
 
   # Configure keymap in X11
   services.xserver = {
