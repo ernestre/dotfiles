@@ -1,10 +1,10 @@
 { config, pkgs, lib, ... }:
 {
   imports = [
-    ./modules/neovim/neovim.nix
-    ./modules/zsh/zsh.nix
-    ./modules/git/git.nix
-    ./modules/tmux/tmux.nix
+    ./modules/neovim
+    ./modules/zsh
+    ./modules/git
+    ./modules/tmux
     ./modules/rofi
   ];
 
