@@ -25,6 +25,7 @@ in
       nodePackages.typescript-language-server
       rnix-lsp
       gopls
+      rnix-lsp
       terraform-ls
       golangci-lint-langserver
       sumneko-lua-language-server
