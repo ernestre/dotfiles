@@ -23,6 +23,7 @@
   home.packages = with pkgs; [
     git
     pass
+    alacritty
     tmux
     fzf
     fd
