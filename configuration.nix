@@ -38,7 +38,10 @@
 
   # Enable the XFCE Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.defaultSession = "none+i3";
   services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.windowManager.i3.enable = true;
+  services.xserver.windowManager.i3.package = pkgs.i3-gaps;
 
   # Configure keymap in X11
   services.xserver = {
