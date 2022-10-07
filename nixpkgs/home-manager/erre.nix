@@ -15,6 +15,8 @@
 
   programs.home-manager.enable = true;
 
+  home.file.".background-image".source = ../../wallpapers/porsche.png;
+
   # This doesn't work with a flake
   # nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
