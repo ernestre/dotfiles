@@ -34,6 +34,7 @@
     just
     terraform
     rofi
+    pwgen
 
     nodejs-16_x
     nodePackages."intelephense"

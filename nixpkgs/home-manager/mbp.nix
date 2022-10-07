@@ -28,6 +28,7 @@
     go
     just
     terraform
+    pwgen
 
     nodejs-16_x
     nodePackages."intelephense"
