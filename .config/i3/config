@@ -116,11 +116,11 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:  "
-set $ws2 "2:  "
-set $ws3 "3:  "
-set $ws4 "4:  "
-set $ws5 "5:  "
+set $ws1 ""
+set $ws2 ""
+set $ws3 ""
+set $ws4 ""
+set $ws5 ""
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -152,6 +152,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 assign [class="Chromium"] $ws1
+assign [class="firefox"] $ws1
 assign [class="Google-chrome"] $ws1
 assign [class="Brave-browser"] $ws1
 assign [class="Slack"] $ws3
@@ -211,14 +212,27 @@ for_window [class=".*"] border pixel 1
 gaps inner 10
 gaps outer 10
 
-exec --no-startup-id ~/dotfiles/scripts/i3/alternating_layouts.py
-exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/main.png
+bar {
+    status_command i3status
 
-exec --no-startup-id spotify
-exec --no-startup-id slack
-exec --no-startup-id mailspring
+    colors {
+        background #2a2f38
+        statusline #f1fffa
 
-exec --no-startup-id export $(gnome-keyring-daemon --start --components=secrets,ssh)
-exec --no-startup-id polybar bottom
-exec --no-startup-id xset -dpms && xset s off
-exec --no-startup-id picom
+        # colorclass       <border> <background> <text>
+        focused_workspace  #f1fffa #3772ff #f1fffa
+        active_workspace   #f1fffa #f1fffa #f1fffa
+        inactive_workspace #2a2f38 #2a2f38 #f1fffa
+        urgent_workspace   #f1fffa #b80c09 #f1fffa
+    }
+}
+
+# exec --no-startup-id ~/dotfiles/scripts/i3/alternating_layouts.py
+# exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/main.png
+
+# exec --no-startup-id spotify
+# exec --no-startup-id slack
+# exec --no-startup-id mailspring
+
+# exec --no-startup-id xset -dpms && xset s off
+# exec --no-startup-id picom
