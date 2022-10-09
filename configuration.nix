@@ -80,13 +80,10 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       firefox
-      #  thunderbird
     ];
   };
 
   users.defaultUserShell = pkgs.zsh;
-
-
 
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
