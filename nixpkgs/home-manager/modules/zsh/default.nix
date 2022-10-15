@@ -13,7 +13,6 @@
         "docker"
         "docker-compose"
         "wd"
-        "pass"
         "kubectl"
         "helm"
       ];
