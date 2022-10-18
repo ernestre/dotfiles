@@ -204,13 +204,7 @@ client.placeholder #3772ff #3772ff #3772ff #3772ff #3772ff
 
 bindsym $mod+r mode "resize"
 
-for_window [class=".*"] border pixel 1
-
-# smart_gaps on
-# smart_borders on
-
-gaps inner 10
-gaps outer 10
+for_window [class=".*"] border pixel 0
 
 bar {
     status_command i3status

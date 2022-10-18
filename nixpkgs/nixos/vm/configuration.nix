@@ -41,7 +41,6 @@
   services.xserver.displayManager.defaultSession = "none+i3";
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.windowManager.i3.enable = true;
-  services.xserver.windowManager.i3.package = pkgs.i3-gaps;
   services.xserver.windowManager.i3.configFile = ../../../.config/i3/config;
 
   # Configure keymap in X11
