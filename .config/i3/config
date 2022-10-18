@@ -214,10 +214,10 @@ bar {
         statusline #f1fffa
 
         # colorclass       <border> <background> <text>
-        focused_workspace  #f1fffa #3772ff #f1fffa
-        active_workspace   #f1fffa #f1fffa #f1fffa
+        focused_workspace  #3772ff #3772ff #f1fffa
+        active_workspace   #3772ff #f1fffa #f1fffa
         inactive_workspace #2a2f38 #2a2f38 #f1fffa
-        urgent_workspace   #f1fffa #b80c09 #f1fffa
+        urgent_workspace   #3772ff #b80c09 #f1fffa
     }
 }
 
