@@ -5,6 +5,7 @@
     ./modules/zsh
     ./modules/git
     ./modules/tmux
+    ./modules/alacritty
   ];
 
   home.username = "erre";

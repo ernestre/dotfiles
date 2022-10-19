@@ -1,0 +1,10 @@
+env:
+  WINIT_X11_SCALE_FACTOR: "1"
+font:
+  normal:
+    family: JetBrains Mono Nerd Font
+    style: Regular
+colors:
+  primary:
+    background: '#2a2f38'
+    foreground: '#f1fffa'

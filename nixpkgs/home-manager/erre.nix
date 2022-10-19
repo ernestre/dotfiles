@@ -6,6 +6,7 @@
     ./modules/git
     ./modules/tmux
     ./modules/rofi
+    ./modules/alacritty
   ];
 
   home.username = "erre";
