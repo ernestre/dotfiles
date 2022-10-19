@@ -25,8 +25,8 @@ require 'nvim-tree'.setup {
                     symlink_open = "",
                 },
                 git = {
-                    unstaged = "",
-                    staged = "",
+                    unstaged = "",
+                    staged = "",
                     unmerged = "",
                     renamed = "➜",
                     untracked = "",
@@ -38,10 +38,6 @@ require 'nvim-tree'.setup {
         indent_markers = {
             enable = true,
         },
-    },
-    diagnostics = {
-        enable = true,
-        show_on_dirs = true,
     },
     view = {
         mappings = {
