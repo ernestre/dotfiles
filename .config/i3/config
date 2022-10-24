@@ -62,6 +62,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show drun -show-icons -modi drun
 bindsym $mod+w exec rofi -show window -show-icons
 bindsym $mod+p exec bash /usr/share/doc/pass/examples/dmenu/passmenu
+bindsym $mod+o exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+o exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -203,13 +205,13 @@ client.placeholder #3772ff #3772ff #3772ff #3772ff #3772ff
 
 bindsym $mod+r mode "resize"
 
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 0
 
 # smart_gaps on
 # smart_borders on
 
-gaps inner 10
-gaps outer 10
+gaps inner 0
+gaps outer 0
 
 exec --no-startup-id ~/dotfiles/scripts/i3/alternating_layouts.py
 exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/main.png
@@ -221,4 +223,4 @@ exec --no-startup-id mailspring
 exec --no-startup-id export $(gnome-keyring-daemon --start --components=secrets,ssh)
 exec --no-startup-id polybar bottom
 exec --no-startup-id xset -dpms && xset s off
-exec --no-startup-id picom
+# exec --no-startup-id picom
