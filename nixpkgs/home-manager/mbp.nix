@@ -29,6 +29,8 @@
     terraform
     pwgen
     gopass
+    yq
+    jq
 
     nodejs-16_x
     nodePackages."intelephense"
