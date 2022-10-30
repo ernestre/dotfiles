@@ -36,7 +36,7 @@
     terraform
     rofi
     pwgen
-    yq
+    # yq installs an old version
     jq
 
     nodejs-16_x

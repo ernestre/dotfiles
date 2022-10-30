@@ -29,7 +29,7 @@
     terraform
     pwgen
     gopass
-    yq
+    # yq installs an old version
     jq
 
     nodejs-16_x
