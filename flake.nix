@@ -27,11 +27,11 @@
       };
 
       nixosConfigurations = {
-        vm = inputs.nixpkgs.lib.nixosSystem {
+        pc = inputs.nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { common = self.common; inherit inputs; };
           modules = [
-            ./nixpkgs/nixos/vm/configuration.nix
+            ./nixpkgs/nixos/pc/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

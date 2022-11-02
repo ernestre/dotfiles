@@ -4,16 +4,28 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ ];
+  imports =
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-  boot.initrd.availableKernelModules = [ "ata_piix" "mptspi" "uhci_hcd" "ehci_pci" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/6f43e7a4-a4df-4f42-af3e-f113d310fc7a";
+    {
+      device = "/dev/disk/by-uuid/5e084200-cf26-43ff-82d9-ed391cee3e8d";
       fsType = "ext4";
+    };
+
+  boot.initrd.luks.devices."luks-74915141-bb6a-4f5b-95b7-0d7f4b97888a".device = "/dev/disk/by-uuid/74915141-bb6a-4f5b-95b7-0d7f4b97888a";
+
+  fileSystems."/boot/efi" =
+    {
+      device = "/dev/disk/by-uuid/52BD-58E6";
+      fsType = "vfat";
     };
 
   swapDevices = [ ];
@@ -23,7 +35,8 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.ens33.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp2s0.useDHCP = lib.mkDefault true;
 
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
