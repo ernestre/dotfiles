@@ -31,6 +31,7 @@
     gopass
     yq-go
     jq
+    gnumake
 
     nodejs-16_x
     nodePackages."intelephense"
