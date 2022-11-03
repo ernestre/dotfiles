@@ -80,6 +80,7 @@
     packages = with pkgs; [
       brave
       tdesktop
+      spotify
     ];
   };
 
