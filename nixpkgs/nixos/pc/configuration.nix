@@ -43,6 +43,11 @@
   services.xserver.windowManager.i3.enable = true;
   services.xserver.windowManager.i3.configFile = ../../../.config/i3/config;
 
+  # NVIDIA drivers
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl.enable = true;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
