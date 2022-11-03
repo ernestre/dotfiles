@@ -18,20 +18,20 @@
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
   home.packages = with pkgs; [
-    git
-    tmux
-    fzf
     fd
-    ripgrep
-    tree
-    go
-    just
-    terraform
-    pwgen
-    gopass
-    yq-go
-    jq
+    fzf
+    git
     gnumake
+    go
+    gopass
+    jq
+    just
+    pwgen
+    ripgrep
+    terraform
+    tmux
+    tree
+    yq-go
 
     nodejs-16_x
     nodePackages."intelephense"
