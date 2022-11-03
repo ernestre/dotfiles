@@ -39,6 +39,9 @@
     tree
     xclip
     yq-go
+    kubectl
+    kind
+    k9s
 
     nodejs-16_x
     nodePackages."intelephense"
