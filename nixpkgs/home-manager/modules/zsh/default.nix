@@ -48,6 +48,8 @@
       if ! [ -x "$(command -v pbcopy)" ]; then
         alias pbcopy='xclip -selection clipboard'
       fi
+
+      xset r rate 300 85
     '';
   };
 }
