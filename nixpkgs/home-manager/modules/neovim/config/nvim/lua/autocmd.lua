@@ -3,7 +3,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = '*', command = 'lua vim.lsp.buf.formatting_sync(nil, 500)'
+    pattern = '*', command = 'lua vim.lsp.buf.format(nil, 500)'
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
