@@ -42,6 +42,7 @@
     kubectl
     kind
     k9s
+    maim
 
     nodejs-16_x
     nodePackages."intelephense"
