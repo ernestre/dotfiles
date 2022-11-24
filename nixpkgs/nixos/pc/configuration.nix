@@ -105,6 +105,7 @@
     git
     docker
     docker-compose
+    playerctl
   ];
 
   fonts.fonts = with pkgs; [
