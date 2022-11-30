@@ -11,7 +11,7 @@ cmp.setup({
         format = lspkind.cmp_format {
             with_text = true,
             menu = {
-                -- buffer = "[buf]",
+                buffer = "[buf]",
                 nvim_lsp = "[LSP]",
                 path = "[path]",
                 luasnip = "[snip]",
@@ -42,15 +42,15 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'path' },
         { name = 'calc' },
-        -- {
-        --     name = 'buffer',
-        --     keyword_length = 3,
-        --     option = {
-        --         get_bufnrs = function()
-        --             return vim.api.nvim_list_bufs()
-        --         end
-        --     }
-        -- }
+        {
+            name = 'buffer',
+            keyword_length = 3,
+            option = {
+                get_bufnrs = function()
+                    return vim.api.nvim_list_bufs()
+                end
+            }
+        }
     }),
     experimental = {
         native_menu = false,
