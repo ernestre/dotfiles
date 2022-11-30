@@ -35,3 +35,4 @@ o.termguicolors = true
 o.completeopt = 'menuone,noinsert,noselect'
 g.completion_matching_strategy_list = { 'fuzzy' }
 g.completion_matching_ignore_case = 1
+o.spell = true
