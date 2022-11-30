@@ -222,12 +222,4 @@ bar {
     }
 }
 
-# exec --no-startup-id ~/dotfiles/scripts/i3/alternating_layouts.py
-# exec --no-startup-id feh --bg-scale ~/dotfiles/wallpapers/main.png
-
-# exec --no-startup-id spotify
-# exec --no-startup-id slack
-# exec --no-startup-id mailspring
-
-# exec --no-startup-id xset -dpms && xset s off
-# exec --no-startup-id picom
+exec --no-startup-id spotify
