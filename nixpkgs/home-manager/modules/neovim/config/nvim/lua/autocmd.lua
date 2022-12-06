@@ -9,3 +9,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = '*.go', command = 'GoImport'
 })
+
+vim.api.nvim_create_autocmd("TermOpen", {
+    pattern = '*', command = 'setlocal nospell'
+})
