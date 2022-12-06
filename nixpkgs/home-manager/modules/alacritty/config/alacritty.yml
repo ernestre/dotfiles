@@ -2,7 +2,7 @@ env:
   WINIT_X11_SCALE_FACTOR: "1"
 font:
   normal:
-    family: JetBrains Mono Nerd Font
+    family: UbuntuMono Nerd Font
     style: Regular
 colors:
   primary:

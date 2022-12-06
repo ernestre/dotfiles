@@ -110,7 +110,7 @@
 
   fonts.fonts = with pkgs; [
     font-awesome
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
