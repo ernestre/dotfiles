@@ -21,7 +21,7 @@ map('i', '.', '.<c-g>u')
 -- Toggle hlsearch
 map('n', '<space>', ':set hlsearch! hlsearch?<CR>')
 
-map('n', '<C-s>', '<C-^>')
+map('n', '<C-s>', '<C-^>zz')
 
 -- Paste in visual mode without copying
 map('x', 'p', 'pgvy')
