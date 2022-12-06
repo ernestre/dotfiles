@@ -16,7 +16,7 @@ require 'lspconfig'.rnix.setup {}
 require 'lspconfig'.gopls.setup {}
 -- require 'lspconfig'.golangci_lint_ls.setup {}
 
-map('n', '<C-]>', '<Cmd>lua vim.lsp.buf.definition()<CR>')
+map('n', '<C-]>', '<Cmd>lua vim.lsp.buf.definition()<CR>zz')
 map('n', '<leader>ci', '<Cmd>lua vim.lsp.buf.references()<CR>')
 map('n', '<leader>r', '<Cmd>lua vim.lsp.buf.rename()<CR>')
 map('n', '<leader>cl', '<Cmd>lua vim.lsp.buf.formatting()<CR><CR>')
