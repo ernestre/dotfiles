@@ -89,7 +89,7 @@ element-text {
     vertical-align: 0.5;
     horizontal-align: 0.5;
     expand: true;
-    font: "JetBrainsMono Nerd Font Medium 10";
+    font: "UbuntuMono Nerd Font Medium 10";
   }
 
 mode-switcher {
