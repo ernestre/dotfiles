@@ -57,13 +57,6 @@ Plug 'junegunn/gv.vim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'tpope/vim-fugitive'
 " }}}
-" nvim-dap: {{{
-Plug 'mfussenegger/nvim-dap'
-Plug 'leoluz/nvim-dap-go'
-Plug 'rcarriga/nvim-dap-ui'
-Plug 'theHamsta/nvim-dap-virtual-text'
-Plug 'nvim-telescope/telescope-dap.nvim'
-" }}}
 " vim-test: {{{
 Plug 'vim-test/vim-test'
 " }}}
