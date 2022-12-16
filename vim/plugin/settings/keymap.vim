@@ -58,7 +58,9 @@ nnoremap <Leader>gl :diffget //3<CR>
 " Gitsigns: {{{
 nnoremap gn :Gitsigns next_hunk<cr>
 nnoremap gp :Gitsigns prev_hunk<cr>
+nnoremap gP :Gitsigns preview_hunk_inline<cr>
 nnoremap gu :Gitsigns reset_hunk<cr>
+nnoremap ga :Gitsigns stage_hunk<cr>
 " }}}
 " LSP: {{{
 nmap <C-]> <Cmd>lua vim.lsp.buf.definition()<CR>
