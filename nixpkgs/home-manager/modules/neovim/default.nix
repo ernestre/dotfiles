@@ -80,6 +80,7 @@ in
         plugins.tree-sitter-nix
         plugins.tree-sitter-php
         plugins.tree-sitter-lua
+        plugins.tree-sitter-help
         plugins.tree-sitter-typescript
       ]))
     ];
