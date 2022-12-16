@@ -36,3 +36,7 @@ o.completeopt = 'menuone,noinsert,noselect'
 g.completion_matching_strategy_list = { 'fuzzy' }
 g.completion_matching_ignore_case = 1
 o.spell = true
+
+-- Save undos into a file which allows to do undos which are days ago
+o.undodir = os.getenv("HOME") .. "/.vim/undodir"
+o.undofile = true
