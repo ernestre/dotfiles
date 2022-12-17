@@ -1,0 +1,14 @@
+configuration {
+    font: "UbuntuMono Nerd Font 10";
+    lines: 5;
+    show-icons: true;
+    hide-scrollbar: true;
+    icon-theme: "Papirus";
+    kb-cancel: "Escape,Alt+F1";
+    disable-history: false;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-window: " 﩯  Window ";
+}
+
+@theme "tokyonight"
