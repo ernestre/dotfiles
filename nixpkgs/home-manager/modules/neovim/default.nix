@@ -66,6 +66,7 @@ in
       telescope-nvim
       ultisnips
       undotree
+      impatient-nvim
       vim-fugitive
       vim-repeat
       vim-snippets
