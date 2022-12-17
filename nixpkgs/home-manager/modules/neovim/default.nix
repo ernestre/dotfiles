@@ -43,6 +43,7 @@ in
       committia-vim
       gitsigns-nvim
       gv-vim
+      impatient-nvim
       indent-blankline-nvim
       lspkind-nvim
       lualine-nvim
@@ -65,7 +66,6 @@ in
       telescope-nvim
       ultisnips
       undotree
-      impatient-nvim
       vim-fugitive
       vim-repeat
       vim-snippets
