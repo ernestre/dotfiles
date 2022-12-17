@@ -43,7 +43,6 @@ in
       committia-vim
       gitsigns-nvim
       gv-vim
-      hop-nvim
       indent-blankline-nvim
       lspkind-nvim
       lualine-nvim
