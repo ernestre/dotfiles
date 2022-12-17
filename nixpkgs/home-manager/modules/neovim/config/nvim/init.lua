@@ -1,4 +1,4 @@
-require('impatient').enable_profile()
+require('impatient')
 
 require('autocmd')
 require('keymaps')
