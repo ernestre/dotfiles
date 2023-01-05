@@ -40,3 +40,5 @@ o.spell = true
 -- Save undos into a file which allows to do undos which are days ago
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.undofile = true
+
+require('plugin-settings/vimwiki')
