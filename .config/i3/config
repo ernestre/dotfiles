@@ -223,3 +223,5 @@ bar {
 }
 
 exec --no-startup-id spotify
+# no sleep
+exec --no-startup-id xset -dpms && xset s off
