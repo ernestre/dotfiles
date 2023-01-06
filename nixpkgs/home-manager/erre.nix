@@ -7,7 +7,7 @@
     ./modules/tmux
     ./modules/rofi
     ./modules/common.nix
-    # ./modules/alacritty
+    ./modules/alacritty
   ];
 
   home.username = "erre";
@@ -22,7 +22,7 @@
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
   home.packages = with pkgs; [
-    # alacritty
+    alacritty
     gcc
     rofi
     xclip
