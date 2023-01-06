@@ -1,14 +1,7 @@
 require 'lspconfig'.intelephense.setup {}
 require 'lspconfig'.jsonls.setup {}
 require 'lspconfig'.pyright.setup {}
-require 'lspconfig'.tsserver.setup {
-    cmd = {
-        "/nix/store/2x94130dh3kp2xg5nbib6r497wxzxc44-typescript-language-server-1.2.0/bin/typescript-language-server",
-        "--stdio",
-        "--tsserver-path",
-        "/nix/store/jvnjrvrb3yywpimwilcxd5m2kdi1q1ws-typescript-4.8.4/lib/node_modules/typescript/lib/"
-    }
-}
+require 'lspconfig'.tsserver.setup {}
 require 'lspconfig'.yamlls.setup {}
 require 'lspconfig'.terraformls.setup {}
 require 'lspconfig'.sumneko_lua.setup {}
