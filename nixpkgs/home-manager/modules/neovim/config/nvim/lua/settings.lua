@@ -6,7 +6,6 @@ g.mapleader = ','
 o.list = true
 o.listchars:append "trail:⋅"
 o.listchars:append "extends:#"
-o.listchars:append "eol:↲"
 o.listchars:append "tab:» "
 
 o.encoding = 'utf-8'
