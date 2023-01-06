@@ -6,7 +6,8 @@
     ./modules/git
     ./modules/tmux
     ./modules/rofi
-    ./modules/alacritty
+    ./modules/common.nix
+    # ./modules/alacritty
   ];
 
   home.username = "erre";
@@ -21,35 +22,14 @@
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
   home.packages = with pkgs; [
-    alacritty
-    fd
-    fzf
+    # alacritty
     gcc
-    git
-    gnumake
-    go
-    gopass
-    jq
-    just
-    pwgen
-    ripgrep
     rofi
-    terraform
-    tmux
-    tree
     xclip
-    yq-go
     kubectl
     kind
     k9s
     maim
-
-    nodejs-16_x
-    nodePackages."intelephense"
-    nodePackages."typescript"
-    nodePackages."typescript-language-server"
-    nodePackages."vscode-langservers-extracted"
-    nodePackages."yaml-language-server"
   ];
 
   programs.bottom.enable = true;

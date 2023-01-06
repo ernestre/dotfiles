@@ -6,6 +6,7 @@
     ./modules/git
     ./modules/tmux
     ./modules/alacritty
+    ./modules/common.nix
   ];
 
   home.username = "erre";
@@ -16,30 +17,6 @@
   programs.home-manager.enable = true;
 
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
-
-  home.packages = with pkgs; [
-    fd
-    fzf
-    git
-    gnumake
-    go
-    gopass
-    jq
-    just
-    pwgen
-    ripgrep
-    terraform
-    tmux
-    tree
-    yq-go
-
-    nodejs-16_x
-    nodePackages."intelephense"
-    nodePackages."typescript"
-    nodePackages."typescript-language-server"
-    nodePackages."vscode-langservers-extracted"
-    nodePackages."yaml-language-server"
-  ];
 
   programs.bottom.enable = true;
   programs.bat.enable = true;
