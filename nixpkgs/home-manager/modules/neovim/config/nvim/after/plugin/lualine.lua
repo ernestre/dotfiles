@@ -61,7 +61,16 @@ require('lualine').setup {
                 },
             },
         },
-        lualine_c = { 'filename' },
+        lualine_c = {
+            {
+                'filename',
+                -- 0: Just the filename
+                -- 1: relative path
+                -- 2: absolute path
+                -- 3: absolute path, with tilde as the home directory
+                path = 1
+            }
+        },
         lualine_x = {
             'filetype',
             {
