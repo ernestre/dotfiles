@@ -1,10 +1,11 @@
 local cmp = require 'cmp'
 local lspkind = require 'lspkind'
+local luasnip = require("luasnip")
 
 cmp.setup({
     snippet = {
         expand = function(args)
-            vim.fn["UltiSnips#Anon"](args.body)
+            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
     formatting = {
@@ -32,13 +33,16 @@ cmp.setup({
                     cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
                 end
                 cmp.confirm()
+            elseif luasnip.expand_or_jumpable() then
+                print("expand")
+                luasnip.expand_or_jump()
             else
                 fallback()
             end
-        end, { "i" }), -- Only work in insert mode, otherwise the command toggling is not working
+        end, { "i", "s" }),
     },
     sources = cmp.config.sources({
-        { name = 'ultisnips' },
+        { name = 'luasnip' },
         { name = 'nvim_lsp' },
         { name = 'path' },
         { name = 'calc' },
