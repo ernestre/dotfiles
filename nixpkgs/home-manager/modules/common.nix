@@ -15,6 +15,7 @@
     tmux
     tree
     yq-go
+    starship
 
     nodejs-16_x
     nodePackages."intelephense"
