@@ -52,8 +52,6 @@
       if [ -x "$(command -v xset)" ]; then
         xset r rate 300 85
       fi
-
-      eval "$(starship init zsh)"
     '';
   };
 }
