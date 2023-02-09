@@ -15,6 +15,7 @@
     tmux
     tree
     yq-go
+    delve # go dap debug
 
     nodejs-16_x
     nodePackages."intelephense"

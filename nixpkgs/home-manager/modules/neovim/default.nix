@@ -52,8 +52,14 @@ in
       nvim-autopairs
       nvim-cmp
       nvim-colorizer-lua
+
+      # dap
+      nvim-dap
+      nvim-dap-go
       nvim-dap-ui
       nvim-dap-virtual-text
+      telescope-dap-nvim
+
       nvim-lspconfig
       nvim-tree-lua
       nvim-web-devicons
@@ -61,7 +67,6 @@ in
       popup-nvim
       sonokai
       symbols-outline-nvim
-      telescope-dap-nvim
       telescope-fzf-native-nvim
       telescope-nvim
       ultisnips
