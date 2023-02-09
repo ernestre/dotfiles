@@ -29,7 +29,6 @@
       guc = "git add -u && git commit -v";
       gaca = "git add . && git commit -v --amend";
       gacan = "gaca --no-edit";
-      hms = "home-manager switch --flake .#erre --extra-experimental-features nix-command --extra-experimental-features flakes";
     };
 
     sessionVariables = {
