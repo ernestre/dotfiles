@@ -6,7 +6,21 @@ require 'lspconfig'.yamlls.setup {}
 require 'lspconfig'.terraformls.setup {}
 require 'lspconfig'.sumneko_lua.setup {}
 require 'lspconfig'.rnix.setup {}
-require 'lspconfig'.gopls.setup {}
+require 'lspconfig'.gopls.setup {
+    cmd = { "gopls" },
+    log_level = vim.lsp.protocol.MessageType.Log,
+    message_level = vim.lsp.protocol.MessageType.Log,
+    settings = {
+        gopls = {
+            analyses = {
+                fieldalignment = true,
+            },
+            ["formatting.gofumpt"] = true,
+            ["ui.verboseOutput"] = true,
+            buildFlags = { "-tags=wireinject" }
+        },
+    },
+}
 -- require 'lspconfig'.golangci_lint_ls.setup {}
 
 map('n', '<C-]>', '<Cmd>lua vim.lsp.buf.definition()<CR>zz')
