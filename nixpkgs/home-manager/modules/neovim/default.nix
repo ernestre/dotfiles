@@ -76,6 +76,7 @@ in
       vim-snippets
       vim-surround
       vimwiki
+      diffview-nvim
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: [
         plugins.tree-sitter-go
         plugins.tree-sitter-hcl
