@@ -29,6 +29,8 @@ in
       terraform-ls
       golangci-lint-langserver
       sumneko-lua-language-server
+      golangci-lint-langserver
+      golangci-lint
     ];
     plugins = with pkgs.vimPlugins; [
       (plugin "ray-x/go.nvim" "c75824b1f050c153ebfd5be65a318b9d4463d5a9")
