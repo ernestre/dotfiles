@@ -80,6 +80,7 @@ in
       vim-surround
       vimwiki
       diffview-nvim
+      gitlinker-nvim
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: [
         plugins.tree-sitter-go
         plugins.tree-sitter-hcl
