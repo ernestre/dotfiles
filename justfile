@@ -1,8 +1,8 @@
-_nixos-rebuild-pc action:
-    sudo nixos-rebuild {{action}} --flake .#pc
-
 default:
   @just --list
+
+_nixos-rebuild-pc action:
+    sudo nixos-rebuild {{action}} --flake .#pc
 
 nixos-test: (_nixos-rebuild-pc "test")
 nixos-switch: (_nixos-rebuild-pc "switch")
