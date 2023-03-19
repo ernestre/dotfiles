@@ -31,8 +31,13 @@
     kind
     k9s
     maim
+
+    font-awesome
+    (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
   ];
 
   programs.bottom.enable = true;
   programs.bat.enable = true;
+
+  fonts.fontconfig.enable = true;
 }
