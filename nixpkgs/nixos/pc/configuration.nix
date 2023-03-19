@@ -41,7 +41,6 @@
   services.xserver.displayManager.defaultSession = "none+i3";
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.windowManager.i3.enable = true;
-  services.xserver.windowManager.i3.configFile = ../../../.config/i3/config;
 
   # NVIDIA drivers
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -106,11 +105,6 @@
     docker
     docker-compose
     playerctl
-  ];
-
-  fonts.fonts = with pkgs; [
-    font-awesome
-    (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -8,6 +8,7 @@
     ./modules/rofi
     ./modules/common.nix
     ./modules/alacritty
+    ./modules/i3
   ];
 
   home.username = "erre";
@@ -16,8 +17,6 @@
   home.stateVersion = "22.05";
 
   programs.home-manager.enable = true;
-
-  home.file.".background-image".source = ../../wallpapers/porsche.png;
 
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
@@ -30,8 +29,13 @@
     kind
     k9s
     maim
+
+    font-awesome
+    (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
   ];
 
   programs.bottom.enable = true;
   programs.bat.enable = true;
+
+  fonts.fontconfig.enable = true;
 }
