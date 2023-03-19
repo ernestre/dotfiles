@@ -53,10 +53,10 @@ in
       }];
 
       keybindings = {
-        "XF86AudioRaiseVolume" = "exec --no-startup-id amixer set Master 10%+ && $refresh_i3status";
-        "XF86AudioLowerVolume" = "exec --no-startup-id amixer set Master 10%- && $refresh_i3status";
-        "XF86AudioMute" = "exec --no-startup-id amixer set Master toggle && $refresh_i3status";
-        "XF86AudioMicMute" = "exec --no-startup-id amixer set Capture toggle && $refresh_i3status";
+        "XF86AudioRaiseVolume" = "exec --no-startup-id amixer -D pulse set Master 10%+ && $refresh_i3status";
+        "XF86AudioLowerVolume" = "exec --no-startup-id amixer -D pulse set Master 10%- && $refresh_i3status";
+        "XF86AudioMute" = "exec --no-startup-id amixer -D pulse set Master toggle && $refresh_i3status";
+        "XF86AudioMicMute" = "exec --no-startup-id amixer -D pulse set Capture toggle && $refresh_i3status";
         "XF86AudioPlay" = "exec playerctl play-pause";
         "XF86AudioNext" = "exec playerctl next";
         "XF86AudioPrev" = "exec playerctl previous";
