@@ -18,8 +18,6 @@
 
   programs.home-manager.enable = true;
 
-  home.file.".background-image".source = ../../wallpapers/porsche.png;
-
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
   home.packages = with pkgs; [
