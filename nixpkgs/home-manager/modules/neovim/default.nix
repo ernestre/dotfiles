@@ -37,6 +37,7 @@ in
       (plugin "ray-x/go.nvim" "c75824b1f050c153ebfd5be65a318b9d4463d5a9")
       (plugin "ThePrimeagen/harpoon" "f4aff5bf9b512f5a85fe20eb1dcf4a87e512d971")
       (plugin "szw/vim-maximizer" "2e54952fe91e140a2e69f35f22131219fcd9c5f1")
+      (plugin "NoahTheDuke/vim-just" "3b8cd4b1d270108320bd0ffac939766e9cedf6b9")
       cmp-buffer
       cmp-calc
       cmp-nvim-lsp
