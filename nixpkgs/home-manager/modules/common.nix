@@ -16,6 +16,9 @@
     yq-go
     delve # go dap debug
 
+    font-awesome
+    (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
+
     nodejs-18_x
     nodePackages."intelephense"
     nodePackages."typescript"
@@ -23,6 +26,8 @@
     nodePackages."vscode-langservers-extracted"
     nodePackages."yaml-language-server"
   ];
+
+  fonts.fontconfig.enable = true;
 
   programs.fzf.enable = true;
 
