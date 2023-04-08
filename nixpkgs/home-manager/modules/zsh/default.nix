@@ -14,6 +14,7 @@
         "wd"
         "kubectl"
         "helm"
+        "tmuxinator"
       ];
       theme = "cloud";
     };
