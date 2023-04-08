@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     fd
-    fzf
     git
     gnumake
     go
@@ -24,6 +23,8 @@
     nodePackages."vscode-langservers-extracted"
     nodePackages."yaml-language-server"
   ];
+
+  programs.fzf.enable = true;
 
   programs.starship = {
     enable = true;
