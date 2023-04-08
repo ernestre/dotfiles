@@ -10,7 +10,9 @@ require 'lspconfig'.tsserver.setup {
     }
 }
 require 'lspconfig'.yamlls.setup {}
-require 'lspconfig'.terraformls.setup {}
+require 'lspconfig'.terraformls.setup {
+    filetypes = { "terraform", "terraform-vars", "hcl" }
+}
 require 'lspconfig'.sumneko_lua.setup {}
 require 'lspconfig'.rnix.setup {}
 require 'lspconfig'.gopls.setup {
