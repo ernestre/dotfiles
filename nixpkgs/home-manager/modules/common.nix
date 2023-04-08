@@ -16,7 +16,7 @@
     yq-go
     delve # go dap debug
 
-    nodejs-16_x
+    nodejs-18_x
     nodePackages."intelephense"
     nodePackages."typescript"
     nodePackages."typescript-language-server"
