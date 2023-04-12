@@ -56,6 +56,7 @@ in
       nvim-autopairs
       nvim-cmp
       nvim-colorizer-lua
+      lsp_lines-nvim
 
       # dap
       nvim-dap
