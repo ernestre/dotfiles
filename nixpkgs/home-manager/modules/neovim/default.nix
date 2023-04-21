@@ -70,7 +70,7 @@ in
       nvim-web-devicons
       plenary-nvim
       popup-nvim
-      sonokai
+      catppuccin-nvim
       symbols-outline-nvim
       telescope-fzf-native-nvim
       telescope-nvim
