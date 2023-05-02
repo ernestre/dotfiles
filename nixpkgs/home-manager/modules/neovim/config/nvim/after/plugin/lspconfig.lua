@@ -3,10 +3,10 @@ require 'lspconfig'.jsonls.setup {}
 require 'lspconfig'.pyright.setup {}
 require 'lspconfig'.tsserver.setup {
     cmd = {
-        "/nix/store/6qb5xa7i3n5rd8p1dq4q1bp6pmcsqlla-typescript-language-server-2.1.0/bin/typescript-language-server",
+        "/nix/store/1d031zaya21lq7n0q0naj1cd3632y1b5-typescript-language-server-2.1.0/bin/typescript-language-server",
         "--stdio",
         "--tsserver-path",
-        "/nix/store/ws5saziayswil7dgx1ly6fqmrwrks26c-typescript-4.8.4/lib/node_modules/typescript/lib/"
+        "/nix/store/0d14rsfw1cxjqr106lbpblz8953wvi1i-typescript-4.9.5/lib/node_modules/typescript/lib/"
     }
 }
 require 'lspconfig'.yamlls.setup {}
