@@ -51,7 +51,6 @@ in
       indent-blankline-nvim
       lspkind-nvim
       lualine-nvim
-      markdown-preview-nvim
       mkdir-nvim
       nvim-autopairs
       nvim-cmp
