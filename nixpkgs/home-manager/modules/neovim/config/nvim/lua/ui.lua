@@ -1,8 +1,6 @@
 local g = vim.g
 local is_background_transparent = false
 
--- With this enabled I think it tries write some kind of cache files and nix is not happy about that
-g.sonokai_better_performance = 0
 g.sonokai_style = 'atlantis'
 
 vim.cmd('colorscheme sonokai')
