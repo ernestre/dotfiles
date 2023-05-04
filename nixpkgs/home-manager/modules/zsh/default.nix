@@ -1,9 +1,22 @@
 { pkgs, lib, ... }:
+let
+  zsh-z = pkgs.fetchFromGitHub {
+    owner = "agkozak";
+    repo = "zsh-z";
+    rev = "da8dee3ccaf882d1bf653c34850041025616ceb5";
+    sha256 = "sha256-MHb9Q7mwgWAs99vom6a2aODB40I9JTBaJnbvTYbMwiA=";
+  };
+in
 {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     enableAutosuggestions = true;
+
+    plugins = [{
+      name = "zsh-z";
+      src = zsh-z;
+    }];
 
     oh-my-zsh = {
       enable = true;
