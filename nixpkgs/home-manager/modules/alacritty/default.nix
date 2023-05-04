@@ -10,7 +10,7 @@
           family = "UbuntuMono Nerd Font";
           style = "Regular";
         };
-        size = 12.5;
+        size = 13.5;
       };
       colors = {
         primary = {
