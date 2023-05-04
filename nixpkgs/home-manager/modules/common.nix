@@ -31,6 +31,8 @@
 
   programs.fzf.enable = true;
 
+  programs.direnv.enable = true;
+
   programs.starship = {
     enable = true;
     # Configuration written to ~/.config/starship.toml

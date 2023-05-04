@@ -16,3 +16,4 @@ Makefile.local
 docker-compose.local.yml
 .vimspector.json
 .DS_Store
+.direnv
