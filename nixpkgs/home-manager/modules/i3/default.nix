@@ -63,7 +63,7 @@ in
 
         "${i3_mod}+Shift+minus" = "move scratchpad";
         "${i3_mod}+minus" = "scratchpad show";
-        "${i3_mod}+Return" = "exec alacritty";
+        "${i3_mod}+Return" = "exec --no-startup-id alacritty";
         "${i3_mod}+Shift+q" = "kill";
         "${i3_mod}+d" = "exec rofi -show drun -show-icons -modi drun";
         "${i3_mod}+w" = "exec rofi -show window -show-icons";
