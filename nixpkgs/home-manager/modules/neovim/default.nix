@@ -21,20 +21,28 @@ in
 
     extraPackages = with pkgs; [
       tree-sitter
-      nodePackages.typescript
-      nodePackages.typescript-language-server
-      gopls
 
-      # nix stuff
+      # nix
       nil
       nixpkgs-fmt
 
-      terraform-ls
-      golangci-lint-langserver
-      sumneko-lua-language-server
-      golangci-lint-langserver
+      # golang
       golangci-lint
+      golangci-lint-langserver
+      gopls
+
+      # nodejs
+      nodePackages.typescript
+      nodePackages.typescript-language-server
+
+      # puthon
       nodePackages.pyright
+
+      # lua
+      sumneko-lua-language-server
+
+      # terraform
+      terraform-ls
     ];
     plugins = with pkgs.vimPlugins; [
       (plugin "ray-x/go.nvim" "c75824b1f050c153ebfd5be65a318b9d4463d5a9")
