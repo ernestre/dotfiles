@@ -14,7 +14,15 @@ require 'lspconfig'.terraformls.setup {
     filetypes = { "terraform", "terraform-vars", "hcl" }
 }
 require 'lspconfig'.sumneko_lua.setup {}
-require 'lspconfig'.rnix.setup {}
+require 'lspconfig'.nil_ls.setup {
+    settings = {
+        ['nil'] = {
+            formatting = {
+                command = { "nixpkgs-fmt" },
+            },
+        },
+    },
+}
 require 'lspconfig'.gopls.setup {
     cmd = { "gopls" },
     log_level = vim.lsp.protocol.MessageType.Log,

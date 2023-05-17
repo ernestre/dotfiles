@@ -23,9 +23,12 @@ in
       tree-sitter
       nodePackages.typescript
       nodePackages.typescript-language-server
-      rnix-lsp
       gopls
-      rnix-lsp
+
+      # nix stuff
+      nil
+      nixpkgs-fmt
+
       terraform-ls
       golangci-lint-langserver
       sumneko-lua-language-server
