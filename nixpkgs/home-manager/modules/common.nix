@@ -15,7 +15,7 @@
     tree
     yq-go
     delve # go dap debug
-
+    sops
     font-awesome
     (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
 
