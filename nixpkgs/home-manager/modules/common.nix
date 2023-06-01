@@ -10,7 +10,6 @@
     just
     pwgen
     ripgrep
-    terraform
     tmux
     tree
     yq-go
