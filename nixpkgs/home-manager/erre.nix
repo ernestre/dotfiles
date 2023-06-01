@@ -29,7 +29,6 @@
     kind
     k9s
     maim
-    feh
 
     font-awesome
     (nerdfonts.override { fonts = [ "UbuntuMono" ]; })

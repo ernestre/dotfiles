@@ -16,7 +16,6 @@ in
         { command = "nm-applet"; notification = false; }
         { command = "spotify"; notification = false; }
         { command = "xset -dpms && xset s off"; notification = false; }
-        { command = "feh --bg-fill ../../wallpapers/main.png"; notification = false; }
       ];
 
       fonts = i3_fonts;
