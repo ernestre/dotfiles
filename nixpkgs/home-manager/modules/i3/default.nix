@@ -61,6 +61,10 @@ in
         "XF86AudioNext" = "exec playerctl next";
         "XF86AudioPrev" = "exec playerctl previous";
 
+        "${i3_mod}+Shift+f" = "exec playerctl play-pause";
+        "${i3_mod}+Shift+d" = "exec playerctl next";
+        "${i3_mod}+Shift+s" = "exec playerctl previous";
+
         "${i3_mod}+Shift+minus" = "move scratchpad";
         "${i3_mod}+minus" = "scratchpad show";
         "${i3_mod}+Return" = "exec --no-startup-id alacritty";
