@@ -16,6 +16,7 @@
     delve # go dap debug
     sops
     font-awesome
+    ranger
     (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
 
     nodejs-18_x
