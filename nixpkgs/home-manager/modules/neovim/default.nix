@@ -39,7 +39,7 @@ in
       nodePackages.pyright
 
       # lua
-      sumneko-lua-language-server
+      lua-language-server
 
       # terraform
       terraform-ls
@@ -49,6 +49,9 @@ in
       (plugin "ThePrimeagen/harpoon" "f4aff5bf9b512f5a85fe20eb1dcf4a87e512d971")
       (plugin "szw/vim-maximizer" "2e54952fe91e140a2e69f35f22131219fcd9c5f1")
       (plugin "NoahTheDuke/vim-just" "3b8cd4b1d270108320bd0ffac939766e9cedf6b9")
+      (plugin "sniphpets/sniphpets" "069f4a7818e8fcf50cd669a2651c3f63f9b2e550")
+      (plugin "sniphpets/sniphpets-common" "a250b732477b4985b3961f0fd4e50aab247f0bae")
+      (plugin "phpactor/phpactor" "02bc482e37fd2fbdb698092380f5dfecb10aaf29")
       cmp-buffer
       cmp-calc
       cmp-nvim-lsp
@@ -101,7 +104,6 @@ in
         plugins.tree-sitter-nix
         plugins.tree-sitter-php
         plugins.tree-sitter-lua
-        plugins.tree-sitter-help
         plugins.tree-sitter-typescript
       ]))
     ];

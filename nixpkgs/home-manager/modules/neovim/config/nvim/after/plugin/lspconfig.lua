@@ -9,11 +9,17 @@ require 'lspconfig'.tsserver.setup {
         "/nix/store/0d14rsfw1cxjqr106lbpblz8953wvi1i-typescript-4.9.5/lib/node_modules/typescript/lib/"
     }
 }
-require 'lspconfig'.yamlls.setup {}
 require 'lspconfig'.terraformls.setup {
     filetypes = { "terraform", "terraform-vars", "hcl" }
 }
-require 'lspconfig'.sumneko_lua.setup {}
+require 'lspconfig'.yamlls.setup {
+    settings = {
+        yaml = {
+            keyOrdering = false,
+        }
+    }
+}
+require 'lspconfig'.lua_ls.setup {}
 require 'lspconfig'.nil_ls.setup {
     settings = {
         ['nil'] = {
