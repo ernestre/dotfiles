@@ -71,7 +71,7 @@ in
         "${i3_mod}+Shift+q" = "kill";
         "${i3_mod}+d" = "exec rofi -show drun -show-icons -modi drun";
         "${i3_mod}+w" = "exec rofi -show window -show-icons";
-        "${i3_mod}+p" = "exec gopass ls --flat | dmenu | xargs --no-run-if-empty gopass show -c";
+        "${i3_mod}+p" = "exec gopass ls --flat | rofi -dmenu -p gopass | xargs --no-run-if-empty gopass show -c";
         "${i3_mod}+Shift+o" = "exec --no-startup-id maim --select | xclip -selection clipboard -t image/png";
 
         "${i3_mod}+h" = "focus left";
