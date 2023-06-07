@@ -1,4 +1,8 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
+let
+  # because of retina
+  size = if pkgs.stdenv.isDarwin then 18 else 13.5;
+in
 {
   home.file.".config/alacritty/alacritty.yml".text = pkgs.lib.generators.toYAML { }
     {
@@ -10,7 +14,7 @@
           family = "UbuntuMono Nerd Font";
           style = "Regular";
         };
-        size = 13.5;
+        inherit size;
       };
       colors = {
         primary = {
