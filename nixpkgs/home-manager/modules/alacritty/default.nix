@@ -22,5 +22,8 @@ in
           foreground = "#f1fffa";
         };
       };
+      window = {
+        startup_mode = "Maximized";
+      };
     };
 }
