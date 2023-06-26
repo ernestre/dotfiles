@@ -17,7 +17,4 @@
   programs.home-manager.enable = true;
 
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
-
-  programs.bottom.enable = true;
-  programs.bat.enable = true;
 }

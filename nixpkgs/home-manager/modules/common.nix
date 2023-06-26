@@ -33,6 +33,8 @@
   programs.fzf.enable = true;
 
   programs.direnv.enable = true;
+  programs.bat.enable = true;
+  programs.btop.enable = true;
 
   programs.starship = {
     enable = true;
