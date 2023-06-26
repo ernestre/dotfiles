@@ -1,7 +1,8 @@
 { pkgs, ... }:
 let
   # because of retina
-  size = if pkgs.stdenv.isDarwin then 18 else 13.5;
+  size = if pkgs.stdenv.isDarwin then 18 else 10.5;
+  fonts = import ../../../commons/fonts.nix;
 in
 {
   home.file.".config/alacritty/alacritty.yml".text = pkgs.lib.generators.toYAML { }
@@ -11,7 +12,7 @@ in
       };
       font = {
         normal = {
-          family = "UbuntuMono Nerd Font";
+          family = fonts.name;
           style = "Regular";
         };
         inherit size;

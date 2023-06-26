@@ -1,5 +1,5 @@
 configuration {
-    font: "UbuntuMono Nerd Font 10";
+    font: "GoMono Nerd Font 10";
     lines: 5;
     show-icons: true;
     hide-scrollbar: true;

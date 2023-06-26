@@ -1,9 +1,10 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 let
   i3_mod = "Mod1";
+  fonts = import ../../../commons/fonts.nix;
   i3_fonts = {
-    names = [ "UbuntuMono Nerd Font" ];
-    size = 10.0;
+    names = [ fonts.name ];
+    size = 8.0;
   };
 in
 {

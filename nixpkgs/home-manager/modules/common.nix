@@ -18,7 +18,7 @@
     sops
     font-awesome
     ranger
-    (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
+    (nerdfonts.override { fonts = [ "Go-Mono" ]; })
 
     nodejs-18_x
     nodePackages."intelephense"
