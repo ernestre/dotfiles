@@ -17,6 +17,7 @@ in
         { command = "nm-applet"; notification = false; }
         { command = "spotify"; notification = false; }
         { command = "xset -dpms && xset s off"; notification = false; }
+        { command = "${pkgs.feh}/bin/feh --bg-center ~/dotfiles/wallpapers/main.png"; notification = false; }
       ];
 
       fonts = i3_fonts;
