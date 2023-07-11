@@ -1,8 +1,8 @@
 require('telescope').setup {
     defaults = {
-        file_sorter = require('telescope.sorters').fuzzy_with_index_bias,
-        prompt_prefix = ' » ',
-        color_devicons = true,
+        file_sorter      = require('telescope.sorters').fuzzy_with_index_bias,
+        prompt_prefix    = ' » ',
+        color_devicons   = true,
 
         file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
         grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
@@ -14,12 +14,12 @@ require('telescope').setup {
             override_generic_sorter = false, -- override the generic sorter
             override_file_sorter = true,     -- override the file sorter
             case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                                             -- the default case_mode is "smart_case"
+            -- the default case_mode is "smart_case"
         }
     }
 }
 
-require('telescope').load_extension('fzf')
+require('telescope').load_extension('fzy_native')
 
 map('n', '<Leader>f', ':Telescope find_files<CR>')
 map('n', '<Leader>F', ':Telescope find_files find_command=rg,--no-ignore,--hidden,--files,.<CR>')

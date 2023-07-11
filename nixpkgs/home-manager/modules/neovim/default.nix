@@ -95,6 +95,7 @@ in
       vimwiki
       diffview-nvim
       gitlinker-nvim
+      telescope-fzy-native-nvim
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: [
         plugins.tree-sitter-go
         plugins.tree-sitter-hcl
