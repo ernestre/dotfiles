@@ -96,6 +96,7 @@ in
       diffview-nvim
       gitlinker-nvim
       telescope-fzy-native-nvim
+      vim-tmux-navigator
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: [
         plugins.tree-sitter-go
         plugins.tree-sitter-hcl
