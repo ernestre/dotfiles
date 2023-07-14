@@ -76,6 +76,7 @@ in
         "${i3_mod}+p" = "exec gopass ls --flat | rofi -dmenu -p gopass | xargs --no-run-if-empty gopass show -c";
         "${i3_mod}+u" = "exec gopass ls --flat | rofi -dmenu -p gopass | xargs -i --no-run-if-empty gopass show -c {} user";
         "${i3_mod}+Shift+o" = "exec --no-startup-id maim --select | xclip -selection clipboard -t image/png";
+        "${i3_mod}+Shift+p" = "exec --no-startup-id maim | xclip -selection clipboard -t image/png";
 
         "${i3_mod}+h" = "focus left";
         "${i3_mod}+j" = "focus down";
