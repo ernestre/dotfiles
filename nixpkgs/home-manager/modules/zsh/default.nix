@@ -41,7 +41,6 @@ in
       guc = "git add -u && git commit -v";
       gaca = "git add . && git commit -v --amend";
       gacan = "gaca --no-edit";
-      docker-compose = "docker compose --compatibility $@";
       genpass = "pwgen -CnysB 32 1";
     };
 
