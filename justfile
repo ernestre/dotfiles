@@ -12,3 +12,9 @@ nixos-switch: (_nixos-rebuild-pc "switch")
 
 hm-switch-erre: (hm-switch "erre")
 hm-switch-mbp: (hm-switch "mbp")
+
+store-fix:
+    nix-store --verify --check-contents --repair
+
+store-clean:
+    nix-collect-garbage -d
