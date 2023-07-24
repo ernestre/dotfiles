@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, system, ... }:
 
 let
   plugin = repo: rev: pkgs.vimUtils.buildVimPluginFrom2Nix {
@@ -69,6 +69,7 @@ in
       nvim-autopairs
       nvim-cmp
       nvim-colorizer-lua
+      markdown-preview-nvim
 
       # dap
       nvim-dap

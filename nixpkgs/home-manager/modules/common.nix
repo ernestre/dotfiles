@@ -64,4 +64,31 @@
       };
     };
   };
+
+  nixpkgs.overlays = [
+    (final: prev:
+      let
+        markdown-preview-nvim = prev.vimPlugins.markdown-preview-nvim.overrideAttrs
+          (
+            old:
+            let
+              nodeDep = pkgs.mkYarnPackage {
+                name = "node-modules";
+                src = ../../overlays/markdown-preview-nvim/deps/.;
+              };
+            in
+            {
+              postInstall = ''
+                ln -s ${nodeDep}/libexec/markdown-preview/node_modules $out/app
+              '';
+            }
+          );
+      in
+      {
+        vimPlugins = prev.vimPlugins // {
+          inherit markdown-preview-nvim;
+        };
+      }
+    )
+  ];
 }
