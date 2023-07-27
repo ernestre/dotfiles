@@ -13,6 +13,12 @@ let
         };
       in
       {
+        src = builtins.fetchGit {
+          url = "https://github.com/ernestre/markdown-preview.nvim";
+          ref = "bump-socket-io";
+          rev = "90d3fdbf4876edd5c3c033006494887622add320";
+        };
+
         postInstall = ''
           ln -s ${nodeDep}/libexec/markdown-preview/node_modules $out/app
         '';
