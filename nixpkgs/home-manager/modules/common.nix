@@ -22,6 +22,7 @@
     (nerdfonts.override { fonts = [ "Go-Mono" ]; })
 
     nodejs-18_x
+    yarn
     nodePackages."intelephense"
     nodePackages."typescript"
     nodePackages."typescript-language-server"
