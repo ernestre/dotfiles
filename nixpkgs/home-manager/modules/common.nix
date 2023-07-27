@@ -18,6 +18,7 @@
     sops
     font-awesome
     ranger
+    lazygit
     (nerdfonts.override { fonts = [ "Go-Mono" ]; })
 
     nodejs-18_x
