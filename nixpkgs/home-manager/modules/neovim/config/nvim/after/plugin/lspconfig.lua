@@ -2,11 +2,17 @@ require 'lspconfig'.intelephense.setup {}
 require 'lspconfig'.jsonls.setup {}
 require 'lspconfig'.pyright.setup {}
 require 'lspconfig'.tsserver.setup {
-    cmd = {
-        "/nix/store/1d031zaya21lq7n0q0naj1cd3632y1b5-typescript-language-server-2.1.0/bin/typescript-language-server",
-        "--stdio",
-        "--tsserver-path",
-        "/nix/store/0d14rsfw1cxjqr106lbpblz8953wvi1i-typescript-4.9.5/lib/node_modules/typescript/lib/"
+    settings = {
+        typescript = {
+            format = {
+                indentSize = 2,
+            }
+        },
+        javascript = {
+            format = {
+                indentSize = 2,
+            }
+        }
     }
 }
 require 'lspconfig'.terraformls.setup {
