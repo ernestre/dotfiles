@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   # because of retina
-  size = if pkgs.stdenv.isDarwin then 16 else 10.5;
+  size = if pkgs.stdenv.isDarwin then 16 else 10;
   fonts = import ../../../commons/fonts.nix;
 in
 {
