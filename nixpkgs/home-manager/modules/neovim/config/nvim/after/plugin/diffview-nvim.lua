@@ -8,3 +8,4 @@ require("diffview").setup({
 
 
 vim.keymap.set('n', '<leader>do', ":DiffviewOpen<CR>")
+vim.keymap.set('n', '<leader>dO', ":DiffviewClose<CR>")
