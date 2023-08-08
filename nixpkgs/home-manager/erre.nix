@@ -40,7 +40,7 @@
   xsession.windowManager.i3 = {
     config = {
       startup = [
-        { command = "tdesktop"; notification = false; }
+        { command = "telegram-desktop"; notification = false; }
         { command = "discord"; notification = false; }
         { command = "autorandr -c"; notification = false; }
       ];
