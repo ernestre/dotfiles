@@ -1,14 +1,15 @@
 { pkgs, ... }:
 {
   imports = [
-    ./modules/neovim
-    ./modules/zsh
-    ./modules/git
-    ./modules/tmux
-    ./modules/rofi
-    ./modules/common.nix
     ./modules/alacritty
+    ./modules/common.nix
+    ./modules/dunst
+    ./modules/git
     ./modules/i3
+    ./modules/neovim
+    ./modules/rofi
+    ./modules/tmux
+    ./modules/zsh
   ];
 
   home.username = "erre";
@@ -29,9 +30,12 @@
     kind
     k9s
     maim
+    dunst
 
     autorandr
   ];
+
+  services.dunst.enable = true;
 
   xsession.windowManager.i3 = {
     config = {
