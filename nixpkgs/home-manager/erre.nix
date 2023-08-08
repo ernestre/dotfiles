@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./modules/neovim
@@ -30,9 +30,16 @@
     k9s
     maim
 
-    font-awesome
-    (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
+    autorandr
   ];
 
-  fonts.fontconfig.enable = true;
+  xsession.windowManager.i3 = {
+    config = {
+      startup = [
+        { command = "tdesktop"; notification = false; }
+        { command = "discord"; notification = false; }
+        { command = "autorandr -c"; notification = false; }
+      ];
+    };
+  };
 }
