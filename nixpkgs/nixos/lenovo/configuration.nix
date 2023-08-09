@@ -111,6 +111,8 @@
     docker
     docker-compose
     playerctl
+
+    autorandr
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -144,4 +146,51 @@
   system.stateVersion = "23.05"; # Did you read the comment?
 
   virtualisation.docker.enable = true;
+
+  services.autorandr =
+    let
+      fingerprint = {
+        DP-2 = "00ffffffffffff0010ac7aa0534b50311f17010380342078eaee95a3544c99260f5054a1080081408180a940b300d1c0010101010101283c80a070b023403020360006442100001a000000ff00304646584433375331504b530a000000fc0044454c4c2055323431324d0a20000000fd00323d1e5311000a20202020202000f2";
+        eDP-1 = "00ffffffffffff0006af3d5700000000001c0104a51f1178022285a5544d9a270e505400000001010101010101010101010101010101b43780a070383e401010350035ae100000180000000f0000000000000000000000000020000000fe0041554f0a202020202020202020000000fe004231343048414e30352e37200a0070";
+      };
+    in
+    {
+      enable = true;
+
+      defaultTarget = "laptop";
+
+      profiles =
+        {
+          home = {
+            inherit fingerprint;
+
+            config = {
+              eDP-1. enable = false;
+              DP-2 = {
+                enable = true;
+                crtc = 0;
+                primary = true;
+                position = "0x0";
+                mode = "1920x1200";
+                rate = "59.95";
+              };
+            };
+          };
+
+          laptop = {
+            inherit fingerprint;
+
+            config = {
+              eDP-1 = {
+                enable = true;
+                crtc = 1;
+                primary = true;
+                position = "0x0";
+                mode = "1920x1080";
+                rate = "60.03";
+              };
+            };
+          };
+        };
+    };
 }

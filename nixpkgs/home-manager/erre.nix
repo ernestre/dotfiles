@@ -31,8 +31,6 @@
     k9s
     maim
     dunst
-
-    autorandr
   ];
 
   services.dunst.enable = true;
