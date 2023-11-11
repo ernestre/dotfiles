@@ -62,7 +62,7 @@ in
       fi
 
       if [ -x "$(command -v xset)" ]; then
-        xset r rate 300 85
+        xset r rate 300 20
       fi
     '';
   };

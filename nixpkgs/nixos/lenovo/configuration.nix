@@ -16,7 +16,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Disable suspend on lid close
-  services.logind.lidSwitch = "ignore";
+  # services.logind.lidSwitch = "ignore";
 
   # Setup keyfile
   boot.initrd.secrets = {
@@ -48,9 +48,12 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
   services.xserver.windowManager.i3.enable = true;
-  services.xserver.displayManager.defaultSession = "none+i3";
+  services.xserver.displayManager.defaultSession = "gnome-xorg";
+  # services.xserver.displayManager.defaultSession = "none+i3";
+
+  services.tailscale.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -92,6 +95,15 @@
       tdesktop
       spotify
       discord
+      betaflight-configurator
+
+      gparted
+      deluge
+      tailscale
+      awscli2
+
+      exfat
+      gnome.gnome-disk-utility
     ];
   };
 

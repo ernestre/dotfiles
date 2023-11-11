@@ -3,9 +3,7 @@
   imports = [
     ./modules/alacritty
     ./modules/common.nix
-    ./modules/dunst
     ./modules/git
-    ./modules/i3
     ./modules/neovim
     ./modules/rofi
     ./modules/tmux
@@ -30,8 +28,32 @@
     kind
     k9s
     maim
-    dunst
+    insomnia
+
+    gnomeExtensions.user-themes
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.clipboard-indicator
+    gnomeExtensions.aylurs-widgets
+
+    # tiling?
+    gnomeExtensions.pop-shell
+    gnomeExtensions.top-bar-organizer
+    gnomeExtensions.tray-icons-reloaded
+    gnomeExtensions.user-themes
+    gnomeExtensions.vitals
   ];
+
+  dconf.settings = {
+    # ...
+    "org/gnome/shell" = {
+      disable-user-extensions = false;
+
+      # `gnome-extensions list` for a list
+      enabled-extensions = [
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
+      ];
+    };
+  };
 
   services.dunst.enable = true;
 

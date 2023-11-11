@@ -4,7 +4,9 @@
     fd
     git
     gnumake
-    go
+    (go.overrideAttrs (old: {
+      version = "1.21.1";
+    }))
     gopass
     jq
     just
