@@ -1,4 +1,4 @@
-{ pkgs, lib, system, ... }:
+{ pkgs, pkgsUnstable, lib, ... }:
 
 let
   plugin = repo: rev: pkgs.vimUtils.buildVimPluginFrom2Nix {
@@ -45,13 +45,15 @@ in
       terraform-ls
     ];
     plugins = with pkgs.vimPlugins; [
-      (plugin "ray-x/go.nvim" "c75824b1f050c153ebfd5be65a318b9d4463d5a9")
-      (plugin "ThePrimeagen/harpoon" "f4aff5bf9b512f5a85fe20eb1dcf4a87e512d971")
       (plugin "szw/vim-maximizer" "2e54952fe91e140a2e69f35f22131219fcd9c5f1")
-      (plugin "NoahTheDuke/vim-just" "3b8cd4b1d270108320bd0ffac939766e9cedf6b9")
       (plugin "sniphpets/sniphpets" "069f4a7818e8fcf50cd669a2651c3f63f9b2e550")
       (plugin "sniphpets/sniphpets-common" "a250b732477b4985b3961f0fd4e50aab247f0bae")
-      (plugin "phpactor/phpactor" "02bc482e37fd2fbdb698092380f5dfecb10aaf29")
+
+      pkgsUnstable.vimPlugins.vim-just
+
+      harpoon
+      phpactor
+      go-nvim
       cmp-buffer
       cmp-calc
       cmp-nvim-lsp
