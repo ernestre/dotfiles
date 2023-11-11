@@ -3,11 +3,8 @@
   imports = [
     ./modules/alacritty
     ./modules/common.nix
-    ./modules/dunst
     ./modules/git
-    ./modules/i3
     ./modules/neovim
-    ./modules/rofi
     ./modules/tmux
     ./modules/zsh
   ];
@@ -22,26 +19,10 @@
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
   home.packages = with pkgs; [
-    alacritty
     gcc
-    rofi
     xclip
     kubectl
     kind
     k9s
-    maim
-    dunst
   ];
-
-  services.dunst.enable = true;
-
-  xsession.windowManager.i3 = {
-    config = {
-      startup = [
-        { command = "telegram-desktop"; notification = false; }
-        { command = "discord"; notification = false; }
-        { command = "autorandr -c"; notification = false; }
-      ];
-    };
-  };
 }
