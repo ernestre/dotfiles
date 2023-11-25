@@ -43,10 +43,10 @@
         move-to-workspace-3 = [ "<Shift><Alt>numbersign" ];
         move-to-workspace-4 = [ "<Shift><Alt>dollar" ];
 
-        witch-to-workspace-1 = [ "<Alt>1" ];
-        witch-to-workspace-2 = [ "<Alt>2" ];
-        witch-to-workspace-3 = [ "<Alt>3" ];
-        witch-to-workspace-4 = [ "<Alt>4" ];
+        switch-to-workspace-1 = [ "<Alt>1" ];
+        switch-to-workspace-2 = [ "<Alt>2" ];
+        switch-to-workspace-3 = [ "<Alt>3" ];
+        switch-to-workspace-4 = [ "<Alt>4" ];
 
         switch-applications = [ "<Alt>Tab" ];
         switch-windows = [ "<Super>Tab" ];
