@@ -100,6 +100,7 @@ in
       gitlinker-nvim
       telescope-fzy-native-nvim
       vim-tmux-navigator
+      lsp_signature-nvim
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: [
         plugins.tree-sitter-go
         plugins.tree-sitter-hcl
