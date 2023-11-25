@@ -4,6 +4,7 @@
     ./modules/alacritty
     ./modules/common.nix
     ./modules/git
+    ./modules/gnome
     ./modules/neovim
     ./modules/tmux
     ./modules/zsh
