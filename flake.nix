@@ -30,6 +30,20 @@
       };
     in
     {
+      modules = {
+        alacritty = import ./nixpkgs/home-manager/modules/alacritty;
+        common = import ./nixpkgs/home-manager/modules/common.nix;
+        dunst = import ./nixpkgs/home-manager/modules/dunst;
+        git = import ./nixpkgs/home-manager/modules/git;
+        gnome = import ./nixpkgs/home-manager/modules/gnome;
+        i3 = import ./nixpkgs/home-manager/modules/i3;
+        neovim = import ./nixpkgs/home-manager/modules/neovim;
+        profile = import ./nixpkgs/home-manager/modules/profile;
+        rofi = import ./nixpkgs/home-manager/modules/rofi;
+        tmux = import ./nixpkgs/home-manager/modules/tmux;
+        zsh = import ./nixpkgs/home-manager/modules/zsh;
+      };
+
       homeConfigurations = {
         erre = inputs.home-manager.lib.homeManagerConfiguration {
           pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
