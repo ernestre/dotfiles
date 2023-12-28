@@ -1,32 +1,32 @@
-{ pkgs, ... }:
+{ pkgs, pkgsUnstable, ... }:
 {
   home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    delve # go dap debug
     fd
-    font-awesome
     git
     gnumake
+    go
+    gopass
     jq
     just
     pwgen
-    ranger
     ripgrep
-    sops
+    terraform
     tmux
     tree
     yq-go
+    delve # go dap debug
+    sops
+    font-awesome
+    ranger
+    (pkgsUnstable.nerdfonts.override { fonts = [ "GeistMono" ]; })
 
-    # go
-    # gopass
-    # nodePackages."intelephense"
-    # nodePackages."typescript"
-    # nodePackages."typescript-language-server"
-    # nodePackages."vscode-langservers-extracted"
-    # nodePackages."yaml-language-server"
-    # nodejs-18_x
-    # terraform
-    # yarn
+    nodejs_20
+    yarn
+    nodePackages."intelephense"
+    nodePackages."typescript"
+    nodePackages."typescript-language-server"
+    nodePackages."vscode-langservers-extracted"
+    nodePackages."yaml-language-server"
   ];
 
   fonts.fontconfig.enable = true;
