@@ -51,6 +51,7 @@ in
       pkgsUnstable.vimPlugins.vim-just
 
       harpoon
+      vim-polyglot
       phpactor
       go-nvim
       cmp-buffer
