@@ -1,3 +1,4 @@
+# This overlay updates plugin's dependencies because of fsevents package remove code execution vulnerability
 { pkgs }:
 final: prev:
 let
@@ -6,7 +7,7 @@ let
       old:
       let
         nodeDep = pkgs.mkYarnPackage {
-          name = "node-modules";
+          name = "mkp-node-modules";
           src = ./.;
           packageJSON = ./package.json;
           yarnLock = ./yarn.lock;
@@ -19,6 +20,7 @@ let
           rev = "90d3fdbf4876edd5c3c033006494887622add320";
         };
 
+        patches = [ ];
         postInstall = ''
           ln -s ${nodeDep}/libexec/markdown-preview/node_modules $out/app
         '';
