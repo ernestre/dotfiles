@@ -1,7 +1,7 @@
 { pkgs, pkgsUnstable, lib, ... }:
 
 let
-  plugin = repo: ref: rev: pkgs.vimUtils.buildVimPluginFrom2Nix {
+  plugin = repo: ref: rev: pkgs.vimUtils.buildVimPlugin {
     pname = "${lib.strings.sanitizeDerivationName repo}";
     version = rev;
     src = builtins.fetchGit {
