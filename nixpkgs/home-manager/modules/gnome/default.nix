@@ -1,5 +1,18 @@
-{ lib, ... }:
-{
+{ lib, ... }: {
+  # home.packages = with pkgs.gnomeExtensions; [
+  #   auto-move-windows
+  #   # bluetooth-battery
+  #   # caffeine
+  #   # clipboard-indicator
+  #   # notification-banner-reloaded
+  #   # vitals
+  # ];
+
+  # home.file.".local/share/gnome-shell/extensions/Vitals@CoreCoding.com".source = builtins.fetchGit {
+  #   url = "https://github.com/corecoding/Vitals.git";
+  #   ref = "refs/tags/v62.0.0";
+  # };
+
   # Use `dconf watch /` to track stateful changes you are doing, then set them here.
   dconf.settings =
     let
@@ -60,21 +73,23 @@
         previous = [ "<Shift><Alt>s" ];
       };
 
-      "org/gnome/shell" = {
-        disable-user-extensions = false;
-        enabled-extensions = [
-          "Vitals@CoreCoding.com"
-          "auto-move-windows@gnome-shell-extensions.gcampax.github.com"
-          "bluetooth-battery@michalw.github.com"
-          "caffeine@patapon.info"
-          "clipboard-indicator@tudmotu.com"
-          "instantworkspaceswitcher@amalantony.net"
-          "notification-banner-reloaded@marcinjakubowski.github.com"
-          "ubuntu-appindicators@ubuntu.com"
-          "ubuntu-dock@ubuntu.com"
-          "user-theme@gnome-shell-extensions.gcampax.github.com"
-        ];
-      };
+      # "org/gnome/shell".disabled-extensions = [ ];
+      #
+      # "org/gnome/shell" = {
+      #   disable-user-extensions = false;
+      #   enabled-extensions = [
+      #     "Vitals@CoreCoding.com"
+      #     # "ato-move-windows@gnome-shell-extensions.gcampax.github.com"
+      #     # "bluetooth-battery@michalw.github.com"
+      #     # "caffeine@patapon.info"
+      #     # "clipboard-indicator@tudmotu.com"
+      #     # # "instantworkspaceswitcher@amalantony.net"
+      #     # "notification-banner-reloaded@marcinjakubowski.github.com"
+      #     # "ubuntu-appindicators@ubuntu.com"
+      #     # "ubuntu-dock@ubuntu.com"
+      #     # "user-theme@gnome-shell-extensions.gcampax.github.com"
+      #   ];
+      # };
 
       "org/gnome/shell/extensions/auto-move-windows" = {
         application-list = [
