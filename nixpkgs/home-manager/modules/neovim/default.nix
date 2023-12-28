@@ -1,13 +1,12 @@
 { pkgs, pkgsUnstable, lib, ... }:
 
 let
-  plugin = repo: rev: pkgs.vimUtils.buildVimPluginFrom2Nix {
+  plugin = repo: ref: rev: pkgs.vimUtils.buildVimPluginFrom2Nix {
     pname = "${lib.strings.sanitizeDerivationName repo}";
     version = rev;
     src = builtins.fetchGit {
       url = "https://github.com/${repo}.git";
-      ref = "master";
-      rev = rev;
+      inherit ref rev;
     };
   };
 in
@@ -45,9 +44,9 @@ in
       terraform-ls
     ];
     plugins = with pkgs.vimPlugins; [
-      (plugin "szw/vim-maximizer" "2e54952fe91e140a2e69f35f22131219fcd9c5f1")
-      (plugin "sniphpets/sniphpets" "069f4a7818e8fcf50cd669a2651c3f63f9b2e550")
-      (plugin "sniphpets/sniphpets-common" "a250b732477b4985b3961f0fd4e50aab247f0bae")
+      (plugin "szw/vim-maximizer" "master" "2e54952fe91e140a2e69f35f22131219fcd9c5f1")
+      (plugin "sniphpets/sniphpets" "master" "069f4a7818e8fcf50cd669a2651c3f63f9b2e550")
+      (plugin "sniphpets/sniphpets-common" "master" "a250b732477b4985b3961f0fd4e50aab247f0bae")
 
       pkgsUnstable.vimPlugins.vim-just
 
