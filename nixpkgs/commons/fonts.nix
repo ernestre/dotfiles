@@ -1,3 +1,3 @@
 {
-  name = "Geist Mono Nerd Font";
+  name = "GeistMono Nerd Font";
 }
