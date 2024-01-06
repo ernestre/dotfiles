@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 let
   zsh-z = pkgs.fetchFromGitHub {
     owner = "agkozak";
@@ -42,6 +42,8 @@ in
       gaca = "git add . && git commit -v --amend";
       gacan = "gaca --no-edit";
       genpass = "pwgen -CnysB 32 1";
+
+      rm = "trash";
     };
 
     sessionVariables = {

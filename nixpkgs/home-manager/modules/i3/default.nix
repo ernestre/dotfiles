@@ -4,10 +4,20 @@ let
   fonts = import ../../../commons/fonts.nix;
   i3_fonts = {
     names = [ fonts.name ];
-    size = 8.0;
+    size = 10.0;
   };
 in
 {
+  imports = [
+    ../dunst
+    ../rofi
+  ];
+
+  home.packages = with pkgs; [
+    arandr
+    autorandr
+  ];
+
   xsession.windowManager.i3 = {
     enable = true;
 
@@ -142,9 +152,6 @@ in
         "3" = [
           { class = "Slack"; }
           { class = "discord"; }
-        ];
-        "5" = [
-          { class = "Mailspring"; }
         ];
       };
 

@@ -5,16 +5,16 @@
     { enable = true; }
     ./modules/common.nix
     ./modules/git
-    ./modules/gnome
     ./modules/neovim
     ./modules/tmux
     ./modules/zsh
+    ./modules/i3
   ];
 
   home.username = "erre";
   home.homeDirectory = "/home/erre";
 
-  home.stateVersion = "22.05";
+  home.stateVersion = "23.11";
 
   programs.home-manager.enable = true;
 
@@ -26,5 +26,7 @@
     kubectl
     kind
     k9s
+
+    trash-cli
   ];
 }

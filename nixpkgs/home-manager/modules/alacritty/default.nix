@@ -1,8 +1,6 @@
 { config, lib, pkgs, ... }:
 with lib;
 let
-  # because of retina
-  size = if pkgs.stdenv.isDarwin then 16 else 10;
   fonts = import ../../../commons/fonts.nix;
 in
 {
@@ -37,7 +35,7 @@ in
               family = fonts.name;
               style = "Regular";
             };
-            inherit size;
+            size = fonts.size;
           };
           colors = {
             primary = {
