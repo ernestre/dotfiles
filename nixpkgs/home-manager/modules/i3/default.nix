@@ -83,6 +83,7 @@ in
         "${i3_mod}+Shift+q" = "kill";
         "${i3_mod}+d" = "exec rofi -show drun -show-icons -modi drun";
         "${i3_mod}+w" = "exec rofi -show window -show-icons";
+        "${i3_mod}+c" = "exec rofi -show calc -modi calc -no-show-match -no-sort";
         "${i3_mod}+p" = "exec gopass ls --flat | rofi -dmenu -p gopass | xargs --no-run-if-empty gopass -c";
         "${i3_mod}+u" = "exec gopass ls --flat | rofi -dmenu -p gopass | xargs -i --no-run-if-empty gopass -c {} user";
         "${i3_mod}+o" = "exec gopass ls --flat | rofi -dmenu -p gopass | xargs --no-run-if-empty gopass otp -c";

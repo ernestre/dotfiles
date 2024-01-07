@@ -1,8 +1,13 @@
 { pkgs, ... }:
+let
+  font = import ../../../commons/fonts.nix;
+in
 {
-  home.file.".config/rofi".source = ./config;
+  programs.rofi = {
+    enable = true;
 
-  home.packages = with pkgs; [
-    rofi
-  ];
+    font = "${font.name} ${font.size}";
+
+    plugins = with pkgs; [ rofi-calc ];
+  };
 }
