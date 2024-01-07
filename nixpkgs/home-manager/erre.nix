@@ -2,7 +2,6 @@
 {
   imports = [
     ./modules/alacritty
-    { enable = true; }
     ./modules/common.nix
     ./modules/git
     ./modules/neovim

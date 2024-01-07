@@ -1,53 +1,24 @@
-{ config, lib, pkgs, ... }:
-with lib;
+{ ... }:
 let
-  fonts = import ../../../commons/fonts.nix;
+  font = import ../../../commons/fonts.nix;
 in
 {
-  options = {
-    enable = mkOption {
-      type = types.bool;
-      default = false;
-      example = true;
-      description = lib.mdDoc ''
-        Whether to enable personal Alacritty config.
-      '';
-    };
+  home.file.".config/alacritty/alacritty.toml".text = ''
+    [colors.primary]
+    background = "#2a2f38"
+    foreground = "#f1fffa"
 
-    customConfig = mkOption {
-      type = types.attrs;
-      default = { };
-      description = lib.mdDoc ''
-        Override default config with custom values. i.e different font or font size.
-      '';
-    };
-  };
+    [env]
+    WINIT_X11_SCALE_FACTOR = "1"
 
-  config = mkIf config.enable {
-    home.file.".config/alacritty/alacritty.yml".text = pkgs.lib.generators.toYAML { }
-      (
-        {
-          env = {
-            WINIT_X11_SCALE_FACTOR = "1";
-          };
-          font = {
-            normal = {
-              family = fonts.name;
-              style = "Regular";
-            };
-            size = fonts.size;
-          };
-          colors = {
-            primary = {
-              background = "#2a2f38";
-              foreground = "#f1fffa";
-            };
-          };
-          window = {
-            startup_mode = "Maximized";
-          };
-        } //
-        config.customConfig
-      );
-  };
+    [font]
+    size = ${font.size}
+
+    [font.normal]
+    family = "${font.name}"
+    style = "Regular"
+
+    [window]
+    startup_mode = "Maximized"
+  '';
 }
