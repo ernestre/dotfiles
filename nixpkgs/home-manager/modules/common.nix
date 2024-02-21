@@ -11,7 +11,6 @@
     pwgen
     ripgrep
     terraform
-    tmux
     tree
     yq-go
     delve # go dap debug

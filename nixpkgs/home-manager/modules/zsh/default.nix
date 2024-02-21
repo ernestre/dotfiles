@@ -22,10 +22,8 @@ in
         "git"
         "docker"
         "docker-compose"
-        "wd"
         "kubectl"
         "helm"
-        "tmuxinator"
       ];
       theme = "cloud";
     };
