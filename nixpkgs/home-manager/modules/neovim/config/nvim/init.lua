@@ -1,4 +1,4 @@
-vim.loader.enable()
+require('impatient')
 
 require('autocmd')
 require('keymaps')
