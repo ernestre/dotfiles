@@ -42,6 +42,8 @@ in
 
       # terraform
       terraform-ls
+
+      marksman
     ];
     plugins = with pkgs.vimPlugins; [
       (plugin "szw/vim-maximizer" "master" "2e54952fe91e140a2e69f35f22131219fcd9c5f1")
@@ -110,6 +112,8 @@ in
         plugins.tree-sitter-javascript
         plugins.tree-sitter-jsdoc
         plugins.tree-sitter-json
+        plugins.tree-sitter-lua
+        plugins.tree-sitter-markdown
         plugins.tree-sitter-nix
         plugins.tree-sitter-php
         plugins.tree-sitter-lua

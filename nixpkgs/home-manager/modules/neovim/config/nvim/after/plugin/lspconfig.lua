@@ -1,3 +1,5 @@
+local lsp_utils = require "lspconfig.util"
+
 require 'lspconfig'.intelephense.setup {}
 require 'lspconfig'.jsonls.setup {}
 require 'lspconfig'.pyright.setup {}
@@ -51,6 +53,13 @@ require 'lspconfig'.gopls.setup {
     },
 }
 require 'lspconfig'.golangci_lint_ls.setup {}
+
+require 'lspconfig'.marksman.setup {
+    cmd = { "marksman", "server" },
+    filetypes = { "markdown", "markdown.mdx", "vimwiki" },
+    root_dir = lsp_utils.root_pattern(".git", ".marksman.toml"),
+    single_file_support = true,
+}
 
 map('n', '<C-]>', '<Cmd>lua vim.lsp.buf.definition()<CR>zz')
 map('n', '<leader>ci', '<Cmd>Telescope lsp_references<CR>')
