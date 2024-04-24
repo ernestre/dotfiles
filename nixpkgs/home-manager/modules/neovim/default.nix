@@ -73,6 +73,10 @@ in
       nvim-colorizer-lua
       markdown-preview-nvim
 
+      # breadcrumbs
+      barbecue-nvim
+      nvim-navic
+
       # dap
       nvim-dap
       nvim-dap-go
