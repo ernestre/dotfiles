@@ -23,7 +23,7 @@ o.shiftwidth = 4    -- when indenting with '>', use 4 spaces width
 o.splitright = true -- Open new splits on the right
 o.synmaxcol = 200   -- syntax highlight only 200 chars"
 o.tabstop = 4       -- show existing tab with 4 spaces width
-o.updatetime = 1000 -- wait ms after stop typing to trigger scripts
+o.updatetime = 200  -- wait ms after stop typing to trigger scripts
 o.cursorline = true;
 o.diffopt:append { "vertical" }
 o.linespace = 2
