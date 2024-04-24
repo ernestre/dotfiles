@@ -78,11 +78,11 @@ in
       nvim-navic
 
       # dap
-      nvim-dap
-      nvim-dap-go
-      nvim-dap-ui
-      nvim-dap-virtual-text
-      telescope-dap-nvim
+      # nvim-dap
+      # nvim-dap-go
+      # nvim-dap-ui
+      # nvim-dap-virtual-text
+      # telescope-dap-nvim
 
       nvim-lspconfig
       nvim-tree-lua
