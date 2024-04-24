@@ -16,6 +16,7 @@ in
   home.packages = with pkgs; [
     arandr
     autorandr
+    maim
   ];
 
   xsession.windowManager.i3 = {
