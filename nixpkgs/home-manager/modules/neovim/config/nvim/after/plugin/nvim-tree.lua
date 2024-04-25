@@ -79,6 +79,10 @@ require 'nvim-tree'.setup {
         enable = false,
         update_cwd = true,
     },
+    view = {
+        width = 30,
+        adaptive_size = true,
+    },
     renderer = {
         highlight_git = true,
         root_folder_modifier = ":t",
