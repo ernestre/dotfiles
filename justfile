@@ -18,3 +18,6 @@ store-fix:
 
 store-clean:
     nix-collect-garbage -d
+
+tmux-source:
+    tmux source-file ~/.config/tmux/tmux.conf

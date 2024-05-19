@@ -11,6 +11,7 @@
       continuum
 
       catppuccin
+      tmux-thumbs
     ];
 
     extraConfig = ''
