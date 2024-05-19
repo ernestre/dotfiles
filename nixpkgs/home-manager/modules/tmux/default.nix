@@ -12,6 +12,7 @@
 
       catppuccin
       tmux-thumbs
+      fzf-tmux-url
     ];
 
     extraConfig = ''
