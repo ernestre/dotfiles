@@ -27,9 +27,5 @@
     k9s
 
     trash-cli
-
-    vagrant
-    virtualbox
-    ansible
   ];
 }
