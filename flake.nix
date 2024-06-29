@@ -51,6 +51,12 @@
           extraSpecialArgs = { pkgsUnstable = inputs.nixpkgsUnstable.legacyPackages.x86_64-linux; };
         };
 
+        mbp-homelab = inputs.home-manager.lib.homeManagerConfiguration {
+          pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+          modules = [ ./nixpkgs/home-manager/mbp-homelab.nix ];
+          extraSpecialArgs = { pkgsUnstable = inputs.nixpkgsUnstable.legacyPackages.x86_64-linux; };
+        };
+
         mbp = inputs.home-manager.lib.homeManagerConfiguration {
           pkgs = inputs.nixpkgs.legacyPackages.x86_64-darwin;
           modules = [ ./nixpkgs/home-manager/mbp.nix ];

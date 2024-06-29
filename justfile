@@ -12,6 +12,7 @@ nixos-switch: (_nixos-rebuild-pc "switch")
 
 hm-switch-erre: (hm-switch "erre")
 hm-switch-mbp: (hm-switch "mbp")
+hm-switch-mbp-homelab: (hm-switch "mbp-homelab")
 
 store-fix:
     nix-store --verify --check-contents --repair
