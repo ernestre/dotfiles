@@ -20,5 +20,6 @@ in
 
     [window]
     startup_mode = "Maximized"
+    opacity = 0.9
   '';
 }
