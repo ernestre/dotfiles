@@ -27,6 +27,10 @@
       pull.rebase = true;
       push.default = "tracking";
       rebase.autoStash = true;
+      rerere.enabled = true;
+      diff.algorithm = "histogram";
+      diff.context = 10;
+      merge.conflictstyle = "zdiff3";
     };
 
     delta = {
