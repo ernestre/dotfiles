@@ -4,23 +4,23 @@
     fd
     git
     gnumake
-    go
     gopass
     jq
     just
     pwgen
     ripgrep
-    terraform
     tree
     yq-go
     delve # go dap debug
     sops
     font-awesome
-    ranger
+    yazi
+    trash-cli
+    parallel
     (pkgsUnstable.nerdfonts.override { fonts = [ "GeistMono" ]; })
 
-    nodejs_20
-    yarn
+    nodejs_22
+    (yarn.override { nodejs = nodejs_22; })
     nodePackages."intelephense"
     nodePackages."typescript"
     nodePackages."typescript-language-server"
@@ -35,6 +35,7 @@
   programs.direnv.enable = true;
   programs.bat.enable = true;
   programs.btop.enable = true;
+  programs.go.enable = true;
 
   programs.starship = {
     enable = true;
