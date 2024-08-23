@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./modules/alacritty
+    ./modules/kitty
     ./modules/common.nix
     ./modules/git
     ./modules/neovim
