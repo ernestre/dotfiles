@@ -17,6 +17,7 @@
     yazi
     trash-cli
     parallel
+    playerctl
     (pkgsUnstable.nerdfonts.override { fonts = [ "GeistMono" ]; })
 
     nodejs_22
