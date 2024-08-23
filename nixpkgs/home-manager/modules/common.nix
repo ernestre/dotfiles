@@ -18,6 +18,7 @@
     trash-cli
     parallel
     playerctl
+    eza
     (pkgsUnstable.nerdfonts.override { fonts = [ "GeistMono" ]; })
 
     nodejs_22
