@@ -55,11 +55,15 @@
         move-to-workspace-2 = [ "<Shift><Alt>at" ];
         move-to-workspace-3 = [ "<Shift><Alt>numbersign" ];
         move-to-workspace-4 = [ "<Shift><Alt>dollar" ];
+        move-to-workspace-5 = [ "<Shift><Alt>percent" ];
+        move-to-workspace-6 = [ "<Shift><Alt>asciicircum" ];
 
         switch-to-workspace-1 = [ "<Alt>1" ];
         switch-to-workspace-2 = [ "<Alt>2" ];
         switch-to-workspace-3 = [ "<Alt>3" ];
         switch-to-workspace-4 = [ "<Alt>4" ];
+        switch-to-workspace-5 = [ "<Alt>5" ];
+        switch-to-workspace-6 = [ "<Alt>6" ];
 
         switch-applications = [ "<Alt>Tab" ];
         switch-windows = [ "<Super>Tab" ];
