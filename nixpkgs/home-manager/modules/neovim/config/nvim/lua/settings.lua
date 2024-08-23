@@ -11,7 +11,7 @@ o.listchars:append "tab:» "
 o.encoding = 'utf-8'
 o.expandtab = true
 o.hidden = true
-o.lazyredraw = true     -- will buffer screen updates instead of updating all the time show statusline
+-- o.lazyredraw = false    -- will buffer screen updates instead of updating all the time show statusline
 o.maxmempattern = 20000 -- increase max memory to show syntax highlighting for large files
 o.swapfile = false      -- Don't create swapfile
 o.number = true         -- show line numbers
@@ -31,10 +31,12 @@ o.shortmess = 'IaTc' -- Disable welcome message and random short messagesA
 o.wrap = false
 o.laststatus = 3
 o.termguicolors = true
+o.conceallevel = 0
 o.completeopt = 'menuone,noinsert,noselect'
 g.completion_matching_strategy_list = { 'fuzzy' }
 g.completion_matching_ignore_case = 1
 o.spell = true
+o.spellfile = "~/.vim/spell/en.utf-8.add"
 
 -- Save undos into a file which allows to do undos which are days ago
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
