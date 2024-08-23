@@ -1,7 +1,11 @@
 local lsp_utils = require "lspconfig.util"
 
 require 'lspconfig'.intelephense.setup {}
-require 'lspconfig'.jsonls.setup {}
+require 'lspconfig'.jsonls.setup {
+    init_options = {
+        provideFormatter = false
+    }
+}
 require 'lspconfig'.pyright.setup {}
 require 'lspconfig'.tsserver.setup {
     settings = {
@@ -52,7 +56,12 @@ require 'lspconfig'.gopls.setup {
         },
     },
 }
-require 'lspconfig'.golangci_lint_ls.setup {}
+-- require 'lspconfig'.golangci_lint_ls.setup {}
+require 'lspconfig'.marksman.setup {
+    cmd = { "marksman", "server" },
+    filetypes = { "markdown", "markdown.mdx", "vimwiki" },
+    root_dir = lsp_utils.root_pattern(".git", ".marksman.toml"),
+}
 
 require 'lspconfig'.marksman.setup {
     cmd = { "marksman", "server" },

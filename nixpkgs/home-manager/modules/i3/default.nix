@@ -4,7 +4,7 @@ let
   fonts = import ../../../commons/fonts.nix;
   i3_fonts = {
     names = [ fonts.name ];
-    size = 10.0;
+    size = 11.0;
   };
 in
 {
@@ -13,11 +13,17 @@ in
     ../rofi
   ];
 
-  home.packages = with pkgs; [
-    arandr
-    autorandr
-    maim
-  ];
+  home.packages = with pkgs;
+    [
+      arandr
+      autorandr
+      xorg.xrandr
+      i3status-rust
+
+      feh
+      flameshot
+      picom
+    ];
 
   xsession.windowManager.i3 = {
     enable = true;
@@ -27,8 +33,9 @@ in
         { command = "xss-lock --transfer-sleep-lock -- i3lock --nofork"; notification = false; }
         { command = "nm-applet"; notification = false; }
         { command = "spotify"; notification = false; }
+        { command = "picom"; notification = false; }
         { command = "xset -dpms && xset s off"; notification = false; }
-        { command = "${pkgs.feh}/bin/feh --bg-center ~/dotfiles/wallpapers/main.png"; notification = false; }
+        { command = "${pkgs.feh}/bin/feh --bg-center ~/dotfiles/wallpapers/cat.png"; notification = false; }
       ];
 
       fonts = i3_fonts;
@@ -36,7 +43,9 @@ in
       bars = [{
         fonts = i3_fonts;
 
-        statusCommand = "${pkgs.i3status}/bin/i3status";
+        statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/dotfiles/configs/i3/i3status-rs-config.toml";
+
+        trayOutput = "primary";
 
         colors = {
           background = "#2a2f38";
@@ -80,7 +89,7 @@ in
 
         "${i3_mod}+Shift+minus" = "move scratchpad";
         "${i3_mod}+minus" = "scratchpad show";
-        "${i3_mod}+Return" = "exec --no-startup-id alacritty";
+        "${i3_mod}+Return" = "exec --no-startup-id kitty";
         "${i3_mod}+Shift+q" = "kill";
         "${i3_mod}+d" = "exec rofi -show drun -show-icons -modi drun";
         "${i3_mod}+w" = "exec rofi -show window -show-icons";
@@ -88,25 +97,12 @@ in
         "${i3_mod}+p" = "exec gopass ls --flat | rofi -dmenu -p gopass | xargs --no-run-if-empty gopass -c";
         "${i3_mod}+u" = "exec gopass ls --flat | rofi -dmenu -p gopass | xargs -i --no-run-if-empty gopass -c {} user";
         "${i3_mod}+o" = "exec gopass ls --flat | rofi -dmenu -p gopass | xargs --no-run-if-empty gopass otp -c";
-        "${i3_mod}+Shift+o" = "exec --no-startup-id maim --select | xclip -selection clipboard -t image/png";
-        "${i3_mod}+Shift+p" = "exec --no-startup-id maim | xclip -selection clipboard -t image/png";
+        "${i3_mod}+Shift+o" = "exec --no-startup-id flameshot gui -c -r | xclip -selection clipboard -t image/png";
 
         "${i3_mod}+h" = "focus left";
         "${i3_mod}+j" = "focus down";
         "${i3_mod}+k" = "focus up";
         "${i3_mod}+l" = "focus right";
-        "${i3_mod}+Left" = "focus left";
-        "${i3_mod}+Down" = "focus down";
-        "${i3_mod}+Up" = "focus up";
-        "${i3_mod}+Right" = "focus right";
-        "${i3_mod}+Shift+h" = "move left";
-        "${i3_mod}+Shift+j" = "move down";
-        "${i3_mod}+Shift+k" = "move up";
-        "${i3_mod}+Shift+l" = "move right";
-        "${i3_mod}+Shift+Left" = "move left";
-        "${i3_mod}+Shift+Down" = "move down";
-        "${i3_mod}+Shift+Up" = "move up";
-        "${i3_mod}+Shift+Right" = "move right";
         "${i3_mod}+f" = "fullscreen toggle";
         "${i3_mod}+Shift+space" = "floating toggle";
         "${i3_mod}+space" = "focus mode_toggle";
@@ -136,6 +132,7 @@ in
 
         "Mod4+l" = "exec ~/dotfiles/scripts/i3/lock.sh";
 
+        "${i3_mod}+Control+c" = "exec autorandr -c";
         "${i3_mod}+Shift+c" = "reload";
         "${i3_mod}+Shift+r" = "restart";
         "${i3_mod}+Shift+e" = "exec \"i3-nagbar - t warning - m 'You pressed the exit shortcut.Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'\"";
@@ -154,6 +151,9 @@ in
         "3" = [
           { class = "Slack"; }
           { class = "discord"; }
+        ];
+        "5" = [
+          { class = "thunderbird"; }
         ];
       };
 

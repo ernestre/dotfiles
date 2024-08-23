@@ -11,13 +11,14 @@
       continuum
 
       catppuccin
-      tmux-thumbs
-      fzf-tmux-url
     ];
 
     extraConfig = ''
       set -g @continuum-restore 'on'
       set -g @continuum-save-interval '1'
+
+      # for images
+      set -gq allow-passthrough on
 
       set -g @catppuccin_flavour 'macchiato' # or frappe, macchiato, mocha
 
