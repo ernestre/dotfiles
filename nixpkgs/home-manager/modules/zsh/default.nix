@@ -40,6 +40,15 @@ in
       gaca = "git add . && git commit -v --amend";
       gacan = "gaca --no-edit";
       genpass = "pwgen -CnysB 32 1";
+      dd = "delta --diff-so-fancy";
+      lg = "lazygit";
+      dc = "docker compose";
+      ld = "lazydocker";
+      ls = "eza --icons --long";
+      drmi = "docker run --rm -it";
+      v = "vim";
+      vn = "vim -c \":VimwikiIndex\"";
+      newpass = "pwgen -CnysB 32 1";
 
       rm = "trash";
     };
@@ -52,18 +61,27 @@ in
     };
 
     initExtra = ''
-      # Linux alternative for OSX pbcopy
-      if ! [ -x "$(command -v pbpaste)" ]; then
-        alias pbpaste='xclip -selection clipboard -o'
-      fi
+        # Linux alternative for OSX pbcopy
+        if ! [ -x "$(command -v pbpaste)" ]; then
+          alias pbpaste='xclip -selection clipboard -o'
+        fi
 
-      if ! [ -x "$(command -v pbcopy)" ]; then
-        alias pbcopy='xclip -selection clipboard'
-      fi
+        if ! [ -x "$(command -v pbcopy)" ]; then
+          alias pbcopy='xclip -selection clipboard'
+        fi
 
-      if [ -x "$(command -v xset)" ]; then
-        xset r rate 300 85
-      fi
+        if [ -x "$(command -v xset)" ]; then
+          xset r rate 300 20
+        fi
+
+        n () {
+          local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+          yazi "$@" --cwd-file="$tmp"
+          if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+              cd -- "$cwd"
+          fi
+          rm -f -- "$tmp"
+      }
     '';
   };
 }
