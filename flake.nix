@@ -61,6 +61,7 @@
       nixosConfigurations = {
         pc = nixosConfig ./nixpkgs/nixos/pc/configuration.nix;
         lenovo = nixosConfig ./nixpkgs/nixos/lenovo/configuration.nix;
+        thinkpad = nixosConfig ./nixpkgs/nixos/thinkpad/configuration.nix;
       };
     };
 }
