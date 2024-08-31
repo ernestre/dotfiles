@@ -136,6 +136,8 @@ in
         plugins.tree-sitter-regex
         plugins.tree-sitter-typescript
         plugins.tree-sitter-yaml
+        plugins.tree-sitter-query
+        plugins.tree-sitter-vimdoc
       ]))
     ];
   };
