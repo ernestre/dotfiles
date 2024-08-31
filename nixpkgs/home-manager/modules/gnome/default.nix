@@ -50,6 +50,8 @@
         screenshot-window = [ "<Shift><Alt>w" ];
       };
 
+      "org/gnome/desktop/wm/preferences".button-layout = ":minimize,maximize,close";
+
       "org/gnome/desktop/wm/keybindings" = {
         move-to-workspace-1 = [ "<Shift><Alt>exclam" ];
         move-to-workspace-2 = [ "<Shift><Alt>at" ];
