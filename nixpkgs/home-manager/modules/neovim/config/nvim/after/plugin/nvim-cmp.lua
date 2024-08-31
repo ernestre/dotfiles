@@ -38,7 +38,7 @@ cmp.setup({
         end, { "i" }), -- Only work in insert mode, otherwise the command toggling is not working
     },
     sources = cmp.config.sources({
-        { name = 'ultisnips' },
+        -- { name = 'ultisnips' }, # This cause slowness in js files
         { name = 'nvim_lsp' },
         { name = 'path' },
         { name = 'calc' },
