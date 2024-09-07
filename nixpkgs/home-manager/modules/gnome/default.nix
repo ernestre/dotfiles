@@ -24,6 +24,7 @@
         sources = [
           (mkTuple [ "xkb" "us" ])
           (mkTuple [ "xkb" "ru+phonetic_YAZHERTY" ])
+          (mkTuple [ "xkb" "lt" ])
         ];
       };
 
