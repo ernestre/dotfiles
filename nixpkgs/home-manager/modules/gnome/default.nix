@@ -17,6 +17,7 @@
   dconf.settings =
     let
       mkTuple = lib.hm.gvariant.mkTuple;
+      naturalScroll = false;
     in
     {
       "org/gnome/desktop/input-sources" = {
@@ -72,6 +73,14 @@
         switch-windows = [ "<Super>Tab" ];
         toggle-maximized = [ "<Alt>f" ];
         minimize = [ "<Alt>minus" ];
+      };
+
+      "org/gnome/desktop/peripherals/mouse" = {
+        natural-scroll = naturalScroll;
+      };
+
+      "org/gnome/desktop/peripherals/touchpad" = {
+        natural-scroll = naturalScroll;
       };
 
       "org/gnome/settings-daemon/plugins/media-keys" = {
