@@ -88,6 +88,7 @@ in
       vimwiki
       bullets-vim
       image-nvim
+      (plugin "MeanderingProgrammer/render-markdown.nvim" "main" "fe1002fddc61207e4ef4325d4bc0ca33697bbc7a")
       # }}
 
       # breadcrumbs
