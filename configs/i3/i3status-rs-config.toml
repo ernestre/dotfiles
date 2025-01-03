@@ -14,6 +14,12 @@ block = "bluetooth"
 mac = "14:28:76:96:EE:06"
 disconnected_format = ""
 format = " $icon $name{ $percentage|} "
+
+[[block]]
+block = "music"
+format = " $icon {$combo.str(max_w:20) $play $next |}"
+player = "spotify"
+
 [[block]]
 block = "bluetooth"
 mac = "94:DB:56:16:FD:0F"
