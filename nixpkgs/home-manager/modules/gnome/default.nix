@@ -17,7 +17,6 @@
   dconf.settings =
     let
       mkTuple = lib.hm.gvariant.mkTuple;
-      naturalScroll = false;
     in
     {
       "org/gnome/desktop/input-sources" = {
@@ -25,7 +24,6 @@
         sources = [
           (mkTuple [ "xkb" "us" ])
           (mkTuple [ "xkb" "ru+phonetic_YAZHERTY" ])
-          (mkTuple [ "xkb" "lt" ])
         ];
       };
 
@@ -52,8 +50,6 @@
         screenshot-window = [ "<Shift><Alt>w" ];
       };
 
-      "org/gnome/desktop/wm/preferences".button-layout = ":minimize,maximize,close";
-
       "org/gnome/desktop/wm/keybindings" = {
         move-to-workspace-1 = [ "<Shift><Alt>exclam" ];
         move-to-workspace-2 = [ "<Shift><Alt>at" ];
@@ -73,14 +69,6 @@
         switch-windows = [ "<Super>Tab" ];
         toggle-maximized = [ "<Alt>f" ];
         minimize = [ "<Alt>minus" ];
-      };
-
-      "org/gnome/desktop/peripherals/mouse" = {
-        natural-scroll = naturalScroll;
-      };
-
-      "org/gnome/desktop/peripherals/touchpad" = {
-        natural-scroll = naturalScroll;
       };
 
       "org/gnome/settings-daemon/plugins/media-keys" = {

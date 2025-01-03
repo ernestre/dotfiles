@@ -9,16 +9,15 @@
     just
     pwgen
     ripgrep
+    terraform
     tree
     yq-go
-    delve # go dap debug
+    pkgsUnstable.delve # go dap debug
     sops
     font-awesome
     yazi
     trash-cli
     parallel
-    playerctl
-    eza
     (pkgsUnstable.nerdfonts.override { fonts = [ "GeistMono" ]; })
 
     nodejs_22

@@ -19,7 +19,7 @@ require('telescope').setup {
     }
 }
 
-require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('fzf')
 
 map('n', '<Leader>f', ':Telescope find_files<CR>')
 map('n', '<Leader>F', ':Telescope find_files find_command=rg,--no-ignore,--hidden,--files,.<CR>')

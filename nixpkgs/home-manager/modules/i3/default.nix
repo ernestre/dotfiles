@@ -4,7 +4,7 @@ let
   fonts = import ../../../commons/fonts.nix;
   i3_fonts = {
     names = [ fonts.name ];
-    size = 11.0;
+    size = 10.0;
   };
 in
 {
@@ -98,6 +98,7 @@ in
         "${i3_mod}+u" = "exec gopass ls --flat | rofi -dmenu -p gopass | xargs -i --no-run-if-empty gopass -c {} user";
         "${i3_mod}+o" = "exec gopass ls --flat | rofi -dmenu -p gopass | xargs --no-run-if-empty gopass otp -c";
         "${i3_mod}+Shift+o" = "exec --no-startup-id flameshot gui -c -r | xclip -selection clipboard -t image/png";
+        "${i3_mod}+Shift+p" = "exec --no-startup-id flameshot gui";
 
         "${i3_mod}+h" = "focus left";
         "${i3_mod}+j" = "focus down";

@@ -1,1 +1,1 @@
-vim.g["pencil#conceallevel"] = 0
+vim.g["pencil#conceallevel"] = 3

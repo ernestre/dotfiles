@@ -40,6 +40,7 @@ in
       gaca = "git add . && git commit -v --amend";
       gacan = "gaca --no-edit";
       genpass = "pwgen -CnysB 32 1";
+      docker-image-size = "function() {docker inspect -f '{{.Size}}' $1 | numfmt --to=si}";
       dd = "delta --diff-so-fancy";
       lg = "lazygit";
       dc = "docker compose";
