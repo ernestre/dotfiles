@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = '*.go', command = 'GoImport'
+    pattern = '*.go', command = 'GoImports'
 })
 
 vim.api.nvim_create_autocmd("TermOpen", {

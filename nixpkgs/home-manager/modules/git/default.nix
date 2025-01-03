@@ -29,7 +29,7 @@
       rebase.autoStash = true;
       rerere.enabled = true;
       diff.algorithm = "histogram";
-      diff.context = 10;
+      diff.context = 2;
       merge.conflictstyle = "zdiff3";
     };
 

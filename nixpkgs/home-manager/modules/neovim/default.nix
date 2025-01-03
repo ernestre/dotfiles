@@ -49,6 +49,9 @@ in
       # writing
       marksman
       imagemagick
+
+      # k8s
+      helm-ls
     ];
     plugins = with pkgs.vimPlugins; [
       (plugin "szw/vim-maximizer" "master" "2e54952fe91e140a2e69f35f22131219fcd9c5f1")
@@ -74,6 +77,7 @@ in
       gitsigns-nvim
       gv-vim
       impatient-nvim
+      tabular
       lspkind-nvim
       vim-polyglot
       lualine-nvim
@@ -96,11 +100,11 @@ in
       nvim-navic
 
       # dap
-      # nvim-dap
-      # nvim-dap-go
-      # nvim-dap-ui
-      # nvim-dap-virtual-text
-      # telescope-dap-nvim
+      nvim-dap
+      nvim-dap-go
+      nvim-dap-ui
+      nvim-dap-virtual-text
+      telescope-dap-nvim
 
       nvim-lspconfig
       oil-nvim
@@ -137,8 +141,6 @@ in
         plugins.tree-sitter-regex
         plugins.tree-sitter-typescript
         plugins.tree-sitter-yaml
-        plugins.tree-sitter-query
-        plugins.tree-sitter-vimdoc
       ]))
     ];
   };
