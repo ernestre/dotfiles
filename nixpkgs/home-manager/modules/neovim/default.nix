@@ -38,7 +38,7 @@ in
       nodePackages.typescript-language-server
 
       # puthon
-      nodePackages.pyright
+      pyright
 
       # lua
       lua-language-server

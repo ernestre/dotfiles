@@ -18,7 +18,7 @@
     trash-cli
     parallel
     eza
-    (pkgsUnstable.nerdfonts.override { fonts = [ "GeistMono" ]; })
+    (nerdfonts.override { fonts = [ "GeistMono" ]; })
 
     nodejs_22
     (yarn.override { nodejs = nodejs_22; })
