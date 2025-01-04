@@ -17,6 +17,7 @@
     yazi
     trash-cli
     parallel
+    eza
     (pkgsUnstable.nerdfonts.override { fonts = [ "GeistMono" ]; })
 
     nodejs_22

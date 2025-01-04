@@ -19,6 +19,8 @@ in
       autorandr
       xorg.xrandr
       i3status-rust
+      networkmanagerapplet
+      playerctl
 
       feh
       flameshot
@@ -95,7 +97,6 @@ in
         "${i3_mod}+w" = "exec rofi -show window -show-icons";
         "${i3_mod}+c" = "exec rofi -show calc -modi calc -no-show-match -no-sort";
         "${i3_mod}+Shift+o" = "exec --no-startup-id flameshot gui -c -r | xclip -selection clipboard -t image/png";
-        "${i3_mod}+Shift+p" = "exec --no-startup-id flameshot gui";
 
         "${i3_mod}+h" = "focus left";
         "${i3_mod}+j" = "focus down";

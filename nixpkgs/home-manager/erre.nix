@@ -7,7 +7,7 @@
     ./modules/neovim
     ./modules/tmux
     ./modules/zsh
-    # ./modules/i3
+    ./modules/i3
     ./modules/gnome
   ];
 
