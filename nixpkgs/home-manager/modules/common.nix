@@ -4,7 +4,6 @@
     fd
     git
     gnumake
-    gopass
     jq
     just
     pwgen
