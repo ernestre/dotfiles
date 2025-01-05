@@ -20,7 +20,6 @@ in
 
     package = pkgsUnstable.neovim-unwrapped;
 
-    extraLuaPackages = ps: [ ps.magick ];
     extraPackages = with pkgs; [
       pkgsUnstable.tree-sitter
 
@@ -48,29 +47,32 @@ in
 
       # writing
       marksman
-      imagemagick
 
       # k8s
       helm-ls
     ];
     plugins = with pkgs.vimPlugins; [
       (plugin "szw/vim-maximizer" "master" "2e54952fe91e140a2e69f35f22131219fcd9c5f1")
-      (plugin "sniphpets/sniphpets" "master" "069f4a7818e8fcf50cd669a2651c3f63f9b2e550")
-      (plugin "sniphpets/sniphpets-common" "master" "a250b732477b4985b3961f0fd4e50aab247f0bae")
-      (plugin "lukas-reineke/indent-blankline.nvim" "master" "3c8a185da4b8ab7aef487219f5e001b11d4b6aaf")
       (plugin "ernestre/git-worktree.nvim" "master" "36cba883129e0fe02cf046fd30c87c962b2ab957")
       neogit
 
       pkgsUnstable.vimPlugins.vim-just
 
+      # luasnip {{
+      luasnip
+      cmp_luasnip
+      friendly-snippets
+      # }}
+
       harpoon
+
+      indent-blankline-nvim
       vim-polyglot
       phpactor
       go-nvim
       cmp-buffer
       cmp-calc
       cmp-nvim-lsp
-      cmp-nvim-ultisnips
       cmp-path
       comment-nvim
       committia-vim
@@ -91,7 +93,6 @@ in
       vim-pencil
       vimwiki
       bullets-vim
-      image-nvim
       (plugin "MeanderingProgrammer/render-markdown.nvim" "main" "fe1002fddc61207e4ef4325d4bc0ca33697bbc7a")
       # }}
 
@@ -99,16 +100,16 @@ in
       barbecue-nvim
       nvim-navic
 
-      # dap
+      # dap {{
       nvim-dap
       nvim-dap-go
       nvim-dap-ui
       nvim-dap-virtual-text
       telescope-dap-nvim
+      # }}
 
       nvim-lspconfig
       oil-nvim
-      nvim-tree-lua
       nvim-web-devicons
       plenary-nvim
       popup-nvim
@@ -116,16 +117,17 @@ in
       symbols-outline-nvim
       telescope-fzf-native-nvim
       telescope-nvim
-      ultisnips
       undotree
       vim-fugitive
       vim-repeat
-      vim-snippets
       vim-surround
-      (plugin "sindrets/diffview.nvim" "main" "4516612fe98ff56ae0415a259ff6361a89419b0a")
+      # (plugin "sindrets/diffview.nvim" "main" "4516612fe98ff56ae0415a259ff6361a89419b0a")
+      diffview-nvim
       gitlinker-nvim
       telescope-fzy-native-nvim
       vim-tmux-navigator
+
+      catppuccin-nvim
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: [
         plugins.tree-sitter-bash
         plugins.tree-sitter-go

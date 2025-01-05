@@ -47,9 +47,9 @@ require 'lspconfig'.gopls.setup {
     message_level = vim.lsp.protocol.MessageType.Log,
     settings = {
         gopls = {
-            analyses = {
-                fieldalignment = true,
-            },
+            -- analyses = {
+            --     fieldalignment = true,
+            -- },
             ["formatting.gofumpt"] = true,
             ["ui.verboseOutput"] = true,
             buildFlags = { "-tags=wireinject" }
