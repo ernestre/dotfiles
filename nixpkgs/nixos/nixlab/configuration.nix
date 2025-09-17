@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -16,20 +17,20 @@
   boot.loader.grub.useOSProber = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
   networking.wireless.networks = {
     "Telia-D6BDD9-Greitas" = {
-	psk = "A2BE783498";
+      psk = "A2BE783498";
     };
-};
+  };
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
- # networking.networkmanager.enable = true;
+  # networking.networkmanager.enable = true;
 
-	services.tailscale.enable = true;
+  services.tailscale.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Vilnius";
@@ -87,17 +88,17 @@
     };
 
     dynamicConfigOptions = {
-      http.routers = {};
-      http.services = {};
+      http.routers = { };
+      http.services = { };
     };
-  };  
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nixlab = {
     isNormalUser = true;
     description = "nix-lab";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFKk0GRInnARuEJrbomfTUEH/azAk9YeMxyI1Ptflr1l erre@thinkpad"
     ];
@@ -112,8 +113,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-   # wget
+    # neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    # wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -134,7 +135,7 @@
   };
 
   # Open ports in the firewall.
-#  networking.firewall.allowedTCPPorts = [ 22 ];
+  # networking.firewall.allowedTCPPorts = [ 22 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;

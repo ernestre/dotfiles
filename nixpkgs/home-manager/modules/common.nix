@@ -8,7 +8,6 @@
     just
     pwgen
     ripgrep
-    terraform
     tree
     yq-go
     pkgsUnstable.delve # go dap debug
