@@ -24,7 +24,7 @@
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = { pkgsUnstable = inputs.nixpkgsUnstable.legacyPackages.x86_64-linux; };
             # TODO load home-manager dotfiles also for root user
-            home-manager.users.erre = import ./nixpkgs/home-manager/erre.nix;
+            home-manager.users.nixlab = import ./nixpkgs/home-manager/erre.nix;
           }
         ];
       };
@@ -62,6 +62,7 @@
         pc = nixosConfig ./nixpkgs/nixos/pc/configuration.nix;
         lenovo = nixosConfig ./nixpkgs/nixos/lenovo/configuration.nix;
         thinkpad = nixosConfig ./nixpkgs/nixos/thinkpad/configuration.nix;
+        nixlab = nixosConfig ./nixpkgs/nixos/nixlab/configuration.nix;
       };
     };
 }

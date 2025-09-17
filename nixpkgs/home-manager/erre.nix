@@ -7,12 +7,10 @@
     ./modules/neovim
     ./modules/tmux
     ./modules/zsh
-    ./modules/i3
-    ./modules/gnome
   ];
 
-  home.username = "erre";
-  home.homeDirectory = "/home/erre";
+  home.username = "nixlab";
+  home.homeDirectory = "/home/nixlab";
 
   home.stateVersion = "23.11";
 
