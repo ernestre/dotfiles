@@ -12,11 +12,11 @@ require("lazy").setup({
     { "szw/vim-maximizer" },
     { "tpope/vim-surround" },
     { "tpope/vim-repeat" },
-    { "tpope/vim-fugitive", cmd = { "Git", "G", "Gvdiffsplit", "Gread", "Gwrite" } },
-    { "junegunn/gv.vim", cmd = "GV" },
+    { "tpope/vim-fugitive",            cmd = { "Git", "G", "Gvdiffsplit", "Gread", "Gwrite" } },
+    { "junegunn/gv.vim",               cmd = "GV" },
     { "rhysd/committia.vim" },
     { "christoomey/vim-tmux-navigator" },
-    { "mbbill/undotree", cmd = "UndotreeToggle" },
+    { "mbbill/undotree",               cmd = "UndotreeToggle" },
 
     {
         "sainnhe/sonokai",
@@ -33,13 +33,16 @@ require("lazy").setup({
             vim.cmd('silent! hi VirtualTextError guifg=Red ctermfg=Red')
             vim.cmd('sign define LspDiagnosticsSignError text=» texthl=LspDiagnosticsSignError linehl= numhl=')
             vim.cmd('sign define LspDiagnosticsSignWarning text=» texthl=LspDiagnosticsSignWarning linehl= numhl=')
-            vim.cmd('sign define LspDiagnosticsSignInformation text=» texthl=LspDiagnosticsSignInformation linehl= numhl=')
+            vim.cmd(
+                'sign define LspDiagnosticsSignInformation text=» texthl=LspDiagnosticsSignInformation linehl= numhl=')
             vim.cmd('sign define LspDiagnosticsSignHint text=» texthl=LspDiagnosticsSignHint linehl= numhl=')
         end,
     },
 
     {
         "nvim-lualine/lualine.nvim",
+        lazy = false,
+        priority = 900,
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             local colors = {
@@ -108,12 +111,12 @@ require("lazy").setup({
         dependencies = { "nvim-lua/plenary.nvim", "nvim-lua/popup.nvim", "nvim-telescope/telescope-fzf-native.nvim" },
         cmd = "Telescope",
         keys = {
-            { "<Leader>f", ":Telescope find_files<CR>" },
-            { "<Leader>F", ":Telescope find_files find_command=rg,--no-ignore,--hidden,--files,.<CR>" },
-            { "<Leader>p", ":Telescope git_files<CR>" },
+            { "<Leader>f",  ":Telescope find_files<CR>" },
+            { "<Leader>F",  ":Telescope find_files find_command=rg,--no-ignore,--hidden,--files,.<CR>" },
+            { "<Leader>p",  ":Telescope git_files<CR>" },
             { "<Leader>gS", ":Telescope git_status<CR>" },
-            { "<Leader>b", ":Telescope buffers<CR>" },
-            { "<Leader>l", ":Telescope treesitter<CR>" },
+            { "<Leader>b",  ":Telescope buffers<CR>" },
+            { "<Leader>l",  ":Telescope treesitter<CR>" },
             { "<Leader>gf", ":Telescope live_grep<CR>" },
         },
         config = function()
@@ -131,18 +134,18 @@ require("lazy").setup({
             require('telescope').load_extension('fzf')
         end,
     },
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make",                        lazy = true },
 
     {
         "ThePrimeagen/harpoon",
         dependencies = { "nvim-lua/plenary.nvim" },
         keys = {
-            { "<leader>t", [[<Cmd>lua require("harpoon.term").gotoTerminal(1)<CR>]] },
-            { "<leader>1", [[<Cmd>lua require("harpoon.ui").nav_file(1)<CR>]] },
-            { "<leader>2", [[<Cmd>lua require("harpoon.ui").nav_file(2)<CR>]] },
-            { "<leader>3", [[<Cmd>lua require("harpoon.ui").nav_file(3)<CR>]] },
-            { "<leader>4", [[<Cmd>lua require("harpoon.ui").nav_file(4)<CR>]] },
-            { "<leader>5", [[<Cmd>lua require("harpoon.ui").nav_file(5)<CR>]] },
+            { "<leader>t",  [[<Cmd>lua require("harpoon.term").gotoTerminal(1)<CR>]] },
+            { "<leader>1",  [[<Cmd>lua require("harpoon.ui").nav_file(1)<CR>]] },
+            { "<leader>2",  [[<Cmd>lua require("harpoon.ui").nav_file(2)<CR>]] },
+            { "<leader>3",  [[<Cmd>lua require("harpoon.ui").nav_file(3)<CR>]] },
+            { "<leader>4",  [[<Cmd>lua require("harpoon.ui").nav_file(4)<CR>]] },
+            { "<leader>5",  [[<Cmd>lua require("harpoon.ui").nav_file(5)<CR>]] },
             { "<leader>ha", [[<Cmd>lua require("harpoon.mark").add_file()<CR>]] },
             { "<leader>hq", [[<Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]] },
         },
@@ -152,7 +155,7 @@ require("lazy").setup({
         "stevearc/oil.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         keys = {
-            { "-", ":Oil<CR>" },
+            { "-",          ":Oil<CR>" },
             { "<Leader>nt", ":Oil<CR>" },
             { "<Leader>nf", ":Oil<CR>" },
         },
@@ -217,6 +220,7 @@ require("lazy").setup({
 
     {
         "neovim/nvim-lspconfig",
+        tag = "v1.7.0",
         event = { "BufReadPre", "BufNewFile" },
         config = function()
             local lsp_utils = require("lspconfig.util")
@@ -300,7 +304,16 @@ require("lazy").setup({
                     { name = 'nvim_lsp' },
                     { name = 'path' },
                     { name = 'calc' },
-                    { name = 'buffer', keyword_length = 3, option = { get_bufnrs = function() return vim.api.nvim_list_bufs() end } }
+                    {
+                        name = 'buffer',
+                        keyword_length = 3,
+                        option = {
+                            get_bufnrs = function()
+                                return vim.api
+                                    .nvim_list_bufs()
+                            end
+                        }
+                    }
                 }),
             })
         end,
@@ -316,7 +329,8 @@ require("lazy").setup({
             vim.keymap.set({ "i" }, "<C-K>", function() ls.expand() end, { silent = true })
             vim.keymap.set({ "i", "s" }, "<C-L>", function() ls.jump(1) end, { silent = true })
             vim.keymap.set({ "i", "s" }, "<C-J>", function() ls.jump(-1) end, { silent = true })
-            vim.keymap.set({ "i", "s" }, "<C-E>", function() if ls.choice_active() then ls.change_choice(1) end end, { silent = true })
+            vim.keymap.set({ "i", "s" }, "<C-E>", function() if ls.choice_active() then ls.change_choice(1) end end,
+                { silent = true })
         end,
     },
 
@@ -340,7 +354,8 @@ require("lazy").setup({
         event = { "BufReadPost", "BufNewFile" },
         main = "ibl",
         config = function()
-            local highlight = { "RainbowRed", "RainbowYellow", "RainbowBlue", "RainbowOrange", "RainbowGreen", "RainbowViolet", "RainbowCyan" }
+            local highlight = { "RainbowRed", "RainbowYellow", "RainbowBlue", "RainbowOrange", "RainbowGreen",
+                "RainbowViolet", "RainbowCyan" }
             local hooks = require("ibl.hooks")
             hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
                 vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
@@ -355,9 +370,30 @@ require("lazy").setup({
         end,
     },
 
-    { "numToStr/Comment.nvim", event = { "BufReadPost", "BufNewFile" }, config = function() require('Comment').setup() end },
-    { "windwp/nvim-autopairs", event = "InsertEnter", config = function() require('nvim-autopairs').setup { check_ts = true } end },
-    { "norcalli/nvim-colorizer.lua", event = { "BufReadPost", "BufNewFile" }, config = function() require('colorizer').setup() end },
+    {
+        "numToStr/Comment.nvim",
+        event = { "BufReadPost", "BufNewFile" },
+        config = function()
+            require(
+                'Comment').setup()
+        end
+    },
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = function()
+            require(
+                'nvim-autopairs').setup { check_ts = true }
+        end
+    },
+    {
+        "norcalli/nvim-colorizer.lua",
+        event = { "BufReadPost", "BufNewFile" },
+        config = function()
+            require(
+                'colorizer').setup()
+        end
+    },
 
     {
         "simrat39/symbols-outline.nvim",
@@ -418,10 +454,10 @@ require("lazy").setup({
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 
-    { "reedes/vim-pencil", ft = { "markdown", "vimwiki", "text" } },
-    { "dkarter/bullets.vim", ft = { "markdown", "vimwiki", "text" } },
-    { "vimwiki/vimwiki", ft = { "vimwiki", "markdown" } },
-    { "NoahTheDuke/vim-just", ft = "just" },
+    { "reedes/vim-pencil",                        ft = { "markdown", "vimwiki", "text" } },
+    { "dkarter/bullets.vim",                      ft = { "markdown", "vimwiki", "text" } },
+    { "vimwiki/vimwiki",                          ft = { "vimwiki", "markdown" } },
+    { "NoahTheDuke/vim-just",                     ft = "just" },
     { "jamessan/vim-gnupg" },
 }, {
     performance = {
