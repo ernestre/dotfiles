@@ -460,6 +460,7 @@ require("lazy").setup({
     { "NoahTheDuke/vim-just",                     ft = "just" },
     { "jamessan/vim-gnupg" },
 }, {
+    lockfile = "~/dotfiles/lazy-lock.json",
     performance = {
         rtp = {
             disabled_plugins = {
