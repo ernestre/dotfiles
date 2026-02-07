@@ -15,7 +15,7 @@ in
     foreground #f1fffa
     background #2a2f38
 
-    background_opacity 0.9
+    background_opacity 1
 
     term xterm-kitty
 

@@ -4,7 +4,7 @@ let
   fonts = import ../../../commons/fonts.nix;
   i3_fonts = {
     names = [ fonts.name ];
-    size = 10.0;
+    size = 9.0;
   };
 in
 {
@@ -35,12 +35,20 @@ in
         { command = "xss-lock --transfer-sleep-lock -- i3lock --nofork"; notification = false; }
         { command = "nm-applet"; notification = false; }
         { command = "spotify"; notification = false; }
-        { command = "picom"; notification = false; }
+        { command = "telegram-desktop"; notification = false; }
+        { command = "discord"; notification = false; }
         { command = "xset -dpms && xset s off"; notification = false; }
         { command = "${pkgs.feh}/bin/feh --bg-center ~/dotfiles/wallpapers/cat.png"; notification = false; }
       ];
 
       fonts = i3_fonts;
+
+
+      modes = {
+        "Passthrough Mode - Press Alt+F12 to exit" = {
+          "${i3_mod}+F1" = "mode default";
+        };
+      };
 
       bars = [{
         fonts = i3_fonts;
@@ -77,6 +85,8 @@ in
       }];
 
       keybindings = {
+        "${i3_mod}+F1" = ''mode "Passthrough Mode - Press Alt+F12 to exit"'';
+
         "XF86AudioRaiseVolume" = "exec --no-startup-id amixer -D pulse set Master 10%+ && $refresh_i3status";
         "XF86AudioLowerVolume" = "exec --no-startup-id amixer -D pulse set Master 10%- && $refresh_i3status";
         "XF86AudioMute" = "exec --no-startup-id amixer -D pulse set Master toggle && $refresh_i3status";
@@ -153,6 +163,11 @@ in
         ];
         "5" = [
           { class = "thunderbird"; }
+          { class = "steam"; }
+        ];
+        "10" = [
+          { class = "dota2"; }
+          { class = "factorio"; }
         ];
       };
 
