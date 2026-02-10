@@ -29,3 +29,5 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.api.nvim_create_autocmd("TermOpen", {
     pattern = '*', command = 'setlocal nospell'
 })
+
+require('nvim-treesitter.configs').setup { highlight = { enable = true } }

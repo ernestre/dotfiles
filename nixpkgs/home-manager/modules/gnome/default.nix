@@ -1,12 +1,12 @@
-{ lib, ... }: {
-  # home.packages = with pkgs.gnomeExtensions; [
-  #   auto-move-windows
-  #   # bluetooth-battery
-  #   # caffeine
-  #   # clipboard-indicator
-  #   # notification-banner-reloaded
-  #   # vitals
-  # ];
+{ lib, pkgs, ... }: {
+  home.packages = with pkgs.gnomeExtensions; [
+    auto-move-windows
+    # bluetooth-battery
+    # caffeine
+    # clipboard-indicator
+    # notification-banner-reloaded
+    # vitals
+  ];
 
   # home.file.".local/share/gnome-shell/extensions/Vitals@CoreCoding.com".source = builtins.fetchGit {
   #   url = "https://github.com/corecoding/Vitals.git";

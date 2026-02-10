@@ -31,7 +31,7 @@ o.shortmess = 'IaTc' -- Disable welcome message and random short messagesA
 o.wrap = false
 o.laststatus = 3
 o.termguicolors = true
-o.conceallevel = 3
+o.conceallevel = 2
 o.completeopt = 'menuone,noinsert,noselect'
 g.completion_matching_strategy_list = { 'fuzzy' }
 g.completion_matching_ignore_case = 1
@@ -42,4 +42,7 @@ o.spellfile = "~/.vim/spell/en.utf-8.add"
 o.undodir = os.getenv("HOME") .. "/.vim/undodir"
 o.undofile = true
 
-require('plugin-settings/vimwiki')
+vim.g.vimwiki_table_mappins = 1
+vim.g.vimwiki_list = { { syntax = 'markdown', ext = '.md' } }
+vim.g.vimwiki_global_ext = 1
+vim.g.vimwiki_conceallevel = 2

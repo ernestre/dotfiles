@@ -28,5 +28,6 @@
     k9s
 
     trash-cli
+    age
   ];
 }
