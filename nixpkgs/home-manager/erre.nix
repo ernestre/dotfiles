@@ -28,5 +28,9 @@
     k9s
 
     trash-cli
+    platformio-core
+    restic
+    terragrunt
+    doppler
   ];
 }
