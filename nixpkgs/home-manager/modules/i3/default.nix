@@ -35,7 +35,7 @@ in
         { command = "xss-lock --transfer-sleep-lock -- i3lock --nofork"; notification = false; }
         { command = "nm-applet"; notification = false; }
         { command = "spotify"; notification = false; }
-        { command = "picom"; notification = false; }
+        { command = "picom --backend xrender"; notification = false; }
         { command = "xset -dpms && xset s off"; notification = false; }
         { command = "${pkgs.feh}/bin/feh --bg-center ~/dotfiles/wallpapers/cat.png"; notification = false; }
       ];
