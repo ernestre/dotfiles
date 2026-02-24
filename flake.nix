@@ -42,6 +42,7 @@
         rofi = import ./nixpkgs/home-manager/modules/rofi;
         tmux = import ./nixpkgs/home-manager/modules/tmux;
         zsh = import ./nixpkgs/home-manager/modules/zsh;
+        nexos-vibecoding = import ./nixpkgs/home-manager/modules/nexos-vibecoding;
       };
 
       homeConfigurations = {
