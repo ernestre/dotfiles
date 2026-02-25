@@ -10,7 +10,23 @@
       resurrect
       continuum
 
-      catppuccin
+      {
+        plugin = catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_flavour 'macchiato' # or frappe, macchiato, mocha
+          set -g @catppuccin_window_status_style "rounded"
+
+          # Make the status line pretty and add some modules
+          set -g status-right-length 100
+          set -g status-left-length 100
+          set -g status-left ""
+          set -g status-right "#{E:@catppuccin_status_application}"
+          set -ag status-right "#{E:@catppuccin_status_session}"
+          set -ag status-right "#{E:@catppuccin_status_uptime}"
+          set -g @catppuccin_window_text " #(basename #{pane_current_path})"
+          set -g @catppuccin_window_current_text " #(basename #{pane_current_path})"
+        '';
+      }
     ];
 
     extraConfig = ''
@@ -20,7 +36,6 @@
       # for images
       set -gq allow-passthrough on
 
-      set -g @catppuccin_flavour 'macchiato' # or frappe, macchiato, mocha
 
       set-option -g mouse off
 
@@ -35,9 +50,13 @@
       bind -n M-j select-pane -D
       bind -n M-k select-pane -U
       bind -n M-l select-pane -R
+      bind X kill-pane
 
       bind -n M-H previous-window
       bind -n M-L next-window
+
+      # Allow window swaping with mouse
+      bind-key -n MouseDrag1Status swap-window -d -t=
 
       bind % split-window -h -c "#{pane_current_path}"
       bind '"' split-window -c "#{pane_current_path}"
@@ -72,5 +91,6 @@
       bind-key -T copy-mode-vi 'C-l' select-pane -R
       bind-key -T copy-mode-vi 'C-\' select-pane -l
     '';
+
   };
 }
