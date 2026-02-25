@@ -1,11 +1,10 @@
 {
   inputs = {
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/master";
     home-manager = {
       # url = "github:nix-community/home-manager";
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -31,7 +30,6 @@
     in
     {
       modules = {
-        alacritty = import ./nixpkgs/home-manager/modules/alacritty;
         common = import ./nixpkgs/home-manager/modules/common.nix;
         dunst = import ./nixpkgs/home-manager/modules/dunst;
         git = import ./nixpkgs/home-manager/modules/git;
@@ -42,6 +40,7 @@
         rofi = import ./nixpkgs/home-manager/modules/rofi;
         tmux = import ./nixpkgs/home-manager/modules/tmux;
         zsh = import ./nixpkgs/home-manager/modules/zsh;
+        kitty = import ./nixpkgs/home-manager/modules/kitty;
         nexos-vibecoding = import ./nixpkgs/home-manager/modules/nexos-vibecoding;
       };
 
@@ -50,12 +49,6 @@
           pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
           modules = [ ./nixpkgs/home-manager/erre.nix ];
           extraSpecialArgs = { pkgsUnstable = inputs.nixpkgsUnstable.legacyPackages.x86_64-linux; };
-        };
-
-        mbp = inputs.home-manager.lib.homeManagerConfiguration {
-          pkgs = inputs.nixpkgs.legacyPackages.x86_64-darwin;
-          modules = [ ./nixpkgs/home-manager/mbp.nix ];
-          extraSpecialArgs = { pkgsUnstable = inputs.nixpkgsUnstable.legacyPackages.x86_64-darwin; };
         };
       };
 

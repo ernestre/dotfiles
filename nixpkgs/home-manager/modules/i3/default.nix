@@ -19,13 +19,30 @@ in
       autorandr
       xorg.xrandr
       i3status-rust
-      networkmanagerapplet
       playerctl
+      picom
 
       feh
       flameshot
-      picom
     ];
+
+  xdg.configFile."autorandr/postswitch" = {
+    executable = true;
+    text = ''
+      #!/bin/bash
+      if xrandr | grep -E '\s(3840x2160|3440x1440)\+' >/dev/null; then
+          echo "Xft.dpi: 115" | xrdb -merge
+      else
+          echo "Xft.dpi: 96" | xrdb -merge
+      fi
+      i3-msg restart
+    '';
+  };
+
+  home.file.".config/i3/i3status-rs-config.toml".source = ./config/i3status-rs-config.toml;
+  home.file.".config/i3/scripts/lock.sh".source = ./scripts/lock.sh;
+  home.file.".config/i3/scripts/nordlayer_status.sh".source = ./scripts/nordlayer_status.sh;
+  home.file.".config/i3/wallpapers/main.png".source = ../../../../wallpapers/main.png;
 
   xsession.windowManager.i3 = {
     enable = true;
@@ -35,9 +52,9 @@ in
         { command = "xss-lock --transfer-sleep-lock -- i3lock --nofork"; notification = false; }
         { command = "nm-applet"; notification = false; }
         { command = "spotify"; notification = false; }
-        { command = "picom --backend xrender"; notification = false; }
         { command = "xset -dpms && xset s off"; notification = false; }
-        { command = "${pkgs.feh}/bin/feh --bg-center ~/dotfiles/wallpapers/cat.png"; notification = false; }
+        { command = "picom"; notification = false; }
+        { command = "${pkgs.feh}/bin/feh --bg-center ~/.config/i3/wallpapers/main.png"; notification = false; }
       ];
 
       fonts = i3_fonts;
@@ -45,7 +62,7 @@ in
       bars = [{
         fonts = i3_fonts;
 
-        statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/dotfiles/configs/i3/i3status-rs-config.toml";
+        statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3/i3status-rs-config.toml";
 
         trayOutput = "primary";
 
@@ -97,7 +114,7 @@ in
         "${i3_mod}+w" = "exec rofi -show window -show-icons";
         "${i3_mod}+c" = "exec rofi -show calc -modi calc -no-show-match -no-sort";
         "${i3_mod}+Shift+o" = "exec --no-startup-id flameshot gui -c -r | xclip -selection clipboard -t image/png";
-        "${i3_mod}+Shift+p" = "exec --no-startup-id flameshot gui -p ~/Pictures/Screenshots";
+        "${i3_mod}+Shift+p" = "exec --no-startup-id flameshot gui";
 
         "${i3_mod}+h" = "focus left";
         "${i3_mod}+j" = "focus down";
@@ -130,7 +147,7 @@ in
         "${i3_mod}+Shift+9" = "move container to workspace number 9";
         "${i3_mod}+Shift+0" = "move container to workspace number 10";
 
-        "Mod4+l" = "exec ~/dotfiles/scripts/i3/lock.sh";
+        "Mod4+l" = "exec ~/.config/i3/scripts/lock.sh";
 
         "${i3_mod}+Control+c" = "exec autorandr -c";
         "${i3_mod}+Shift+c" = "reload";

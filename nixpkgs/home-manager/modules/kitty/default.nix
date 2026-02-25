@@ -11,7 +11,7 @@ in
     enable_audio_bell no
 
     # font_size 11.5
-    font_size 14
+    font_size 11.5
 
     foreground #f1fffa
     background #2a2f38

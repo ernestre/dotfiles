@@ -53,8 +53,39 @@ in
     ];
     plugins = with pkgs.vimPlugins; [
       (plugin "szw/vim-maximizer" "master" "2e54952fe91e140a2e69f35f22131219fcd9c5f1")
-      (plugin "ernestre/git-worktree.nvim" "master" "36cba883129e0fe02cf046fd30c87c962b2ab957")
+      indent-blankline-nvim
       neogit
+
+      # (
+      #   let
+      #     url = "https://github.com/harrisoncramer/gitlab.nvim";
+      #     ref = "main";
+      #     rev = "35f0bc16a5bbcb3df8415b96605e7142293be5d0";
+      #
+      #     gitlabBin = pkgs.buildGoModule {
+      #       pname = "gitlab-bin.nvim";
+      #       version = "1.1.3";
+      #       src = builtins.fetchGit {
+      #         inherit url ref rev;
+      #
+      #       };
+      #       vendorHash = "sha256-FjiG5XYd5VviZgMzgB//qzDvoLy4sJVb6A88Z0aEdbo=";
+      #     };
+      #
+      #   in
+      #   pkgs.vimUtils.buildVimPlugin {
+      #     pname = "gitlab.nvim";
+      #     version = rev;
+      #     buildInputs = [ gitlabBin ];
+      #     postInstall = ''
+      #       cp ${gitlabBin}/bin/cmd $out/bin
+      #     '';
+      #     src = builtins.fetchGit {
+      #       inherit url ref rev;
+      #     };
+      #   }
+      # )
+      nui-nvim
 
       pkgsUnstable.vimPlugins.vim-just
 
@@ -63,16 +94,13 @@ in
       cmp_luasnip
       friendly-snippets
       # }}
-
       harpoon
-
-      indent-blankline-nvim
       vim-polyglot
-      phpactor
       go-nvim
       cmp-buffer
       cmp-calc
       cmp-nvim-lsp
+      cmp-nvim-ultisnips
       cmp-path
       comment-nvim
       committia-vim
@@ -93,20 +121,23 @@ in
       vim-pencil
       vimwiki
       bullets-vim
-      (plugin "MeanderingProgrammer/render-markdown.nvim" "main" "fe1002fddc61207e4ef4325d4bc0ca33697bbc7a")
-      # }}
+
+      # neotest{{
+      nvim-nio
+      neotest
+      neotest-golang
+      #}}
 
       # breadcrumbs
       barbecue-nvim
       nvim-navic
 
-      # dap {{
+      # dap
       nvim-dap
       nvim-dap-go
       nvim-dap-ui
       nvim-dap-virtual-text
       telescope-dap-nvim
-      # }}
 
       nvim-lspconfig
       oil-nvim
@@ -117,17 +148,16 @@ in
       symbols-outline-nvim
       telescope-fzf-native-nvim
       telescope-nvim
+      ultisnips
       undotree
       vim-fugitive
       vim-repeat
+      vim-snippets
       vim-surround
-      # (plugin "sindrets/diffview.nvim" "main" "4516612fe98ff56ae0415a259ff6361a89419b0a")
       diffview-nvim
       gitlinker-nvim
       telescope-fzy-native-nvim
       vim-tmux-navigator
-
-      catppuccin-nvim
       (pkgs.vimPlugins.nvim-treesitter.withPlugins (plugins: [
         plugins.tree-sitter-bash
         plugins.tree-sitter-go
@@ -139,7 +169,6 @@ in
         plugins.tree-sitter-markdown
         plugins.tree-sitter-markdown-inline
         plugins.tree-sitter-nix
-        plugins.tree-sitter-php
         plugins.tree-sitter-regex
         plugins.tree-sitter-typescript
         plugins.tree-sitter-yaml

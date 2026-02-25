@@ -59,9 +59,10 @@ in
       LANG = "en_US.UTF-8";
       LC_ALL = "en_US.UTF-8";
       LC_CTYPE = "en_US.UTF-8";
+      DISABLE_AUTO_TITLE = true;
     };
 
-    initExtra = ''
+    initContent = ''
         # Linux alternative for OSX pbcopy
         if ! [ -x "$(command -v pbpaste)" ]; then
           alias pbpaste='xclip -selection clipboard -o'
