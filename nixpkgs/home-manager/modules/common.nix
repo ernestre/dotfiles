@@ -1,4 +1,4 @@
-{ pkgs, pkgsUnstable, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     fd
@@ -11,14 +11,14 @@
     terraform
     tree
     yq-go
-    pkgsUnstable.delve # go dap debug
+    delve
     sops
     font-awesome
     yazi
     trash-cli
     parallel
     eza
-    (nerdfonts.override { fonts = [ "GeistMono" ]; })
+    nerd-fonts.geist-mono
 
     nodejs_22
     (yarn.override { nodejs = nodejs_22; })
