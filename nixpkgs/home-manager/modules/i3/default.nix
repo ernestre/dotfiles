@@ -11,6 +11,7 @@ in
   imports = [
     ../dunst
     ../rofi
+    ../picom
   ];
 
   home.packages = with pkgs;
@@ -20,7 +21,6 @@ in
       xorg.xrandr
       i3status-rust
       playerctl
-      picom
 
       feh
       flameshot

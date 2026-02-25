@@ -35,13 +35,14 @@
         git = import ./nixpkgs/home-manager/modules/git;
         gnome = import ./nixpkgs/home-manager/modules/gnome;
         i3 = import ./nixpkgs/home-manager/modules/i3;
+        kitty = import ./nixpkgs/home-manager/modules/kitty;
         neovim = import ./nixpkgs/home-manager/modules/neovim;
+        nexos-vibecoding = import ./nixpkgs/home-manager/modules/nexos-vibecoding;
+        picom = import ./nixpkgs/home-manager/modules/picom;
         profile = import ./nixpkgs/home-manager/modules/profile;
         rofi = import ./nixpkgs/home-manager/modules/rofi;
         tmux = import ./nixpkgs/home-manager/modules/tmux;
         zsh = import ./nixpkgs/home-manager/modules/zsh;
-        kitty = import ./nixpkgs/home-manager/modules/kitty;
-        nexos-vibecoding = import ./nixpkgs/home-manager/modules/nexos-vibecoding;
       };
 
       homeConfigurations = {
