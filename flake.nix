@@ -41,6 +41,7 @@
         tmux = import ./nixpkgs/home-manager/modules/tmux;
         zsh = import ./nixpkgs/home-manager/modules/zsh;
         kitty = import ./nixpkgs/home-manager/modules/kitty;
+        picom = import ./nixpkgs/home-manager/modules/picom;
         nexos-vibecoding = import ./nixpkgs/home-manager/modules/nexos-vibecoding;
       };
 
