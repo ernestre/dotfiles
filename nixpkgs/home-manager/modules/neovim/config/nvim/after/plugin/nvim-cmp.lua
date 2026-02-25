@@ -4,7 +4,7 @@ local lspkind = require 'lspkind'
 cmp.setup({
     -- snippet = {
     --     expand = function(args)
-    --         -- require('luasnip').lsp_expand(args.body)
+    --         require('luasnip').lsp_expand(args.body)
     --     end,
     -- },
     snippet = {
@@ -43,7 +43,6 @@ cmp.setup({
         end, { "i" }), -- Only work in insert mode, otherwise the command toggling is not working
     },
     sources = cmp.config.sources({
-        { name = 'ultisnips' },
         -- { name = 'luasnip' },
         { name = 'nvim_lsp' },
         { name = 'path' },
