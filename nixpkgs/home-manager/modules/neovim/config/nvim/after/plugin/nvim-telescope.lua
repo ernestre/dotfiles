@@ -26,5 +26,5 @@ map('n', '<Leader>F', ':Telescope find_files find_command=rg,--no-ignore,--hidde
 map('n', '<Leader>p', ':Telescope git_files<CR>')
 map('n', '<Leader>gS', ':Telescope git_status<CR>')
 map('n', '<Leader>b', ':Telescope buffers<CR>')
-map('n', '<Leader>l', ':Telescope treesitter<CR>')
+map('n', '<Leader>l', ':Telescope lsp_document_symbols<CR>')
 map('n', '<Leader>gf', ':Telescope live_grep<CR>')

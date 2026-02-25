@@ -24,6 +24,17 @@ require 'lspconfig'.ts_ls.setup {
 require 'lspconfig'.terraformls.setup {
     filetypes = { "terraform", "terraform-vars", "hcl" }
 }
+
+require 'lspconfig'.helm_ls.setup {
+    settings = {
+        ['helm-ls'] = {
+            yamlls = {
+                path = "yaml-language-server",
+            }
+        }
+    }
+}
+
 require 'lspconfig'.yamlls.setup {
     settings = {
         yaml = {
@@ -56,7 +67,7 @@ require 'lspconfig'.gopls.setup {
         },
     },
 }
--- require 'lspconfig'.golangci_lint_ls.setup {}
+require 'lspconfig'.golangci_lint_ls.setup {}
 require 'lspconfig'.marksman.setup {
     cmd = { "marksman", "server" },
     filetypes = { "markdown", "markdown.mdx", "vimwiki" },

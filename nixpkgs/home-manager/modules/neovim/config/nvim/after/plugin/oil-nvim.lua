@@ -3,6 +3,9 @@ require("oil").setup({
     delete_to_trash = true,
     -- Skip the confirmation popup for simple operations (:help oil.skip_confirm_for_simple_edits)
     skip_confirm_for_simple_edits = true,
+    view_options = {
+        show_hidden = false,
+    }
 })
 map('n', '-', ':Oil<CR>')
 -- Breaking the muscle memory
