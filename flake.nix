@@ -31,7 +31,6 @@
     in
     {
       modules = {
-        alacritty = import ./nixpkgs/home-manager/modules/alacritty;
         common = import ./nixpkgs/home-manager/modules/common.nix;
         dunst = import ./nixpkgs/home-manager/modules/dunst;
         git = import ./nixpkgs/home-manager/modules/git;
