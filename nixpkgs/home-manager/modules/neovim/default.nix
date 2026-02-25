@@ -89,6 +89,11 @@ in
 
       pkgsUnstable.vimPlugins.vim-just
 
+      # luasnip {{
+      luasnip
+      cmp_luasnip
+      friendly-snippets
+      # }}
       harpoon
       vim-polyglot
       go-nvim
@@ -118,7 +123,6 @@ in
       bullets-vim
 
       # neotest{{
-      FixCursorHold-nvim
       nvim-nio
       neotest
       neotest-golang
