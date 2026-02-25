@@ -1,13 +1,14 @@
-local lsp_utils = require "lspconfig.util"
+vim.lsp.config('intelephense', {})
 
-require 'lspconfig'.intelephense.setup {}
-require 'lspconfig'.jsonls.setup {
+vim.lsp.config('jsonls', {
     init_options = {
         provideFormatter = false
     }
-}
-require 'lspconfig'.pyright.setup {}
-require 'lspconfig'.ts_ls.setup {
+})
+
+vim.lsp.config('pyright', {})
+
+vim.lsp.config('ts_ls', {
     settings = {
         typescript = {
             format = {
@@ -20,12 +21,13 @@ require 'lspconfig'.ts_ls.setup {
             }
         }
     }
-}
-require 'lspconfig'.terraformls.setup {
-    filetypes = { "terraform", "terraform-vars", "hcl" }
-}
+})
 
-require 'lspconfig'.helm_ls.setup {
+vim.lsp.config('terraformls', {
+    filetypes = { "terraform", "terraform-vars", "hcl" }
+})
+
+vim.lsp.config('helm_ls', {
     settings = {
         ['helm-ls'] = {
             yamlls = {
@@ -33,17 +35,19 @@ require 'lspconfig'.helm_ls.setup {
             }
         }
     }
-}
+})
 
-require 'lspconfig'.yamlls.setup {
+vim.lsp.config('yamlls', {
     settings = {
         yaml = {
             keyOrdering = false,
         }
     }
-}
-require 'lspconfig'.lua_ls.setup {}
-require 'lspconfig'.nil_ls.setup {
+})
+
+vim.lsp.config('lua_ls', {})
+
+vim.lsp.config('nil_ls', {
     settings = {
         ['nil'] = {
             formatting = {
@@ -51,40 +55,46 @@ require 'lspconfig'.nil_ls.setup {
             },
         },
     },
-}
-require 'lspconfig'.gopls.setup {
+})
+
+vim.lsp.config('gopls', {
     cmd = { "gopls" },
-    log_level = vim.lsp.protocol.MessageType.Log,
-    message_level = vim.lsp.protocol.MessageType.Log,
     settings = {
         gopls = {
-            -- analyses = {
-            --     fieldalignment = true,
-            -- },
             ["formatting.gofumpt"] = true,
             ["ui.verboseOutput"] = true,
             buildFlags = { "-tags=wireinject" }
         },
     },
-}
-require 'lspconfig'.golangci_lint_ls.setup {}
-require 'lspconfig'.marksman.setup {
-    cmd = { "marksman", "server" },
-    filetypes = { "markdown", "markdown.mdx", "vimwiki" },
-    root_dir = lsp_utils.root_pattern(".git", ".marksman.toml"),
-}
+})
 
-require 'lspconfig'.marksman.setup {
+vim.lsp.config('golangci_lint_ls', {})
+
+vim.lsp.config('marksman', {
     cmd = { "marksman", "server" },
     filetypes = { "markdown", "markdown.mdx", "vimwiki" },
-    root_dir = lsp_utils.root_pattern(".git", ".marksman.toml"),
-    single_file_support = true,
-}
+    root_markers = { ".git", ".marksman.toml" },
+})
+
+vim.lsp.enable({
+    'intelephense',
+    'jsonls',
+    'pyright',
+    'ts_ls',
+    'terraformls',
+    'helm_ls',
+    'yamlls',
+    'lua_ls',
+    'nil_ls',
+    'gopls',
+    'golangci_lint_ls',
+    'marksman',
+})
 
 map('n', '<C-]>', '<Cmd>lua vim.lsp.buf.definition()<CR>zz')
 map('n', '<leader>ci', '<Cmd>Telescope lsp_references<CR>')
 map('n', '<leader>r', '<Cmd>lua vim.lsp.buf.rename()<CR>')
-map('n', '<leader>cl', '<Cmd>lua vim.lsp.buf.formatting()<CR><CR>')
+map('n', '<leader>cl', '<Cmd>lua vim.lsp.buf.format()<CR>')
 map('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>')
 map('n', '<S-l>', '<Cmd>lua vim.diagnostic.goto_next()<CR>')
 map('n', '<S-h>', '<Cmd>lua vim.diagnostic.goto_prev()<CR>')
