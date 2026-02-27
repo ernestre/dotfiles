@@ -6,6 +6,7 @@ let
     names = [ fonts.name ];
     size = 10.0;
   };
+  wallpaper = ../../../../wallpapers/forest.png;
 in
 {
   imports = [
@@ -42,7 +43,7 @@ in
   home.file.".config/i3/i3status-rs-config.toml".source = ./config/i3status-rs-config.toml;
   home.file.".config/i3/scripts/lock.sh".source = ./scripts/lock.sh;
   home.file.".config/i3/scripts/nordlayer_status.sh".source = ./scripts/nordlayer_status.sh;
-  home.file.".config/i3/wallpapers/main.png".source = ../../../../wallpapers/main.png;
+  home.file.".config/i3/wallpapers/main.png".source = wallpaper;
 
   xsession.windowManager.i3 = {
     enable = true;
@@ -54,7 +55,7 @@ in
         { command = "spotify"; notification = false; }
         { command = "xset -dpms && xset s off"; notification = false; }
         { command = "picom"; notification = false; }
-        { command = "${pkgs.feh}/bin/feh --bg-center ~/.config/i3/wallpapers/main.png"; notification = false; }
+        { command = "${pkgs.feh}/bin/feh --bg-fill ~/.config/i3/wallpapers/main.png"; notification = false; }
       ];
 
       fonts = i3_fonts;
