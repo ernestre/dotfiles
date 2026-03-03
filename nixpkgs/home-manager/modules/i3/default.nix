@@ -43,6 +43,7 @@ in
   home.file.".config/i3/i3status-rs-config.toml".source = ./config/i3status-rs-config.toml;
   home.file.".config/i3/scripts/lock.sh".source = ./scripts/lock.sh;
   home.file.".config/i3/scripts/nordlayer_status.sh".source = ./scripts/nordlayer_status.sh;
+  home.file.".config/i3/scripts/nordlayer_connect.sh".source = ./scripts/nordlayer_connect.sh;
   home.file.".config/i3/wallpapers/main.png".source = wallpaper;
 
   xsession.windowManager.i3 = {

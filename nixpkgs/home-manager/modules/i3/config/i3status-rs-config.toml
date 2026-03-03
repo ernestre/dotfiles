@@ -13,6 +13,9 @@ icons = "awesome6"
 block = "custom"
 command = "~/.config/i3/scripts/nordlayer_status.sh"
 json = true
+[[block.click]]
+button = "left"
+cmd = "~/.config/i3/scripts/nordlayer_connect.sh"
 
 [[block]]
 block = "bluetooth"
