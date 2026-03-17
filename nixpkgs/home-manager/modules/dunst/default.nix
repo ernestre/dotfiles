@@ -6,8 +6,9 @@ in
   # https://github.com/nix-community/home-manager/blob/master/modules/services/dunst.nix
   services.dunst =
     let
-      background = "#2a2f38";
-      foreground = "#f1fffa";
+      background = "#1a1d23e6";
+      foreground = "#ffffff";
+      highlight = "#0072cee6";
       timeout = 5;
     in
     {
@@ -17,30 +18,56 @@ in
       settings = {
 
         global = {
-          width = 500;
-          height = 300;
+          width = "(350, 450)";
+          height = 120;
+          origin = "top-right";
+          offset = "20x20";
           font = "${font.name} ${font.size}";
+          format = "<b>%s</b>\\n%b";
+          alignment = "left";
+          vertical_alignment = "center";
+          icon_position = "left";
+          max_icon_size = 48;
+          corner_radius = 12;
+          frame_width = 0;
+          separator_height = 2;
+          separator_color = "auto";
+          padding = 16;
+          horizontal_padding = 16;
+          gap_size = 8;
+          progress_bar_corner_radius = 4;
+          indicate_hidden = "yes";
+          show_indicators = "no";
+          mouse_left_click = "close_current";
+          mouse_right_click = "close_all";
         };
 
-        urgency_low = { inherit background foreground timeout; };
-        urgency_normal = { inherit background foreground timeout; };
+        urgency_low = {
+          inherit background foreground timeout;
+          highlight = highlight;
+        };
+
+        urgency_normal = {
+          inherit background foreground timeout;
+          highlight = highlight;
+        };
 
         urgency_critical = {
-          background = "#900000";
+          background = "#1a1d23e6";
           foreground = "#ffffff";
-          frame_color = "#ff0000";
+          frame_color = "#e74c3c";
           timeout = 0;
         };
 
         Slack = {
           appname = "Slack";
-          format = " %s\\n<b>%b</b>";
+          format = " %s\\n<b>%b</b>";
         };
 
         Spotify = {
           appname = "Spotify";
-          background = "#1DB954";
-          foreground = "#191414";
+          background = "#1DB954e6";
+          foreground = "#ffffff";
         };
       };
     };
