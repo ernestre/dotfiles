@@ -71,11 +71,13 @@
     enable = true;
     settings = {
       git = {
-        paging = {
-          colorArg = "always";
-          pager = "delta --color-only --dark --paging=never";
-          useConfig = false;
-        };
+        pagers = [
+          {
+            colorArg = "always";
+            pager = "delta --color-only --dark --paging=never";
+            useConfig = false;
+          }
+        ];
       };
     };
   };
