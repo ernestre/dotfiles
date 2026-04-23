@@ -6,7 +6,7 @@ let
     names = [ fonts.name ];
     size = 10.0;
   };
-  wallpaper = ../../../../wallpapers/asian-Girl-ascii-art-blue-tuned.png;
+  wallpaper = ../../../../wallpapers/arcane.png;
 in
 {
   imports = [
