@@ -19,6 +19,7 @@
     parallel
     eza
     nerd-fonts.geist-mono
+    hcloud
 
     nodejs_22
     (yarn.override { nodejs = nodejs_22; })
