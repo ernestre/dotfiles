@@ -38,7 +38,11 @@ in
 
     {
       home.packages = [
-        (pkgs.writeShellScriptBin "nexos-get-models" (builtins.readFile ./scripts/nexos-get-models.sh))
+        (pkgs.writeShellApplication {
+          name = "nexos-get-models";
+          runtimeInputs = with pkgs; [ curl jq ];
+          text = builtins.readFile ./scripts/nexos-get-models.sh;
+        })
       ];
     }
   ];
