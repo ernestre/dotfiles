@@ -35,5 +35,11 @@ in
     (lib.mkIf cfg.opencode.enable opencodeModule)
 
     (lib.mkIf cfg.claude-code.enable claudeCodeModule)
+
+    {
+      home.packages = [
+        (pkgs.writeShellScriptBin "nexos-get-models" (builtins.readFile ./scripts/nexos-get-models.sh))
+      ];
+    }
   ];
 }
