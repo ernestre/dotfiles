@@ -120,7 +120,6 @@ in
       markdown-preview-nvim
       vim-pencil
       vimwiki
-      bullets-vim
 
       # neotest{{
       nvim-nio
