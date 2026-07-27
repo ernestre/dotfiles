@@ -2,10 +2,8 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-HOST="api.nexos.ai"
-
 curl -Ls \
-  --url "https://${HOST}/v1/models" \
+  --url "https://api.nexos.ai/v1/models" \
   --header "Authorization: Bearer ${NEXOS_API_KEY}" \
   --header 'Accept: */*' |
-jq ".data[].name"
+jq -r '.data[] | [.name, .nexos_model_id] | @tsv' | column -t -s $'\t'
