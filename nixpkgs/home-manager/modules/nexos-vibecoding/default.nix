@@ -25,12 +25,12 @@ in
   };
 
   config = lib.mkMerge [
-    {
+    (lib.mkIf pkgs.stdenv.isLinux {
       home.packages = with pkgs; [
         bubblewrap
         socat
       ];
-    }
+    })
 
     (lib.mkIf cfg.opencode.enable opencodeModule)
 
