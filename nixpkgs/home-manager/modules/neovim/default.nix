@@ -1,5 +1,4 @@
 { pkgs, pkgsUnstable, lib, ps, ... }:
-
 let
   plugin = repo: ref: rev: pkgs.vimUtils.buildVimPlugin {
     pname = "${lib.strings.sanitizeDerivationName repo}";
@@ -18,7 +17,7 @@ in
     vimAlias = true;
     withNodeJs = true;
 
-    package = pkgsUnstable.neovim-unwrapped;
+    # package = pkgsUnstable.neovim-unwrapped;
 
     extraPackages = with pkgs; [
       pkgsUnstable.tree-sitter
@@ -33,8 +32,8 @@ in
       pkgsUnstable.gopls
 
       # nodejs
-      nodePackages.typescript
-      nodePackages.typescript-language-server
+      typescript
+      typescript-language-server
 
       # puthon
       pyright

@@ -23,11 +23,11 @@
 
     nodejs_22
     (yarn.override { nodejs = nodejs_22; })
-    nodePackages."intelephense"
-    nodePackages."typescript"
-    nodePackages."typescript-language-server"
-    nodePackages."vscode-langservers-extracted"
-    nodePackages."yaml-language-server"
+    intelephense
+    typescript
+    typescript-language-server
+    vscode-langservers-extracted
+    yaml-language-server
   ];
 
   fonts.fontconfig.enable = true;
