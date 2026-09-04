@@ -6,8 +6,6 @@ vim.lsp.config('jsonls', {
     }
 })
 
-vim.lsp.config('pyright', {})
-
 vim.lsp.config('ts_ls', {
     settings = {
         typescript = {
@@ -79,7 +77,7 @@ vim.lsp.config('marksman', {
 vim.lsp.enable({
     'intelephense',
     'jsonls',
-    'pyright',
+    'basedpyright',
     'ts_ls',
     'terraformls',
     'helm_ls',

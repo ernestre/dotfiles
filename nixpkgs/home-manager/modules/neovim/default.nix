@@ -36,7 +36,7 @@ in
       typescript-language-server
 
       # puthon
-      pyright
+      basedpyright
 
       # lua
       lua-language-server
