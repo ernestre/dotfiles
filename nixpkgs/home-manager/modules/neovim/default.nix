@@ -116,7 +116,6 @@ in
       nvim-colorizer-lua
 
       # writing  {{
-      markdown-preview-nvim
       vim-pencil
       vimwiki
       render-markdown-nvim

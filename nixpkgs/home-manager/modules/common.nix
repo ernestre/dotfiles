@@ -82,8 +82,4 @@
       };
     };
   };
-
-  nixpkgs.overlays = [
-    (import ../../overlays/markdown-preview-nvim { inherit pkgs; })
-  ];
 }
