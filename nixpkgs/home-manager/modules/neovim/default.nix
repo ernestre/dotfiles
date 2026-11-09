@@ -23,7 +23,8 @@ in
       pkgsUnstable.tree-sitter
 
       # nix
-      nil
+      nixd
+      nixfmt
       nixpkgs-fmt
 
       # golang

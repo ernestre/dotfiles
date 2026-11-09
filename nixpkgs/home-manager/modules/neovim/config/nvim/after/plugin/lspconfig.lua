@@ -1,3 +1,6 @@
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+
 vim.lsp.config('intelephense', {})
 
 vim.lsp.config('jsonls', {
@@ -44,15 +47,8 @@ vim.lsp.config('yamlls', {
 })
 
 vim.lsp.config('lua_ls', {})
-
-vim.lsp.config('nil_ls', {
-    settings = {
-        ['nil'] = {
-            formatting = {
-                command = { "nixpkgs-fmt" },
-            },
-        },
-    },
+vim.lsp.config('nixd', {
+    capabilities = capabilities,
 })
 
 vim.lsp.config('gopls', {
@@ -83,7 +79,7 @@ vim.lsp.enable({
     'helm_ls',
     'yamlls',
     'lua_ls',
-    'nil_ls',
+    'nixd',
     'gopls',
     'golangci_lint_ls',
     'marksman',
