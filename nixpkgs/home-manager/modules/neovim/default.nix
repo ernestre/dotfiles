@@ -1,13 +1,21 @@
-{ pkgs, pkgsUnstable, lib, ps, ... }:
+{
+  pkgs,
+  pkgsUnstable,
+  lib,
+  ps,
+  ...
+}:
 let
-  plugin = repo: ref: rev: pkgs.vimUtils.buildVimPlugin {
-    pname = "${lib.strings.sanitizeDerivationName repo}";
-    version = rev;
-    src = builtins.fetchGit {
-      url = "https://github.com/${repo}.git";
-      inherit ref rev;
+  plugin =
+    repo: ref: rev:
+    pkgs.vimUtils.buildVimPlugin {
+      pname = "${lib.strings.sanitizeDerivationName repo}";
+      version = rev;
+      src = builtins.fetchGit {
+        url = "https://github.com/${repo}.git";
+        inherit ref rev;
+      };
     };
-  };
 in
 {
   home.file.".config/nvim".source = ./config/nvim;
@@ -120,6 +128,7 @@ in
       vim-pencil
       vimwiki
       render-markdown-nvim
+      live-preview-nvim
 
       # neotest{{
       nvim-nio
